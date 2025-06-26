@@ -39,7 +39,7 @@ const Footer: React.FC<FooterProps> = ({
   const brandDescription = getBrandDescription(language);
 
   return (
-    <footer className="relative z-40 backdrop-blur-md mt-16">
+    <footer className="relative z-40 backdrop-blur-md mt-[171]">
       <div className="container mx-auto px-4 pb-3 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 ">
         <nav className="bg-[#020617] px-6 py-8 rounded-2xl shadow-2xl">
           {/* Main Footer Content */}
@@ -226,9 +226,6 @@ const Footer: React.FC<FooterProps> = ({
           </div>
         </nav>
       </div>
-
-      {/* Background decoration */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#718355] via-[#87986a] to-[#b5c99a] opacity-50"></div>
     </footer>
   );
 };

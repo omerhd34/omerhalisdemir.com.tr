@@ -30,12 +30,10 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
 
   const t = translations[language as keyof typeof translations];
 
-  // Use profession titles from translations
   const texts = useMemo(() => {
     return t.professionTitles;
   }, [t.professionTitles]);
 
-  // Reset typewriter effect when language changes
   useEffect(() => {
     setDisplayedText("");
     setCurrentIndex(0);
@@ -49,19 +47,15 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
 
     const timer = setTimeout(() => {
       if (!isDeleting) {
-        // Yazma işlemi
         if (displayedText.length < currentText.length) {
           setDisplayedText(currentText.slice(0, displayedText.length + 1));
         } else {
-          // Yazma tamamlandı, biraz bekle sonra silmeye başla
           setTimeout(() => setIsDeleting(true), pauseTime);
         }
       } else {
-        // Silme işlemi
         if (displayedText.length > 0) {
           setDisplayedText(displayedText.slice(0, -1));
         } else {
-          // Silme tamamlandı, sonraki metne geç
           setIsDeleting(false);
           setCurrentIndex((prev) => (prev + 1) % texts.length);
         }
@@ -90,9 +84,14 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              {/* Left Side - Simple Enhanced Profile Image */}
+              {/* Left Side */}
               <div className="flex-shrink-0">
                 <div className="relative inline-block group">
+                  {/* Rotating Border Effect */}
+                  <div className="absolute -inset-2 rounded-full">
+                    <div className="w-full h-full rounded-full rotating-border relative"></div>
+                  </div>
+
                   {/* Simple gradient background */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-lg animate-pulse"></div>
 
@@ -104,7 +103,7 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
                     alt="Ömer Halis DEMİR"
                     className="relative w-30 h-30 lg:w-42 lg:h-42 xl:w-60 xl:h-60 rounded-full object-cover 
                              border-4 border-white shadow-xl hover:shadow-2xl 
-                             transition-all duration-300 hover:scale-105"
+                             transition-all duration-300 hover:scale-105 z-10"
                   />
                 </div>
               </div>

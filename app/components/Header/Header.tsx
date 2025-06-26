@@ -10,6 +10,7 @@ import {
   getNavigationItems,
   languagesConfig,
 } from "./HeaderData";
+import AnimatedGradient from "../extra/AnimatedGradient";
 
 const rubikDistressed = localFont({
   src: "../../../public/fonts/RubikDistressed-Regular.ttf",
@@ -29,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const languageDropdownRef = useRef<HTMLDivElement>(null);
 
   const t = translations[language as keyof typeof translations];
@@ -40,9 +41,7 @@ const Header: React.FC<HeaderProps> = ({
   const getActiveSection = () => {
     const currentPath = pathname;
     const activeItem = navigationItems.find((item) => {
-      // Exact match için
       if (item.href === currentPath) return true;
-      // Hash link'ler için (#about, #skills vs.)
       if (item.href.startsWith("#") && currentPath === "/") {
         return false;
       }
@@ -96,33 +95,125 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 2xl:-mb-20 bg-[#21110e]/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 2xl:-mb-20 bg-[#21110e] backdrop-blur-md ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-2 sm:pt-3 ">
-        <nav className="bg-[#020617]/98 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10 relative z-10">
-          <div className="flex justify-between items-center ">
+        <nav className="bg-[#020617] backdrop-blur-sm px-4 sm:px-6  py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10 relative z-10">
+          <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="flex items-center group relative">
-              <div className="relative">
-                <span
-                  className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#ebf3fe] via-[#0170e682] to-[#007bff82] bg-clip-text text-transparent ${rubikDistressed.className} group-hover:scale-105 transition-transform duration-300 leading-tight`}
-                  onMouseEnter={() => setShowTooltip(true)}
-                  onMouseLeave={() => setShowTooltip(false)}
-                >
-                  <span className="hidden sm:inline">Ömer Halis DEMİR</span>
-                  <span className="sm:hidden tracking-wider">ÖHD</span>
-                </span>
+            <Link
+              href="/"
+              className="flex items-center group relative"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <div className="flex items-center space-x-3 relative">
+                {/* Animasyon solda - artık hover durumuna tepki veriyor */}
+                <div className="hidden sm:block relative">
+                  <AnimatedGradient isHovered={isHovered} />
 
-                {/* Tooltip for mobile */}
-                {showTooltip && (
-                  <div className="sm:hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-primary bg-[#2a2c27] rounded-lg shadow-lg border border-[#ebf3fe]/20 whitespace-nowrap z-[10] transition-all duration-200 ease-out">
-                    <span className="text-[#c4c8bd] font-medium">
-                      Ömer Halis DEMİR
-                    </span>
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-l-transparent border-r-transparent border-t-[#01438882]"></div>
+                  {/* Bağlantı çizgisi - animasyondan yazıya */}
+                  <div
+                    className={`absolute top-1/2 -right-2 w-4 h-px bg-gradient-to-r from-[#0170e682] to-transparent transition-all duration-500 ${
+                      isHovered
+                        ? "opacity-100 scale-x-100"
+                        : "opacity-0 scale-x-0"
+                    }`}
+                    style={{
+                      transformOrigin: "left center",
+                      transform: "translateY(-50%)",
+                    }}
+                  />
+                </div>
+
+                <div className="relative">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-r from-[#0170e682]/20 via-[#007bff82]/20 to-[#0170e682]/20 rounded-lg transition-all duration-500 ${
+                      isHovered
+                        ? "opacity-100 blur-sm scale-110"
+                        : "opacity-0 scale-100"
+                    }`}
+                  />
+
+                  {/* Ana yazı container'ı */}
+                  <div className="relative min-w-max">
+                    {/* ÖHD - Normal durumda görünür */}
+                    <div
+                      className={`transition-all duration-500 ${
+                        isHovered
+                          ? "opacity-0 scale-95 pointer-events-none"
+                          : "opacity-100 scale-100"
+                      }`}
+                    >
+                      <span
+                        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#ebf3fe] via-[#0170e682] to-[#007bff82] bg-clip-text text-transparent leading-tight tracking-wider"
+                        style={{ fontFamily: rubikDistressed.style.fontFamily }}
+                      >
+                        ÖHD
+                      </span>
+                    </div>
+
+                    {/* Ömer Halis DEMİR - Hover'da görünür */}
+                    <div
+                      className={`absolute top-0 left-0 transition-all duration-500 ${
+                        isHovered
+                          ? "opacity-100 scale-105 pointer-events-auto"
+                          : "opacity-0 scale-95 pointer-events-none"
+                      }`}
+                    >
+                      <span
+                        className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight whitespace-nowrap "
+                        style={{
+                          fontFamily: rubikDistressed.style.fontFamily,
+                          textShadow: isHovered
+                            ? "0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(14, 165, 233, 0.6)"
+                            : "none",
+                        }}
+                      >
+                        {"Ömer Halis DEMİR".split("").map((char, index) => (
+                          <span
+                            key={index}
+                            className="inline-block transition-all duration-300"
+                            style={{
+                              transform: isHovered
+                                ? "translateY(2px)"
+                                : "translateY(0px)",
+                              transition: `transform 0.3s ease ${index * 30}ms`,
+                            }}
+                          >
+                            {char === " " ? "\u00A0" : char}
+                          </span>
+                        ))}
+                      </span>
+
+                      {/* Bu yazının altına özel çizgi */}
+                      <div
+                        className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#3b82f6] via-[#0ea5e9] to-[#ffffff] transition-all duration-700 ${
+                          isHovered ? "w-full opacity-100" : "w-0 opacity-0"
+                        }`}
+                        style={{
+                          width: isHovered ? "100%" : "0%",
+                          right: "0",
+                          boxShadow: isHovered
+                            ? "0 0 10px rgba(59, 130, 246, 0.5)"
+                            : "none",
+                        }}
+                      />
+                    </div>
                   </div>
-                )}
+                </div>
 
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ebf3fe] to-[#0170e682] group-hover:w-full transition-all duration-500"></div>
+                {/* Çevreleyen ışık efekti */}
+                <div
+                  className={`absolute inset-0 pointer-events-none transition-all duration-700 ${
+                    isHovered ? "opacity-30" : "opacity-0"
+                  }`}
+                  style={{
+                    background:
+                      "radial-gradient(circle at center, rgba(1, 112, 230, 0.1) 0%, transparent 70%)",
+                    borderRadius: "50%",
+                    transform: "scale(1.5)",
+                  }}
+                />
               </div>
             </Link>
 
@@ -199,7 +290,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Language Dropdown */}
                 {isLanguageDropdownOpen && (
-                  <div className="absolute right-0 -mx-15 mt-1 py-2 w-22 bg-info/95 backdrop-blur-sm rounded-lg shadow-lg bg-[#061149] border border-[#c4c8bd]/20 z-50">
+                  <div className="absolute right-0 -mx-15 mt-[2px] py-2 w-22 bg-info/95 backdrop-blur-sm rounded-lg shadow-lg bg-[#061149] border border-[#c4c8bd]/20 z-50">
                     {languagesConfig.map((lang) => (
                       <button
                         key={lang.code}
@@ -343,7 +434,6 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </nav>
       </div>
-
       {/* Social Links Bar - Desktop Only */}
       <div className="hidden lg:block  ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 z-[0] ">

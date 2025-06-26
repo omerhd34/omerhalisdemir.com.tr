@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
+import ScrollToTop from "./components/extra/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Ömer Halis DEMİR",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   );
 }

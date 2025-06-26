@@ -81,18 +81,21 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
     }, 2000);
   };
 
-  // Common input styles
   const inputStyles =
-    "w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base";
+    "w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base  hover:border-[#ffffff] hover:scale-[1.02] transform ";
 
   return (
     <section
       id="contact"
-      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary"
+      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary "
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         {/* Section Header */}
-        <FaEnvelope className="w-8 h-8 text-blue-300 mx-auto mb-2" />
+        <FaEnvelope
+          className={`w-8 h-8 text-blue-300 mx-auto mb-2 transition-all duration-1000 delay-100 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        />
         <Title title={t.title} subtitle={t.subtitle} isVisible={isVisible} />
 
         {/* Availability Message */}
@@ -213,7 +216,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-103 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#082039] to-[#d4e2f9] hover:from-[#000] hover:to-[#000] hover:border-2"
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-md py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#082039] to-[#d4e2f9] hover:from-[#000] hover:to-[#000] border-0 hover:ring-2 hover:ring-white hover:ring-opacity-50"
                 >
                   <FaPaperPlane className="w-4 h-4" />
                   <span>{isSubmitting ? t.sending : t.send}</span>

@@ -76,10 +76,16 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
   return (
     <section
       id="skills"
-      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary"
+      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary "
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-        <FaCode className="w-8 h-8 mx-auto mb-2 text-blue-300" />
+        <div
+          className={`text-center mb-2 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <FaCode className="w-8 h-8 mx-auto text-blue-300" />
+        </div>
         <Title title={t.title} subtitle={t.subtitle} isVisible={isVisible} />
 
         <div

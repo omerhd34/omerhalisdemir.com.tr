@@ -16,7 +16,6 @@ import {
 } from "react-icons/fa";
 import Title from "./extra/Title";
 import CategoryButton from "./extra/CategoryButton";
-import "../styles/project.css";
 import translations from "../data/Translations/ProjectTranslations";
 import {
   getProjectsData,
@@ -97,13 +96,16 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
   return (
     <section
       id="projects"
-      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary"
+      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary "
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         {/* Section Header */}
-        <FaProjectDiagram className="w-8 h-8 text-blue-300 mx-auto mb-2" />
+        <FaProjectDiagram
+          className={`w-8 h-8 text-blue-300 mx-auto mb-2 transition-all duration-1000 delay-100 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        />{" "}
         <Title title={t.title} subtitle={t.subtitle} isVisible={isVisible} />
-
         {/* Description and Quick Stats */}
         <div
           className={`text-center mb-8 xs:mb-10 sm:mb-12 transition-all duration-1000 delay-200 ${
@@ -142,7 +144,6 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
             </div>
           </div>
         </div>
-
         {/* Category Tabs */}
         <div
           className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 xs:mb-10 sm:mb-12 transition-all duration-1000 delay-300 ${
@@ -170,7 +171,6 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
             );
           })}
         </div>
-
         {/* Projects Grid */}
         <div
           className={`transition-all duration-1000 delay-500 ${
