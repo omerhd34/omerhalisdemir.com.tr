@@ -59,11 +59,10 @@ const BackgroundAnimation = () => {
       let newPos: Position;
 
       while (!validPosition && attempts < maxAttempts) {
-        // Daha geniş margin ve güvenli alan
-        const margin = 8;
+        const margin = 5;
         newPos = {
-          x: Math.random() * (85 - margin * 2) + margin,
-          y: Math.random() * (85 - margin * 2) + margin,
+          x: Math.random() * (95 - margin * 2) + margin,
+          y: Math.random() * (65 - margin * 2) + margin + 15,
           width,
           height,
         };
@@ -75,13 +74,15 @@ const BackgroundAnimation = () => {
       if (validPosition) {
         positions.push(newPos!);
       } else {
-        const sector = i % 9; // 3x3 grid
-        const sectorX = (sector % 3) * 28 + 8;
-        const sectorY = Math.floor(sector / 3) * 28 + 8;
+        const gridCols = 4;
+        const gridRows = 3;
+        const sector = i % (gridCols * gridRows);
+        const sectorX = (sector % gridCols) * (90 / gridCols) + 30;
+        const sectorY = Math.floor(sector / gridCols) * (60 / gridRows) + 30;
 
         positions.push({
-          x: sectorX + Math.random() * 15,
-          y: sectorY + Math.random() * 15,
+          x: sectorX + Math.random() * (90 / gridCols - 10),
+          y: sectorY + Math.random() * (60 / gridRows - 10) + 15,
           width,
           height,
         });
@@ -99,12 +100,12 @@ const BackgroundAnimation = () => {
   if (!mounted) return null;
 
   return (
-    <div className="fixed z-0 inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed z-10 inset-0 overflow-hidden pointer-events-none">
       <div className="absolute inset-0 md:opacity-30 sm:opacity-20 opacity-15">
         <div className="neural-grid w-full h-full" />
       </div>
 
-      {/* Floating Code Blocks   */}
+      {/* Floating Code Blocks */}
       {codeCommands.map((command, index) => {
         const position = codePositions[index];
         if (!position) return null;
@@ -112,7 +113,7 @@ const BackgroundAnimation = () => {
         return (
           <div
             key={`command-${index}`}
-            className="floating-code absolute border rounded-lg z-[1] min-w-[80px] bg-slate-900/8 border-cyan-400/20 px-3 py-1.5 backdrop-blur-sm  md:opacity-100 opacity-30 sm:opacity-50 "
+            className="floating-code absolute border rounded-lg z-[11] min-w-[80px] bg-slate-900/8 border-cyan-400/20 px-3 py-1.5 backdrop-blur-sm md:opacity-100 opacity-30 sm:opacity-50"
             style={{
               left: `${position.x}%`,
               top: `${position.y}%`,
@@ -130,7 +131,7 @@ const BackgroundAnimation = () => {
         );
       })}
 
-      {/* Tech Tags  */}
+      {/* Tech Tags */}
       {data.map((tech, index) => {
         const position = techPositions[index];
         if (!position) return null;
@@ -138,7 +139,7 @@ const BackgroundAnimation = () => {
         return (
           <div
             key={`tech-${index}`}
-            className="tech-tag absolute flex items-center gap-2 rounded-full py-1 px-[0.625rem] z-[2] min-w-[80px] max-w-[min(240px,20vw)] border border-[rgba(52,211,153,0.25)] sm:border-[rgba(52,211,153,0.15)] md:opacity-100 sm:opacity-60 opacity-40"
+            className="tech-tag absolute flex items-center gap-2 rounded-full py-1 px-[0.625rem] z-[12] min-w-[80px] max-w-[min(240px,20vw)] border border-[rgba(52,211,153,0.25)] sm:border-[rgba(52,211,153,0.15)] md:opacity-100 sm:opacity-60 opacity-40"
             style={{
               left: `${position.x}%`,
               top: `${position.y}%`,
@@ -162,16 +163,16 @@ const BackgroundAnimation = () => {
         return (
           <div
             key={`quantum-${index}`}
-            className="quantum-particle absolute text-sm font-mono font-bold select-none z-[3] md:opacity-100 sm:opacity-50 opacity-25"
+            className="quantum-particle absolute text-sm font-mono font-bold select-none z-[13] md:opacity-100 sm:opacity-50 opacity-25"
             style={{
               left: `${position.x}%`,
               top: `${position.y}%`,
               color: `rgba(${120 + Math.random() * 135}, ${
                 160 + Math.random() * 95
               }, ${210 + Math.random() * 45}, ${
-                window.innerWidth < 640
+                typeof window !== "undefined" && window.innerWidth < 640
                   ? 0.15
-                  : window.innerWidth < 768
+                  : typeof window !== "undefined" && window.innerWidth < 768
                   ? 0.2
                   : 0.3
               })`,

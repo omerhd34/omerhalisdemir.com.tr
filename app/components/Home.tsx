@@ -90,16 +90,21 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
                   : "opacity-0 translate-y-4"
               }`}
             >
-              {/* Left Side - Profile Image */}
+              {/* Left Side - Simple Enhanced Profile Image */}
               <div className="flex-shrink-0">
-                <div className="relative inline-block">
-                  <div className="absolute inset-0 rounded-full blur-xl opacity-30 animate-pulse"></div>
+                <div className="relative inline-block group">
+                  {/* Simple gradient background */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-lg animate-pulse"></div>
+
+                  {/* Main Image */}
                   <Image
                     width={200}
                     height={200}
                     src={ImageMe}
                     alt="Ömer Halis DEMİR"
-                    className="relative w-30 h-30 lg:w-42 lg:h-42 xl:w-60 xl:h-60 rounded-4xl object-cover border-4 border-secondary shadow-lg"
+                    className="relative w-30 h-30 lg:w-42 lg:h-42 xl:w-60 xl:h-60 rounded-full object-cover 
+                             border-4 border-white shadow-xl hover:shadow-2xl 
+                             transition-all duration-300 hover:scale-105"
                   />
                 </div>
               </div>

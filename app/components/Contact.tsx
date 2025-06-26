@@ -19,13 +19,14 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
-  });
+  };
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Visibility animation
@@ -35,7 +36,8 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
   }, []);
 
   // Get current translations
-  const t = translations[language as keyof typeof translations];
+  const t =
+    translations[language as keyof typeof translations] || translations.TR;
 
   // Prepare contact information with translations
   const contactInfoWithTranslations = contactInfo.map((info) => ({
@@ -49,7 +51,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
             countryCode={info.countryCode || "TR"}
             svg
             style={{ width: "16px", height: "12px" }}
-            title="Turkey"
+            title={info.countryCode || "TR"}
           />
         </div>
       ) : (
@@ -75,34 +77,31 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
       console.log("Form submitted:", formData);
       setIsSubmitting(false);
       // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
+      setFormData(initialFormData);
     }, 2000);
   };
+
+  // Common input styles
+  const inputStyles =
+    "w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base";
 
   return (
     <section
       id="contact"
-      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-white"
+      className="min-h-screen pt-16 lg:pt-38 relative overflow-hidden text-primary"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
         {/* Section Header */}
         <FaEnvelope className="w-8 h-8 text-blue-300 mx-auto mb-2" />
         <Title title={t.title} subtitle={t.subtitle} isVisible={isVisible} />
+
         {/* Availability Message */}
         <div
           className={`text-center mb-12 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-primary text-[16px] sm:text-lg px-2">
-            {t.availability}
-          </p>
+          <p className="text-[16px] sm:text-lg px-2">{t.availability}</p>
         </div>
 
         {/* Main Content Grid */}
@@ -116,17 +115,17 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
             }`}
           >
             <div className="bg-secondary p-8 rounded-2xl shadow-2xl">
-              <h3 className="text-2xl font-bold text-primary mb-6 flex items-center space-x-2 ">
-                <FaPaperPlane className="w-5 h-5 text-primary" />
+              <h3 className="text-2xl font-bold mb-6 flex items-center space-x-2">
+                <FaPaperPlane className="w-5 h-5" />
                 <span>{t.formTitle}</span>
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name and Email Row - Yan Yana */}
+                {/* Name and Email Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name Input */}
                   <div className="group">
-                    <label className="block text-primary text-md font-medium mb-2">
+                    <label className="block text-md font-medium mb-2">
                       <FaUser className="inline w-4 h-4 mr-2 mb-1" />
                       {t.name}
                     </label>
@@ -137,13 +136,13 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                       onChange={handleChange}
                       placeholder={t.namePlaceholder}
                       required
-                      className="w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg text-primary placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base"
+                      className={inputStyles}
                     />
                   </div>
 
                   {/* Email Input */}
                   <div className="group">
-                    <label className="block text-primary text-md font-medium mb-2">
+                    <label className="block text-md font-medium mb-2">
                       <FaEnvelope className="inline w-4 h-4 mr-2 mb-1" />
                       {t.email}
                     </label>
@@ -154,7 +153,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                       onChange={handleChange}
                       placeholder={t.emailPlaceholder}
                       required
-                      className="w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg text-primary placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base"
+                      className={inputStyles}
                     />
                   </div>
                 </div>
@@ -162,7 +161,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Phone Input */}
                   <div className="group">
-                    <label className="block text-primary text-md font-medium mb-2">
+                    <label className="block text-md font-medium mb-2">
                       <FaPhone className="inline w-4 h-4 mr-2 mb-1" />
                       {t.phone}
                     </label>
@@ -172,13 +171,13 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder={t.phonePlaceholder}
-                      className="w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg text-primary placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base"
+                      className={inputStyles}
                     />
                   </div>
 
                   {/* Subject Input */}
                   <div className="group">
-                    <label className="block text-primary text-md font-medium mb-2">
+                    <label className="block text-md font-medium mb-2">
                       <FaTag className="inline w-4 h-4 mr-2 mb-1" />
                       {t.subject}
                     </label>
@@ -189,15 +188,15 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                       onChange={handleChange}
                       placeholder={t.subjectPlaceholder}
                       required
-                      className="w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg text-primary placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base"
+                      className={inputStyles}
                     />
                   </div>
                 </div>
 
                 {/* Message Textarea */}
                 <div className="group">
-                  <label className="block text-primary text-md font-medium mb-2">
-                    <FaComment className="inline w-4 h-4 mr-2 mb-1 " />
+                  <label className="block text-md font-medium mb-2">
+                    <FaComment className="inline w-4 h-4 mr-2 mb-1" />
                     {t.message}
                   </label>
                   <textarea
@@ -206,7 +205,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                     onChange={handleChange}
                     placeholder={t.messagePlaceholder}
                     rows={5}
-                    className="w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg text-primary placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-base resize-none"
+                    className={`${inputStyles} resize-none`}
                   />
                 </div>
 
@@ -214,7 +213,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-md py-3 text-primary font-semibold rounded-2xl transition-all duration-300 transform hover:scale-103 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#082039] to-[#d4e2f9] hover:from-[#000] hover:to-[#000] hover:border-2"
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-md py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-103 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#082039] to-[#d4e2f9] hover:from-[#000] hover:to-[#000] hover:border-2"
                 >
                   <FaPaperPlane className="w-4 h-4" />
                   <span>{isSubmitting ? t.sending : t.send}</span>
@@ -222,9 +221,10 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
               </form>
             </div>
           </div>
+
           {/* Right Column - Contact Info & Social */}
           <div
-            className={`space-y-8 transition-all duration-1000 delay-500  ${
+            className={`space-y-8 transition-all duration-1000 delay-500 ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-10"
@@ -232,12 +232,12 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
           >
             {/* Contact Information Card */}
             <div className="bg-secondary p-8 rounded-t-2xl shadow-2xl lg:mb-[40px]">
-              <h3 className="text-2xl font-bold text-primary mb-6 flex items-center space-x-2 ">
-                <FaPhone className="w-5 h-5 text-primary" />
+              <h3 className="text-2xl font-bold mb-6 flex items-center space-x-2">
+                <FaPhone className="w-5 h-5" />
                 <span>{t.contactInfo}</span>
               </h3>
 
-              <div className="space-y-5 ">
+              <div className="space-y-5">
                 {contactInfoWithTranslations.map((info) => {
                   const IconComponent = info.icon;
                   return (
@@ -249,10 +249,8 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                         <IconComponent className="w-5 h-5 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-primary text-sm block">
-                          {info.label}
-                        </span>
-                        <div className="text-primary font-medium text-base break-words">
+                        <span className="text-sm block">{info.label}</span>
+                        <div className="font-medium text-base break-words">
                           {info.value}
                         </div>
                       </div>
@@ -264,7 +262,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
 
             {/* Social Media Card */}
             <div className="bg-secondary p-8 rounded-b-2xl shadow-2xl">
-              <h3 className="text-2xl font-bold text-primary mb-6 flex items-center justify-center space-x-2">
+              <h3 className="text-2xl font-bold mb-6 flex items-center justify-center space-x-2">
                 <span>{t.socialMedia}</span>
               </h3>
               <div className="flex justify-center space-x-10">

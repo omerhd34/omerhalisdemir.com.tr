@@ -80,7 +80,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
   const getStatusBg = (status: string) => {
     switch (status) {
       case "completed":
-        return "bg-black border-accent";
+        return "bg-info border-accent";
       case "current":
         return "bg-red-900 border-accent ";
       case "upcoming":
@@ -110,7 +110,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-primary text-[16px] sm:text-lg max-w-3xl mx-auto px-2 mb-6 xs:mb-7 sm:mb-8">
+          <p className="text-[16px] sm:text-lg max-w-3xl mx-auto px-2 mb-6 xs:mb-7 sm:mb-8">
             {t.description}
           </p>
 
@@ -120,7 +120,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
               <div className="text-xl xs:text-2xl font-bold text-red-400">
                 {stats.total}
               </div>
-              <div className="text-xs xs:text-sm text-primary">
+              <div className="text-xs xs:text-sm">
                 {language === "TR" ? "Toplam Proje" : "Total Projects"}
               </div>
             </div>
@@ -128,7 +128,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
               <div className="text-xl xs:text-2xl font-bold text-green-400">
                 {stats.completed}
               </div>
-              <div className="text-xs xs:text-sm text-primary">
+              <div className="text-xs xs:text-sm">
                 {language === "TR" ? "Tamamlanan" : "Completed"}
               </div>
             </div>
@@ -136,7 +136,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
               <div className="text-xl xs:text-2xl font-bold text-blue-400">
                 {stats.current}
               </div>
-              <div className="text-xs xs:text-sm text-primary">
+              <div className="text-xs xs:text-sm">
                 {language === "TR" ? "Devam Eden" : "In Progress"}
               </div>
             </div>
@@ -180,10 +180,10 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12 xs:py-14 sm:py-16">
               <div className="text-4xl xs:text-5xl sm:text-6xl mb-3 xs:mb-4"></div>
-              <h3 className="text-lg xs:text-xl font-semibold text-primary mb-2">
+              <h3 className="text-lg xs:text-xl font-semibold mb-2">
                 {language === "TR" ? "Proje bulunamadı" : "No projects found"}
               </h3>
-              <p className="text-primary text-sm xs:text-base">
+              <p className="text-sm xs:text-base">
                 {language === "TR"
                   ? "Arama kriterlerinizi değiştirmeyi deneyin"
                   : "Try changing your search criteria"}
@@ -199,7 +199,6 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                     key={project.id}
                     className="bg-secondary rounded-xl xs:rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden"
                     style={{
-                      animationDelay: `${index * 200}ms`,
                       animation: `slideIn 0.6s ease-out ${index * 200}ms both`,
                     }}
                   >
@@ -211,15 +210,15 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                           {/* Header */}
                           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 xs:gap-4 mb-3 xs:mb-4">
                             <div className="flex-1 min-w-0">
-                              <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-2 break-words">
+                              <h3 className="text-lg xs:text-xl sm:text-2xl font-bold mb-2 break-words">
                                 {project.title}
                               </h3>
-                              <p className="text-primary mb-3 xs:mb-4 text-sm xs:text-base">
+                              <p className="mb-3 xs:mb-4 text-sm xs:text-base">
                                 {project.description}
                               </p>
                             </div>
 
-                            <div className="flex flex-col sm:items-end space-y-1 xs:space-y-2 flex-shrink-0">
+                            <div className="flex flex-col space-y-2 flex-shrink-0">
                               <div
                                 className={`inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${getStatusBg(
                                   project.status
@@ -231,28 +230,55 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                   ]
                                 }
                               </div>
-                              <div className="text-primary font-semibold text-xs xs:text-sm">
+                              <div className="font-semibold text-xs xs:text-sm text-center">
                                 {project.period}
                               </div>
                             </div>
                           </div>
 
-                          {/* Technologies */}
+                          {/* Technologies with Colors */}
                           <div className="flex flex-wrap gap-2 xs:gap-3 mb-4 xs:mb-5 sm:mb-6">
-                            {project.technologies.map((TechIcon, techIndex) => (
-                              <div
-                                key={techIndex}
-                                className="p-1.5 xs:p-2 bg-muted rounded-lg transition-colors duration-200 group"
-                              >
-                                <TechIcon className="w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5 text-primary group-hover:text-primary transition-colors duration-200" />
-                              </div>
-                            ))}
+                            {project.technologies.map((TechIcon, techIndex) => {
+                              // Renk sınıflarını önceden tanımla
+                              const colorClasses = [
+                                "text-cyan-400 hover:text-cyan-300", // React
+                                "text-white hover:text-gray-200", // Next.js
+                                "text-blue-500 hover:text-blue-400", // TypeScript
+                                "text-yellow-400 hover:text-yellow-300", // JavaScript
+                                "text-teal-400 hover:text-teal-300", // Tailwind
+                                "text-green-500 hover:text-green-400", // Node.js
+                                "text-teal-500 hover:text-teal-400", // Arduino
+                                "text-blue-600 hover:text-blue-500", // C++
+                                "text-purple-400 hover:text-purple-300", // Microchip
+                                "text-orange-400 hover:text-orange-300", // Tools
+                                "text-yellow-500 hover:text-yellow-400", // Bolt
+                                "text-indigo-400 hover:text-indigo-300", // LayerGroup
+                                "text-blue-400 hover:text-blue-300", // Globe
+                                "text-red-400 hover:text-red-300",
+                                "text-pink-400 hover:text-pink-300",
+                                "text-gray-400 hover:text-gray-300",
+                              ];
+
+                              const iconColorClass =
+                                colorClasses[techIndex % colorClasses.length];
+
+                              return (
+                                <div
+                                  key={techIndex}
+                                  className="p-1.5 xs:p-2 bg-muted rounded-lg transition-all duration-300 group hover:scale-110 hover:shadow-lg"
+                                >
+                                  <TechIcon
+                                    className={`w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5 transition-all duration-300 ${iconColorClass}`}
+                                  />
+                                </div>
+                              );
+                            })}
                           </div>
 
                           {/* Quick Features */}
                           <div className="mb-4 xs:mb-5 sm:mb-6">
-                            <h4 className="text-primary font-semibold mb-2 xs:mb-3 flex items-center text-sm xs:text-base">
-                              <FaRocket className="w-3 xs:w-4 h-3 xs:h-4 mr-2" />
+                            <h4 className="font-semibold mb-2 xs:mb-3 flex items-center text-sm xs:text-base">
+                              <FaRocket className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-orange-400" />
                               {language === "TR" ? "Özellikler" : "Features"}
                             </h4>
                             <div className="flex flex-wrap gap-1.5 xs:gap-2">
@@ -261,13 +287,13 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                 .map((feature, featureIndex) => (
                                   <span
                                     key={featureIndex}
-                                    className="px-3 xs:px-4 py-1 bg-primary text-primary rounded-full text-xs xs:text-sm"
+                                    className="px-3 xs:px-4  py-1 bg-primary text-primary rounded-full text-xs xs:text-sm"
                                   >
                                     {feature}
                                   </span>
                                 ))}
                               {project.features.length > 4 && (
-                                <span className="px-3 xs:px-4 py-1 bg-muted text-primary rounded-full text-xs xs:text-sm">
+                                <span className="px-3 xs:px-4 py-1 bg-muted rounded-full text-xs xs:text-sm">
                                   +{project.features.length - 4}{" "}
                                   {language === "TR" ? "daha" : "more"}
                                 </span>
@@ -284,7 +310,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-[#005bbb] to-[#0d345e] text-primary rounded-lg hover:from-[#0079fa] hover:to-[#0079fa] transition-all duration-300 group text-xs xs:text-sm"
                               >
-                                <FaEye className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2" />
+                                <FaEye className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-cyan-300" />
                                 {language === "TR" ? "Canlı Demo" : "Live Demo"}
                                 <FaExternalLinkAlt className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                               </a>
@@ -297,7 +323,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-[#005bbb] to-[#0d345e] text-primary rounded-lg hover:from-[#0079fa] hover:to-[#0079fa] transition-all duration-300 group text-xs xs:text-sm"
                               >
-                                <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2" />
+                                <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-gray-300" />
                                 {language === "TR"
                                   ? "Kaynak Kod"
                                   : "Source Code"}
@@ -309,7 +335,7 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                           {/* Expand Button */}
                           <button
                             onClick={() => toggleExpanded(project.id)}
-                            className="flex items-center space-x-1.5 xs:space-x-2 text-primary transition-colors duration-200 group"
+                            className="flex items-center space-x-1.5 xs:space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-200 group"
                           >
                             {isExpanded ? (
                               <FaChevronDown className="w-3 xs:w-4 h-3 xs:h-4 group-hover:translate-y-1 transition-transform duration-200" />
@@ -337,13 +363,13 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                           {/* Detailed Description */}
                           {project.longDescription && (
                             <div>
-                              <h4 className="text-primary font-semibold mb-2 xs:mb-3 flex items-center text-sm xs:text-base">
-                                <FaBookOpen className="w-3 xs:w-4 h-3 xs:h-4 mr-2" />
+                              <h4 className="font-semibold mb-2 xs:mb-3 flex items-center text-sm xs:text-base">
+                                <FaBookOpen className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-blue-400" />
                                 {language === "TR"
                                   ? "Proje Detayları"
                                   : "Project Details"}
                               </h4>
-                              <p className="text-primary text-sm xs:text-base">
+                              <p className="text-sm xs:text-base">
                                 {project.longDescription}
                               </p>
                             </div>
@@ -351,8 +377,8 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
 
                           {/* All Features */}
                           <div>
-                            <h4 className="text-primary font-semibold mb-2 xs:mb-3 flex items-center text-sm xs:text-base">
-                              <FaRocket className="w-3 xs:w-4 h-3 xs:h-4 mr-2" />
+                            <h4 className="font-semibold mb-2 xs:mb-3 flex items-center text-sm xs:text-base">
+                              <FaRocket className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-orange-400" />
                               {language === "TR"
                                 ? "Tüm Özellikler"
                                 : "All Features"}
@@ -363,8 +389,8 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                   key={featureIndex}
                                   className="flex items-start space-x-2 xs:space-x-3"
                                 >
-                                  <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 rounded-full bg-abc mt-1.5 xs:mt-2 flex-shrink-0"></div>
-                                  <span className="text-primary text-sm xs:text-base">
+                                  <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 rounded-full bg-blue-800 mt-1.5 xs:mt-2 flex-shrink-0"></div>
+                                  <span className="text-sm xs:text-base">
                                     {feature}
                                   </span>
                                 </li>
@@ -377,11 +403,11 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                             <div className="md:col-span-2 grid sm:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 pt-3 xs:pt-4 border-t border-info">
                               {project.team && (
                                 <div>
-                                  <h4 className="text-primary font-semibold mb-2 flex items-center text-sm xs:text-base">
-                                    <FaUsers className="w-3 xs:w-4 h-3 xs:h-4 mr-2" />
+                                  <h4 className="font-semibold mb-2 flex items-center text-sm xs:text-base">
+                                    <FaUsers className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-purple-400" />
                                     {language === "TR" ? "Takım" : "Team"}
                                   </h4>
-                                  <span className="text-primary text-sm xs:text-base">
+                                  <span className="text-sm xs:text-base">
                                     {project.team}
                                   </span>
                                 </div>
@@ -389,11 +415,11 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
 
                               {project.role && (
                                 <div>
-                                  <h4 className="text-primary font-semibold mb-2 flex items-center text-sm xs:text-base">
-                                    <FaBriefcase className="w-3 xs:w-4 h-3 xs:h-4 mr-2" />
+                                  <h4 className="font-semibold mb-2 flex items-center text-sm xs:text-base">
+                                    <FaBriefcase className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-indigo-400" />
                                     {language === "TR" ? "Rolüm" : "My Role"}
                                   </h4>
-                                  <span className="text-primary text-sm xs:text-base">
+                                  <span className="text-sm xs:text-base">
                                     {project.role}
                                   </span>
                                 </div>
@@ -404,8 +430,8 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                           {/* Metrics */}
                           {project.metrics && project.metrics.length > 0 && (
                             <div className="md:col-span-2 pt-3 xs:pt-4 border-t border-info">
-                              <h4 className="text-primary font-semibold mb-3 xs:mb-4 flex items-center text-sm xs:text-base">
-                                <FaChartLine className="w-3 xs:w-4 h-3 xs:h-4 mr-2" />
+                              <h4 className="font-semibold mb-3 xs:mb-4 flex items-center text-sm xs:text-base">
+                                <FaChartLine className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-green-400" />
                                 {language === "TR"
                                   ? "Proje Metrikleri"
                                   : "Project Metrics"}
@@ -414,19 +440,19 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                 {project.metrics.map((metric, metricIndex) => (
                                   <div
                                     key={metricIndex}
-                                    className="bg-info rounded-lg p-3 xs:p-4 text-center"
+                                    className="bg-info rounded-lg p-3 xs:p-4 text-center hover:bg-opacity-80 transition-all duration-300"
                                   >
-                                    <div className="text-lg xs:text-xl sm:text-2xl font-bold text-primary mb-1">
+                                    <div className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 text-cyan-400">
                                       {metric.value}
                                     </div>
-                                    <div className="text-xs xs:text-sm text-primary">
+                                    <div className="text-xs xs:text-sm text-gray-300">
                                       {metric.label}
                                     </div>
                                   </div>
                                 ))}
                               </div>
 
-                              {/* 👇 Arduino Uno görseli */}
+                              {/* Arduino Uno görseli */}
                               {project.id === "custom-arduino-uno" && (
                                 <div className="text-center pt-10 border-t border-info my-5">
                                   <Image
@@ -434,28 +460,28 @@ const Project: React.FC<ProjectProps> = ({ language = "TR" }) => {
                                     height={150}
                                     width={600}
                                     alt="Arduino project"
-                                    className="inline-block mr-5"
+                                    className="inline-block mr-5 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                                   />
                                   <Image
                                     src="/images/arduino2.png"
                                     height={150}
                                     width={600}
                                     alt="Arduino project"
-                                    className="inline-block "
+                                    className="inline-block rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                                   />
                                 </div>
                               )}
 
-                              {/* 👇 Metal Dedektör görseli */}
+                              {/* Metal Dedektör görseli */}
                               {project.id === "metal-detector" && (
                                 <div className="bg-secondary">
-                                  <div className="text-center pt-10 border-t border-info my-5  ">
+                                  <div className="text-center pt-10 border-t border-info my-5">
                                     <Image
                                       src="/images/MetalDedector.png"
                                       height={250}
                                       width={125}
                                       alt="Metal detector"
-                                      className="inline-block  "
+                                      className="inline-block rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                                     />
                                   </div>
                                 </div>

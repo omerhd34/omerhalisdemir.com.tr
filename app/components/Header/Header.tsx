@@ -96,10 +96,10 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 2xl:-mb-20 bg-[#21110e] backdrop-blur-md">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-2 sm:pt-3">
-        <nav className="bg-[#020617] px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl">
-          <div className="flex justify-between items-center">
+    <header className="sticky top-0 z-[100] 2xl:-mb-20 bg-[#21110e]/95 backdrop-blur-md">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-2 sm:pt-3 ">
+        <nav className="bg-[#020617]/98 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10">
+          <div className="flex justify-between items-center ">
             {/* Logo */}
             <Link href="/" className="flex items-center group relative">
               <div className="relative">
@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Tooltip for mobile */}
                 {showTooltip && (
-                  <div className="sm:hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-primary bg-[#2a2c27] rounded-lg shadow-lg border border-[#ebf3fe]/20 whitespace-nowrap z-50 transition-all duration-200 ease-out">
+                  <div className="sm:hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-primary bg-[#2a2c27] rounded-lg shadow-lg border border-[#ebf3fe]/20 whitespace-nowrap z-[110] transition-all duration-200 ease-out">
                     <span className="text-[#c4c8bd] font-medium">
                       Ömer Halis DEMİR
                     </span>
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({
                   </div>
                 )}
 
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#718355] to-[#87986a] group-hover:w-full transition-all duration-500"></div>
+                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#ebf3fe] to-[#0170e682] group-hover:w-full transition-all duration-500"></div>
               </div>
             </Link>
 
@@ -199,7 +199,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Language Dropdown */}
                 {isLanguageDropdownOpen && (
-                  <div className="absolute right-0 -mx-15 mt-1 py-2 w-22 bg-info rounded-lg shadow-lg border border-[#c4c8bd]/20 z-[70]">
+                  <div className="absolute right-0 -mx-15 mt-1 py-2 w-22 bg-info/95 backdrop-blur-sm rounded-lg shadow-lg border border-[#c4c8bd]/20 z-[120]">
                     {languagesConfig.map((lang) => (
                       <button
                         key={lang.code}
@@ -266,7 +266,7 @@ const Header: React.FC<HeaderProps> = ({
                 : "max-h-0 opacity-0"
             }`}
           >
-            <div className="bg-[#020c3b] rounded-xl p-4 space-y-2">
+            <div className="bg-[#020c3b]/95 backdrop-blur-sm rounded-xl p-4 space-y-2 border border-[#718355]/10">
               {navigationItems.map((item, index) => {
                 const IconComponent = item.icon;
                 const isActive = activeSection === item.key;
@@ -348,7 +348,7 @@ const Header: React.FC<HeaderProps> = ({
       <div className="hidden lg:block">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="flex justify-end">
-            <div className="flex items-center justify-center space-x-3 p-3 bg-gradient-to-r from-[#040d348d] via-[#091c708d] to-[#020c3b] rounded-b-2xl shadow-xl border-x border-b border-[#718355]/20">
+            <div className="flex items-center justify-center space-x-3 p-3 bg-gradient-to-r from-[#040d348d] via-[#091c708d] to-[#020c3b] backdrop-blur-sm rounded-b-2xl shadow-xl border-x border-b border-[#718355]/20">
               {socialLinks.map((link) => {
                 const IconComponent = link.icon;
                 return (

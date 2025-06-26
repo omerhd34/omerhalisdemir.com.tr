@@ -50,7 +50,7 @@ export interface ExperienceItem {
   description: string;
   achievements?: string[];
   technologies?: React.ElementType[];
-  icon: React.ElementType; // Artık sadece React component'leri kabul eder
+  icon: React.ElementType;
   color: string;
 }
 
@@ -66,7 +66,6 @@ export interface ExperienceData {
   certificates: ExperienceCategory;
 }
 
-// Image wrapper component for imported images
 const ImageIcon = ({
   src,
   alt = "Icon",
@@ -230,7 +229,7 @@ export const getExperienceData = (language: string = "TR"): ExperienceData => ({
         institution:
           language === "TR" ? "İksir İnternet Hizmetleri A.Ş." : "IXIRHOST",
         period: language === "TR" ? "Haziran 2025 - ..." : "June 2025 - ...",
-        status: "current", // 'continues' yerine 'current' kullanıldı
+        status: "current",
         location: "Ümraniye, İstanbul, Türkiye",
         description:
           language === "TR"

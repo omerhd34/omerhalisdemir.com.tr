@@ -11,6 +11,8 @@ const codeCommands = [
   "docker pull name-of-the-image",
   "docker run -d -p 80:80 IMAGE-ID",
   "docker start CONTAINER-ID",
+  "docker image prune",
+  "docker stop $(docker ps -aq)",
 ];
 const data = [
   "React",

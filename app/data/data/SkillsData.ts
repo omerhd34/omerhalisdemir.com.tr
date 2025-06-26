@@ -27,7 +27,7 @@ import {
 const skillsData = {
   frontend: {
     icon: FaLaptopCode,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-red-900 to-red-400",
     skills: [
       {
         name: "HTML5",
@@ -41,7 +41,7 @@ const skillsData = {
         icon: FaCss3Alt,
         level: 90,
         experience: "2",
-        color: "text-blue-500",
+        color: "text-blue-400",
       },
       {
         name: "JavaScript",
@@ -62,7 +62,7 @@ const skillsData = {
         icon: FaReact,
         level: 75,
         experience: "2",
-        color: "text-cyan-400",
+        color: "text-blue-500",
       },
       {
         name: "Next.js",
@@ -104,7 +104,7 @@ const skillsData = {
   },
   backend: {
     icon: FaServer,
-    color: "from-gray-700 to-black-300",
+    color: "from-green-900 to-green-400",
     skills: [
       {
         name: "Java & OOP",
@@ -131,7 +131,7 @@ const skillsData = {
   },
   tools: {
     icon: FaTools,
-    color: "from-purple-500 to-pink-500",
+    color: "from-orange-900 to-orange-400",
     skills: [
       {
         name: "Git",

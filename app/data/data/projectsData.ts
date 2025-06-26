@@ -55,17 +55,17 @@ export interface Categories {
 export const getCategories = (language: string): Categories => ({
   all: {
     icon: FaLayerGroup,
-    color: "from-purple-500 to-pink-500",
+    color: "from-red-900 to-red-400",
     title: language === "TR" ? "Tüm Projeler" : "All Projects",
   },
   web: {
     icon: FaGlobe,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-green-900 to-green-400",
     title: language === "TR" ? "Web Siteleri" : "Web Sites",
   },
   electronics: {
     icon: FaBolt,
-    color: "from-green-500 to-emerald-500",
+    color: "from-orange-900 to-orange-400",
     title:
       language === "TR" ? "Elektrik & Elektronik" : "Electric & Electronics",
   },
@@ -146,7 +146,7 @@ export const getProjectsData = (language: string): ProjectItem[] => [
         : "This is an individual portfolio project developed using TypeScript and Next.js. It features multi-language support, dark/light mode, and a responsive design. Built with a focus on performance and security, this project offers a more advanced structure compared to my previous work.",
     category: "web",
     status: "completed",
-    period: "2024",
+    period: "2025",
     technologies: [
       SiReact,
       SiNextdotjs,
@@ -201,7 +201,7 @@ export const getProjectsData = (language: string): ProjectItem[] => [
         : "This project is a metal detector system developed using custom-designed electronic circuits, without using an Arduino or similar microcontroller. It operates based on the principle of electromagnetic induction, providing an audible alert and visual feedback via LEDs when metal objects are detected. With its 1-meter length, it offers ergonomic handling. It is capable of distinguishing between different types of metals and operates efficiently with low power consumption.",
     category: "electronics",
     status: "completed",
-    period: "2024",
+    period: "2021",
     technologies: [FaMicrochip, FaTools, SiCplusplus],
     features: [
       language === "TR" ? "Hassas metal algılama" : "Sensitive metal detection",
@@ -263,7 +263,7 @@ export const getProjectsData = (language: string): ProjectItem[] => [
         : "This project aims to enhance the memory of Arduino Uno R3 by integrating a 24LC512 serial EEPROM chip. The system increases memory capacity to at least 256KB using I2C communication. The 24LC512 supports page writes up to 128 bytes and allows both random and sequential reads. The memory chip is composed of resistors, capacitors, and transistors and functions as a storage device, either temporarily (RAM) or permanently (ROM). A double-layer PCB was designed in Autodesk EAGLE. The firmware was developed in C/C++.",
     category: "electronics",
     status: "completed",
-    period: "2024",
+    period: "2022",
     technologies: [SiArduino, SiCplusplus, FaMicrochip, FaTools],
     features: [
       language === "TR"

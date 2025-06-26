@@ -103,13 +103,14 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
         {/* Section Header */}
         <FaBriefcase className="w-8 h-8 text-blue-300 mx-auto mb-2" />
         <Title title={t.title} subtitle={t.subtitle} isVisible={isVisible} />
+
         {/* Description */}
         <div
           className={`text-center mb-12 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-primary text-[16px] sm:text-lg max-w-3xl mx-auto px-2">
+          <p className="text-[16px] sm:text-lg max-w-3xl mx-auto px-2">
             {t.description}
           </p>
         </div>
@@ -146,10 +147,10 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
         >
           {/* Category Description */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-2">
+            <h3 className="text-2xl font-bold mb-2">
               {t.categories[activeCategory as keyof typeof t.categories].title}
             </h3>
-            <p className="text-primary text-base px-2 ">
+            <p className="text-base px-2">
               {
                 t.categories[activeCategory as keyof typeof t.categories]
                   .description
@@ -194,10 +195,10 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                           {/* Header */}
                           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-3">
                             <div className="min-w-0">
-                              <h4 className="text-[19px] font-bold text-primary mb-1 break-words">
+                              <h4 className="text-[19px] font-bold mb-1 break-words">
                                 {item.title}
                               </h4>
-                              <p className="text-[17px] font-medium text-base break-words">
+                              <p className="text-[17px] font-medium break-words">
                                 {item.institution}
                               </p>
                             </div>
@@ -209,14 +210,14 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                               >
                                 {t.status[item.status as keyof typeof t.status]}
                               </div>
-                              <p className="text-primary font-semibold mt-3 sm:mt-1 text-[15px]">
+                              <p className="font-semibold mt-3 sm:mt-1 text-[15px]">
                                 {item.period}
                               </p>
                             </div>
                           </div>
 
                           {/* Basic Info */}
-                          <div className="flex flex-wrap gap-6 text-[15px] text-primary mb-4">
+                          <div className="flex flex-wrap gap-6 text-[15px] mb-4">
                             {item.location && (
                               <div className="flex items-center space-x-2">
                                 <FaMapMarkerAlt className="w-4 h-4" />
@@ -234,7 +235,7 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                           </div>
 
                           {/* Description */}
-                          <p className="text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] text-primary tracking-tight sm:tracking-normal mb-5">
+                          <p className="text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] tracking-tight sm:tracking-normal mb-5">
                             {item.description}
                           </p>
 
@@ -246,7 +247,7 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                                   key={techIndex}
                                   className="p-2 bg-muted rounded-lg"
                                 >
-                                  <TechIcon className="w-5 h-5 text-primary" />
+                                  <TechIcon className="w-5 h-5" />
                                 </div>
                               ))}
                             </div>
@@ -256,7 +257,7 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                           {showExpandButton && (
                             <button
                               onClick={() => toggleExpanded(item.id)}
-                              className="flex items-center space-x-2 text-primary transition-colors duration-200"
+                              className="flex items-center space-x-2 transition-colors duration-200"
                             >
                               {isExpanded ? (
                                 <FaChevronDown className="w-4 h-4" />
@@ -271,11 +272,12 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                         </div>
                       </div>
                     </div>
+
                     {/* Expanded Content - Only show if expanded and has achievements */}
                     {isExpanded && showExpandButton && (
                       <div className="px-6 pb-6 pt-0 border-t border-info">
                         <div className="mt-4">
-                          <h5 className="text-primary font-semibold mb-3 text-base">
+                          <h5 className="font-semibold mb-3 text-base">
                             {t.achievements}:
                           </h5>
                           <ul className="space-y-2 mb-4">
@@ -286,7 +288,7 @@ const Experience: React.FC<ExperienceProps> = ({ language = "TR" }) => {
                                   className="flex items-start space-x-3"
                                 >
                                   <div className="w-2 h-2 rounded-full bg-abc mt-2 flex-shrink-0"></div>
-                                  <span className="text-primary text-[16px]">
+                                  <span className="text-[16px]">
                                     {achievement}
                                   </span>
                                 </li>
