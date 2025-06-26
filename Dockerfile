@@ -1,37 +1,37 @@
-# Node.js base image kullan
 FROM node:18-alpine AS base
 
-# Çalışma dizinini ayarla
-WORKDIR /app
-
-# Package dosyalarını kopyala
-COPY package*.json ./
-
-# Dependencies kurulumu
 FROM base AS deps
-# Eğer yarn kullanıyorsan yarn.lock da kopyala
-# COPY yarn.lock ./
-RUN npm ci --only=production
-
-# Build stage
-FROM base AS builder
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-# Production stage
-FROM node:18-alpine AS runner
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# Güvenlik için non-root user oluştur
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+RUN \
+  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+  elif [ -f package-lock.json ]; then npm ci; \
+  elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm i --frozen-lockfile; \
+  else echo "Lockfile not found." && exit 1; \
+  fi
+
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN yarn build
+
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Gerekli dosyaları kopyala
 COPY --from=builder /app/public ./public
 
-# Build çıktılarını kopyala
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
@@ -42,5 +42,4 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
-# Uygulamayı başlat
 CMD ["node", "server.js"]
