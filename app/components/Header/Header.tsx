@@ -96,9 +96,9 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-[100] 2xl:-mb-20 bg-[#21110e]/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 2xl:-mb-20 bg-[#21110e]/95 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-2 sm:pt-3 ">
-        <nav className="bg-[#020617]/98 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10">
+        <nav className="bg-[#020617]/98 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10 relative z-10">
           <div className="flex justify-between items-center ">
             {/* Logo */}
             <Link href="/" className="flex items-center group relative">
@@ -114,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Tooltip for mobile */}
                 {showTooltip && (
-                  <div className="sm:hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-primary bg-[#2a2c27] rounded-lg shadow-lg border border-[#ebf3fe]/20 whitespace-nowrap z-[110] transition-all duration-200 ease-out">
+                  <div className="sm:hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-primary bg-[#2a2c27] rounded-lg shadow-lg border border-[#ebf3fe]/20 whitespace-nowrap z-[10] transition-all duration-200 ease-out">
                     <span className="text-[#c4c8bd] font-medium">
                       Ömer Halis DEMİR
                     </span>
@@ -155,7 +155,7 @@ const Header: React.FC<HeaderProps> = ({
             {/* Language Selector & Mobile Menu Button */}
             <div className="flex items-center space-x-2">
               {/* Language Selector */}
-              <div className="relative" ref={languageDropdownRef}>
+              <div className="relative z-30" ref={languageDropdownRef}>
                 <button
                   onClick={toggleLanguageDropdown}
                   className="flex items-center space-x-1.5 px-2 py-1.5 text-[#c4c8bd] hover:bg-[#c4c8bd]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#c4c8bd]/50"
@@ -199,7 +199,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Language Dropdown */}
                 {isLanguageDropdownOpen && (
-                  <div className="absolute right-0 -mx-15 mt-1 py-2 w-22 bg-info/95 backdrop-blur-sm rounded-lg shadow-lg border border-[#c4c8bd]/20 z-[120]">
+                  <div className="absolute right-0 -mx-15 mt-1 py-2 w-22 bg-info/95 backdrop-blur-sm rounded-lg shadow-lg bg-[#061149] border border-[#c4c8bd]/20 z-50">
                     {languagesConfig.map((lang) => (
                       <button
                         key={lang.code}
@@ -345,8 +345,8 @@ const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Social Links Bar - Desktop Only */}
-      <div className="hidden lg:block">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+      <div className="hidden lg:block  ">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 z-[0] ">
           <div className="flex justify-end">
             <div className="flex items-center justify-center space-x-3 p-3 bg-gradient-to-r from-[#040d348d] via-[#091c708d] to-[#020c3b] backdrop-blur-sm rounded-b-2xl shadow-xl border-x border-b border-[#718355]/20">
               {socialLinks.map((link) => {
