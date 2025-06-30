@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  body {
+    font-family: "Zain-Light", sans-serif;
+    transition: all 0.3s ease;
+  }
+}
+
+.text-primary {
+  color: #daf1ff;
+}
+/* background color  */
+.bg-primary {
+  background-color: #040d348d;
+}
+.bg-secondary {
+  background-color: #020617;
+}
+.bg-info {
+  background-color: #020c3b;
+}
+.bg-muted {
+  background-color: #01438882;
+}
+.bg-accent {
+  background-color: #b600003e;
+}
+.bg-abc {
+  background-color: #daf1ff;
+}
+/* border color  */
+.border-primary {
+  border-color: #415d12;
+}
+.border-secondary {
+  border-color: #dfdfdf;
+}
+.border-info {
+  border-color: #dfdfdf24;
+}
+.border-accent {
+  border-color: oklch(95% 0.06 254.128);
+}

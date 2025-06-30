@@ -1,0 +1,202 @@
+import {
+  FaLaptopCode,
+  FaServer,
+  FaTools,
+  FaGitAlt,
+  FaCogs,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaBootstrap,
+  FaNodeJs,
+  FaJava,
+  FaGithub,
+  FaDocker,
+  FaLinux,
+} from "react-icons/fa";
+import { RiClaudeFill } from "react-icons/ri";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiChakraui,
+  SiMui,
+  SiMysql,
+} from "react-icons/si";
+
+const skillsData = {
+  frontend: {
+    icon: FaLaptopCode,
+    color: "from-red-900 to-red-400",
+    skills: [
+      {
+        name: "HTML5",
+        icon: FaHtml5,
+        level: 90,
+        experience: "2",
+        color: "text-orange-500",
+      },
+      {
+        name: "CSS3",
+        icon: FaCss3Alt,
+        level: 90,
+        experience: "2",
+        color: "text-blue-400",
+      },
+      {
+        name: "JavaScript",
+        icon: FaJsSquare,
+        level: 70,
+        experience: "2",
+        color: "text-yellow-400",
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+        level: 70,
+        experience: "1",
+        color: "text-blue-400",
+      },
+      {
+        name: "React",
+        icon: FaReact,
+        level: 75,
+        experience: "2",
+        color: "text-blue-500",
+      },
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        level: 75,
+        experience: "1",
+        color: "text-white",
+      },
+
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+        level: 85,
+        experience: "1",
+        color: "text-teal-400",
+      },
+      {
+        name: "Bootstrap",
+        icon: FaBootstrap,
+        level: 75,
+        experience: "2",
+        color: "text-purple-500",
+      },
+      {
+        name: "Material UI",
+        icon: SiMui,
+        level: 50,
+        experience: "1",
+        color: "text-blue-400",
+      },
+      {
+        name: "Chakra UI",
+        icon: SiChakraui,
+        level: 50,
+        experience: "1",
+        color: "text-teal-300",
+      },
+    ],
+  },
+  backend: {
+    icon: FaServer,
+    color: "from-green-900 to-green-400",
+    skills: [
+      {
+        name: "Java & OOP",
+        icon: FaJava,
+        level: 60,
+        experience: "2",
+        color: "text-red-500",
+      },
+      {
+        name: "Node.js",
+        icon: FaNodeJs,
+        level: 30,
+        experience: "1",
+        color: "text-green-500",
+      },
+      {
+        name: "MySQL",
+        icon: SiMysql,
+        level: 30,
+        experience: "1",
+        color: "text-green-400",
+      },
+    ],
+  },
+  tools: {
+    icon: FaTools,
+    color: "from-orange-900 to-orange-400",
+    skills: [
+      {
+        name: "Git",
+        icon: FaGitAlt,
+        level: 50,
+        experience: "1",
+        color: "text-orange-600",
+      },
+      {
+        name: "GitHub",
+        icon: FaGithub,
+        level: 50,
+        experience: "1",
+        color: "text-gray-300",
+      },
+      {
+        name: "VS Code",
+        icon: FaLaptopCode,
+        level: 75,
+        experience: "2",
+        color: "text-blue-500",
+      },
+      {
+        name: "Cursor",
+        icon: FaLaptopCode,
+        level: 50,
+        experience: "1",
+        color: "text-blue-500",
+      },
+      {
+        name: "IntelliJ IDEA",
+        icon: FaLaptopCode,
+        level: 50,
+        experience: "1",
+        color: "text-purple-500",
+      },
+      {
+        name: "Claude",
+        icon: RiClaudeFill,
+        level: 50,
+        experience: "1",
+        color: "text-orange-500",
+      },
+    ],
+  },
+  devOps: {
+    icon: FaCogs,
+    color: "from-red-500 to-pink-500",
+    skills: [
+      {
+        name: "Docker",
+        icon: FaDocker,
+        level: 25,
+        experience: "1",
+        color: "text-blue-600",
+      },
+      {
+        name: "Linux",
+        icon: FaLinux,
+        level: 25,
+        experience: "1",
+        color: "text-black-800",
+      },
+    ],
+  },
+};
+export default skillsData;
