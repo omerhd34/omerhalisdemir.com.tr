@@ -72,10 +72,10 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
   ];
 
   return (
-    <section className="min-h-[80vh] flex items-center justify-center pt-2 sm:pt-5 md:pt-10 lg:pt-10 2xl:pt-30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 w-full ">
+    <section className="min-h-[80vh] flex items-center justify-center pt-3 sm:pt-5 md:pt-10 lg:pt-10 2xl:pt-30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 w-full">
         <div className="max-w-7xl mx-auto lg:max-w-8xl xl:max-w-[1350px] ">
-          <div className="bg-secondary rounded-2xl shadow-2xl p-6 py-3 lg:p-8 xl:p-10 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 hover:translate-x-2">
+          <div className="bg-secondary rounded-2xl shadow-2xl p-6 py-3 lg:p-8 xl:p-10 hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 hover:translate-x-2 ">
             {/* Main Content - Horizontal Layout */}
             <div
               className={`flex flex-col lg:flex-row items-center gap-3 lg:gap-10 xl:gap-16 transition-all duration-700  ${

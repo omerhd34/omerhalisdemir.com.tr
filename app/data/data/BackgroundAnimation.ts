@@ -8,11 +8,6 @@ const codeCommands = [
   "npx create-react-app my-app",
   "cd my-app",
   "npx create-next-app@latest",
-  "docker pull name-of-the-image",
-  "docker run -d -p 80:80 IMAGE-ID",
-  "docker start CONTAINER-ID",
-  "docker image prune",
-  "docker stop $(docker ps -aq)",
 ];
 const data = [
   "React",
@@ -25,7 +20,6 @@ const data = [
   "CSS",
   "JavaScript",
   "Java & OOP",
-  "Docker",
   "Tailwind CSS",
   "Bootstrap",
   "Material UI",
