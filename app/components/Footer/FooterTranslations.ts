@@ -12,15 +12,14 @@ const translations = {
     socialMedia: "Sosyal Medya",
     linkedin: "LinkedIn",
     github: "GitHub",
-    youtube: "Youtube",
-    cv: "CV İndir",
+    cv: "CV",
 
     // Contact Info
     contactInfo: "İletişim Bilgileri",
     location: "İstanbul, Türkiye",
 
     // Footer text
-    madeWithLove: "Typescript & Next.js ile yapıldı.",
+    madeWithLove: "Typescript & Next.js ile yapıldı. 2025",
     allRightsReserved: "Tüm hakları saklıdır.",
     scrollToTop: "Yukarı çık",
   },
@@ -37,15 +36,14 @@ const translations = {
     socialMedia: "Social Media",
     linkedin: "LinkedIn",
     github: "GitHub",
-    youtube: "Youtube",
-    cv: "Download CV",
+    cv: "CV",
 
     // Contact Info
     contactInfo: "Contact Info",
     location: "Istanbul, Turkey",
 
     // Footer text
-    madeWithLove: "Made with Typescript & Next.js.",
+    madeWithLove: "Made with Typescript & Next.js. 2025",
     allRightsReserved: "All rights reserved.",
     scrollToTop: "Scroll to top",
   },

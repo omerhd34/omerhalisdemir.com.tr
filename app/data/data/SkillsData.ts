@@ -61,7 +61,7 @@ const skillsData = {
       {
         name: "React",
         icon: FaReact,
-        level: 75,
+        level: 70,
         experience: "2",
         color: "text-blue-500",
       },
@@ -72,7 +72,6 @@ const skillsData = {
         experience: "1",
         color: "text-white",
       },
-
       {
         name: "Tailwind CSS",
         icon: SiTailwindcss,
@@ -130,6 +129,26 @@ const skillsData = {
       },
     ],
   },
+  devOps: {
+    icon: FaCogs,
+    color: "from-red-500 to-pink-500",
+    skills: [
+      {
+        name: "Docker",
+        icon: FaDocker,
+        level: 25,
+        experience: "1",
+        color: "text-blue-600",
+      },
+      {
+        name: "Linux",
+        icon: FaLinux,
+        level: 25,
+        experience: "1",
+        color: "text-black-800",
+      },
+    ],
+  },
   tools: {
     icon: FaTools,
     color: "from-orange-900 to-orange-400",
@@ -175,26 +194,6 @@ const skillsData = {
         level: 50,
         experience: "1",
         color: "text-orange-500",
-      },
-    ],
-  },
-  devOps: {
-    icon: FaCogs,
-    color: "from-red-500 to-pink-500",
-    skills: [
-      {
-        name: "Docker",
-        icon: FaDocker,
-        level: 25,
-        experience: "1",
-        color: "text-blue-600",
-      },
-      {
-        name: "Linux",
-        icon: FaLinux,
-        level: 25,
-        experience: "1",
-        color: "text-black-800",
       },
     ],
   },

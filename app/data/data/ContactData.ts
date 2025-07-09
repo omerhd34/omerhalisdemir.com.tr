@@ -5,7 +5,6 @@ import {
   FaMapMarkerAlt,
   FaLinkedin,
   FaGithub,
-  FaYoutube,
 } from "react-icons/fa";
 
 export interface ContactInfo {
@@ -49,10 +48,5 @@ export const socialLinks: SocialLink[] = [
     icon: FaGithub,
     url: "https://github.com/omerhd34",
     color: "hover:text-gray-400",
-  },
-  {
-    icon: FaYoutube,
-    url: "https://www.youtube.com/@%C3%96mer_Halis_Demir",
-    color: "hover:text-sky-400",
   },
 ];

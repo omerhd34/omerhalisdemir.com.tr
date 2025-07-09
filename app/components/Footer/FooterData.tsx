@@ -1,10 +1,5 @@
 import { IconType } from "react-icons";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaYoutube,
-  FaFileDownload,
-} from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 
 export interface QuickLink {
   key: string;
@@ -25,11 +20,11 @@ export interface Language {
 }
 
 export const quickLinksConfig: QuickLink[] = [
-  { key: "about", href: "/" },
-  { key: "skills", href: "/skills" },
-  { key: "experience", href: "/experience" },
-  { key: "projects", href: "/projects" },
-  { key: "contact", href: "/contact" },
+  { key: "about", href: "#about" },
+  { key: "skills", href: "#skills" },
+  { key: "experience", href: "#exp" },
+  { key: "projects", href: "#projects" },
+  { key: "contact", href: "#contact" },
 ];
 
 export const socialLinksConfig: SocialLink[] = [
@@ -44,12 +39,6 @@ export const socialLinksConfig: SocialLink[] = [
     href: "https://github.com/omerhd34",
     icon: FaGithub,
     color: "hover:text-gray-300",
-  },
-  {
-    key: "youtube",
-    href: "https://www.youtube.com/@%C3%96mer_Halis_Demir",
-    icon: FaYoutube,
-    color: "hover:text-red-400",
   },
 ];
 
@@ -118,14 +107,12 @@ export const getBrandDescription = (language: string) => {
           "Full-stack Geliştirici",
           "Frontend Geliştirici",
           "Backend Geliştirici",
-          "DevOps Mühendisi",
           "Elektrik Elektronik Mühendisi",
         ]
       : [
           "Full-stack Developer",
           "Frontend Developer",
           "Backend Developer",
-          "DevOps Engineer",
           "Electric Electronic Engineer",
         ];
 

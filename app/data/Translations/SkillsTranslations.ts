@@ -6,11 +6,11 @@ const translations = {
       "Modern web teknolojileri ve araçlarında uzmanlaşarak, kullanıcı deneyimi odaklı ve performanslı uygulamalar geliştiriyorum.",
     categories: {
       frontend: {
-        title: "FRONTEND",
+        title: "Frontend",
         description: "Modern ve responsive kullanıcı arayüzleri",
       },
       backend: {
-        title: "BACKEND",
+        title: "Backend",
         description: "Güçlü ve ölçeklenebilir sunucu çözümleri",
       },
       tools: {
@@ -45,11 +45,11 @@ const translations = {
       "Specializing in modern web technologies and tools, I develop user experience-focused and performant applications.",
     categories: {
       frontend: {
-        title: "FRONTEND",
+        title: "Frontend",
         description: "Modern and responsive user interfaces",
       },
       backend: {
-        title: "BACKEND",
+        title: "Backend",
         description: "Robust and scalable server solutions",
       },
       tools: {

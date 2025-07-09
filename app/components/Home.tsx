@@ -67,8 +67,8 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
 
   const stats = [
     { number: "15+", label: t.stats.skills, icon: FaCode },
-    { number: "3", label: t.stats.experience, icon: FaGraduationCap },
-    { number: "4", label: t.stats.projects, icon: FaRocket },
+    { number: "2", label: t.stats.experience, icon: FaGraduationCap },
+    { number: "3", label: t.stats.projects, icon: FaRocket },
   ];
 
   return (
@@ -110,11 +110,9 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
 
               {/* Center - Main Content */}
               <div className="flex-grow text-center lg:text-left">
-                {/* Name */}
                 <h1 className="text-[24px] lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary mb-[1px] sm:mb-3">
                   Ömer Halis DEMİR
                 </h1>
-
                 {/* Typewriter Effect */}
                 <div className="text-primary font-medium mb-4 text-[18px] lg:text-xl xl:text-2xl h-6 lg:h-8 flex items-center justify-center lg:justify-start">
                   <span className="inline-block">
@@ -122,12 +120,10 @@ const Home: React.FC<HomeProps> = ({ language = "TR" }) => {
                     <span className="animate-pulse ml-1 text-primary">|</span>
                   </span>
                 </div>
-
                 {/* Description */}
-                <p className="text-primary tracking-tight sm:tracking-normal lg:tracking-wide text-[16px] sm:text-[16px] lg:text-base xl:text-lg mb-3 sm:mb-6 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-primary tracking-tight sm:tracking-normal lg:tracking-wide text-[16px] lg:text-[18px] mb-3 sm:mb-6 max-w-2xl mx-auto lg:mx-0 text-left">
                   {t.shortDescription}
                 </p>
-
                 {/* Action Buttons - Horizontal */}
                 <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start items-center">
                   {/* Download CV Button */}

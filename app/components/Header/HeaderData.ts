@@ -2,7 +2,6 @@ import { IconType } from "react-icons";
 import {
   FaLinkedin,
   FaGithub,
-  FaYoutube,
   FaFileDownload,
   FaUser,
   FaCode,
@@ -50,11 +49,6 @@ export const socialLinksConfig: SocialLink[] = [
     key: "github",
     href: "https://github.com/omerhd34",
     icon: FaGithub,
-  },
-  {
-    key: "youtube",
-    href: "https://www.youtube.com/@%C3%96mer_Halis_Demir",
-    icon: FaYoutube,
   },
   {
     key: "cv",

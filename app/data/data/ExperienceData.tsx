@@ -23,7 +23,6 @@ import {
   FaAtom,
   FaBrain,
   FaGithub,
-  FaDocker,
 } from "react-icons/fa";
 
 import {
@@ -93,24 +92,6 @@ export const getExperienceData = (language: string = "TR"): ExperienceData => ({
     color: "from-red-900 to-red-400",
     items: [
       {
-        id: "university-prep",
-        title: language === "TR" ? "İngilizce Hazırlık" : "English Preparation",
-        institution:
-          language === "TR"
-            ? "İstanbul Ticaret Üniversitesi"
-            : "Istanbul Commerce University",
-        period: "2018-2019",
-        status: "completed",
-        location: "İstanbul, Türkiye",
-        description:
-          language === "TR"
-            ? "İngilizce hazırlık eğitimimi başarıyla tamamladım ve B1 seviyesinde İngilizce yeterliliği kazandım. Bu seviyede günlük konuşmaları anlayabiliyor, temel teknik dokümanları okuyabiliyor ve kendimi yazılı ve sözlü olarak ifade edebiliyorum."
-            : "I successfully completed my English preparatory education and achieved a B1 level of English proficiency. At this level, I can understand daily conversations, read basic technical documents, and express myself both in writing and speaking.",
-        technologies: [FaLanguage, FaBookOpen, FaGlobe],
-        icon: FaBookOpen,
-        color: "text-orange-500",
-      },
-      {
         id: "high-school",
         title: language === "TR" ? "Lise Eğitimi" : "High School Education",
         institution:
@@ -134,6 +115,24 @@ export const getExperienceData = (language: string = "TR"): ExperienceData => ({
         ],
         icon: FaSchool,
         color: "text-green-500",
+      },
+      {
+        id: "university-prep",
+        title: language === "TR" ? "İngilizce Hazırlık" : "English Preparation",
+        institution:
+          language === "TR"
+            ? "İstanbul Ticaret Üniversitesi"
+            : "Istanbul Commerce University",
+        period: "2018-2019",
+        status: "completed",
+        location: "İstanbul, Türkiye",
+        description:
+          language === "TR"
+            ? "İngilizce hazırlık eğitimimi başarıyla tamamladım ve B1 seviyesinde İngilizce yeterliliği kazandım. Bu seviyede günlük konuşmaları anlayabiliyor, temel teknik dokümanları okuyabiliyor ve kendimi yazılı ve sözlü olarak ifade edebiliyorum."
+            : "I successfully completed my English preparatory education and achieved a B1 level of English proficiency. At this level, I can understand daily conversations, read basic technical documents, and express myself both in writing and speaking.",
+        technologies: [FaLanguage, FaBookOpen, FaGlobe],
+        icon: FaBookOpen,
+        color: "text-orange-500",
       },
       {
         id: "university",
@@ -163,32 +162,6 @@ export const getExperienceData = (language: string = "TR"): ExperienceData => ({
     icon: FaBriefcase,
     color: "from-green-900 to-green-400",
     items: [
-      {
-        id: "design-intern",
-        title: language === "TR" ? "Tasarım Stajyeri" : "Design Intern",
-        institution: language === "TR" ? "TEPAŞ" : "TEPAŞ",
-        period:
-          language === "TR"
-            ? "Haziran 2021 - Temmuz 2021"
-            : "June 2021 - July 2021",
-        status: "completed",
-        location: "İstanbul, Türkiye",
-        description:
-          language === "TR"
-            ? "Staj sürecimde AutoCAD programını aktif olarak kullanarak bina içi elektrik tesisatı tasarımı üzerine detaylı çalışmalar gerçekleştirdim. Aydınlatma, priz yerleşimi, buat noktaları ve kablo güzergahları gibi elektrik altyapı elemanlarının projelendirilmesini sağladım. Teknik çizimlerin hazırlanması, projelerin standartlara uygun olarak uygulanması ve saha kontrollerine yönelik süreçlerde aktif rol alarak pratik deneyim kazandım. Bu süreç, elektrik projelerinin planlama ve uygulama aşamalarını daha iyi kavramamı sağladı."
-            : "During my internship, I actively used AutoCAD to work on detailed electrical installation designs for buildings. I created project layouts involving lighting systems, socket placements, junction box positions, and cable routing. I gained hands-on experience in preparing technical drawings, ensuring compliance with relevant standards, and contributing to on-site project implementation processes. This experience significantly enhanced my understanding of planning and executing electrical infrastructure projects.",
-        technologies: [SiAutodesk],
-        icon: () => (
-          <ImageIcon
-            src={tepas}
-            alt="TEPAŞ"
-            onClick={() =>
-              window.open("http://www.tepasmuhendislik.com.tr/", "_blank")
-            }
-          />
-        ),
-        color: "text-emerald-400",
-      },
       {
         id: "software",
         title: language === "TR" ? "Yazılım Stajyeri" : "Software Intern",
@@ -224,36 +197,30 @@ export const getExperienceData = (language: string = "TR"): ExperienceData => ({
         color: "text-cyan-400",
       },
       {
-        id: "devops-engineer",
-        title: language === "TR" ? "DevOps Mühendisi" : "DevOps Engineer",
-        institution:
-          language === "TR" ? "İksir İnternet Hizmetleri A.Ş." : "IXIRHOST",
-        period: language === "TR" ? "Haziran 2025 - ..." : "June 2025 - ...",
-        status: "current",
-        location: "Ümraniye, İstanbul, Türkiye",
+        id: "design-intern",
+        title: language === "TR" ? "Tasarım Stajyeri" : "Design Intern",
+        institution: language === "TR" ? "TEPAŞ" : "TEPAŞ",
+        period:
+          language === "TR"
+            ? "Haziran 2021 - Temmuz 2021"
+            : "June 2021 - July 2021",
+        status: "completed",
+        location: "İstanbul, Türkiye",
         description:
           language === "TR"
-            ? "DevOps mühendisi olarak, sürekli entegrasyon/sürekli teslimat (CI/CD) süreçlerinin optimize edilmesi, konteyner teknolojileri ile uygulama dağıtımı ve altyapı otomasyonu üzerine çalışmalar yürütüyorum. Docker, Kubernetes ve çeşitli bulut platformları kullanarak ölçeklenebilir ve güvenilir sistemler geliştiriyorum."
-            : "As a DevOps engineer, I work on optimizing continuous integration/continuous deployment (CI/CD) processes, application deployment with container technologies, and infrastructure automation. I develop scalable and reliable systems using Docker, Kubernetes, and various cloud platforms.",
-        technologies: [
-          FaDocker,
-          FaServer,
-          FaGlobeEurope,
-          FaNetworkWired,
-          FaCloud,
-          FaDatabase,
-          FaHdd,
-          FaCogs,
-          FaShieldAlt,
-        ],
+            ? "Staj sürecimde AutoCAD programını aktif olarak kullanarak bina içi elektrik tesisatı tasarımı üzerine detaylı çalışmalar gerçekleştirdim. Aydınlatma, priz yerleşimi, buat noktaları ve kablo güzergahları gibi elektrik altyapı elemanlarının projelendirilmesini sağladım. Teknik çizimlerin hazırlanması, projelerin standartlara uygun olarak uygulanması ve saha kontrollerine yönelik süreçlerde aktif rol alarak pratik deneyim kazandım. Bu süreç, elektrik projelerinin planlama ve uygulama aşamalarını daha iyi kavramamı sağladı."
+            : "During my internship, I actively used AutoCAD to work on detailed electrical installation designs for buildings. I created project layouts involving lighting systems, socket placements, junction box positions, and cable routing. I gained hands-on experience in preparing technical drawings, ensuring compliance with relevant standards, and contributing to on-site project implementation processes. This experience significantly enhanced my understanding of planning and executing electrical infrastructure projects.",
+        technologies: [SiAutodesk],
         icon: () => (
           <ImageIcon
-            src={ixirhost}
-            alt="IXIRHOST"
-            onClick={() => window.open("https://www.ixirhost.com/", "_blank")}
+            src={tepas}
+            alt="TEPAŞ"
+            onClick={() =>
+              window.open("http://www.tepasmuhendislik.com.tr/", "_blank")
+            }
           />
         ),
-        color: "text-cyan-400",
+        color: "text-emerald-400",
       },
     ],
   },

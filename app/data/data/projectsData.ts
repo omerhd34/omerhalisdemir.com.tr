@@ -2,12 +2,10 @@ import {
   SiReact,
   SiNextdotjs,
   SiTypescript,
-  SiJavascript,
   SiTailwindcss,
   SiNodedotjs,
   SiArduino,
   SiCplusplus,
-  SiDocker,
 } from "react-icons/si";
 import {
   FaLayerGroup,
@@ -69,82 +67,19 @@ export const getCategories = (language: string): Categories => ({
 
 export const getProjectsData = (language: string): ProjectItem[] => [
   {
-    id: "portfolio-website1",
+    id: "portfolio-website",
     title:
       language === "TR"
-        ? "Kişisel Portföy Sitesi 1"
-        : "Personal Portfolio Website 1",
-    description:
-      language === "TR"
-        ? "İlk React ve Next.js projemdir. Responsive tasarıma sahip, çoklu dil desteği ve dark/light mod özellikleri içeren kişisel portföy web sitesidir."
-        : "This is my first React and Next.js project. A responsive personal portfolio website with multi-language support and dark/light mode features.",
-    longDescription:
-      language === "TR"
-        ? "Bu, React ve Next.js kullanarak geliştirdiğim ilk kişisel portföy web sitemdir. Modern tasarım prensipleriyle responsive (mobil uyumlu) olarak tasarladım. Projede çoklu dil desteği, karanlık/aydınlık mod geçişi ve bileşen tabanlı yapı gibi gelişmiş özellikler yer almaktadır. Bu süreçte Next.js ile sayfa yönlendirme, dinamik içerik yönetimi ve statik site üretimi konularında pratik kazandım. Ayrıca, performance optimizasyonu için image lazy loading, kod bölünmesi ve SEO optimizasyonu gibi teknikleri uyguladım."
-        : "This is the first personal portfolio website I developed using React and Next.js. It was built with modern design principles and is fully responsive. The project includes advanced features like multi-language support, dark/light mode toggle, and a component-based structure. Through this project, I gained hands-on experience in routing, dynamic content management, and static site generation with Next.js. Additionally, I implemented performance optimization techniques such as image lazy loading, code splitting, and SEO optimization.",
-    category: "web",
-    status: "completed",
-    technologies: [
-      SiReact,
-      SiNextdotjs,
-      SiJavascript,
-      SiTailwindcss,
-      SiNodedotjs,
-    ],
-    features: [
-      language === "TR" ? "Responsive tasarım" : "Responsive design",
-      language === "TR"
-        ? "Çoklu dil desteği (TR/EN)"
-        : "Multi-language support (TR/EN)",
-      language === "TR" ? "Dark/Light mode geçişi" : "Dark/Light mode toggle",
-      language === "TR"
-        ? "Smooth scroll animasyonları"
-        : "Smooth scroll animations",
-      language === "TR" ? "SEO optimizasyonu" : "SEO optimization",
-      language === "TR"
-        ? "Progressive Web App özellikleri"
-        : "Progressive Web App features",
-    ],
-    liveUrl: "http://omerhalisdemir.xyz/",
-    githubUrl: "https://github.com/omerhd34/omerhalisdemir.xyz",
-    team: language === "TR" ? "Bireysel Proje" : "Individual Project",
-    role: language === "TR" ? "Full Stack Developer" : "Full Stack Developer",
-    metrics: [
-      {
-        label: language === "TR" ? "Geliştirme Süresi" : "Development Time",
-        value: "1 ay",
-      },
-      {
-        label: language === "TR" ? "Sayfa Yükleme Hızı" : "Page Load Speed",
-        value: "0.8s",
-      },
-      {
-        label: language === "TR" ? "Lighthouse Skoru" : "Lighthouse Score",
-        value: "98/100",
-      },
-      {
-        label:
-          language === "TR"
-            ? "Responsive Breakpoint"
-            : "Responsive Breakpoints",
-        value: "5+",
-      },
-    ],
-  },
-  {
-    id: "portfolio-website2",
-    title:
-      language === "TR"
-        ? "Kişisel Portföy Sitesi 2"
-        : "Personal Portfolio Website 2",
+        ? "Kişisel Portföy Sitesi"
+        : "Personal Portfolio Website",
     description:
       language === "TR"
         ? "Modern tasarım prensipleri ve gelişmiş yapısıyla hazırladığım, TypeScript destekli ikinci kişisel portföy projemdir."
         : "This is my second personal portfolio project, built with TypeScript and designed with modern UI/UX principles and an improved structure.",
     longDescription:
       language === "TR"
-        ? "Bu proje, TypeScript ve Next.js teknolojileri kullanılarak geliştirilen bireysel bir portföy çalışmasıdır. Çoklu dil desteği, dark/light mod ve responsive tasarım gibi özellikler içerir. Performans ve güvenlik odaklı geliştirilen bu proje, önceki çalışmama göre daha gelişmiş bir yapı sunar. TypeScript kullanımı ile kod güvenilirliği artırılmış, modern CSS teknikleri ile görsel deneyim geliştirilmiştir. Ayrıca component tabanlı mimari, reusability ve maintainability açısından optimize edilmiştir."
-        : "This is an individual portfolio project developed using TypeScript and Next.js. It features multi-language support, dark/light mode, and a responsive design. Built with a focus on performance and security, this project offers a more advanced structure compared to my previous work. The use of TypeScript enhanced code reliability, while modern CSS techniques improved the visual experience. Additionally, the component-based architecture has been optimized for reusability and maintainability.",
+        ? "Bu proje, TypeScript ve Next.js teknolojileri kullanılarak geliştirilen bireysel bir portföy çalışmasıdır. Çoklu dil desteği ve responsive tasarım gibi özellikler içerir. Performans ve güvenlik odaklı geliştirilen bu proje, önceki çalışmama göre daha gelişmiş bir yapı sunar. TypeScript kullanımı ile kod güvenilirliği artırılmış, modern CSS teknikleri ile görsel deneyim geliştirilmiştir. Ayrıca component tabanlı mimari, reusability ve maintainability açısından optimize edilmiştir."
+        : "This is an individual portfolio project developed using TypeScript and Next.js. It features multi-language support and a responsive design. Built with a focus on performance and security, this project offers a more advanced structure compared to my previous work. The use of TypeScript enhanced code reliability, while modern CSS techniques improved the visual experience. Additionally, the component-based architecture has been optimized for reusability and maintainability.",
     category: "web",
     status: "completed",
     technologies: [
@@ -153,7 +88,6 @@ export const getProjectsData = (language: string): ProjectItem[] => [
       SiTypescript,
       SiTailwindcss,
       SiNodedotjs,
-      SiDocker,
     ],
     features: [
       language === "TR"
@@ -163,14 +97,13 @@ export const getProjectsData = (language: string): ProjectItem[] => [
       language === "TR"
         ? "Çoklu dil desteği (TR/EN)"
         : "Multi-language support (TR/EN)",
-      language === "TR" ? "Dark/Light mode geçişi" : "Dark/Light mode toggle",
       language === "TR" ? "Advanced animasyonlar" : "Advanced animations",
       language === "TR"
         ? "Component tabanlı mimari"
         : "Component-based architecture",
     ],
     liveUrl: "http://omerhalisdemir.com.tr/",
-    githubUrl: "https://github.com/omerhd34/omerhalisdemir",
+    githubUrl: "https://github.com/omerhd34/omerhalisdemir.com.tr",
     team: language === "TR" ? "Bireysel Proje" : "Individual Project",
     role: language === "TR" ? "Full Stack Developer" : "Full Stack Developer",
     metrics: [
@@ -179,16 +112,8 @@ export const getProjectsData = (language: string): ProjectItem[] => [
         value: "1 ay",
       },
       {
-        label: language === "TR" ? "Sayfa Yükleme Hızı" : "Page Load Speed",
-        value: "1.0s",
-      },
-      {
-        label: language === "TR" ? "Lighthouse Skoru" : "Lighthouse Score",
-        value: "95/100",
-      },
-      {
-        label: language === "TR" ? "Bundle Boyutu" : "Bundle Size",
-        value: "~150KB",
+        label: language === "TR" ? "Boyut" : "Size",
+        value: "892 MB",
       },
     ],
   },
