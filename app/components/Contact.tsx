@@ -7,12 +7,14 @@ import {
   FaEnvelope,
   FaPhone,
   FaTag,
+  FaWhatsapp,
 } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
 import Title from "./extra/Title";
 import translations from "../data/Translations/ContactTranslations";
 import { contactInfo, socialLinks } from "../data/data/ContactData";
 import toast, { Toaster } from "react-hot-toast";
+import Link from "next/link";
 
 interface ContactProps {
   language?: string;
@@ -360,8 +362,20 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                           <span className="text-[15px] block">
                             {info.label}
                           </span>
-                          <div className="font-medium text-[16px] break-words">
+                          <div className="font-medium text-[16px] break-words flex items-center gap-2">
                             {info.value}
+                            {info.label ===
+                              (language === "TR" ? "Telefon:" : "Phone:") && (
+                              <Link
+                                href="https://wa.me/905078492903"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 bg-green-500 hover:bg-green-600 rounded-full transition-all duration-300 hover:scale-110"
+                                title="WhatsApp"
+                              >
+                                <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                              </Link>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -379,7 +393,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
                     return (
-                      <a
+                      <Link
                         key={index}
                         href={social.url}
                         target="_blank"
@@ -398,7 +412,7 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
                         <div className="relative h-10 w-10 sm:w-14 sm:h-14 bg-primary rounded-full flex items-center justify-center border-2 border-[#01438882] group-hover:border-[#fff] transition-all duration-300 group-hover:scale-110">
                           <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-[#d4e6f9] transition-colors duration-300" />
                         </div>
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
