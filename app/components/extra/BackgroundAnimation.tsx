@@ -121,7 +121,7 @@ const BackgroundAnimation = () => {
               animationDelay: `${index * 0.1}s`,
             }}
           >
-            <div className="text-xs font-mono text-green-400/50 sm:text-green-400/30 overflow-hidden text-ellipsis whitespace-nowrap">
+            <div className="text-xs font-mono text-white overflow-hidden text-ellipsis whitespace-nowrap">
               <span className="text-yellow-400/50 sm:text-yellow-400/30">
                 $
               </span>{" "}
@@ -151,7 +151,7 @@ const BackgroundAnimation = () => {
               <div className="w-2.5 h-2.5 from-emerald-400/30 to-cyan-400/30 sm:from-emerald-400/20 sm:to-cyan-400/20 rounded-full border border-emerald-400/40 sm:border-emerald-400/25"></div>
               <div className="tech-icon-ripple absolute bg-emerald-400/20 sm:bg-emerald-400/10 rounded-full inset-0"></div>
             </div>
-            <div className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-xs font-mono text-emerald-400/40 sm:text-emerald-400/25 font-medium">
+            <div className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-xs font-mono text-white font-medium">
               {tech}
             </div>
           </div>
@@ -163,7 +163,7 @@ const BackgroundAnimation = () => {
         return (
           <div
             key={`quantum-${index}`}
-            className="quantum-particle absolute text-sm font-mono font-bold select-none z-[13] md:opacity-100 sm:opacity-50 opacity-25"
+            className="quantum-particle absolute text-sm font-mono font-bold select-none z-[13] md:opacity-100 sm:opacity-50 opacity-25 "
             style={{
               left: `${position.x}%`,
               top: `${position.y}%`,

@@ -19,7 +19,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen select-none transition-colors duration-300 ease-in-out bg-[#21110e] relative">
+    <div className="min-h-screen select-none transition-colors duration-300 ease-in-out bg-gray-900 relative">
       {/* Background Animation Component */}
       <BackgroundAnimation />
       {/* Main Content */}

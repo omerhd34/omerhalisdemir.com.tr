@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 2xl:-mb-20 bg-[#21110e] backdrop-blur-md ">
+    <header className="sticky top-0 z-50 2xl:-mb-20 bg-gray-900 backdrop-blur-md ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-2 sm:pt-3 ">
         <nav className="bg-[#020617] backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10 relative z-10">
           <div className="flex justify-between items-center">

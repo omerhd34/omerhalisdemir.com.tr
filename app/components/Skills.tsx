@@ -119,7 +119,7 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
           />
 
           <div
-            className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-5 sm:mb-12 transition-all duration-1000 delay-300 ${
+            className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-5 sm:mb-12 transition-all duration-1000 delay-300  ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -138,7 +138,6 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
                   color={data.color}
                   isActive={activeCategory === key}
                   onClick={handleCategoryChange}
-                  className="w-[120px] xs:w-[220px] sm:w-[250px] lg:w-auto"
                 />
               );
             })}

@@ -16,8 +16,6 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
-  SiChakraui,
-  SiMui,
   SiMongodb,
 } from "react-icons/si";
 
@@ -73,18 +71,6 @@ const skillsData = {
         icon: FaBootstrap,
         experience: "3",
         color: "text-purple-500",
-      },
-      {
-        name: "Material UI",
-        icon: SiMui,
-        experience: "2",
-        color: "text-blue-400",
-      },
-      {
-        name: "Chakra UI",
-        icon: SiChakraui,
-        experience: "2",
-        color: "text-teal-300",
       },
     ],
   },

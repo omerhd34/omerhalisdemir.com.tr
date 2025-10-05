@@ -22,8 +22,6 @@ const data = [
   "Java & OOP",
   "Tailwind CSS",
   "Bootstrap",
-  "Material UI",
-  "Chakra UI",
   "Git & Github",
   "VS Code",
   "Cursor",

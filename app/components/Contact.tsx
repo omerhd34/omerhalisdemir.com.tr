@@ -12,6 +12,7 @@ import ReactCountryFlag from "react-country-flag";
 import Title from "./extra/Title";
 import translations from "../data/Translations/ContactTranslations";
 import { contactInfo, socialLinks } from "../data/data/ContactData";
+import toast, { Toaster } from "react-hot-toast";
 
 interface ContactProps {
   language?: string;
@@ -100,13 +101,82 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(
+          language === "TR"
+            ? "Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım."
+            : "Your message has been sent successfully! I will get back to you soon.",
+          {
+            duration: 5000,
+            position: "top-center",
+            style: {
+              background: "#10B981",
+              color: "#fff",
+              padding: "16px",
+              borderRadius: "10px",
+              fontSize: "15px",
+            },
+            iconTheme: {
+              primary: "#fff",
+              secondary: "#10B981",
+            },
+          }
+        );
+
+        setFormData(initialFormData);
+      } else {
+        toast.error(
+          language === "TR"
+            ? `Hata: ${
+                data.error || "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+              }`
+            : `Error: ${
+                data.error || "Message could not be sent. Please try again."
+              }`,
+          {
+            duration: 5000,
+            position: "top-center",
+            style: {
+              background: "#EF4444",
+              color: "#fff",
+              padding: "16px",
+              borderRadius: "10px",
+              fontSize: "15px",
+            },
+          }
+        );
+      }
+    } catch {
+      toast.error(
+        language === "TR"
+          ? "Bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+          : "An error occurred. Please try again later.",
+        {
+          duration: 5000,
+          position: "top-center",
+          style: {
+            background: "#EF4444",
+            color: "#fff",
+            padding: "16px",
+            borderRadius: "10px",
+            fontSize: "15px",
+          },
+        }
+      );
+    } finally {
       setIsSubmitting(false);
-      // Reset form
-      setFormData(initialFormData);
-    }, 2000);
+    }
   };
 
   const inputStyles =
@@ -121,6 +191,8 @@ const Contact: React.FC<ContactProps> = ({ language = "TR" }) => {
         minHeight: "100vh",
       }}
     >
+      <Toaster />
+
       {/* Mobil için ek spacing */}
       <div className="block sm:hidden" style={{ height: "1px" }} />
 
