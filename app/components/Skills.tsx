@@ -16,15 +16,7 @@ interface TranslationCategory {
   description: string;
 }
 
-interface TranslationSkillLevels {
-  expert: string;
-  advanced: string;
-  intermediate: string;
-  start: string;
-}
-
 interface CategoryStats {
-  averageLevel: string;
   technologies: string;
   skills: string;
 }
@@ -37,7 +29,6 @@ interface Translation {
   categories: {
     [key: string]: TranslationCategory;
   };
-  skillLevels: TranslationSkillLevels;
   categoryStats: CategoryStats;
   skillDescriptions?: {
     [key: string]: string;
@@ -87,14 +78,11 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
 
   const getCategoryStats = (category: string) => {
     const skills = skillsData[category as keyof typeof skillsData].skills;
-    const avgLevel = Math.round(
-      skills.reduce((acc, skill) => acc + skill.level, 0) / skills.length
-    );
     const totalExp = skills.reduce(
       (acc, skill) => acc + parseInt(skill.experience),
       0
     );
-    return { avgLevel, totalExp, count: skills.length };
+    return { totalExp, count: skills.length };
   };
 
   const handleCategoryChange = (category: string) => {
@@ -110,7 +98,6 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
         minHeight: "100vh",
       }}
     >
-      {/* Mobil için ek spacing */}
       <div className="block sm:hidden" style={{ height: "1px" }} />
 
       <div className="min-h-screen relative overflow-hidden text-primary ">
@@ -192,8 +179,7 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
                       }}
                     >
                       <div className="bg-info p-4 rounded-lg transition-all duration-300 hover:shadow-xl">
-                        {/* Icon ve isim üstte */}
-                        <div className="flex flex-col items-center text-center mb-3">
+                        <div className="flex flex-col items-center text-center">
                           <div
                             className={`p-2 rounded-lg bg-muted ${skill.color} float-animation mb-1 sm:mb-2`}
                           >
@@ -203,24 +189,6 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
                             {skill.name}
                           </h4>
                         </div>
-
-                        {/* Progress bar */}
-                        <div className="relative h-1.5 bg-blue-950 rounded-full overflow-hidden mb-2">
-                          <div
-                            className="absolute top-0 left-0 h-full bg-red-900 rounded-full transition-all duration-1000"
-                            style={{
-                              width: `${skill.level}%`,
-                            }}
-                          ></div>
-                        </div>
-
-                        {/* Level ve deneyim alt kısımda */}
-                        <div className="flex justify-between items-center text-xs">
-                          <span className="font-bold">{skill.level}%</span>
-                          <span className="text-gray-400">
-                            {skill.experience}y
-                          </span>
-                        </div>
                       </div>
                     </div>
                   );
@@ -228,9 +196,9 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
               </div>
             </div>
 
-            {/* Desktop: Orijinal layout */}
+            {/* Desktop */}
             <div className="hidden sm:block">
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-6">
                 {skillsData[
                   activeCategory as keyof typeof skillsData
                 ].skills.map((skill, index) => {
@@ -247,7 +215,7 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
                       }}
                     >
                       <div className="bg-info p-6 rounded-xl transition-all duration-300 hover:shadow-xl">
-                        <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
                             <div
                               className={`p-3 rounded-lg bg-muted ${skill.color} float-animation`}
@@ -263,29 +231,6 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
                               </p>
                             </div>
                           </div>
-                          <div className="text-right">
-                            <div className="text-md sm:text-2xl font-bold">
-                              {skill.level}%
-                            </div>
-                            <div className="text-[12px] sm:text-xs">
-                              {skill.level >= 90
-                                ? t.skillLevels.expert
-                                : skill.level >= 65
-                                ? t.skillLevels.advanced
-                                : skill.level >= 40
-                                ? t.skillLevels.intermediate
-                                : t.skillLevels.start}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="relative h-2 bg-blue-950 rounded-full overflow-hidden mb-4">
-                          <div
-                            className="absolute top-0 left-0 h-full bg-red-900 rounded-full transition-all duration-1000"
-                            style={{
-                              width: `${skill.level}%`,
-                            }}
-                          ></div>
                         </div>
                       </div>
                     </div>
@@ -295,15 +240,7 @@ const Skills: React.FC<SkillsProps> = ({ language = "TR" }) => {
             </div>
 
             <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-info">
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <div className="text-2xl sm:text-3xl font-bold">
-                    %{getCategoryStats(activeCategory).avgLevel}
-                  </div>
-                  <div className="text-sm sm:text-[18px]">
-                    {t.categoryStats.averageLevel}
-                  </div>
-                </div>
+              <div className="grid grid-cols-1 text-center">
                 <div>
                   <div className="text-2xl sm:text-3xl font-bold">
                     {getCategoryStats(activeCategory).count}

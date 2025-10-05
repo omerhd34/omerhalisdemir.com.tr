@@ -6,6 +6,8 @@ import {
   SiNodedotjs,
   SiArduino,
   SiCplusplus,
+  SiMongodb,
+  SiJavascript,
 } from "react-icons/si";
 import {
   FaLayerGroup,
@@ -13,6 +15,7 @@ import {
   FaBolt,
   FaMicrochip,
   FaTools,
+  FaGithub,
 } from "react-icons/fa";
 
 export interface ProjectItem {
@@ -74,7 +77,7 @@ export const getProjectsData = (language: string): ProjectItem[] => [
         : "Personal Portfolio Website",
     description:
       language === "TR"
-        ? "Modern tasarım prensipleri ve gelişmiş yapısıyla hazırladığım, TypeScript destekli ikinci kişisel portföy projemdir."
+        ? "Modern tasarım prensipleri ve gelişmiş yapısıyla hazırladığım, TypeScript destekli kişisel portföy projemdir."
         : "This is my second personal portfolio project, built with TypeScript and designed with modern UI/UX principles and an improved structure.",
     longDescription:
       language === "TR"
@@ -88,11 +91,10 @@ export const getProjectsData = (language: string): ProjectItem[] => [
       SiTypescript,
       SiTailwindcss,
       SiNodedotjs,
+      FaGithub,
     ],
     features: [
-      language === "TR"
-        ? "TypeScript ile tip güvenliği"
-        : "Type safety with TypeScript",
+      language === "TR" ? "asfsafsa" : "safasf",
       language === "TR" ? "Responsive tasarım" : "Responsive design",
       language === "TR"
         ? "Çoklu dil desteği (TR/EN)"
@@ -109,11 +111,58 @@ export const getProjectsData = (language: string): ProjectItem[] => [
     metrics: [
       {
         label: language === "TR" ? "Geliştirme Süresi" : "Development Time",
-        value: "1 ay",
+        value: "2 hafta",
       },
       {
         label: language === "TR" ? "Boyut" : "Size",
         value: "892 MB",
+      },
+    ],
+  },
+
+  {
+    id: "profilo-website",
+    title: language === "TR" ? "Yazıcı Ticaret DTM " : "Yazıcı Ticaret DTM",
+    description:
+      language === "TR"
+        ? "Beyaz eşya mağazası çalışanları ile müşterilerin sorunsuz bir şekilde iletişim kurmasını sağlayan web sitesi"
+        : "A website that allows customers to communicate seamlessly with appliance store employees",
+    longDescription:
+      language === "TR"
+        ? "Bu web sitesi, beyaz eşya mağazası çalışanları ile müşteriler arasında güçlü bir iletişim köprüsü kurmayı amaçlamaktadır. Müşteriler, ürünler hakkında bilgi alabilir, sorularını iletebilir, satışı olmayan yeni ürün isteğinde bulunabilir ve destek talebinde bulunabilir. Aynı zamanda çalışanlar, talepleri hızlıca yönetebilir ve müşterilere en doğru bilgiyi sunabilir. Böylece hem müşteri memnuniyeti artar hem de mağaza içi iletişim daha verimli hâle gelir."
+        : "This website aims to establish a strong communication bridge between appliance store employees and customers. Customers can obtain information about products, submit their questions, request new products that are not currently for sale, and make support inquiries. At the same time, employees can manage these requests quickly and provide customers with the most accurate information. In this way, both customer satisfaction increases and in-store communication becomes more efficient.",
+    category: "web",
+    status: "completed",
+    technologies: [
+      SiReact,
+      SiNextdotjs,
+      SiJavascript,
+      SiTailwindcss,
+      SiNodedotjs,
+      SiMongodb,
+      FaGithub,
+    ],
+    features: [
+      language === "TR" ? "Responsive tasarım" : "Responsive design",
+      language === "TR" ? "Admin girişli" : "Admin login",
+      language === "TR"
+        ? "Component tabanlı mimari"
+        : "Component-based architecture",
+      language === "TR" ? "Veritabanı destekli" : "Database supported",
+    ],
+
+    liveUrl: "https://yazici.gen.tr/",
+    githubUrl: "https://github.com/omerhd34/yaziciTicaret",
+    team: language === "TR" ? "Bireysel Proje" : "Individual Project",
+    role: language === "TR" ? "Full Stack Developer" : "Full Stack Developer",
+    metrics: [
+      {
+        label: language === "TR" ? "Geliştirme Süresi" : "Development Time",
+        value: "1 hafta",
+      },
+      {
+        label: language === "TR" ? "Boyut" : "Size",
+        value: "603 MB",
       },
     ],
   },
