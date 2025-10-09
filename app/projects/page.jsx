@@ -30,32 +30,10 @@ export default function ProjectsPage() {
  const [expandedProject, setExpandedProject] = useState(null);
  const [searchTerm] = useState("");
  const [filteredProjects, setFilteredProjects] = useState([]);
- const [headerHeight, setHeaderHeight] = useState(0);
 
  useEffect(() => {
   const timer = setTimeout(() => setIsVisible(true), 100);
   return () => clearTimeout(timer);
- }, []);
-
- useEffect(() => {
-  const calculateHeaderHeight = () => {
-   const header = document.querySelector("header");
-   if (header) {
-    const height = header.offsetHeight;
-    setHeaderHeight(height);
-   }
-  };
-
-  calculateHeaderHeight();
-  window.addEventListener("resize", calculateHeaderHeight);
-  window.addEventListener("orientationchange", () => {
-   setTimeout(calculateHeaderHeight, 100);
-  });
-
-  return () => {
-   window.removeEventListener("resize", calculateHeaderHeight);
-   window.removeEventListener("orientationchange", calculateHeaderHeight);
-  };
  }, []);
 
  const t = translations[language] || translations.TR;
@@ -133,16 +111,8 @@ export default function ProjectsPage() {
  };
 
  return (
-  <section
-   id="projects"
-   className="relative"
-   style={{
-    paddingTop: `${Math.max(headerHeight + 40, 120)}px`,
-    minHeight: "100vh",
-   }}
-  >
-   <div className="block sm:hidden" style={{ height: "1px" }} />
-
+  <section id="projects" className="relative mt-20 min-h-screen">
+   <div className="block sm:hidden h-1" />
    <div className="min-h-screen relative overflow-hidden text-primary ">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10 ">
      <FaProjectDiagram

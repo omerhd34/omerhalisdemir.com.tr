@@ -1,4 +1,3 @@
-import { IconType } from "react-icons";
 import {
   FaEnvelope,
   FaPhone,
@@ -6,18 +5,6 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
-
-export interface ContactInfo {
-  icon: IconType;
-  label: string;
-  value: React.ReactNode | string;
-}
-
-export interface SocialLink {
-  icon: IconType;
-  url: string;
-  color: string;
-}
 
 export const contactInfo = [
   {
@@ -38,7 +25,7 @@ export const contactInfo = [
   },
 ];
 
-export const socialLinks: SocialLink[] = [
+export const socialLinks = [
   {
     icon: FaLinkedin,
     url: "https://www.linkedin.com/in/%C3%B6mer-halis-demir-7a9b79169/",

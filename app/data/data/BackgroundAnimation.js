@@ -1,4 +1,4 @@
-const codeCommands = [
+export const codeCommands = [
   "git clone [url]",
   "git config -global user.name '[name]'",
   "git commit -m '[message]'",
@@ -9,7 +9,8 @@ const codeCommands = [
   "cd my-app",
   "npx create-next-app@latest",
 ];
-const data = [
+
+export const data = [
   "React",
   "Next.js",
   "MySQL",
@@ -26,7 +27,8 @@ const data = [
   "VS Code",
   "Cursor",
 ];
-const symbols = [
+
+export const symbols = [
   "{ }",
   "[ ]",
   "< >",
@@ -50,4 +52,3 @@ const symbols = [
   "≡",
   "𝓛",
 ];
-export { codeCommands, data, symbols };

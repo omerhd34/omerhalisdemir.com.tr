@@ -21,32 +21,10 @@ export default function AboutPage() {
  const [isVisible, setIsVisible] = useState(false);
  const [isJourneyExpanded, setIsJourneyExpanded] = useState(false);
  const [isInterestsExpanded, setIsInterestsExpanded] = useState(false);
- const [headerHeight, setHeaderHeight] = useState(0);
 
  useEffect(() => {
   const timer = setTimeout(() => setIsVisible(true), 100);
   return () => clearTimeout(timer);
- }, []);
-
- useEffect(() => {
-  const calculateHeaderHeight = () => {
-   const header = document.querySelector("header");
-   if (header) {
-    const height = header.offsetHeight;
-    setHeaderHeight(height);
-   }
-  };
-
-  calculateHeaderHeight();
-  window.addEventListener("resize", calculateHeaderHeight);
-  window.addEventListener("orientationchange", () => {
-   setTimeout(calculateHeaderHeight, 100);
-  });
-
-  return () => {
-   window.removeEventListener("resize", calculateHeaderHeight);
-   window.removeEventListener("orientationchange", calculateHeaderHeight);
-  };
  }, []);
 
  const t = translations[language] || translations.TR;
@@ -104,15 +82,8 @@ export default function AboutPage() {
  const interestsText = getTextPreview(t.interestsDescription, 3);
 
  return (
-  <section
-   id="about"
-   className="relative"
-   style={{
-    paddingTop: `${Math.max(headerHeight + 40, 120)}px`,
-    minHeight: "100vh",
-   }}
-  >
-   <div className="block sm:hidden" style={{ height: "1px" }} />
+  <section id="about" className="relative mt-20 min-h-screen">
+   <div className="block sm:hidden h-1" />
    <div className="min-h-screen relative overflow-hidden text-primary">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
      <FaUser

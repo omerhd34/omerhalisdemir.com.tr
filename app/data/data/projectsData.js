@@ -18,38 +18,7 @@ import {
   FaGithub,
 } from "react-icons/fa";
 
-export interface ProjectItem {
-  id: string;
-  title: string;
-  description: string;
-  longDescription?: string;
-  category: string;
-  status: "completed" | "current" | "planned";
-  technologies: React.ElementType[];
-  features: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  team?: string;
-  role?: string;
-  metrics?: {
-    label: string;
-    value: string;
-  }[];
-}
-
-export interface CategoryData {
-  icon: React.ElementType;
-  color: string;
-  title: string;
-}
-
-export interface Categories {
-  all: CategoryData;
-  web: CategoryData;
-  electronics: CategoryData;
-}
-
-export const getCategories = (language: string): Categories => ({
+export const getCategories = (language) => ({
   all: {
     icon: FaLayerGroup,
     color: "from-red-900 to-red-400",
@@ -68,7 +37,7 @@ export const getCategories = (language: string): Categories => ({
   },
 });
 
-export const getProjectsData = (language: string): ProjectItem[] => [
+export const getProjectsData = (language) => [
   {
     id: "portfolio-website",
     title:
@@ -313,7 +282,7 @@ export const getProjectsData = (language: string): ProjectItem[] => [
   },
 ];
 
-export const getProjectStats = (projects: ProjectItem[]) => {
+export const getProjectStats = (projects) => {
   const total = projects.length;
   const completed = projects.filter((p) => p.status === "completed").length;
   const current = projects.filter((p) => p.status === "current").length;

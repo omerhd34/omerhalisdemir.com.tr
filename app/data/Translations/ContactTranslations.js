@@ -1,27 +1,4 @@
-export interface ContactTranslations {
-  title: string;
-  subtitle: string;
-  formTitle: string;
-  contactInfo: string;
-  socialMedia: string;
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-  send: string;
-  sending: string;
-  location: string;
-  phone: string;
-  emailLabel: string;
-  availability: string;
-  namePlaceholder: string;
-  emailPlaceholder: string;
-  subjectPlaceholder: string;
-  messagePlaceholder: string;
-  phonePlaceholder: string;
-}
-
-const translations: Record<string, ContactTranslations> = {
+const translations = {
   TR: {
     title: "İletişim",
     subtitle: "Benimle İletişime Geçin",
