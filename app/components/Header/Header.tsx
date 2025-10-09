@@ -19,35 +19,23 @@ const rubikDistressed = localFont({
   display: "swap",
 });
 
-interface HeaderProps {
-  language?: string;
-  onLanguageChange?: (lang: string) => void;
-}
-
-const Header: React.FC<HeaderProps> = ({
-  language = "TR",
-  onLanguageChange,
-}) => {
+export default function Header({ language = "TR", onLanguageChange }) {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const languageDropdownRef = useRef<HTMLDivElement>(null);
+  const languageDropdownRef = useRef(null);
 
-  const t = translations[language as keyof typeof translations];
+  const t = translations[language] || translations.TR;
   const navigationItems = getNavigationItems(t);
   const socialLinks = getSocialLinks(language, t);
 
   // URL'e göre aktif section'ı belirle
   const getActiveSection = () => {
     const currentPath = pathname;
-    const activeItem = navigationItems.find((item) => {
-      if (item.href === currentPath) return true;
-      if (item.href.startsWith("#") && currentPath === "/") {
-        return false;
-      }
-      return false;
-    });
+    const activeItem = navigationItems.find(
+      (item) => item.href === currentPath
+    );
     return activeItem?.key || null;
   };
 
@@ -55,10 +43,10 @@ const Header: React.FC<HeaderProps> = ({
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event) => {
       if (
         languageDropdownRef.current &&
-        !languageDropdownRef.current.contains(event.target as Node)
+        !languageDropdownRef.current.contains(event.target)
       ) {
         setIsLanguageDropdownOpen(false);
       }
@@ -84,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
     setIsLanguageDropdownOpen((prev) => !prev);
   };
 
-  const handleLanguageChange = (lang: string) => {
+  const handleLanguageChange = (lang) => {
     setIsLanguageDropdownOpen(false);
     if (onLanguageChange) {
       onLanguageChange(lang);
@@ -462,6 +450,4 @@ const Header: React.FC<HeaderProps> = ({
       </div>
     </header>
   );
-};
-
-export default Header;
+}

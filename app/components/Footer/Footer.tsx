@@ -31,7 +31,6 @@ const Footer: React.FC<FooterProps> = ({
     }
   };
 
-  // Get current translations and data
   const t = translations[language as keyof typeof translations];
   const quickLinks = getQuickLinks(t);
   const socialLinks = getSocialLinks(t);
@@ -39,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({
   const brandDescription = getBrandDescription(language);
 
   return (
-    <footer className="relative z-40 backdrop-blur-md mt-[171]">
+    <footer className="relative z-40 backdrop-blur-md mt-[171px]">
       <div className="container mx-auto px-4 pb-3 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 ">
         <nav className="bg-[#020617] px-6 py-8 rounded-2xl shadow-2xl">
           {/* Main Footer Content */}

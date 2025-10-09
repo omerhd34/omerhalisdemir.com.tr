@@ -122,7 +122,7 @@ export const getProjectsData = (language: string): ProjectItem[] => [
 
   {
     id: "profilo-website",
-    title: language === "TR" ? "Yazıcı Ticaret DTM " : "Yazıcı Ticaret DTM",
+    title: language === "TR" ? "Yazıcı Ticaret " : "Yazıcı Ticaret",
     description:
       language === "TR"
         ? "Beyaz eşya mağazası çalışanları ile müşterilerin sorunsuz bir şekilde iletişim kurmasını sağlayan web sitesi"

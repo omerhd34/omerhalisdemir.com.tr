@@ -34,7 +34,7 @@ export const contactInfo = [
   {
     icon: FaEnvelope,
     label: "emailLabel",
-    value: "omerhd34@outlook.com",
+    value: "omerhd16@outlook.com",
   },
 ];
 

@@ -23,6 +23,10 @@ import {
   FaAtom,
   FaBrain,
   FaGithub,
+  FaHtml5,
+  FaCss3,
+  FaJava,
+  FaReact,
 } from "react-icons/fa";
 
 import {
@@ -32,6 +36,12 @@ import {
   SiHtml5,
   SiCss3,
   SiBootstrap,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiMongodb,
+  SiTypescript,
+  SiTailwindcss,
+  SiExpress,
 } from "react-icons/si";
 
 import ixirhost from "../../../public/images/ixirhost.png";
@@ -162,6 +172,34 @@ export const getExperienceData = (language: string = "TR"): ExperienceData => ({
     icon: FaBriefcase,
     color: "from-green-900 to-green-400",
     items: [
+      {
+        id: "freelancer",
+        title: "Full Stack Developer",
+        institution: "Freelancer",
+        period: language === "TR" ? "Ocak 2025 - ..." : "January 2025 - ...",
+        status: "current",
+        location: "Online",
+        description:
+          language === "TR"
+            ? "İnternet üzerinden çeşitli platformlarda freelance Full Stack Developer olarak çalışıyorum. Bu çalışma biçimi bana hem teknik becerilerimi geliştirme hem de farklı sektörlerden projelerle tanışma fırsatı sunuyor. Freelance dünyasında çalışmak, sürekli yeni zorluklarla karşılaşmak demek. Her proje farklı bir ihtiyaç, farklı bir teknoloji yığını ve farklı bir problem çözme yaklaşımı gerektiriyor. Bu çeşitlilik, beni hem teknik hem de kişisel olarak sürekli gelişmeye itiyor. Frontend tarafında React, Next.js ve modern CSS teknolojileriyle kullanıcı dostu, responsive ve performanslı arayüzler tasarlıyorum. Backend tarafında ise Node.js, Express.js ve MongoDB kullanarak güvenilir API'ler geliştiriyorum. Freelance çalışmanın en değerli tarafı, farklı müşterilerle çalışırken kazandığım deneyim. Her proje, yeni bir öğrenme fırsatı ve portföyüme eklediğim bir başarı hikayesi. Zaman yönetimi, müşteri iletişimi ve problem çözme becerilerimin yanı sıra, teknik yetkinliklerimi de sürekli keskinleştiriyorum. Bu yolculukta en çok keyif aldığım şey, bir fikrin dijital bir ürüne dönüşmesine katkı sağlamak ve müşterilerimin hedeflerine ulaşmalarına yardımcı olmak. Her başarılı proje, bir sonraki için beni daha da motive ediyor."
+            : "I work as a freelance Full Stack Developer on various platforms across the internet. This way of working offers me the opportunity to both develop my technical skills and engage with projects from different industries. Working in the freelance world means constantly facing new challenges. Each project requires a different need, a different technology stack, and a different problem-solving approach. This diversity pushes me to grow continuously, both technically and personally. On the frontend side, I design user-friendly, responsive, and performant interfaces using React, Next.js, and modern CSS technologies. On the backend side, I develop reliable APIs using Node.js, Express.js, and MongoDB. The most valuable aspect of freelancing is the experience I gain while working with different clients. Each project is a new learning opportunity and a success story I add to my portfolio. Alongside time management, client communication, and problem-solving skills, I'm constantly sharpening my technical competencies as well. What I enjoy most about this journey is contributing to the transformation of an idea into a digital product and helping my clients achieve their goals. Every successful project motivates me even more for the next one.",
+        technologies: [
+          FaHtml5,
+          FaCss3,
+          SiJavascript,
+          SiTypescript,
+          FaJava,
+          FaReact,
+          SiNextdotjs,
+          SiNodedotjs,
+          SiExpress,
+          SiMongodb,
+          SiTailwindcss,
+          SiBootstrap,
+        ],
+        icon: () => <FaCertificate />,
+        color: "text-red-400",
+      },
       {
         id: "software",
         title: language === "TR" ? "Yazılım Stajyeri" : "Software Intern",
