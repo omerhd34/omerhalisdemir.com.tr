@@ -28,7 +28,6 @@ export default function SkillsContent({
    className={`bg-secondary p-4 sm:p-8 rounded-2xl shadow-2xl sm:rounded-4xl sm:shadow-4xl transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
     }`}
   >
-   {/* Header */}
    <div className="text-center mb-6 sm:mb-8">
     <h3 className="text-xl sm:text-2xl font-bold mb-2">
      {translations.categories[activeCategory]?.title || activeCategory}
@@ -38,9 +37,7 @@ export default function SkillsContent({
     </p>
    </div>
 
-   {/* Enhanced Statistics Section */}
    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-    {/* Toplam Teknoloji */}
     <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-105">
      <div className="text-center">
       <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1">
@@ -52,7 +49,6 @@ export default function SkillsContent({
      </div>
     </div>
 
-    {/* Ortalama Seviye */}
     <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-105">
      <div className="text-center">
       <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1">
@@ -64,7 +60,6 @@ export default function SkillsContent({
      </div>
     </div>
 
-    {/* Toplam Deneyim */}
     <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-105">
      <div className="text-center">
       <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">
@@ -77,7 +72,6 @@ export default function SkillsContent({
     </div>
    </div>
 
-   {/* Mobile: Compact grid layout */}
    <div className="block sm:hidden">
     <div className="grid grid-cols-2 gap-3">
      {skills.map((skill, index) => (
@@ -92,7 +86,6 @@ export default function SkillsContent({
     </div>
    </div>
 
-   {/* Desktop: Enhanced grid */}
    <div className="hidden sm:block">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
      {skills.map((skill, index) => (

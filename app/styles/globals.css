@@ -7,11 +7,9 @@
     transition: all 0.3s ease;
   }
 }
-
 .text-primary {
   color: #daf1ff;
 }
-/* background color  */
 .bg-primary {
   background-color: #040d348d;
 }
@@ -30,7 +28,6 @@
 .bg-abc {
   background-color: #daf1ff;
 }
-/* border color  */
 .border-primary {
   border-color: #415d12;
 }

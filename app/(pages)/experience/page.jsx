@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaBriefcase } from "react-icons/fa";
-import { useLanguage } from "../context/LanguageContext";
-import translations from "../data/Translations/ExperienceTranslations";
-import { getExperienceData } from "../data/data/ExperienceData";
-import CategoryTabs from "../components/Experience/CategoryTabs";
-import ExperienceItem from "../components/Experience/ExperienceItem";
-import Title from "../components/extra/Title";
-import "../styles/experience.css";
+import { useLanguage } from "../../context/LanguageContext";
+import translations from "../../data/Translations/ExperienceTranslations";
+import { getExperienceData } from "../../data/data/ExperienceData";
+import CategoryTabs from "../../components/PageComponents/Experience/CategoryTabs";
+import ExperienceItem from "../../components/PageComponents/Experience/ExperienceItem";
+import Title from "../../components/extra/Title";
+import "../../styles/experience.css";
 
 export default function ExperiencePage() {
  const { language } = useLanguage();
@@ -43,7 +43,6 @@ export default function ExperiencePage() {
        }`}
      />
 
-     {/* Title Component */}
      <Title
       title={t.title}
       subtitle={t.subtitle}
@@ -51,7 +50,6 @@ export default function ExperiencePage() {
       isVisible={isVisible}
      />
 
-     {/* Category Tabs Component */}
      <CategoryTabs
       experienceData={experienceData}
       translations={t}
@@ -61,7 +59,6 @@ export default function ExperiencePage() {
       isVisible={isVisible}
      />
 
-     {/* Experience Timeline */}
      <div
       className={`bg-secondary p-8 rounded-2xl shadow-2xl sm:rounded-4xl sm:shadow-4xl transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
@@ -75,7 +72,6 @@ export default function ExperiencePage() {
        </p>
       </div>
 
-      {/* Timeline Items - Using ExperienceItem Component */}
       <div className="space-y-6">
        {experienceData[activeCategory].items.map((item, index) => (
         <ExperienceItem

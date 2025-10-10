@@ -1,10 +1,8 @@
 "use client";
-import { useState } from "react";
 
 export default function SkillCard({ skill, index, isMobile = false, translations }) {
  const Icon = skill.icon;
 
- // Level renkleri
  const getLevelColor = (level) => {
   switch (level) {
    case "beginner":
@@ -20,7 +18,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
   }
  };
 
- // Progress bar rengi
  const getProgressColor = (level) => {
   switch (level) {
    case "beginner":
@@ -46,7 +43,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
     }}
    >
     <div className="bg-info p-3 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105 border border-info hover:border-primary/30">
-     {/* Icon ve İsim */}
      <div className="flex flex-col items-center text-center mb-2">
       <div
        className={`p-2 rounded-lg bg-muted ${skill.color} transition-transform duration-300 group-hover:scale-110 mb-1`}
@@ -56,7 +52,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
       <h4 className="font-semibold text-xs leading-tight">{skill.name}</h4>
      </div>
 
-     {/* Level Badge */}
      <div className="flex justify-center mb-1.5">
       <span
        className={`text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r ${getLevelColor(
@@ -67,7 +62,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
       </span>
      </div>
 
-     {/* Progress Bar */}
      <div className="w-full bg-muted rounded-full h-1.5 overflow-hidden">
       <div
        className={`h-full ${getProgressColor(skill.level)} rounded-full`}

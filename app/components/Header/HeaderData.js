@@ -9,7 +9,6 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
-// Navigation items configuration - UPDATED FOR MULTI-PAGE
 export const navigationItems = [
   { key: "about", href: "/about", icon: FaUser },
   { key: "skills", href: "/skills", icon: FaCode },
@@ -18,7 +17,6 @@ export const navigationItems = [
   { key: "contact", href: "/contact", icon: FaEnvelope },
 ];
 
-// Social links configuration
 export const socialLinksConfig = [
   {
     key: "linkedin",
@@ -40,7 +38,6 @@ export const socialLinksConfig = [
   },
 ];
 
-// Language configuration
 export const languagesConfig = [
   {
     code: "TR",
@@ -54,7 +51,6 @@ export const languagesConfig = [
   },
 ];
 
-// Helper function to get social links with translations
 export const getSocialLinks = (language, translations) => {
   return socialLinksConfig.map((link) => ({
     name: translations[link.key],
@@ -66,7 +62,6 @@ export const getSocialLinks = (language, translations) => {
   }));
 };
 
-// Helper function to get navigation items with translations
 export const getNavigationItems = (translations) => {
   return navigationItems.map((item) => ({
     ...item,

@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { FaCode, FaRocket, FaGraduationCap } from "react-icons/fa";
 import translations from "./data/Translations/HomeTranslations";
 import { useLanguage } from "./context/LanguageContext";
-import ProfileImage from "./components/Home/ProfileImage";
-import MainContent from "./components/Home/MainContent";
-import StatsCard from "./components/Home/StatsCard";
+import ProfileImage from "./components/PageComponents/Home/ProfileImage";
+import MainContent from "./components/PageComponents/Home/MainContent";
+import StatsCard from "./components/PageComponents/Home/StatsCard";
 import "./styles/home.css";
 
 export default function HomePage() {

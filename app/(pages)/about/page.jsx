@@ -8,13 +8,12 @@ import {
  FaMapMarkerAlt,
  FaCode,
 } from "react-icons/fa";
-import translations from "../data/Translations/AboutTranslations";
-import { useLanguage } from "../context/LanguageContext";
-import JourneyCard from "../components/About/JourneyCard";
-import InterestsCard from "../components/About/InterestsCard";
-import PersonalInfoCard from "../components/About/PersonalInfoCard";
-import Title from "../components/extra/Title";
-import "../styles/about.css";
+import translations from "../../data/Translations/AboutTranslations";
+import { useLanguage } from "../../context/LanguageContext";
+import Title from "../../components/extra/Title";
+import "../../styles/about.css";
+import InterestsCard from "../../components/PageComponents/About/InterestsCard";
+import PersonalInfoCard from "../../components/PageComponents/About/PersonalInfoCard";
 
 export default function AboutPage() {
  const { language } = useLanguage();

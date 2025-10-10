@@ -9,7 +9,6 @@ import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 
 function LayoutContent({ children }) {
  const { language, handleLanguageChange } = useLanguage();
-
  return (
   <div className="min-h-screen select-none transition-colors duration-300 ease-in-out bg-gray-900 relative">
    <BackgroundAnimation />

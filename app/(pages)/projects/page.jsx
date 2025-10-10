@@ -1,17 +1,17 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import { FaProjectDiagram } from "react-icons/fa";
-import { useLanguage } from "../context/LanguageContext";
-import translations from "../data/Translations/ProjectTranslations";
+import { useLanguage } from "../../context/LanguageContext";
+import translations from "../../data/Translations/ProjectTranslations";
 import {
  getProjectsData,
  getCategories,
  getProjectStats,
-} from "../data/data/projectsData";
-import CategoryButton from "../components/extra/CategoryButton";
-import ProjectCard from "../components/Project/ProjectCard";
-import ProjectStats from "../components/Project/ProjectStats";
-import Title from "../components/extra/Title";
+} from "../../data/data/projectsData";
+import CategoryButton from "../../components/extra/CategoryButton";
+import ProjectCard from "../../components/PageComponents/Project/ProjectCard";
+import ProjectStats from "../../components/PageComponents/Project/ProjectStats";
+import Title from "../../components/extra/Title";
 
 export default function ProjectsPage() {
  const { language } = useLanguage();
@@ -59,13 +59,11 @@ export default function ProjectsPage() {
    <div className="block sm:hidden h-1" />
    <div className="min-h-screen relative overflow-hidden text-primary">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-     {/* Icon */}
      <FaProjectDiagram
       className={`w-8 h-8 text-blue-300 mx-auto mb-2 transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
      />
 
-     {/* Title Component */}
      <Title
       title={t.title}
       subtitle={t.subtitle}
@@ -73,10 +71,8 @@ export default function ProjectsPage() {
       isVisible={isVisible}
      />
 
-     {/* Project Stats Component */}
      <ProjectStats stats={stats} language={language} isVisible={isVisible} />
 
-     {/* Category Tabs */}
      <div
       className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-5 xs:mb-10 sm:mb-12 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
@@ -103,7 +99,6 @@ export default function ProjectsPage() {
       })}
      </div>
 
-     {/* Projects Grid */}
      <div
       className={`transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
@@ -122,7 +117,6 @@ export default function ProjectsPage() {
        </div>
       ) : (
        <div className="grid gap-6 xs:gap-7 sm:gap-8">
-        {/* Project Cards using ProjectCard Component */}
         {filteredProjects.map((project, index) => (
          <ProjectCard
           key={project.id}

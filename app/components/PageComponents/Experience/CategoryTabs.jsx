@@ -1,5 +1,5 @@
 "use client";
-import CategoryButton from "../extra/CategoryButton";
+import CategoryButton from "../../extra/CategoryButton";
 
 export default function CategoryTabs({
  experienceData,
