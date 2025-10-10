@@ -44,8 +44,8 @@ import {
  SiExpress,
 } from "react-icons/si";
 
-import ixirhost from "../../../public/images/ixirhost.png";
-import tepas from "../../../public/images/tepas.jpg";
+const ixirhost = "/images/ixirhost.png";
+const tepas = "/images/tepas.jpg";
 import Image from "next/image";
 
 const ImageIcon = ({ src, alt = "Icon", onClick }) => (
