@@ -1,7 +1,6 @@
 import {
   SiReact,
   SiNextdotjs,
-  SiTypescript,
   SiTailwindcss,
   SiNodedotjs,
   SiArduino,
@@ -46,31 +45,34 @@ export const getProjectsData = (language) => [
         : "Personal Portfolio Website",
     description:
       language === "TR"
-        ? "Modern tasarım prensipleri ve gelişmiş yapısıyla hazırladığım, TypeScript destekli kişisel portföy projemdir."
-        : "This is my second personal portfolio project, built with TypeScript and designed with modern UI/UX principles and an improved structure.",
+        ? "Modern tasarım anlayışıyla şekillendirdiğim ve gelişmiş teknolojik temeller üzerine inşa ettiğim bu portföy projesi, hem estetik hem de performans odaklı bir deneyim sunmak amacıyla tasarlandı. Her detayıyla sade, akıcı ve kullanıcı dostu bir yapı hedefledim. Bu proje, hem profesyonel gelişim yolculuğumun bir yansıması hem de gelecekteki projelere ilham kaynağı olacak bir vitrin niteliğindedir."
+        : "This portfolio project, shaped by a modern design approach and built upon advanced technological foundations, was designed to deliver an experience focused on both aesthetics and performance. I aimed for a simple, fluid, and user-friendly structure in every detail. This project is both a reflection of my professional development journey and a showcase that will inspire future projects.",
     longDescription:
       language === "TR"
-        ? "Bu proje, TypeScript ve Next.js teknolojileri kullanılarak geliştirilen bireysel bir portföy çalışmasıdır. Çoklu dil desteği ve responsive tasarım gibi özellikler içerir. Performans ve güvenlik odaklı geliştirilen bu proje, önceki çalışmama göre daha gelişmiş bir yapı sunar. TypeScript kullanımı ile kod güvenilirliği artırılmış, modern CSS teknikleri ile görsel deneyim geliştirilmiştir. Ayrıca component tabanlı mimari, reusability ve maintainability açısından optimize edilmiştir."
-        : "This is an individual portfolio project developed using TypeScript and Next.js. It features multi-language support and a responsive design. Built with a focus on performance and security, this project offers a more advanced structure compared to my previous work. The use of TypeScript enhanced code reliability, while modern CSS techniques improved the visual experience. Additionally, the component-based architecture has been optimized for reusability and maintainability.",
+        ? "Bu proje, JavaScript, React ve Next.js teknolojileriyle geliştirilen, modern tasarım prensiplerine dayalı kişisel bir portföy çalışmasıdır. Tailwind CSS ile stil tasarımı güçlendirilmiş, Node.js ve MongoDB altyapısıyla güvenli ve ölçeklenebilir bir yapı sağlanmıştır. Çoklu dil desteği, responsive tasarım, performans optimizasyonu ve component tabanlı mimari gibi modern yazılım yaklaşımlarını temel alır. Bu sayede proje; yeniden kullanılabilirlik, sürdürülebilirlik ve yüksek kullanıcı deneyimi açısından dikkat çekici bir çözüm sunar. Hedef, sade ama güçlü bir arayüzle profesyonel kimliğimi yansıtan bir dijital vitrin oluşturmaktır."
+        : "This project is a personal portfolio developed using JavaScript, React, and Next.js, built upon modern design principles. The visual design is enhanced with Tailwind CSS, while Node.js and MongoDB provide a secure and scalable backend structure. It embraces modern software approaches such as multi-language support, responsive design, performance optimization, and component-based architecture. As a result, the project stands out with its reusability, maintainability, and high-quality user experience. The goal is to create a clean yet powerful interface that reflects my professional identity through a modern digital showcase.",
     category: "web",
     status: "completed",
     technologies: [
       SiReact,
       SiNextdotjs,
-      SiTypescript,
+      SiJavascript,
       SiTailwindcss,
       SiNodedotjs,
+      SiMongodb,
       FaGithub,
     ],
     features: [
-      language === "TR" ? "asfsafsa" : "safasf",
+      language === "TR"
+        ? "Güvenli ve Ölçeklenebilir Altyapı"
+        : "Secure and Scalable Infrastructure",
       language === "TR" ? "Responsive tasarım" : "Responsive design",
       language === "TR"
         ? "Çoklu dil desteği (TR/EN)"
         : "Multi-language support (TR/EN)",
-      language === "TR" ? "Advanced animasyonlar" : "Advanced animations",
+      language === "TR" ? "Gelişmiş Animasyonlar" : "Advanced animations",
       language === "TR"
-        ? "Component tabanlı mimari"
+        ? "Bileşen tabanlı mimari"
         : "Component-based architecture",
     ],
     liveUrl: "http://omerhalisdemir.com.tr/",
@@ -88,7 +90,6 @@ export const getProjectsData = (language) => [
       },
     ],
   },
-
   {
     id: "profilo-website",
     title: language === "TR" ? "Yazıcı Ticaret " : "Yazıcı Ticaret",

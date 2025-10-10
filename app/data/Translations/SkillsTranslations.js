@@ -23,7 +23,18 @@ const translations = {
     categoryStats: {
       technologies: "Teknoloji",
       skills: "beceri",
+      avgLevel: "Ortalama Seviye",
+      totalExp: "Toplam Deneyim",
     },
+    levels: {
+      beginner: "Başlangıç",
+      intermediate: "Orta",
+      advanced: "İleri",
+      expert: "Uzman",
+    },
+    proficiency: "Yeterlilik",
+    experience: "Deneyim",
+    levelDistribution: "Seviye Dağılımı",
   },
   EN: {
     title: "My Skills",
@@ -49,7 +60,18 @@ const translations = {
     categoryStats: {
       technologies: "Technologies",
       skills: "skills",
+      avgLevel: "Average Level",
+      totalExp: "Total Experience",
     },
+    levels: {
+      beginner: "Beginner",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+      expert: "Expert",
+    },
+    proficiency: "Proficiency",
+    experience: "Experience",
+    levelDistribution: "Level Distribution",
   },
 };
 

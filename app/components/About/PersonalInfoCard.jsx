@@ -20,9 +20,6 @@ export default function PersonalInfoCard({ personalInfo, translations, isVisible
        key={info.label}
        className={`text-center :p-4 rounded-2xl bg-primary/5 hover:bg-[#01438882] transition-all duration-300 transform hover:scale-105 hover:shadow-lg sm:h-[150px] h-[90px] flex flex-col ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
         }`}
-       style={{
-        transitionDelay: `${600 + index * 100}ms`,
-       }}
       >
        <div className="flex-1 flex flex-col items-center justify-between py-1 sm:py-2">
         <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />

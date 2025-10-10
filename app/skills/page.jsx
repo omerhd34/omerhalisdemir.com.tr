@@ -27,7 +27,16 @@ export default function SkillsPage() {
    (acc, skill) => acc + parseInt(skill.experience),
    0
   );
-  return { totalExp, count: skills.length };
+
+  const avgProficiency = Math.round(
+   skills.reduce((sum, skill) => sum + skill.percentage, 0) / skills.length
+  );
+
+  return {
+   totalExp,
+   count: skills.length,
+   avgProficiency,
+  };
  };
 
  const handleCategoryChange = (category) => {
@@ -39,7 +48,6 @@ export default function SkillsPage() {
    <div className="block sm:hidden h-1" />
    <div className="min-h-screen relative overflow-hidden text-primary">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
-     {/* Icon */}
      <div
       className={`text-center mb-2 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
@@ -47,7 +55,6 @@ export default function SkillsPage() {
       <FaCode className="w-8 h-8 mx-auto text-blue-300" />
      </div>
 
-     {/* Title Component */}
      <Title
       title={t.title}
       subtitle={t.subtitle}
@@ -55,7 +62,6 @@ export default function SkillsPage() {
       isVisible={isVisible}
      />
 
-     {/* Category Tabs */}
      <div
       className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-5 sm:mb-12 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
@@ -78,7 +84,6 @@ export default function SkillsPage() {
       })}
      </div>
 
-     {/* Skills Content Component */}
      <SkillsContent
       activeCategory={activeCategory}
       skillsData={skillsData}
