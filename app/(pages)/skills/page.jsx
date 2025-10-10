@@ -4,9 +4,9 @@ import { FaCode } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 import skillsData from "../../data/data/SkillsData";
 import translations from "../../data/Translations/SkillsTranslations";
-import CategoryButton from "../../components/extra/CategoryButton";
-import Title from "../../components/extra/Title";
-import SkillsContent from "../../components/PageComponents/Skill/SkillsContent";
+import CategoryButton from "../../../components/extra/CategoryButton";
+import Title from "../../../components/extra/Title";
+import SkillsContent from "../../../components/PageComponents/Skill/SkillsContent";
 import "../../styles/skills.css";
 
 export default function SkillsPage() {

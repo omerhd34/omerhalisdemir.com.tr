@@ -1,10 +1,10 @@
 "use client";
 import "./styles/globals.css";
-import ScrollToTop from "./components/extra/ScrollToTop";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import ScrollToTopButton from "./components/extra/ScrollTopButton";
-import BackgroundAnimation from "./components/extra/BackgroundAnimation";
+import ScrollToTop from "../components/extra/ScrollToTop";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import ScrollToTopButton from "../components/extra/ScrollTopButton";
+import BackgroundAnimation from "../components/extra/BackgroundAnimation";
 import { LanguageProvider, useLanguage } from "./context/LanguageContext";
 
 function LayoutContent({ children }) {

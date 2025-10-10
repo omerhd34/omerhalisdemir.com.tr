@@ -8,10 +8,10 @@ import {
  getCategories,
  getProjectStats,
 } from "../../data/data/projectsData";
-import CategoryButton from "../../components/extra/CategoryButton";
-import ProjectCard from "../../components/PageComponents/Project/ProjectCard";
-import ProjectStats from "../../components/PageComponents/Project/ProjectStats";
-import Title from "../../components/extra/Title";
+import CategoryButton from "../../../components/extra/CategoryButton";
+import ProjectCard from "../../../components/PageComponents/Project/ProjectCard";
+import ProjectStats from "../../../components/PageComponents/Project/ProjectStats";
+import Title from "../../../components/extra/Title";
 
 export default function ProjectsPage() {
  const { language } = useLanguage();

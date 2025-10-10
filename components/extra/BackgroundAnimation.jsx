@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import "../../styles/backgroundAnimation.css";
+import "../../app/styles/backgroundAnimation.css";
 import {
  codeCommands,
  data,
  symbols,
-} from "../../data/data/BackgroundAnimation";
+} from "../../app/data/data/BackgroundAnimation";
 
 export default function BackgroundAnimation() {
  const [mounted, setMounted] = useState(false);

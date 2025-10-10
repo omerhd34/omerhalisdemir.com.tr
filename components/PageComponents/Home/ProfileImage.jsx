@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import ImageMe from "../../../../public/images/img.jpg";
+import ImageMe from "../../../public/images/img.jpg";
 
 export default function ProfileImage() {
  return (

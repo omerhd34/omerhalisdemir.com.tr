@@ -6,10 +6,10 @@ import { Toaster } from "react-hot-toast";
 import { useLanguage } from "../../context/LanguageContext";
 import translations from "../../data/Translations/ContactTranslations";
 import { contactInfo, socialLinks } from "../../data/data/ContactData";
-import ContactForm from "../../components/PageComponents/Contact/ContactForm";
-import ContactInfoCard from "../../components/PageComponents/Contact/ContactInfoCard";
-import SocialLinksCard from "../../components/PageComponents/Contact/SocialLinksCard";
-import Title from "../../components/extra/Title";
+import ContactForm from "../../../components/PageComponents/Contact/ContactForm";
+import ContactInfoCard from "../../../components/PageComponents/Contact/ContactInfoCard";
+import SocialLinksCard from "../../../components/PageComponents/Contact/SocialLinksCard";
+import Title from "../../../components/extra/Title";
 
 export default function ContactPage() {
  const { language } = useLanguage();

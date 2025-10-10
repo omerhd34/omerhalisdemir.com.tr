@@ -1,7 +1,7 @@
 import Link from "next/link";
 import localFont from "next/font/local";
 const rubikDistressed = localFont({
- src: "../../../public/fonts/RubikDistressed-Regular.ttf",
+ src: "../../public/fonts/RubikDistressed-Regular.ttf",
  variable: "--font-rubik-distressed",
  display: "swap",
 });

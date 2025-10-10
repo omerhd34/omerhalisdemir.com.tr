@@ -10,10 +10,11 @@ import {
 } from "react-icons/fa";
 import translations from "../../data/Translations/AboutTranslations";
 import { useLanguage } from "../../context/LanguageContext";
-import Title from "../../components/extra/Title";
+import Title from "../../../components/extra/Title";
 import "../../styles/about.css";
-import InterestsCard from "../../components/PageComponents/About/InterestsCard";
-import PersonalInfoCard from "../../components/PageComponents/About/PersonalInfoCard";
+import InterestsCard from "../../../components/PageComponents/About/InterestsCard";
+import PersonalInfoCard from "../../../components/PageComponents/About/PersonalInfoCard";
+import JourneyCard from "../../../components/PageComponents/About/JourneyCard";
 
 export default function AboutPage() {
  const { language } = useLanguage();
