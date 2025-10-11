@@ -103,7 +103,7 @@ export default function ContactForm({ translations, language, isVisible }) {
    className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
     }`}
   >
-   <div className="bg-secondary p-3 sm:p-8 rounded-t-2xl shadow-t-2xl sm:rounded-4xl sm:shadow-4xl">
+   <div className="bg-secondary p-3 sm:p-8 rounded-2xl shadow-2xl sm:rounded-4xl sm:shadow-4xl h-full">
     <h3 className="text-[20px] sm:text-2xl font-bold mb-5 sm:mb-6 flex items-center space-x-4 sm:space-x-2">
      <FaPaperPlane className="w-5 h-5" />
      <span>{translations.formTitle}</span>

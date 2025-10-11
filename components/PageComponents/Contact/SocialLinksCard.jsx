@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export default function SocialLinksCard({ socialLinks, translations, isVisible }) {
  return (
-  <div className="bg-secondary p-3 sm:p-8 rounded-b-4xl shadow-b-4xl">
+  <div
+   className={`bg-secondary p-3 sm:p-8 rounded-b-2xl shadow-b-2xl sm:rounded-b-4xl sm:shadow-b-4xl transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+    }`}
+  >
    <h3 className="text-xl font-bold mb-3 sm:mb-6 flex items-center justify-center space-x-2">
     <span>{translations.socialMedia}</span>
    </h3>

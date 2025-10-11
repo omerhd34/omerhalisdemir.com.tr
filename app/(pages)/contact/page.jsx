@@ -62,31 +62,30 @@ export default function ContactPage() {
       description={t.availability}
       isVisible={isVisible}
      />
-     {/* Main Content Grid */}
+
      <div className="grid lg:grid-cols-2 gap-5 lg:gap-16">
-      {/* Contact Form Component */}
       <ContactForm
        translations={t}
        language={language}
        isVisible={isVisible}
       />
 
-      {/* Contact Info Card Component */}
-      <ContactInfoCard
-       translations={t}
-       language={language}
-       isVisible={isVisible}
-       contactInfo={contactInfoWithTranslations}
-      />
-     </div>
+      <div className="flex flex-col gap-5 lg:gap-8">
+       <ContactInfoCard
+        translations={t}
+        language={language}
+        isVisible={isVisible}
+        contactInfo={contactInfoWithTranslations}
+       />
 
-     {/* Social Links Card Component */}
-     <SocialLinksCard
-      translations={t}
-      language={language}
-      isVisible={isVisible}
-      socialLinks={socialLinks}
-     />
+       <SocialLinksCard
+        translations={t}
+        language={language}
+        isVisible={isVisible}
+        socialLinks={socialLinks}
+       />
+      </div>
+     </div>
     </div>
    </div>
   </section>

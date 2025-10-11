@@ -8,7 +8,7 @@ export default function ContactInfoCard({ contactInfo, translations, language, i
    className={`space-y-4 sm:space-y-8 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
     }`}
   >
-   <div className="bg-secondary p-3 sm:p-8 sm:rounded-t-2xl sm:shadow-2xl lg:mb-[40px]">
+   <div className="bg-secondary p-3 sm:p-8 rounded-t-2xl shadow-t-2xl sm:rounded-t-4xl sm:shadow-t-4xl">
     <h3 className="text-[20px] sm:text-2xl font-bold mb-6 flex items-center space-x-2">
      <FaPhone className="w-5 h-5 mr-4" />
      <span>{translations.contactInfo}</span>
