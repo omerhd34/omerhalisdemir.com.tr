@@ -43,7 +43,7 @@ export default function ContactPage() {
  }));
 
  return (
-  <section id="contact" className="relative mt-20 min-h-screen">
+  <section id="contact" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
    <Toaster />
    <div className="block sm:hidden h-1" />
    <div className="min-h-screen relative overflow-hidden text-primary">

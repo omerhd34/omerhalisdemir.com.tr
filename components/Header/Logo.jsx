@@ -1,13 +1,7 @@
 import Link from "next/link";
-import localFont from "next/font/local";
-const rubikDistressed = localFont({
- src: "../../public/fonts/RubikDistressed-Regular.ttf",
- variable: "--font-rubik-distressed",
- display: "swap",
-});
 import AnimatedGradient from "../extra/AnimatedGradient";
+
 export function Logo({ isHovered, setIsHovered }) {
- const logoText = "Ömer Halis DEMİR";
  return (
   <Link
    href="/"
@@ -36,61 +30,13 @@ export function Logo({ isHovered, setIsHovered }) {
 
      <div className="relative min-w-max -mb-2">
       <div
-       className={`transition-all duration-800 ${isHovered
-        ? "opacity-0 scale-95 pointer-events-none"
-        : "opacity-100 scale-100"
-        }`}
+       className={`transition-all duration-800 opacity-100 scale-100`}
       >
        <span
-        className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-[#ebf3fe] via-[#0170e682] to-[#007bff82] bg-clip-text text-transparent leading-tight tracking-[0.3em] "
-        style={{ fontFamily: rubikDistressed.style.fontFamily }}
+        className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#ebf3fe] via-[#0170e682] to-[#007bff82] bg-clip-text text-transparent leading-tight tracking-[0.1em] font-[Garamond] "
        >
         ÖHD
        </span>
-      </div>
-
-      <div
-       className={`absolute top-0 left-0 transition-all duration-800 ${isHovered
-        ? "opacity-100 scale-105 pointer-events-auto"
-        : "opacity-0 scale-95 pointer-events-none"
-        }`}
-      >
-       <span
-        className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-tight whitespace-nowrap tracking-wider"
-        style={{
-         fontFamily: rubikDistressed.style.fontFamily,
-         textShadow: isHovered
-          ? "0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(14, 165, 233, 0.6)"
-          : "none",
-        }}
-       >
-        {logoText.split("").map((char, index) => (
-         <span
-          key={index}
-          className="inline-block transition-all duration-600"
-          style={{
-           transform: isHovered
-            ? "translateY(2px)"
-            : "translateY(0px)",
-           transition: `transform 0.6s ease ${index * 80}ms`,
-          }}
-         >
-          {char === " " ? "\u00A0" : char}
-         </span>
-        ))}
-       </span>
-
-       <div
-        className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#3b82f6] via-[#0ea5e9] to-[#ffffff] transition-all duration-1000 ${isHovered ? "w-full opacity-100" : "w-0 opacity-0"
-         }`}
-        style={{
-         width: isHovered ? "100%" : "0%",
-         right: "0",
-         boxShadow: isHovered
-          ? "0 0 10px rgba(59, 130, 246, 0.5)"
-          : "none",
-        }}
-       />
       </div>
      </div>
     </div>

@@ -26,8 +26,8 @@ export default function HomePage() {
 
  const stats = [
   { number: "15+", label: t.stats.skills, icon: FaCode },
-  { number: "2", label: t.stats.experience, icon: FaGraduationCap },
-  { number: "3", label: t.stats.projects, icon: FaRocket },
+  { number: "4", label: t.stats.experience, icon: FaGraduationCap },
+  { number: "4", label: t.stats.projects, icon: FaRocket },
  ];
 
  return (

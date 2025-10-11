@@ -34,7 +34,7 @@ export default function ExperiencePage() {
  };
 
  return (
-  <section id="exp" className="relative mt-20 min-h-screen">
+  <section id="exp" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
    <div className="block sm:hidden h-1" />
    <div className="min-h-screen relative overflow-hidden text-primary">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
