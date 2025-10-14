@@ -1,26 +1,12 @@
-"use client";
 import "./styles/globals.css";
 import ScrollToTop from "../components/extra/ScrollToTop";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import ScrollToTopButton from "../components/extra/ScrollTopButton";
-import { LanguageProvider, useLanguage } from "./context/LanguageContext";
+import { LanguageProvider } from "./context/LanguageContext";
+import LayoutContent from "./LayoutContent.jsx";
 
-function LayoutContent({ children }) {
- const { language, handleLanguageChange } = useLanguage();
- return (
-  <div className="min-h-screen select-none transition-colors duration-300 ease-in-out bg-gray-900 relative">
-   <div className="relative z-10">
-    <Header language={language} onLanguageChange={handleLanguageChange} />
-    <main>{children}</main>
-    <Footer language={language} onLanguageChange={handleLanguageChange} />
-    <ScrollToTopButton
-     title={language === "EN" ? "Back to Top" : "Başa Dön"}
-    />
-   </div>
-  </div>
- );
-}
+export const metadata = {
+ title: "Ömer Halis | Full Stack Developer",
+ description: "Modern web uygulamaları geliştiriyorum.",
+};
 
 export default function RootLayout({ children }) {
  return (
