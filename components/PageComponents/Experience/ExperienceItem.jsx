@@ -145,7 +145,7 @@ export default function ExperienceItem({ item, translations, isVisible, index })
        <ul className="space-y-2 mb-4">
         {item.achievements?.map((achievement, achievementIndex) => (
          <li key={achievementIndex} className="flex items-start space-x-3">
-          <div className="w-2 h-2 rounded-full bg-abc mt-2 flex-shrink-0"></div>
+          <div className="w-2 h-2 rounded-full bg-[#daf1ff] mt-2 flex-shrink-0"></div>
           <span className="text-[16px]">{achievement}</span>
          </li>
         ))}

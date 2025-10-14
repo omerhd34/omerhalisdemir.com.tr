@@ -22,17 +22,8 @@
 .bg-muted {
   background-color: #01438882;
 }
-.bg-accent {
-  background-color: #b600003e;
-}
-.bg-abc {
-  background-color: #daf1ff;
-}
 .border-primary {
   border-color: #415d12;
-}
-.border-secondary {
-  border-color: #dfdfdf;
 }
 .border-info {
   border-color: #dfdfdf24;
