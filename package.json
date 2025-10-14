@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js",
-    "start:win": "set NODE_ENV=production && node server.js",
-    "start:unix": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "build": "next build ",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
     "clsx": "^2.1.1",
