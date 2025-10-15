@@ -18,10 +18,13 @@ export function LanguageProvider({ children }) {
    const response = await fetch(`/api/translations/${lang}`);
    if (response.ok) {
     const data = await response.json();
+    console.log('Gelen çeviriler:', data);
     setTranslations(data);
+   } else {
+    console.error('Çeviri yüklenemedi:', response.status);
    }
   } catch (error) {
-   console.error('Error fetching translations:', error);
+   console.error('Çeviri yükleme hatası:', error);
   } finally {
    setLoading(false);
   }
@@ -37,7 +40,10 @@ export function LanguageProvider({ children }) {
 
   for (const k of keys) {
    value = value?.[k];
-   if (value === undefined) return key;
+   if (value === undefined) {
+    console.warn(`Çeviri bulunamadı: ${key}`);
+    return key;
+   }
   }
 
   return value || key;

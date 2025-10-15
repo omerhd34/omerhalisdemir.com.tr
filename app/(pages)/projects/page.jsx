@@ -56,9 +56,9 @@ export default function ProjectsPage() {
  if (loading) return <LoadingScreen language={language} />;
 
  const translations = {
-  title: t('title'),
-  subtitle: t('subtitle'),
-  description: t('description'),
+  title: t('projects.title'),
+  subtitle: t('projects.subtitle'),
+  description: t('projects.description'),
   status: {
    completed: t('status.completed'),
    current: t('status.current'),

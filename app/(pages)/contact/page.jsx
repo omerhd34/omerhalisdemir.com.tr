@@ -56,28 +56,28 @@ export default function ContactPage() {
        }`}
      />
      <Title
-      title={t('title')}
-      subtitle={t('subtitle')}
-      description={t('availability')}
+      title={t('contact.title')}
+      subtitle={t('contact.subtitle')}
+      description={t('contact.availability')}
       isVisible={isVisible}
      />
 
      <div className="grid lg:grid-cols-2 gap-5 lg:gap-16">
       <ContactForm
        translations={{
-        formTitle: t('formTitle'),
-        name: t('name'),
-        email: t('email'),
-        phone: t('phone'),
-        subject: t('subject'),
-        message: t('message'),
-        send: t('send'),
-        sending: t('sending'),
-        namePlaceholder: t('namePlaceholder'),
-        emailPlaceholder: t('emailPlaceholder'),
-        subjectPlaceholder: t('subjectPlaceholder'),
-        messagePlaceholder: t('messagePlaceholder'),
-        phonePlaceholder: t('phonePlaceholder'),
+        formTitle: t('contact.formTitle'),
+        name: t('contact.name'),
+        email: t('contact.email'),
+        phone: t('contact.phone'),
+        subject: t('contact.subject'),
+        message: t('contact.message'),
+        send: t('contact.send'),
+        sending: t('contact.sending'),
+        namePlaceholder: t('contact.namePlaceholder'),
+        emailPlaceholder: t('contact.emailPlaceholder'),
+        subjectPlaceholder: t('contact.subjectPlaceholder'),
+        messagePlaceholder: t('contact.messagePlaceholder'),
+        phonePlaceholder: t('contact.phonePlaceholder'),
        }}
        language={language}
        isVisible={isVisible}
@@ -86,7 +86,7 @@ export default function ContactPage() {
       <div className="flex flex-col gap-5 lg:gap-8">
        <ContactInfoCard
         translations={{
-         contactInfo: t('contactInfo'),
+         contactInfo: t('contact.contactInfo'),
         }}
         language={language}
         isVisible={isVisible}
@@ -95,7 +95,7 @@ export default function ContactPage() {
 
        <SocialLinksCard
         translations={{
-         socialMedia: t('socialMedia'),
+         socialMedia: t('contact.socialMedia'),
         }}
         language={language}
         isVisible={isVisible}

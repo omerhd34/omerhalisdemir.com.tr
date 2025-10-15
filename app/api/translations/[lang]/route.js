@@ -9,9 +9,13 @@ const dbConfig = {
 };
 
 export async function GET(request, { params }) {
+  let connection;
+
   try {
     const { lang } = await params;
-    const connection = await mysql.createConnection(dbConfig);
+
+    connection = await mysql.createConnection(dbConfig);
+
     const [rows] = await connection.execute(
       `SELECT tk.key_path, t.translation_text
        FROM translation t
@@ -23,7 +27,13 @@ export async function GET(request, { params }) {
 
     await connection.end();
 
+    if (!rows || rows.length === 0) {
+      console.log(`${lang} dili için çeviri bulunamadı`);
+      return NextResponse.json({}, { status: 200 });
+    }
+
     const translations = {};
+
     rows.forEach((row) => {
       const keys = row.key_path.split(".");
       let current = translations;
@@ -32,17 +42,32 @@ export async function GET(request, { params }) {
         if (index === keys.length - 1) {
           current[key] = row.translation_text;
         } else {
-          current[key] = current[key] || {};
+          if (typeof current[key] !== "object" || current[key] === null) {
+            current[key] = {};
+          }
           current = current[key];
         }
       });
     });
 
+    console.log(`${lang} için ${rows.length} çeviri yüklendi`);
     return NextResponse.json(translations);
   } catch (error) {
-    console.error("Database error:", error);
+    console.error("Veritabanı hatası:", error);
+
+    if (connection) {
+      try {
+        await connection.end();
+      } catch (closeError) {
+        console.error("Bağlantı kapatma hatası:", closeError);
+      }
+    }
+
     return NextResponse.json(
-      { error: "Failed to fetch translations", details: error.message },
+      {
+        error: "Çeviriler yüklenemedi",
+        details: error.message,
+      },
       { status: 500 }
     );
   }

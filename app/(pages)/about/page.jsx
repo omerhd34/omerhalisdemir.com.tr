@@ -31,12 +31,12 @@ export default function AboutPage() {
  // Personal Info Data
  const personalInfo = [
   {
-   label: t('birthDate'),
+   label: t('about.birthDate'),
    value: `29.03.1998`,
    icon: FaBirthdayCake,
   },
   {
-   label: t('location'),
+   label: t('about.location'),
    value: (
     <span className="flex items-center justify-center gap-2">
      İstanbul, Türkiye
@@ -51,13 +51,13 @@ export default function AboutPage() {
    icon: FaMapMarkerAlt,
   },
   {
-   label: t('education'),
-   value: t('university'),
+   label: t('about.education'),
+   value: t('about.university'),
    icon: FaGraduationCap,
   },
   {
-   label: t('passion'),
-   value: t('passionText'),
+   label: t('about.passion'),
+   value: t('about.passionText'),
    icon: FaCode,
   },
  ];
@@ -82,8 +82,8 @@ export default function AboutPage() {
   return { preview, remaining, hasMore: true };
  };
 
- const journeyText = getTextPreview(t('journeyDescription'), 3);
- const interestsText = getTextPreview(t('interestsDescription'), 3);
+ const journeyText = getTextPreview(t('about.journeyDescription'), 3);
+ const interestsText = getTextPreview(t('about.interestsDescription'), 3);
 
  return (
   <section id="about" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
@@ -98,8 +98,8 @@ export default function AboutPage() {
      />
 
      <Title
-      title={t('title')}
-      subtitle={t('subtitle')}
+      title={t('about.title')}
+      subtitle={t('about.subtitle')}
       isVisible={isVisible}
      />
 
@@ -108,7 +108,7 @@ export default function AboutPage() {
        <JourneyCard
         journeyText={journeyText}
         translations={{
-         journey: t('journey')
+         journey: t('about.journey')
         }}
         language={language}
         isVisible={isVisible}
@@ -117,7 +117,7 @@ export default function AboutPage() {
        <InterestsCard
         interestsText={interestsText}
         translations={{
-         interests: t('interests')
+         interests: t('about.interests')
         }}
         language={language}
         isVisible={isVisible}
@@ -127,7 +127,7 @@ export default function AboutPage() {
       <PersonalInfoCard
        personalInfo={personalInfo}
        translations={{
-        personalInfo: t('personalInfo')
+        personalInfo: t('about.personalInfo')
        }}
        isVisible={isVisible}
       />

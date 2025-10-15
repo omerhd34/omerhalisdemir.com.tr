@@ -24,36 +24,36 @@ export default function ExperiencePage() {
  const experienceData = getExperienceData(language);
 
  const translations = {
-  title: t('title'),
-  subtitle: t('subtitle'),
-  description: t('description'),
+  title: t('experience.title'),
+  subtitle: t('experience.subtitle'),
+  description: t('experience.description'),
   categories: {
    education: {
-    title: t('categories.education.title'),
-    description: t('categories.education.description'),
+    title: t('experience.categories.education.title'),
+    description: t('experience.categories.education.description'),
    },
    internship: {
-    title: t('categories.internship.title'),
-    description: t('categories.internship.description'),
+    title: t('experience.categories.internship.title'),
+    description: t('experience.categories.internship.description'),
    },
    certificates: {
-    title: t('categories.certificates.title'),
-    description: t('categories.certificates.description'),
+    title: t('experience.categories.certificates.title'),
+    description: t('experience.categories.certificates.description'),
    },
   },
   status: {
-   completed: t('status.completed'),
-   current: t('status.current'),
-   upcoming: t('status.upcoming'),
+   completed: t('experience.status.completed'),
+   current: t('experience.status.current'),
+   upcoming: t('experience.status.upcoming'),
   },
-  duration: t('duration'),
-  location: t('location'),
-  gpa: t('gpa'),
-  technologies: t('technologies'),
-  achievements: t('achievements'),
-  details: t('details'),
-  showMore: t('showMore'),
-  showLess: t('showLess'),
+  duration: t('experience.duration'),
+  location: t('experience.location'),
+  gpa: t('experience.gpa'),
+  technologies: t('experience.technologies'),
+  achievements: t('experience.achievements'),
+  details: t('experience.details'),
+  showMore: t('experience.showMore'),
+  showLess: t('experience.showLess'),
  };
 
  const getCategoryStats = (category) => {

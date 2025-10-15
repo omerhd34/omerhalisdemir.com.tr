@@ -45,9 +45,9 @@ export default function SkillsPage() {
  };
 
  const translations = {
-  title: t('title'),
-  subtitle: t('subtitle'),
-  description: t('description'),
+  title: t('skills.title'),
+  subtitle: t('skills.subtitle'),
+  description: t('skills.description'),
   categories: {
    frontend: {
     title: t('categories.frontend.title'),
