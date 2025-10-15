@@ -8,7 +8,6 @@ import {
  FaMapMarkerAlt,
  FaCode,
 } from "react-icons/fa";
-import translations from "../../data/Translations/AboutTranslations";
 import { useLanguage } from "../../context/LanguageContext";
 import Title from "../../../components/extra/Title";
 import "../../styles/about.css";
@@ -17,7 +16,7 @@ import PersonalInfoCard from "../../../components/PageComponents/About/PersonalI
 import JourneyCard from "../../../components/PageComponents/About/JourneyCard";
 
 export default function AboutPage() {
- const { language } = useLanguage();
+ const { language, t, loading } = useLanguage();
  const [isVisible, setIsVisible] = useState(false);
 
  useEffect(() => {
@@ -25,17 +24,26 @@ export default function AboutPage() {
   return () => clearTimeout(timer);
  }, []);
 
- const t = translations[language] || translations.TR;
+ // Loading state
+ if (loading) {
+  return (
+   <section className="min-h-screen flex items-center justify-center">
+    <div className="text-primary text-xl">
+     {language === "TR" ? "Yükleniyor..." : "Loading..."}
+    </div>
+   </section>
+  );
+ }
 
  // Personal Info Data
  const personalInfo = [
   {
-   label: t.birthDate,
+   label: t('birthDate'),
    value: `29.03.1998`,
    icon: FaBirthdayCake,
   },
   {
-   label: t.location,
+   label: t('location'),
    value: (
     <span className="flex items-center justify-center gap-2">
      İstanbul, Türkiye
@@ -50,22 +58,25 @@ export default function AboutPage() {
    icon: FaMapMarkerAlt,
   },
   {
-   label: t.education,
-   value: t.university,
+   label: t('education'),
+   value: t('university'),
    icon: FaGraduationCap,
   },
   {
-   label: t.passion,
-   value: t.passionText,
+   label: t('passion'),
+   value: t('passionText'),
    icon: FaCode,
   },
  ];
 
  // Text preview helper function
  const getTextPreview = (text, maxSentences = 3) => {
+  if (!text) return { preview: '', hasMore: false };
+
   const sentences = text
    .split(". ")
    .filter((sentence) => sentence.trim().length > 0);
+
   if (sentences.length <= maxSentences) {
    return { preview: text, hasMore: false };
   }
@@ -78,8 +89,8 @@ export default function AboutPage() {
   return { preview, remaining, hasMore: true };
  };
 
- const journeyText = getTextPreview(t.journeyDescription, 3);
- const interestsText = getTextPreview(t.interestsDescription, 3);
+ const journeyText = getTextPreview(t('journeyDescription'), 3);
+ const interestsText = getTextPreview(t('interestsDescription'), 3);
 
  return (
   <section id="about" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
@@ -93,36 +104,38 @@ export default function AboutPage() {
        }`}
      />
 
-     {/* Title Component */}
      <Title
-      title={t.title}
-      subtitle={t.subtitle}
+      title={t('title')}
+      subtitle={t('subtitle')}
       isVisible={isVisible}
      />
 
      <div className="max-w-none mx-auto space-y-8">
       <div className="grid md:grid-cols-2 gap-6">
-       {/* Journey Card Component */}
        <JourneyCard
         journeyText={journeyText}
-        translations={t}
+        translations={{
+         journey: t('journey')
+        }}
         language={language}
         isVisible={isVisible}
        />
 
-       {/* Interests Card Component */}
        <InterestsCard
         interestsText={interestsText}
-        translations={t}
+        translations={{
+         interests: t('interests')
+        }}
         language={language}
         isVisible={isVisible}
        />
       </div>
 
-      {/* Personal Info Card Component */}
       <PersonalInfoCard
        personalInfo={personalInfo}
-       translations={t}
+       translations={{
+        personalInfo: t('personalInfo')
+       }}
        isVisible={isVisible}
       />
      </div>

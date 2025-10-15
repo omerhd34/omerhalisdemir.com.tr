@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { FaBriefcase } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
-import translations from "../../data/Translations/ExperienceTranslations";
 import { getExperienceData } from "../../data/data/ExperienceData";
 import CategoryTabs from "../../../components/PageComponents/Experience/CategoryTabs";
 import ExperienceItem from "../../../components/PageComponents/Experience/ExperienceItem";
@@ -10,7 +9,7 @@ import Title from "../../../components/extra/Title";
 import "../../styles/experience.css";
 
 export default function ExperiencePage() {
- const { language } = useLanguage();
+ const { language, t, loading } = useLanguage();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("education");
 
@@ -19,8 +18,50 @@ export default function ExperiencePage() {
   return () => clearTimeout(timer);
  }, []);
 
- const t = translations[language] || translations.TR;
+ if (loading) {
+  return (
+   <section className="min-h-screen flex items-center justify-center">
+    <div className="text-primary text-xl">
+     {language === "TR" ? "Yükleniyor..." : "Loading..."}
+    </div>
+   </section>
+  );
+ }
+
  const experienceData = getExperienceData(language);
+
+ const translations = {
+  title: t('title'),
+  subtitle: t('subtitle'),
+  description: t('description'),
+  categories: {
+   education: {
+    title: t('categories.education.title'),
+    description: t('categories.education.description'),
+   },
+   internship: {
+    title: t('categories.internship.title'),
+    description: t('categories.internship.description'),
+   },
+   certificates: {
+    title: t('categories.certificates.title'),
+    description: t('categories.certificates.description'),
+   },
+  },
+  status: {
+   completed: t('status.completed'),
+   current: t('status.current'),
+   upcoming: t('status.upcoming'),
+  },
+  duration: t('duration'),
+  location: t('location'),
+  gpa: t('gpa'),
+  technologies: t('technologies'),
+  achievements: t('achievements'),
+  details: t('details'),
+  showMore: t('showMore'),
+  showLess: t('showLess'),
+ };
 
  const getCategoryStats = (category) => {
   const items = experienceData[category].items;
@@ -44,15 +85,15 @@ export default function ExperiencePage() {
      />
 
      <Title
-      title={t.title}
-      subtitle={t.subtitle}
-      description={t.description}
+      title={translations.title}
+      subtitle={translations.subtitle}
+      description={translations.description}
       isVisible={isVisible}
      />
 
      <CategoryTabs
       experienceData={experienceData}
-      translations={t}
+      translations={translations}
       activeCategory={activeCategory}
       onCategoryChange={handleCategoryChange}
       getCategoryStats={getCategoryStats}
@@ -65,10 +106,10 @@ export default function ExperiencePage() {
      >
       <div className="text-center mb-8">
        <h3 className="text-2xl font-bold mb-2">
-        {t.categories[activeCategory].title}
+        {translations.categories[activeCategory].title}
        </h3>
        <p className="text-base px-2">
-        {t.categories[activeCategory].description}
+        {translations.categories[activeCategory].description}
        </p>
       </div>
 
@@ -77,7 +118,7 @@ export default function ExperiencePage() {
         <ExperienceItem
          key={item.id}
          item={item}
-         translations={t}
+         translations={translations}
          isVisible={isVisible}
          index={index}
         />

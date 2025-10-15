@@ -1,17 +1,57 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
  const [language, setLanguage] = useState("TR");
+ const [translations, setTranslations] = useState({});
+ const [loading, setLoading] = useState(true);
+
+ useEffect(() => {
+  fetchTranslations(language);
+ }, [language]);
+
+ const fetchTranslations = async (lang) => {
+  setLoading(true);
+  try {
+   const response = await fetch(`/api/translations/${lang}`);
+   if (response.ok) {
+    const data = await response.json();
+    setTranslations(data);
+   }
+  } catch (error) {
+   console.error('Error fetching translations:', error);
+  } finally {
+   setLoading(false);
+  }
+ };
 
  const handleLanguageChange = (newLanguage) => {
   setLanguage(newLanguage);
  };
 
+ // Helper function to get nested translations
+ const t = (key) => {
+  const keys = key.split('.');
+  let value = translations;
+
+  for (const k of keys) {
+   value = value?.[k];
+   if (value === undefined) return key;
+  }
+
+  return value || key;
+ };
+
  return (
-  <LanguageContext.Provider value={{ language, handleLanguageChange }}>
+  <LanguageContext.Provider value={{
+   language,
+   handleLanguageChange,
+   translations,
+   t,
+   loading
+  }}>
    {children}
   </LanguageContext.Provider>
  );

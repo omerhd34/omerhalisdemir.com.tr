@@ -3,14 +3,13 @@ import { useState, useEffect } from "react";
 import { FaCode } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 import skillsData from "../../data/data/SkillsData";
-import translations from "../../data/Translations/SkillsTranslations";
 import CategoryButton from "../../../components/extra/CategoryButton";
 import Title from "../../../components/extra/Title";
 import SkillsContent from "../../../components/PageComponents/Skill/SkillsContent";
 import "../../styles/skills.css";
 
 export default function SkillsPage() {
- const { language } = useLanguage();
+ const { language, t, loading } = useLanguage();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("frontend");
 
@@ -19,7 +18,15 @@ export default function SkillsPage() {
   return () => clearTimeout(timer);
  }, []);
 
- const t = translations[language] || translations.TR;
+ if (loading) {
+  return (
+   <section className="min-h-screen flex items-center justify-center">
+    <div className="text-primary text-xl">
+     {language === "TR" ? "Yükleniyor..." : "Loading..."}
+    </div>
+   </section>
+  );
+ }
 
  const getCategoryStats = (category) => {
   const skills = skillsData[category].skills;
@@ -43,6 +50,40 @@ export default function SkillsPage() {
   setActiveCategory(category);
  };
 
+ const translations = {
+  title: t('title'),
+  subtitle: t('subtitle'),
+  description: t('description'),
+  categories: {
+   frontend: {
+    title: t('categories.frontend.title'),
+    description: t('categories.frontend.description'),
+   },
+   backend: {
+    title: t('categories.backend.title'),
+    description: t('categories.backend.description'),
+   },
+   tools: {
+    title: t('categories.tools.title'),
+    description: t('categories.tools.description'),
+   },
+  },
+  categoryStats: {
+   skills: t('categoryStats.skills'),
+   technologies: t('categoryStats.technologies'),
+   avgLevel: t('categoryStats.avgLevel'),
+   totalExp: t('categoryStats.totalExp'),
+  },
+  levels: {
+   beginner: t('levels.beginner'),
+   intermediate: t('levels.intermediate'),
+   advanced: t('levels.advanced'),
+   expert: t('levels.expert'),
+  },
+  yearsExp: t('yearsExp'),
+  proficiency: t('proficiency'),
+ };
+
  return (
   <section id="skills" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
    <div className="block sm:hidden h-1" />
@@ -56,9 +97,9 @@ export default function SkillsPage() {
      </div>
 
      <Title
-      title={t.title}
-      subtitle={t.subtitle}
-      description={t.description}
+      title={translations.title}
+      subtitle={translations.subtitle}
+      description={translations.description}
       isVisible={isVisible}
      />
 
@@ -72,9 +113,9 @@ export default function SkillsPage() {
         <CategoryButton
          key={key}
          categoryKey={key}
-         title={t.categories[key]?.title || key}
+         title={translations.categories[key]?.title || key}
          count={stats.count}
-         countLabel={t.categoryStats.skills}
+         countLabel={translations.categoryStats.skills}
          icon={data.icon}
          color={data.color}
          isActive={activeCategory === key}
@@ -87,7 +128,7 @@ export default function SkillsPage() {
      <SkillsContent
       activeCategory={activeCategory}
       skillsData={skillsData}
-      translations={t}
+      translations={translations}
       getCategoryStats={getCategoryStats}
       isVisible={isVisible}
      />

@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaCode, FaRocket, FaGraduationCap } from "react-icons/fa";
-import translations from "./data/Translations/HomeTranslations";
 import { useLanguage } from "./context/LanguageContext";
 import ProfileImage from "../components/PageComponents/Home/ProfileImage";
 import MainContent from "../components/PageComponents/Home/MainContent";
@@ -9,7 +8,7 @@ import StatsCard from "../components/PageComponents/Home/StatsCard";
 import "./styles/home.css";
 
 export default function HomePage() {
- const { language } = useLanguage();
+ const { language, t, loading } = useLanguage();
  const [isVisible, setIsVisible] = useState(false);
 
  useEffect(() => {
@@ -17,17 +16,32 @@ export default function HomePage() {
   return () => clearTimeout(timer);
  }, []);
 
- const t = translations[language] || translations.TR;
+ if (loading) {
+  return (
+   <section className="min-h-[80vh] flex items-center justify-center">
+    <div className="text-primary text-xl">
+     {language === "TR" ? "Yükleniyor..." : "Loading..."}
+    </div>
+   </section>
+  );
+ }
 
  const cvUrl =
   language === "EN"
    ? "/pdf/cv-english.pdf#zoom=35"
    : "/pdf/cv.pdf#zoom=35";
 
+ const professionTitles = [
+  t('professionTitles.0') || "Full Stack Geliştirici",
+  t('professionTitles.1') || "Frontend Geliştirici",
+  t('professionTitles.2') || "Backend Geliştirici",
+  t('professionTitles.3') || "Elektrik Elektronik Mühendisi",
+ ];
+
  const stats = [
-  { number: "15+", label: t.stats.skills, icon: FaCode },
-  { number: "4", label: t.stats.experience, icon: FaGraduationCap },
-  { number: "4", label: t.stats.projects, icon: FaRocket },
+  { number: "15+", label: t('stats.skills'), icon: FaCode },
+  { number: "4", label: t('stats.experience'), icon: FaGraduationCap },
+  { number: "4", label: t('stats.projects'), icon: FaRocket },
  ];
 
  return (
@@ -43,12 +57,12 @@ export default function HomePage() {
       >
        <ProfileImage />
        <MainContent
-        name="Ömer Halis DEMİR"
-        professionTitles={t.professionTitles}
-        description={t.shortDescription}
+        name={t('name') || "Ömer Halis DEMİR"}
+        professionTitles={professionTitles}
+        description={t('shortDescription')}
         cvUrl={cvUrl}
-        downloadText={t.downloadCV}
-        viewProjectsText={t.viewProjects}
+        downloadText={t('downloadCV')}
+        viewProjectsText={t('viewProjects')}
        />
        <StatsCard stats={stats} isVisible={isVisible} />
       </div>

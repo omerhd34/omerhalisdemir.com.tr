@@ -2,7 +2,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { FaProjectDiagram } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
-import translations from "../../data/Translations/ProjectTranslations";
 import {
  getProjectsData,
  getCategories,
@@ -14,7 +13,7 @@ import ProjectStats from "../../../components/PageComponents/Project/ProjectStat
 import Title from "../../../components/extra/Title";
 
 export default function ProjectsPage() {
- const { language } = useLanguage();
+ const { language, t, loading } = useLanguage();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("all");
  const [searchTerm] = useState("");
@@ -25,7 +24,6 @@ export default function ProjectsPage() {
   return () => clearTimeout(timer);
  }, []);
 
- const t = translations[language] || translations.TR;
  const projectsData = useMemo(() => getProjectsData(language), [language]);
  const categories = useMemo(() => getCategories(language), [language]);
  const stats = useMemo(() => getProjectStats(projectsData), [projectsData]);
@@ -54,6 +52,27 @@ export default function ProjectsPage() {
   setActiveCategory(category);
  };
 
+ if (loading) {
+  return (
+   <section className="min-h-screen flex items-center justify-center">
+    <div className="text-primary text-xl">
+     {language === "TR" ? "Yükleniyor..." : "Loading..."}
+    </div>
+   </section>
+  );
+ }
+
+ const translations = {
+  title: t('title'),
+  subtitle: t('subtitle'),
+  description: t('description'),
+  status: {
+   completed: t('status.completed'),
+   current: t('status.current'),
+   planned: t('status.planned'),
+  },
+ };
+
  return (
   <section id="projects" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
    <div className="block sm:hidden h-1" />
@@ -65,9 +84,9 @@ export default function ProjectsPage() {
      />
 
      <Title
-      title={t.title}
-      subtitle={t.subtitle}
-      description={t.description}
+      title={translations.title}
+      subtitle={translations.subtitle}
+      description={translations.description}
       isVisible={isVisible}
      />
 
@@ -121,7 +140,7 @@ export default function ProjectsPage() {
          <ProjectCard
           key={project.id}
           project={project}
-          translations={t}
+          translations={translations}
           language={language}
           index={index}
          />
