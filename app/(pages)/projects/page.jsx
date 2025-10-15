@@ -11,6 +11,7 @@ import CategoryButton from "../../../components/extra/CategoryButton";
 import ProjectCard from "../../../components/PageComponents/Project/ProjectCard";
 import ProjectStats from "../../../components/PageComponents/Project/ProjectStats";
 import Title from "../../../components/extra/Title";
+import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ProjectsPage() {
  const { language, t, loading } = useLanguage();
@@ -52,15 +53,7 @@ export default function ProjectsPage() {
   setActiveCategory(category);
  };
 
- if (loading) {
-  return (
-   <section className="min-h-screen flex items-center justify-center">
-    <div className="text-primary text-xl">
-     {language === "TR" ? "Yükleniyor..." : "Loading..."}
-    </div>
-   </section>
-  );
- }
+ if (loading) return <LoadingScreen language={language} />;
 
  const translations = {
   title: t('title'),

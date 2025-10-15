@@ -31,7 +31,6 @@ export function LanguageProvider({ children }) {
   setLanguage(newLanguage);
  };
 
- // Helper function to get nested translations
  const t = (key) => {
   const keys = key.split('.');
   let value = translations;

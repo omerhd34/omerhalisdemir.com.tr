@@ -6,6 +6,7 @@ import ProfileImage from "../components/PageComponents/Home/ProfileImage";
 import MainContent from "../components/PageComponents/Home/MainContent";
 import StatsCard from "../components/PageComponents/Home/StatsCard";
 import "./styles/home.css";
+import LoadingScreen from "../components/extra/LoadingScreen";
 
 export default function HomePage() {
  const { language, t, loading } = useLanguage();
@@ -16,15 +17,7 @@ export default function HomePage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) {
-  return (
-   <section className="min-h-[80vh] flex items-center justify-center">
-    <div className="text-primary text-xl">
-     {language === "TR" ? "Yükleniyor..." : "Loading..."}
-    </div>
-   </section>
-  );
- }
+ if (loading) return <LoadingScreen language={language} />;
 
  const cvUrl =
   language === "EN"

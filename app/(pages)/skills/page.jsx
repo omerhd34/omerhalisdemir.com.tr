@@ -7,6 +7,7 @@ import CategoryButton from "../../../components/extra/CategoryButton";
 import Title from "../../../components/extra/Title";
 import SkillsContent from "../../../components/PageComponents/Skill/SkillsContent";
 import "../../styles/skills.css";
+import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function SkillsPage() {
  const { language, t, loading } = useLanguage();
@@ -18,15 +19,8 @@ export default function SkillsPage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) {
-  return (
-   <section className="min-h-screen flex items-center justify-center">
-    <div className="text-primary text-xl">
-     {language === "TR" ? "Yükleniyor..." : "Loading..."}
-    </div>
-   </section>
-  );
- }
+ if (loading) return <LoadingScreen language={language} />;
+
 
  const getCategoryStats = (category) => {
   const skills = skillsData[category].skills;

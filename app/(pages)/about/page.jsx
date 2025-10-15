@@ -14,6 +14,7 @@ import "../../styles/about.css";
 import InterestsCard from "../../../components/PageComponents/About/InterestsCard";
 import PersonalInfoCard from "../../../components/PageComponents/About/PersonalInfoCard";
 import JourneyCard from "../../../components/PageComponents/About/JourneyCard";
+import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function AboutPage() {
  const { language, t, loading } = useLanguage();
@@ -25,15 +26,7 @@ export default function AboutPage() {
  }, []);
 
  // Loading state
- if (loading) {
-  return (
-   <section className="min-h-screen flex items-center justify-center">
-    <div className="text-primary text-xl">
-     {language === "TR" ? "Yükleniyor..." : "Loading..."}
-    </div>
-   </section>
-  );
- }
+ if (loading) return <LoadingScreen language={language} />;
 
  // Personal Info Data
  const personalInfo = [

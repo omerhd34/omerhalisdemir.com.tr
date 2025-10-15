@@ -9,6 +9,7 @@ import ContactForm from "../../../components/PageComponents/Contact/ContactForm"
 import ContactInfoCard from "../../../components/PageComponents/Contact/ContactInfoCard";
 import SocialLinksCard from "../../../components/PageComponents/Contact/SocialLinksCard";
 import Title from "../../../components/extra/Title";
+import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ContactPage() {
  const { language, t, loading } = useLanguage();
@@ -19,15 +20,8 @@ export default function ContactPage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) {
-  return (
-   <section className="min-h-screen flex items-center justify-center">
-    <div className="text-primary text-xl">
-     {language === "TR" ? "Yükleniyor..." : "Loading..."}
-    </div>
-   </section>
-  );
- }
+ if (loading) return <LoadingScreen language={language} />;
+
 
  // Contact info with translations and flag
  const contactInfoWithTranslations = contactInfo.map((info) => ({

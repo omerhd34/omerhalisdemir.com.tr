@@ -7,6 +7,7 @@ import CategoryTabs from "../../../components/PageComponents/Experience/Category
 import ExperienceItem from "../../../components/PageComponents/Experience/ExperienceItem";
 import Title from "../../../components/extra/Title";
 import "../../styles/experience.css";
+import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ExperiencePage() {
  const { language, t, loading } = useLanguage();
@@ -18,15 +19,7 @@ export default function ExperiencePage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) {
-  return (
-   <section className="min-h-screen flex items-center justify-center">
-    <div className="text-primary text-xl">
-     {language === "TR" ? "Yükleniyor..." : "Loading..."}
-    </div>
-   </section>
-  );
- }
+ if (loading) return <LoadingScreen language={language} />;
 
  const experienceData = getExperienceData(language);
 
