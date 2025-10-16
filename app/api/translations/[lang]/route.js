@@ -1,20 +1,12 @@
 import { NextResponse } from "next/server";
-import mysql from "mysql2/promise";
-
-const dbConfig = {
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME || "translations",
-};
+import { getConnection, closeConnection } from "../../../lib/db.js";
 
 export async function GET(request, { params }) {
   let connection;
 
   try {
     const { lang } = await params;
-
-    connection = await mysql.createConnection(dbConfig);
+    connection = await getConnection();
 
     const [rows] = await connection.execute(
       `SELECT tk.key_path, t.translation_text
@@ -24,8 +16,6 @@ export async function GET(request, { params }) {
        WHERE l.code = ?`,
       [lang.toUpperCase()]
     );
-
-    await connection.end();
 
     if (!rows || rows.length === 0) {
       console.log(`${lang} dili için çeviri bulunamadı`);
@@ -54,15 +44,6 @@ export async function GET(request, { params }) {
     return NextResponse.json(translations);
   } catch (error) {
     console.error("Veritabanı hatası:", error);
-
-    if (connection) {
-      try {
-        await connection.end();
-      } catch (closeError) {
-        console.error("Bağlantı kapatma hatası:", closeError);
-      }
-    }
-
     return NextResponse.json(
       {
         error: "Çeviriler yüklenemedi",
@@ -70,5 +51,7 @@ export async function GET(request, { params }) {
       },
       { status: 500 }
     );
+  } finally {
+    await closeConnection(connection);
   }
 }
