@@ -1,6 +1,7 @@
 import "./styles/globals.css";
 import ScrollToTop from "../components/extra/ScrollToTop";
 import { LanguageProvider } from "./context/LanguageContext";
+import { DataProvider } from "./context/DataContext";
 import LayoutContent from "./LayoutContent.jsx";
 
 export const metadata = {
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
    <body>
     <ScrollToTop />
     <LanguageProvider>
-     <LayoutContent>{children}</LayoutContent>
+     <DataProvider>
+      <LayoutContent>{children}</LayoutContent>
+     </DataProvider>
     </LanguageProvider>
    </body>
   </html>

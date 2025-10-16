@@ -35,15 +35,18 @@ export default function HomePage() {
   t('home.professionTitles.3') || "Elektrik Elektronik Mühendisi",
  ];
 
- // Calculate total skills from all categories
- const totalSkills = Object.values(skills).reduce((acc, category) => {
-  return acc + category.skills.length;
+ // Calculate total skills from all categories with null safety
+ const totalSkills = Object.values(skills || {}).reduce((acc, category) => {
+  if (category && Array.isArray(category.skills)) {
+   return acc + category.skills.length;
+  }
+  return acc;
  }, 0);
 
  const stats = [
-  { number: `${totalSkills}+`, label: t('home.stats.skills'), icon: FaCode },
-  { number: "4", label: t('home.stats.experience'), icon: FaGraduationCap },
-  { number: `${projects.length}`, label: t('home.stats.projects'), icon: FaRocket },
+  { number: `${totalSkills}+`, label: t('home.stats.skills') || 'Yetenekler', icon: FaCode },
+  { number: "4", label: t('home.stats.experience') || 'Yıl Deneyim', icon: FaGraduationCap },
+  { number: `${projects?.length || 0}`, label: t('home.stats.projects') || 'Projeler', icon: FaRocket },
  ];
 
  return (
@@ -63,8 +66,8 @@ export default function HomePage() {
         professionTitles={professionTitles}
         description={t('home.shortDescription')}
         cvUrl={cvUrl}
-        downloadText={t('home.downloadCV')}
-        viewProjectsText={t('home.viewProjects')}
+        downloadText={t('home.downloadCV') || 'CV İndir'}
+        viewProjectsText={t('home.viewProjects') || 'Projeleri Gör'}
        />
        <StatsCard stats={stats} isVisible={isVisible} />
       </div>

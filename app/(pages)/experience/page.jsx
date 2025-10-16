@@ -46,40 +46,40 @@ export default function ExperiencePage() {
  }, {});
 
  const translations = {
-  title: t('experience.title'),
-  subtitle: t('experience.subtitle'),
-  description: t('experience.description'),
+  title: t('experience.title') || 'Deneyim',
+  subtitle: t('experience.subtitle') || 'Eğitim & Deneyim',
+  description: t('experience.description') || 'Eğitim ve profesyonel deneyimlerim',
   categories: {
    education: {
-    title: t('experience.categories.education.title'),
-    description: t('experience.categories.education.description'),
+    title: t('experience.categories.education.title') || 'Eğitim',
+    description: t('experience.categories.education.description') || 'Eğitim geçmişim',
    },
    internship: {
-    title: t('experience.categories.internship.title'),
-    description: t('experience.categories.internship.description'),
+    title: t('experience.categories.internship.title') || 'Staj',
+    description: t('experience.categories.internship.description') || 'Staj deneyimlerim',
    },
    certificates: {
-    title: t('experience.categories.certificates.title'),
-    description: t('experience.categories.certificates.description'),
+    title: t('experience.categories.certificates.title') || 'Sertifikalar',
+    description: t('experience.categories.certificates.description') || 'Aldığım sertifikalar',
    },
   },
   status: {
-   completed: t('experience.status.completed'),
-   current: t('experience.status.current'),
-   upcoming: t('experience.status.upcoming'),
+   completed: t('experience.status.completed') || 'Tamamlandı',
+   current: t('experience.status.current') || 'Devam Ediyor',
+   upcoming: t('experience.status.upcoming') || 'Yakında',
   },
-  duration: t('experience.duration'),
-  location: t('experience.location'),
-  gpa: t('experience.gpa'),
-  technologies: t('experience.technologies'),
-  achievements: t('experience.achievements'),
-  details: t('experience.details'),
-  showMore: t('experience.showMore'),
-  showLess: t('experience.showLess'),
+  duration: t('experience.duration') || 'Süre',
+  location: t('experience.location') || 'Konum',
+  gpa: t('experience.gpa') || 'Not Ortalaması',
+  technologies: t('experience.technologies') || 'Teknolojiler',
+  achievements: t('experience.achievements') || 'Başarılar',
+  details: t('experience.details') || 'Detaylar',
+  showMore: t('experience.showMore') || 'Daha Fazla',
+  showLess: t('experience.showLess') || 'Daha Az',
  };
 
  const getCategoryStats = (category) => {
-  const items = experienceData[category].items;
+  const items = experienceData[category]?.items || [];
   const completed = items.filter((item) => item.status === "completed").length;
   const current = items.filter((item) => item.status === "current").length;
   return { total: items.length, completed, current };
@@ -121,15 +121,15 @@ export default function ExperiencePage() {
      >
       <div className="text-center mb-8">
        <h3 className="text-2xl font-bold mb-2">
-        {translations.categories[activeCategory].title}
+        {translations.categories[activeCategory]?.title || activeCategory}
        </h3>
        <p className="text-base px-2">
-        {translations.categories[activeCategory].description}
+        {translations.categories[activeCategory]?.description || ''}
        </p>
       </div>
 
       <div className="space-y-6">
-       {experienceData[activeCategory].items.map((item, index) => (
+       {(experienceData[activeCategory]?.items || []).map((item, index) => (
         <ExperienceItem
          key={item.id}
          item={item}

@@ -20,9 +20,11 @@ export default function CategoryButton({
     } ${className}`}
   >
    <div className="flex items-center space-x-2 xs:space-x-3">
-    <Icon className="w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5" />
+    {Icon && <Icon className="w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5" />}
     <div className="text-left">
-     <div className="font-semibold text-sm sm:text-base lg:text-lg">{title}</div>
+     <div className="font-semibold text-sm sm:text-base lg:text-lg">
+      {title}
+     </div>
      <div className="text-[14px] sm:text-sm opacity-80">
       {count} {countLabel}
      </div>

@@ -8,8 +8,17 @@ export async function GET() {
     connection = await getConnection();
 
     const [rows] = await connection.execute(
-      `SELECT * FROM skills ORDER BY category, display_order, id`
+      `SELECT * FROM skills ORDER BY 
+       CASE WHEN display_order IS NOT NULL THEN display_order ELSE id END, 
+       id`
     );
+
+    console.log("Skills API - Fetched rows:", rows.length);
+
+    if (rows.length === 0) {
+      console.warn("Skills API - No data found");
+      return NextResponse.json({});
+    }
 
     const groupedSkills = rows.reduce((acc, skill) => {
       if (!acc[skill.category]) {
@@ -30,9 +39,19 @@ export async function GET() {
       return acc;
     }, {});
 
+    console.log("Skills API - Grouped skills:", Object.keys(groupedSkills));
+    console.log(
+      "Skills API - Sample skill:",
+      JSON.stringify(
+        groupedSkills[Object.keys(groupedSkills)[0]]?.skills[0],
+        null,
+        2
+      )
+    );
+
     return NextResponse.json(groupedSkills);
   } catch (error) {
-    console.error("Veritabanı hatası:", error);
+    console.error("Skills API - Veritabanı hatası:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",

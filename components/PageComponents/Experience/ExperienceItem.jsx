@@ -1,3 +1,7 @@
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
  FaGraduationCap,
  FaUniversity,
@@ -47,6 +51,8 @@ import {
  SiTailwindcss,
  SiExpress,
  SiMysql,
+ SiArduino,
+ SiCplusplus,
 } from "react-icons/si";
 
 // Icon mapping object
@@ -92,6 +98,8 @@ const iconMap = {
  SiTailwindcss,
  SiExpress,
  SiMysql,
+ SiArduino,
+ SiCplusplus,
 };
 
 export default function ExperienceItem({ item, translations, isVisible, index }) {
@@ -126,7 +134,7 @@ export default function ExperienceItem({ item, translations, isVisible, index })
     <div className="p-5 sm:p-6">
      <div className="flex items-start space-x-5 sm:space-x-4">
       <div className={`flex-shrink-0 p-3 rounded-full bg-muted ${item.color} float-animation`}>
-       <Icon className="w-5 h-5 sm:h-6 sm:w-6" />
+       {Icon && <Icon className="w-5 h-5 sm:h-6 sm:w-6" />}
       </div>
 
       <div className="flex-1 min-w-0">
@@ -183,15 +191,18 @@ export default function ExperienceItem({ item, translations, isVisible, index })
         {item.description}
        </p>
 
-       {item.technologies && (
+       {item.technologies && item.technologies.length > 0 && (
         <div
          className={`flex flex-wrap gap-2 mb-4 ${!isMobileExpanded ? "hidden sm:flex" : ""}`}
         >
-         {item.technologies.map((TechIcon, techIndex) => (
-          <div key={techIndex} className="p-2 bg-muted rounded-lg">
-           <TechIcon className="h-4 w-4 sm:w-5 sm:h-5" />
-          </div>
-         ))}
+         {item.technologies.map((techIconName, techIndex) => {
+          const TechIcon = iconMap[techIconName];
+          return (
+           <div key={techIndex} className="p-2 bg-muted rounded-lg">
+            {TechIcon && <TechIcon className="h-4 w-4 sm:w-5 sm:h-5" />}
+           </div>
+          );
+         })}
         </div>
        )}
 

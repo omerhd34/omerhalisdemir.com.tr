@@ -8,15 +8,17 @@ export default function SkillsContent({
  getCategoryStats,
  isVisible,
 }) {
- const skills = skillsData[activeCategory].skills;
+ // Null safety kontrolü
+ const skills = skillsData[activeCategory]?.skills || [];
 
  const getAverageProficiency = () => {
-  const total = skills.reduce((sum, skill) => sum + skill.percentage, 0);
+  if (!skills.length) return 0;
+  const total = skills.reduce((sum, skill) => sum + (skill.percentage || 0), 0);
   return Math.round(total / skills.length);
  };
 
  const getTotalExperience = () => {
-  const total = skills.reduce((sum, skill) => sum + parseInt(skill.experience), 0);
+  const total = skills.reduce((sum, skill) => sum + parseInt(skill.experience || 0), 0);
   return total;
  };
 
@@ -72,6 +74,7 @@ export default function SkillsContent({
     </div>
    </div>
 
+   {/* Mobile View */}
    <div className="block sm:hidden">
     <div className="grid grid-cols-2 gap-3">
      {skills.map((skill, index) => (
@@ -86,6 +89,7 @@ export default function SkillsContent({
     </div>
    </div>
 
+   {/* Desktop View */}
    <div className="hidden sm:block">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
      {skills.map((skill, index) => (

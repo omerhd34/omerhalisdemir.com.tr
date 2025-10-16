@@ -46,15 +46,17 @@ export default function SkillsPage() {
  }, {});
 
  const getCategoryStats = (category) => {
-  const categorySkills = skills[category].skills;
+  const categorySkills = skills[category]?.skills || [];
   const totalExp = categorySkills.reduce(
-   (acc, skill) => acc + parseInt(skill.experience),
+   (acc, skill) => acc + parseInt(skill.experience || 0),
    0
   );
 
-  const avgProficiency = Math.round(
-   categorySkills.reduce((sum, skill) => sum + skill.percentage, 0) / categorySkills.length
-  );
+  const avgProficiency = categorySkills.length > 0
+   ? Math.round(
+    categorySkills.reduce((sum, skill) => sum + (skill.percentage || 0), 0) / categorySkills.length
+   )
+   : 0;
 
   return {
    totalExp,
@@ -68,37 +70,37 @@ export default function SkillsPage() {
  };
 
  const translations = {
-  title: t('skills.title'),
-  subtitle: t('skills.subtitle'),
-  description: t('skills.description'),
+  title: t('skills.title') || 'Yetenekler',
+  subtitle: t('skills.subtitle') || 'Teknik Beceriler',
+  description: t('skills.description') || 'Kullandığım teknolojiler ve yetkinlik seviyelerim',
   categories: {
    frontend: {
-    title: t('categories.frontend.title'),
-    description: t('categories.frontend.description'),
+    title: t('categories.frontend.title') || 'Frontend',
+    description: t('categories.frontend.description') || 'Frontend teknolojileri',
    },
    backend: {
-    title: t('categories.backend.title'),
-    description: t('categories.backend.description'),
+    title: t('categories.backend.title') || 'Backend',
+    description: t('categories.backend.description') || 'Backend teknolojileri',
    },
    tools: {
-    title: t('categories.tools.title'),
-    description: t('categories.tools.description'),
+    title: t('categories.tools.title') || 'Araçlar',
+    description: t('categories.tools.description') || 'Geliştirme araçları',
    },
   },
   categoryStats: {
-   skills: t('categoryStats.skills'),
-   technologies: t('categoryStats.technologies'),
-   avgLevel: t('categoryStats.avgLevel'),
-   totalExp: t('categoryStats.totalExp'),
+   skills: t('categoryStats.skills') || 'Yetenek',
+   technologies: t('categoryStats.technologies') || 'Teknoloji',
+   avgLevel: t('categoryStats.avgLevel') || 'Ortalama Seviye',
+   totalExp: t('categoryStats.totalExp') || 'Toplam Deneyim',
   },
   levels: {
-   beginner: t('levels.beginner'),
-   intermediate: t('levels.intermediate'),
-   advanced: t('levels.advanced'),
-   expert: t('levels.expert'),
+   beginner: t('levels.beginner') || 'Başlangıç',
+   intermediate: t('levels.intermediate') || 'Orta',
+   advanced: t('levels.advanced') || 'İleri',
+   expert: t('levels.expert') || 'Uzman',
   },
-  yearsExp: t('yearsExp'),
-  proficiency: t('proficiency'),
+  yearsExp: t('yearsExp') || 'Yıl Deneyim',
+  proficiency: t('proficiency') || 'Yetkinlik',
  };
 
  return (
