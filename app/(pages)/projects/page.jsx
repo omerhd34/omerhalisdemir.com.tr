@@ -6,7 +6,7 @@ import {
  getProjectsData,
  getCategories,
  getProjectStats,
-} from "../../data/data/projectsData";
+} from "../../data/projectsData";
 import CategoryButton from "../../../components/extra/CategoryButton";
 import ProjectCard from "../../../components/PageComponents/Project/ProjectCard";
 import ProjectStats from "../../../components/PageComponents/Project/ProjectStats";

@@ -4,7 +4,7 @@ import { FaEnvelope } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
 import { Toaster } from "react-hot-toast";
 import { useLanguage } from "../../context/LanguageContext";
-import { contactInfo, socialLinks } from "../../data/data/ContactData";
+import { contactInfo, socialLinks } from "../../data/ContactData";
 import ContactForm from "../../../components/PageComponents/Contact/ContactForm";
 import ContactInfoCard from "../../../components/PageComponents/Contact/ContactInfoCard";
 import SocialLinksCard from "../../../components/PageComponents/Contact/SocialLinksCard";

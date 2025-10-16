@@ -17,6 +17,7 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiMongodb,
+  SiMysql,
 } from "react-icons/si";
 
 const skillsData = {
@@ -103,15 +104,7 @@ const skillsData = {
         color: "text-red-500",
       },
       {
-        name: "Node.js",
-        icon: FaNodeJs,
-        experience: "2",
-        level: "intermediate",
-        percentage: 50,
-        color: "text-green-500",
-      },
-      {
-        name: "Express.js",
+        name: "Node.js & Express.js",
         icon: FaNodeJs,
         experience: "2",
         level: "intermediate",
@@ -124,6 +117,14 @@ const skillsData = {
         experience: "2",
         level: "intermediate",
         percentage: 50,
+        color: "text-green-400",
+      },
+      {
+        name: "MySQL",
+        icon: SiMysql,
+        experience: "2",
+        level: "intermediate",
+        percentage: 60,
         color: "text-green-400",
       },
     ],

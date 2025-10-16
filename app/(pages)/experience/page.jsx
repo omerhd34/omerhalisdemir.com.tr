@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { FaBriefcase } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
-import { getExperienceData } from "../../data/data/ExperienceData";
+import { getExperienceData } from "../../data/ExperienceData";
 import CategoryTabs from "../../../components/PageComponents/Experience/CategoryTabs";
 import ExperienceItem from "../../../components/PageComponents/Experience/ExperienceItem";
 import Title from "../../../components/extra/Title";
