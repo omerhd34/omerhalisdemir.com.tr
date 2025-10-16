@@ -3,10 +3,12 @@ import {
   SiNextdotjs,
   SiTailwindcss,
   SiNodedotjs,
+  SiExpress,
   SiArduino,
   SiCplusplus,
   SiMongodb,
   SiJavascript,
+  SiMysql,
 } from "react-icons/si";
 import {
   FaLayerGroup,
@@ -15,6 +17,7 @@ import {
   FaMicrochip,
   FaTools,
   FaGithub,
+  FaGit,
 } from "react-icons/fa";
 
 export const getCategories = (language) => ({
@@ -59,8 +62,10 @@ export const getProjectsData = (language) => [
       SiJavascript,
       SiTailwindcss,
       SiNodedotjs,
-      SiMongodb,
+      SiExpress,
+      SiMysql,
       FaGithub,
+      FaGit,
     ],
     features: [
       language === "TR"
@@ -111,6 +116,7 @@ export const getProjectsData = (language) => [
       SiNodedotjs,
       SiMongodb,
       FaGithub,
+      FaGit,
     ],
     features: [
       language === "TR" ? "Responsive tasarım" : "Responsive design",

@@ -14,6 +14,7 @@ import {
  FaRocket,
  FaChartLine,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default function ProjectCard({ project, translations, language, index }) {
  const [isExpanded, setIsExpanded] = useState(false);
@@ -96,7 +97,7 @@ export default function ProjectCard({ project, translations, language, index }) 
       {/* Action Buttons - Desktop */}
       <div className="hidden sm:flex flex-wrap gap-2 xs:gap-3 sm:gap-4 mb-3 xs:mb-4">
        {project.liveUrl && (
-        <a
+        <Link
          href={project.liveUrl}
          target="_blank"
          rel="noopener noreferrer"
@@ -105,11 +106,11 @@ export default function ProjectCard({ project, translations, language, index }) 
          <FaEye className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-cyan-300" />
          {language === "TR" ? "Canlı Demo" : "Live Demo"}
          <FaExternalLinkAlt className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-        </a>
+        </Link>
        )}
 
        {project.githubUrl && (
-        <a
+        <Link
          href={project.githubUrl}
          target="_blank"
          rel="noopener noreferrer"
@@ -118,7 +119,7 @@ export default function ProjectCard({ project, translations, language, index }) 
          <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-gray-300" />
          {language === "TR" ? "Kaynak Kod" : "Source Code"}
          <FaArrowRight className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-        </a>
+        </Link>
        )}
       </div>
 
@@ -174,7 +175,7 @@ export default function ProjectCard({ project, translations, language, index }) 
 
         <div className="flex flex-wrap gap-2 xs:gap-3">
          {project.liveUrl && (
-          <a
+          <Link
            href={project.liveUrl}
            target="_blank"
            rel="noopener noreferrer"
@@ -183,11 +184,11 @@ export default function ProjectCard({ project, translations, language, index }) 
            <FaEye className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-cyan-300" />
            {language === "TR" ? "Canlı Demo" : "Live Demo"}
            <FaExternalLinkAlt className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2" />
-          </a>
+          </Link>
          )}
 
          {project.githubUrl && (
-          <a
+          <Link
            href={project.githubUrl}
            target="_blank"
            rel="noopener noreferrer"
@@ -196,7 +197,7 @@ export default function ProjectCard({ project, translations, language, index }) 
            <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-gray-300" />
            {language === "TR" ? "Kaynak Kod" : "Source Code"}
            <FaArrowRight className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2" />
-          </a>
+          </Link>
          )}
         </div>
        </div>
@@ -279,10 +280,10 @@ export default function ProjectCard({ project, translations, language, index }) 
         </div>
 
         {project.id === "custom-arduino-uno" && (
-         <div className="text-center pt-10 border-t border-info my-8">
-          <div className="relative inline-block group max-w-6xl mx-auto">
-           <div className="absolute -inset-4 bg-gradient-to-r from-cyan-300 via-purple-200 to-cyan-300 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-all duration-700"></div>
-           <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6 sm:p-8 lg:p-12 rounded-2xl shadow-2xl">
+         <div className="text-center pt-6 border-t border-info my-6">
+          <div className="relative inline-block group max-w-4xl mx-auto">
+           <div className="absolute -inset-3 bg-gradient-to-r from-cyan-300 via-purple-200 to-cyan-300 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-700"></div>
+           <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl">
             <Image
              src="/images/1.png"
              alt={
@@ -290,11 +291,11 @@ export default function ProjectCard({ project, translations, language, index }) 
                ? "Arduino Uno Özel Tasarım PCB Kartı"
                : "Custom Arduino Uno PCB Board Design"
              }
-             width={1600}
-             height={800}
-             quality={100}
+             width={1200}
+             height={600}
+             quality={95}
              priority={true}
-             className="w-full h-auto rounded-xl transition-all duration-700 ease-out transform group-hover:scale-[1.02] drop-shadow-2xl"
+             className="w-full h-auto rounded-lg transition-all duration-700 ease-out transform group-hover:scale-[1.02] drop-shadow-2xl"
             />
            </div>
           </div>

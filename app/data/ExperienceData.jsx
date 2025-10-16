@@ -42,6 +42,7 @@ import {
  SiTypescript,
  SiTailwindcss,
  SiExpress,
+ SiMysql,
 } from "react-icons/si";
 
 const ixirhost = "/images/ixirhost.png";
@@ -75,8 +76,8 @@ export const getExperienceData = (language = "TR") => ({
     location: "İstanbul, Türkiye",
     description:
      language === "TR"
-      ? "Sayısal ağırlıklı bir eğitim programı sürecinden geçtim ve özellikle matematik ile fen bilimleri alanlarında yüksek başarı gösterdim. Analitik düşünme becerilerimi geliştiren bu süreç, problem çözme yeteneğimi ve akademik disiplinimi pekiştirdi. Eğitim hayatım boyunca sayısal alanlarda gösterdiğim tutarlılık ve güçlü performans, temel bilimsel bilgi birikimimi sağlamlaştırdı."
-      : "I completed a science-oriented education program with a strong focus on mathematics and natural sciences. Throughout this period, I demonstrated high academic performance, especially in analytical and problem-solving areas. This background not only enhanced my scientific knowledge but also strengthened my ability to think critically and approach challenges with discipline and precision.",
+      ? "Sayısal ağırlıklı eğitim programında matematik, fizik ve kimya alanlarında güçlü bir temel edindim. Analitik düşünme ve problem çözme becerilerimi geliştiren bu süreç, yazılım dünyasına olan ilgimi ateşledi ve akademik disiplinimi şekillendirdi. Bilimsel yaklaşım ve mantıksal düşünme yeteneğim, bugünkü kariyerimin temel taşlarını oluşturdu."
+      : "I built a strong foundation in mathematics, physics, and chemistry through a science-focused curriculum. This period shaped my analytical thinking and problem-solving skills, igniting my passion for software development and establishing my academic discipline. The logical reasoning abilities and scientific approach I gained during this time formed the cornerstone of my current career.",
     technologies: [FaCalculator, FaFlask, FaAtom, FaGraduationCap, FaSchool, FaBrain],
     icon: FaSchool,
     color: "text-green-500",
@@ -93,8 +94,8 @@ export const getExperienceData = (language = "TR") => ({
     location: "İstanbul, Türkiye",
     description:
      language === "TR"
-      ? "İngilizce hazırlık eğitimimi başarıyla tamamladım ve B1 seviyesinde İngilizce yeterliliği kazandım. Bu seviyede günlük konuşmaları anlayabiliyor, temel teknik dokümanları okuyabiliyor ve kendimi yazılı ve sözlü olarak ifade edebiliyorum."
-      : "I successfully completed my English preparatory education and achieved a B1 level of English proficiency. At this level, I can understand daily conversations, read basic technical documents, and express myself both in writing and speaking.",
+      ? "İngilizce hazırlık programını başarıyla tamamlayarak B1+ seviyesinde yetkinlik kazandım. Bu süreçte sadece dil becerilerimi geliştirmekle kalmadım, aynı zamanda uluslararası kaynaklara erişim ve global teknoloji topluluğuyla etkileşim kurma yeteneğimi güçlendirdim. Teknik dokümantasyon okuma ve yazılım geliştirme alanında İngilizce içeriklerle çalışabilme becerim bu dönemde olgunlaştı."
+      : "I successfully completed the English preparatory program and achieved B1+ proficiency. This experience not only enhanced my language skills but also opened doors to the global technology community. My ability to read technical documentation, learn from international resources, and communicate with software communities was developed during this period.",
     technologies: [FaLanguage, FaBookOpen, FaGlobe],
     icon: FaBookOpen,
     color: "text-orange-500",
@@ -109,14 +110,14 @@ export const getExperienceData = (language = "TR") => ({
      language === "TR"
       ? "İstanbul Ticaret Üniversitesi"
       : "Istanbul Commerce University",
-    period: "2019-2025",
+    period: "2019-2024",
     status: "completed",
     location: "İstanbul, Türkiye",
     gpa: "2.5/4.0",
     description:
      language === "TR"
-      ? "Elektrik Elektronik Mühendisliği lisans eğitimim boyunca, elektrik devreleri, sinyal işleme, mikrodenetleyiciler, kontrol sistemleri ve güç elektroniği gibi temel alanlarda sağlam bir teorik altyapı kazandım. AutoCAD ve Autodesk Eagle ile teknik çizimler yapma becerisi edindim; Proteus ve Arduino IDE gibi platformlar üzerinde devre simülasyonları gerçekleştirdim. Özellikle PCB tasarımı ve gömülü sistemler üzerinde yoğunlaşarak hem yazılım hem donanım alanında kendimi geliştirdim. Bu süreçte, mühendislik problemlerine çözüm üretme, proje geliştirme ve teknik dokümantasyon hazırlama konularında da deneyim sahibi oldum."
-      : "During my undergraduate studies in Electrical and Electronics Engineering, I built a solid theoretical foundation in key areas such as electric circuits, signal processing, microcontrollers, control systems, and power electronics. I gained practical skills in technical drawing using AutoCAD and Autodesk Eagle, and carried out circuit simulations with tools like Proteus and Arduino IDE. I focused particularly on PCB design and embedded systems, improving both my hardware and software abilities. Throughout this journey, I also developed strong problem-solving skills, project development experience, and the ability to create comprehensive technical documentation.",
+      ? "Elektrik Elektronik Mühendisliği lisans eğitimim boyunca, elektrik devreleri, sinyal işleme, mikrodenetleyiciler, kontrol sistemleri ve güç elektroniği gibi temel alanlarda sağlam bir teorik altyapı kazandım. AutoCAD ve Autodesk Eagle ile teknik çizim ve PCB tasarımı yapma becerisi edindim. Proteus ve Arduino IDE gibi platformlarda devre simülasyonları gerçekleştirerek, teorik bilgiyi pratiğe dönüştürme yeteneğimi geliştirdim. Özellikle PCB tasarımı ve gömülü sistemler üzerine yoğunlaşarak, hem yazılım hem donanım alanında kendimi geliştirdim. Bu süreçte mühendislik problemlerine çözüm üretme, proje yönetimi ve teknik dokümantasyon hazırlama konularında deneyim kazandım. Edindiğim analitik düşünme ve problem çözme becerileri, yazılım geliştirme kariyerime güçlü bir temel oluşturdu."
+      : "Throughout my Electrical and Electronics Engineering degree, I built a solid theoretical foundation in core areas such as electrical circuits, signal processing, microcontrollers, control systems, and power electronics. I gained expertise in technical drawing and PCB design using AutoCAD and Autodesk Eagle, and performed circuit simulations on platforms like Proteus and Arduino IDE, developing my ability to transform theoretical knowledge into practice. Focusing particularly on PCB design and embedded systems, I developed skills in both software and hardware domains. During this period, I gained experience in engineering problem-solving, project management, and technical documentation preparation. The analytical thinking and problem-solving abilities I acquired formed a strong foundation for my software development career.",
     technologies: [SiAutodesk, FaMicrochip, FaDraftingCompass, FaCubes],
     icon: FaUniversity,
     color: "text-blue-500",
@@ -136,8 +137,8 @@ export const getExperienceData = (language = "TR") => ({
     location: "Online",
     description:
      language === "TR"
-      ? "İnternet üzerinden çeşitli platformlarda freelance Full Stack Developer olarak çalışıyorum. Bu çalışma biçimi bana hem teknik becerilerimi geliştirme hem de farklı sektörlerden projelerle tanışma fırsatı sunuyor. Freelance dünyasında çalışmak, sürekli yeni zorluklarla karşılaşmak demek. Her proje farklı bir ihtiyaç, farklı bir teknoloji yığını ve farklı bir problem çözme yaklaşımı gerektiriyor. Bu çeşitlilik, beni hem teknik hem de kişisel olarak sürekli gelişmeye itiyor. Frontend tarafında React, Next.js ve modern CSS teknolojileriyle kullanıcı dostu, responsive ve performanslı arayüzler tasarlıyorum. Backend tarafında ise Node.js, Express.js ve MongoDB kullanarak güvenilir API'ler geliştiriyorum. Freelance çalışmanın en değerli tarafı, farklı müşterilerle çalışırken kazandığım deneyim. Her proje, yeni bir öğrenme fırsatı ve portföyüme eklediğim bir başarı hikayesi. Zaman yönetimi, müşteri iletişimi ve problem çözme becerilerimin yanı sıra, teknik yetkinliklerimi de sürekli keskinleştiriyorum. Bu yolculukta en çok keyif aldığım şey, bir fikrin dijital bir ürüne dönüşmesine katkı sağlamak ve müşterilerimin hedeflerine ulaşmalarına yardımcı olmak. Her başarılı proje, bir sonraki için beni daha da motive ediyor."
-      : "I work as a freelance Full Stack Developer on various platforms across the internet. This way of working offers me the opportunity to both develop my technical skills and engage with projects from different industries. Working in the freelance world means constantly facing new challenges. Each project requires a different need, a different technology stack, and a different problem-solving approach. This diversity pushes me to grow continuously, both technically and personally. On the frontend side, I design user-friendly, responsive, and performant interfaces using React, Next.js, and modern CSS technologies. On the backend side, I develop reliable APIs using Node.js, Express.js, and MongoDB. The most valuable aspect of freelancing is the experience I gain while working with different clients. Each project is a new learning opportunity and a success story I add to my portfolio. Alongside time management, client communication, and problem-solving skills, I'm constantly sharpening my technical competencies as well. What I enjoy most about this journey is contributing to the transformation of an idea into a digital product and helping my clients achieve their goals. Every successful project motivates me even more for the next one.",
+      ? "İnternet üzerinden çeşitli platformlarda freelance Full Stack Developer olarak çalışıyorum. Bu çalışma biçimi bana hem teknik becerilerimi geliştirme hem de farklı sektörlerden projelerle tanışma fırsatı sunuyor. Freelance dünyasında çalışmak, sürekli yeni zorluklarla karşılaşmak demek. Her proje farklı bir ihtiyaç, farklı bir teknoloji yığını ve farklı bir problem çözme yaklaşımı gerektiriyor. Bu çeşitlilik, beni hem teknik hem de kişisel olarak sürekli gelişmeye itiyor. Frontend tarafında React, Next.js ve modern CSS teknolojileriyle kullanıcı dostu, responsive ve performanslı arayüzler tasarlıyorum. Backend tarafında ise Node.js, Express.js, MongoDB ve MySQL kullanarak güvenilir API'ler geliştiriyorum. Freelance çalışmanın en değerli tarafı, farklı müşterilerle çalışırken kazandığım deneyim. Her proje, yeni bir öğrenme fırsatı ve portföyüme eklediğim bir başarı hikayesi. Zaman yönetimi, müşteri iletişimi ve problem çözme becerilerimin yanı sıra, teknik yetkinliklerimi de sürekli keskinleştiriyorum. Bu yolculukta en çok keyif aldığım şey, bir fikrin dijital bir ürüne dönüşmesine katkı sağlamak ve müşterilerimin hedeflerine ulaşmalarına yardımcı olmak. Her başarılı proje, bir sonraki için beni daha da motive ediyor."
+      : "I work as a freelance Full Stack Developer on various platforms across the internet. This way of working offers me the opportunity to both develop my technical skills and engage with projects from different industries. Working in the freelance world means constantly facing new challenges. Each project requires a different need, a different technology stack, and a different problem-solving approach. This diversity pushes me to grow continuously, both technically and personally. On the frontend side, I design user-friendly, responsive, and performant interfaces using React, Next.js, and modern CSS technologies. On the backend side, I develop reliable APIs using Node.js, Express.js, MongoDB and MySQL. The most valuable aspect of freelancing is the experience I gain while working with different clients. Each project is a new learning opportunity and a success story I add to my portfolio. Alongside time management, client communication, and problem-solving skills, I'm constantly sharpening my technical competencies as well. What I enjoy most about this journey is contributing to the transformation of an idea into a digital product and helping my clients achieve their goals. Every successful project motivates me even more for the next one.",
     technologies: [
      FaHtml5,
      FaCss3,
@@ -149,6 +150,7 @@ export const getExperienceData = (language = "TR") => ({
      SiNodedotjs,
      SiExpress,
      SiMongodb,
+     SiMysql,
      SiTailwindcss,
      SiBootstrap,
     ],
