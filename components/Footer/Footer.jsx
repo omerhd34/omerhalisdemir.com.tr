@@ -1,4 +1,6 @@
 "use client";
+import { useData } from "../../app/context/DataContext";
+import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 import FooterBrand from "./FooterBrand";
 import QuickLinksSection from "./QuickLinksSection";
 import SocialMediaSection from "./SocialMediaSection";
@@ -8,19 +10,43 @@ import FooterBottom from "./FooterBottom";
 import translations from "./FooterTranslations";
 import {
  getQuickLinks,
- getSocialLinks,
- getCvLink,
  getBrandDescription,
  languagesConfig,
- contactConfig,
 } from "./FooterData";
 
 export default function Footer({ language = "TR", onLanguageChange }) {
+ const { contactData } = useData();
  const t = translations[language];
+
+ if (!contactData) {
+  return null;
+ }
+
  const quickLinks = getQuickLinks(t);
- const socialLinks = getSocialLinks(t);
- const cvLink = getCvLink(language, t);
  const brandDescription = getBrandDescription(language);
+
+ const iconMap = {
+  FaLinkedin,
+  FaGithub,
+  FaFileDownload,
+ };
+
+ const socialLinks = contactData.socialLinks.map((link) => ({
+  name: link.name,
+  href: link.url,
+  icon: iconMap[link.icon],
+  color: link.color,
+ }));
+
+ const cvLink = {
+  name: t.cv,
+  href: language === "EN" ? "/pdf/cv-english.pdf" : "/pdf/cv.pdf",
+  icon: FaFileDownload,
+  color: "hover:text-[#b5c99a]",
+ };
+
+ const contactInfo = contactData.contactInfo.find((info) => info.type === "phone");
+ const emailInfo = contactData.contactInfo.find((info) => info.type === "email");
 
  const languageSelector = (
   <LanguageSelector
@@ -45,8 +71,8 @@ export default function Footer({ language = "TR", onLanguageChange }) {
       <ContactInfoSection
        title={t.contactInfo}
        location={t.location}
-       tel={contactConfig.tel}
-       email={contactConfig.email}
+       tel={contactInfo?.value || "+90 507 849 29 03"}
+       email={emailInfo?.value || "omerhd16@outlook.com"}
       />
      </div>
 

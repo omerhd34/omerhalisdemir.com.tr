@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaLinkedin, FaGithub } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
 import { Toaster } from "react-hot-toast";
 import { useLanguage } from "../../context/LanguageContext";
-import { contactInfo, socialLinks } from "../../data/ContactData";
+import { useData } from "../../context/DataContext";
 import ContactForm from "../../../components/PageComponents/Contact/ContactForm";
 import ContactInfoCard from "../../../components/PageComponents/Contact/ContactInfoCard";
 import SocialLinksCard from "../../../components/PageComponents/Contact/SocialLinksCard";
@@ -12,7 +12,8 @@ import Title from "../../../components/extra/Title";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ContactPage() {
- const { language, t, loading } = useLanguage();
+ const { language, t, loading: langLoading } = useLanguage();
+ const { contactData, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
 
  useEffect(() => {
@@ -20,27 +21,45 @@ export default function ContactPage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) return <LoadingScreen language={language} />;
+ if (langLoading || dataLoading || !contactData) {
+  return <LoadingScreen language={language} />;
+ }
 
+ // Icon mapping
+ const iconMap = {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaLinkedin,
+  FaGithub
+ };
 
  // Contact info with translations and flag
- const contactInfoWithTranslations = contactInfo.map((info) => ({
+ const contactInfoWithTranslations = contactData.contactInfo.map((info) => ({
   ...info,
-  label: t(info.label),
+  icon: iconMap[info.icon],
+  label: t(info.label_key),
   value:
-   info.label === "location" ? (
+   info.label_key === "location" ? (
     <div className="flex items-center space-x-2">
      <span>{info.value}</span>
      <ReactCountryFlag
-      countryCode={info.countryCode || "TR"}
+      countryCode={info.country_code || "TR"}
       svg
       style={{ width: "16px", height: "12px" }}
-      title={info.countryCode || "TR"}
+      title={info.country_code || "TR"}
      />
     </div>
    ) : (
     info.value
    ),
+ }));
+
+ // Social links with icons
+ const socialLinks = contactData.socialLinks.map((link) => ({
+  ...link,
+  icon: iconMap[link.icon],
+  url: link.url,
  }));
 
  return (

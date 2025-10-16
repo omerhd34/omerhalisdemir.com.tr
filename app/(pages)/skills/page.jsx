@@ -2,15 +2,16 @@
 import { useState, useEffect } from "react";
 import { FaCode } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
-import skillsData from "../../data/SkillsData";
+import { useData } from "../../context/DataContext";
 import CategoryButton from "../../../components/extra/CategoryButton";
 import Title from "../../../components/extra/Title";
 import SkillsContent from "../../../components/PageComponents/Skill/SkillsContent";
-import "../../styles/skills.css";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
+import { FaLaptopCode, FaServer, FaTools } from "react-icons/fa";
 
 export default function SkillsPage() {
- const { language, t, loading } = useLanguage();
+ const { language, t, loading: langLoading } = useLanguage();
+ const { skills, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("frontend");
 
@@ -19,23 +20,45 @@ export default function SkillsPage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) return <LoadingScreen language={language} />;
+ if (langLoading || dataLoading || !skills) {
+  return <LoadingScreen language={language} />;
+ }
 
+ const categoryIcons = {
+  frontend: FaLaptopCode,
+  backend: FaServer,
+  tools: FaTools
+ };
+
+ const categoryColors = {
+  frontend: "from-red-900 to-red-400",
+  backend: "from-green-900 to-green-400",
+  tools: "from-orange-900 to-orange-400"
+ };
+
+ const skillsData = Object.keys(skills).reduce((acc, key) => {
+  acc[key] = {
+   ...skills[key],
+   icon: categoryIcons[key],
+   color: categoryColors[key]
+  };
+  return acc;
+ }, {});
 
  const getCategoryStats = (category) => {
-  const skills = skillsData[category].skills;
-  const totalExp = skills.reduce(
+  const categorySkills = skills[category].skills;
+  const totalExp = categorySkills.reduce(
    (acc, skill) => acc + parseInt(skill.experience),
    0
   );
 
   const avgProficiency = Math.round(
-   skills.reduce((sum, skill) => sum + skill.percentage, 0) / skills.length
+   categorySkills.reduce((sum, skill) => sum + skill.percentage, 0) / categorySkills.length
   );
 
   return {
    totalExp,
-   count: skills.length,
+   count: categorySkills.length,
    avgProficiency,
   };
  };

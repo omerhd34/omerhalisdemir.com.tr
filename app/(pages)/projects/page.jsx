@@ -1,12 +1,8 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
-import { FaProjectDiagram } from "react-icons/fa";
+import { FaProjectDiagram, FaLayerGroup, FaGlobe, FaBolt } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
-import {
- getProjectsData,
- getCategories,
- getProjectStats,
-} from "../../data/projectsData";
+import { useData } from "../../context/DataContext";
 import CategoryButton from "../../../components/extra/CategoryButton";
 import ProjectCard from "../../../components/PageComponents/Project/ProjectCard";
 import ProjectStats from "../../../components/PageComponents/Project/ProjectStats";
@@ -14,7 +10,8 @@ import Title from "../../../components/extra/Title";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ProjectsPage() {
- const { language, t, loading } = useLanguage();
+ const { language, t, loading: langLoading } = useLanguage();
+ const { projects, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("all");
  const [searchTerm] = useState("");
@@ -25,12 +22,51 @@ export default function ProjectsPage() {
   return () => clearTimeout(timer);
  }, []);
 
- const projectsData = useMemo(() => getProjectsData(language), [language]);
- const categories = useMemo(() => getCategories(language), [language]);
- const stats = useMemo(() => getProjectStats(projectsData), [projectsData]);
+ const categories = useMemo(() => {
+  const categoryIcons = {
+   all: FaLayerGroup,
+   web: FaGlobe,
+   electronics: FaBolt
+  };
+
+  const categoryColors = {
+   all: "from-red-900 to-red-400",
+   web: "from-green-900 to-green-400",
+   electronics: "from-orange-900 to-orange-400"
+  };
+
+  return {
+   all: {
+    icon: categoryIcons.all,
+    color: categoryColors.all,
+    title: language === "TR" ? "Tüm Projeler" : "All Projects",
+   },
+   web: {
+    icon: categoryIcons.web,
+    color: categoryColors.web,
+    title: language === "TR" ? "Web Siteleri" : "Web Sites",
+   },
+   electronics: {
+    icon: categoryIcons.electronics,
+    color: categoryColors.electronics,
+    title: language === "TR" ? "Elektrik & Elektronik" : "Electric & Electronics",
+   },
+  };
+ }, [language]);
+
+ const stats = useMemo(() => {
+  if (!projects) return { total: 0, completed: 0, current: 0 };
+
+  const total = projects.length;
+  const completed = projects.filter((p) => p.status === "completed").length;
+  const current = projects.filter((p) => p.status === "current").length;
+  return { total, completed, current };
+ }, [projects]);
 
  useEffect(() => {
-  let filtered = projectsData;
+  if (!projects) return;
+
+  let filtered = projects;
 
   if (activeCategory !== "all") {
    filtered = filtered.filter(
@@ -47,22 +83,24 @@ export default function ProjectsPage() {
   }
 
   setFilteredProjects(filtered);
- }, [activeCategory, searchTerm, projectsData]);
+ }, [activeCategory, searchTerm, projects]);
 
  const handleCategoryChange = (category) => {
   setActiveCategory(category);
  };
 
- if (loading) return <LoadingScreen language={language} />;
+ if (langLoading || dataLoading || !projects) {
+  return <LoadingScreen language={language} />;
+ }
 
  const translations = {
   title: t('projects.title'),
   subtitle: t('projects.subtitle'),
   description: t('projects.description'),
   status: {
-   completed: t('status.completed'),
-   current: t('status.current'),
-   planned: t('status.planned'),
+   completed: t('projects.status.completed'),
+   current: t('projects.status.current'),
+   planned: t('projects.status.planned'),
   },
  };
 
@@ -92,8 +130,8 @@ export default function ProjectsPage() {
       {Object.entries(categories).map(([key, data]) => {
        const count =
         key === "all"
-         ? projectsData.length
-         : projectsData.filter((p) => p.category === key).length;
+         ? projects.length
+         : projects.filter((p) => p.category === key).length;
 
        return (
         <CategoryButton

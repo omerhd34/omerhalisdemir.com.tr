@@ -7,9 +7,11 @@ import {
   FaBriefcase,
   FaProjectDiagram,
   FaEnvelope,
+  FaHome,
 } from "react-icons/fa";
 
 export const navigationItems = [
+  { key: "home", href: "/home", icon: FaHome },
   { key: "about", href: "/about", icon: FaUser },
   { key: "skills", href: "/skills", icon: FaCode },
   { key: "experience", href: "/experience", icon: FaBriefcase },

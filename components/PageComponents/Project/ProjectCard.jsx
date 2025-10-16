@@ -15,10 +15,58 @@ import {
  FaChartLine,
 } from "react-icons/fa";
 import Link from "next/link";
+import {
+ SiReact,
+ SiNextdotjs,
+ SiTailwindcss,
+ SiNodedotjs,
+ SiExpress,
+ SiArduino,
+ SiCplusplus,
+ SiMongodb,
+ SiJavascript,
+ SiMysql,
+ SiTypescript,
+ SiBootstrap,
+} from "react-icons/si";
+import {
+ FaGitAlt,
+ FaHtml5,
+ FaCss3Alt,
+ FaJsSquare,
+ FaNodeJs,
+ FaJava,
+ FaMicrochip,
+ FaTools,
+} from "react-icons/fa";
+
+// Icon mapping
+const iconMap = {
+ SiReact,
+ SiNextdotjs,
+ SiTailwindcss,
+ SiNodedotjs,
+ SiExpress,
+ SiArduino,
+ SiCplusplus,
+ SiMongodb,
+ SiJavascript,
+ SiMysql,
+ SiTypescript,
+ SiBootstrap,
+ FaGitAlt,
+ FaGithub,
+ FaHtml5,
+ FaCss3Alt,
+ FaJsSquare,
+ FaNodeJs,
+ FaJava,
+ FaMicrochip,
+ FaTools,
+};
 
 export default function ProjectCard({ project, translations, language, index }) {
  const [isExpanded, setIsExpanded] = useState(false);
- const [isMobileExpanded, setIsMobileExpanded] = useState(false);
 
  const getStatusBg = (status) => {
   switch (status) {
@@ -79,16 +127,19 @@ export default function ProjectCard({ project, translations, language, index }) 
 
       {/* Technologies - Desktop */}
       <div className="hidden sm:flex flex-wrap gap-2 xs:gap-3 mb-4 xs:mb-5 sm:mb-6">
-       {project.technologies.map((TechIcon, techIndex) => {
+       {project.technologies.map((techIconName, techIndex) => {
+        const TechIcon = iconMap[techIconName];
         const iconColorClass = colorClasses[techIndex % colorClasses.length];
         return (
          <div
           key={techIndex}
           className="p-1.5 xs:p-2 bg-muted rounded-lg transition-all duration-300 group hover:scale-110 hover:shadow-lg"
          >
-          <TechIcon
-           className={`w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5 transition-all duration-300 ${iconColorClass}`}
-          />
+          {TechIcon && (
+           <TechIcon
+            className={`w-3 xs:w-4 sm:w-5 h-3 xs:h-4 sm:h-5 transition-all duration-300 ${iconColorClass}`}
+           />
+          )}
          </div>
         );
        })}
@@ -158,16 +209,19 @@ export default function ProjectCard({ project, translations, language, index }) 
         </div>
 
         <div className="flex flex-wrap gap-2 xs:gap-3">
-         {project.technologies.map((TechIcon, techIndex) => {
+         {project.technologies.map((techIconName, techIndex) => {
+          const TechIcon = iconMap[techIconName];
           const iconColorClass = colorClasses[techIndex % colorClasses.length];
           return (
            <div
             key={techIndex}
             className="p-1.5 xs:p-2 bg-muted rounded-lg transition-all duration-300 group hover:scale-110 hover:shadow-lg"
            >
-            <TechIcon
-             className={`w-3 xs:w-4 h-3 xs:h-4 transition-all duration-300 ${iconColorClass}`}
-            />
+            {TechIcon && (
+             <TechIcon
+              className={`w-3 xs:w-4 h-3 xs:h-4 transition-all duration-300 ${iconColorClass}`}
+             />
+            )}
            </div>
           );
          })}

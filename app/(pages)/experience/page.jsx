@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaBriefcase } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaCertificate } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
-import { getExperienceData } from "../../data/ExperienceData";
+import { useData } from "../../context/DataContext";
 import CategoryTabs from "../../../components/PageComponents/Experience/CategoryTabs";
 import ExperienceItem from "../../../components/PageComponents/Experience/ExperienceItem";
 import Title from "../../../components/extra/Title";
@@ -10,7 +10,8 @@ import "../../styles/experience.css";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ExperiencePage() {
- const { language, t, loading } = useLanguage();
+ const { language, t, loading: langLoading } = useLanguage();
+ const { experience, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("education");
 
@@ -19,9 +20,30 @@ export default function ExperiencePage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (loading) return <LoadingScreen language={language} />;
+ if (langLoading || dataLoading || !experience) {
+  return <LoadingScreen language={language} />;
+ }
 
- const experienceData = getExperienceData(language);
+ const categoryIcons = {
+  education: FaGraduationCap,
+  internship: FaBriefcase,
+  certificates: FaCertificate
+ };
+
+ const categoryColors = {
+  education: "from-red-900 to-red-400",
+  internship: "from-green-900 to-green-400",
+  certificates: "from-orange-900 to-orange-400"
+ };
+
+ const experienceData = Object.keys(experience).reduce((acc, key) => {
+  acc[key] = {
+   ...experience[key],
+   icon: categoryIcons[key],
+   color: categoryColors[key]
+  };
+  return acc;
+ }, {});
 
  const translations = {
   title: t('experience.title'),

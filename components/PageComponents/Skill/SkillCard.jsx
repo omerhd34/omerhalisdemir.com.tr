@@ -1,7 +1,48 @@
 "use client";
+import {
+ FaLaptopCode,
+ FaServer,
+ FaTools,
+ FaGitAlt,
+ FaReact,
+ FaHtml5,
+ FaCss3Alt,
+ FaJsSquare,
+ FaBootstrap,
+ FaNodeJs,
+ FaJava,
+ FaGithub,
+} from "react-icons/fa";
+import {
+ SiNextdotjs,
+ SiTypescript,
+ SiTailwindcss,
+ SiMongodb,
+ SiMysql,
+} from "react-icons/si";
+
+const iconMap = {
+ FaLaptopCode,
+ FaServer,
+ FaTools,
+ FaGitAlt,
+ FaReact,
+ FaHtml5,
+ FaCss3Alt,
+ FaJsSquare,
+ FaBootstrap,
+ FaNodeJs,
+ FaJava,
+ FaGithub,
+ SiNextdotjs,
+ SiTypescript,
+ SiTailwindcss,
+ SiMongodb,
+ SiMysql,
+};
 
 export default function SkillCard({ skill, index, isMobile = false, translations }) {
- const Icon = skill.icon;
+ const IconComponent = iconMap[skill.icon];
 
  const getLevelColor = (level) => {
   switch (level) {
@@ -47,7 +88,7 @@ export default function SkillCard({ skill, index, isMobile = false, translations
       <div
        className={`p-2 rounded-lg bg-muted ${skill.color} transition-transform duration-300 group-hover:scale-110 mb-1`}
       >
-       <Icon className="w-4 h-4" />
+       {IconComponent && <IconComponent className="w-4 h-4" />}
       </div>
       <h4 className="font-semibold text-xs leading-tight">{skill.name}</h4>
      </div>
@@ -97,7 +138,7 @@ export default function SkillCard({ skill, index, isMobile = false, translations
       <div
        className={`p-3 rounded-xl bg-muted ${skill.color} transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}
       >
-       <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+       {IconComponent && <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />}
       </div>
       <div className="flex-1">
        <h4 className="font-bold text-[16px] sm:text-lg mb-1">{skill.name}</h4>

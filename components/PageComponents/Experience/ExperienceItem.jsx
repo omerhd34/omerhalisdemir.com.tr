@@ -1,14 +1,104 @@
-"use client";
-import { useState } from "react";
-import { FaMapMarkerAlt, FaStar, FaChevronDown, FaChevronRight } from "react-icons/fa";
-import Image from "next/image";
-import Link from "next/link";
+import {
+ FaGraduationCap,
+ FaUniversity,
+ FaSchool,
+ FaBriefcase,
+ FaBookOpen,
+ FaCertificate,
+ FaMicrochip,
+ FaDraftingCompass,
+ FaCubes,
+ FaServer,
+ FaGlobeEurope,
+ FaNetworkWired,
+ FaCloud,
+ FaDatabase,
+ FaHdd,
+ FaCogs,
+ FaShieldAlt,
+ FaLanguage,
+ FaGlobe,
+ FaCalculator,
+ FaFlask,
+ FaAtom,
+ FaBrain,
+ FaGithub,
+ FaHtml5,
+ FaCss3,
+ FaJava,
+ FaReact,
+ FaMapMarkerAlt,
+ FaStar,
+ FaChevronDown,
+ FaChevronRight
+} from "react-icons/fa";
+
+import {
+ SiReact,
+ SiJavascript,
+ SiAutodesk,
+ SiHtml5,
+ SiCss3,
+ SiBootstrap,
+ SiNextdotjs,
+ SiNodedotjs,
+ SiMongodb,
+ SiTypescript,
+ SiTailwindcss,
+ SiExpress,
+ SiMysql,
+} from "react-icons/si";
+
+// Icon mapping object
+const iconMap = {
+ FaGraduationCap,
+ FaUniversity,
+ FaSchool,
+ FaBriefcase,
+ FaBookOpen,
+ FaCertificate,
+ FaMicrochip,
+ FaDraftingCompass,
+ FaCubes,
+ FaServer,
+ FaGlobeEurope,
+ FaNetworkWired,
+ FaCloud,
+ FaDatabase,
+ FaHdd,
+ FaCogs,
+ FaShieldAlt,
+ FaLanguage,
+ FaGlobe,
+ FaCalculator,
+ FaFlask,
+ FaAtom,
+ FaBrain,
+ FaGithub,
+ FaHtml5,
+ FaCss3,
+ FaJava,
+ FaReact,
+ SiReact,
+ SiJavascript,
+ SiAutodesk,
+ SiHtml5,
+ SiCss3,
+ SiBootstrap,
+ SiNextdotjs,
+ SiNodedotjs,
+ SiMongodb,
+ SiTypescript,
+ SiTailwindcss,
+ SiExpress,
+ SiMysql,
+};
 
 export default function ExperienceItem({ item, translations, isVisible, index }) {
  const [isExpanded, setIsExpanded] = useState(false);
  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
 
- const Icon = item.icon;
+ const Icon = typeof item.icon === 'string' ? iconMap[item.icon] : item.icon;
  const showExpandButton = item.achievements && item.achievements.length > 0;
 
  const getStatusBg = (status) => {
