@@ -35,6 +35,7 @@ import {
  FaStar,
  FaChevronDown,
  FaChevronRight,
+ FaClock,
 } from "react-icons/fa";
 
 import {
@@ -153,7 +154,7 @@ export default function ExperienceItem({ item, translations, isVisible, index })
       </div>
 
       <div className="flex-1 min-w-0">
-       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-3">
+       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3">
         <div className="min-w-0">
          <h4 className="text-[18px] sm:text-[19px] font-bold mb-1 break-words">
           {item.title}
@@ -170,12 +171,6 @@ export default function ExperienceItem({ item, translations, isVisible, index })
          >
           {translations.status[item.status]}
          </div>
-         <p
-          className={`font-semibold mt-3 sm:mt-1 text-[15px] ${!isMobileExpanded ? "hidden sm:block" : ""
-           }`}
-         >
-          {item.period}
-         </p>
         </div>
        </div>
 
@@ -195,6 +190,12 @@ export default function ExperienceItem({ item, translations, isVisible, index })
           <span>
            {translations.gpa}: {item.gpa}
           </span>
+         </div>
+        )}
+        {item.period && (
+         <div className="flex items-center space-x-2">
+          <FaClock className="w-4 h-4" />
+          <span>{item.period}</span>
          </div>
         )}
        </div>
