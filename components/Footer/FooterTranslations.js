@@ -7,6 +7,7 @@ const translations = {
     experience: "Deneyimler",
     projects: "Projeler",
     contact: "İletişim",
+    home: "Ana Sayfa",
 
     // Social Media
     socialMedia: "Sosyal Medya",
@@ -19,7 +20,7 @@ const translations = {
     location: "İstanbul, Türkiye",
 
     // Footer text
-    madeWithLove: "Typescript & Next.js ile yapıldı. 2025",
+    madeWithLove: "Javascript & Next.js & MySQL ile yapıldı. 2025",
     allRightsReserved: "Tüm hakları saklıdır.",
     scrollToTop: "Yukarı çık",
   },
@@ -31,6 +32,7 @@ const translations = {
     experience: "Experience",
     projects: "Projects",
     contact: "Contact",
+    home: "Home",
 
     // Social Media
     socialMedia: "Social Media",
@@ -43,7 +45,7 @@ const translations = {
     location: "Istanbul, Turkey",
 
     // Footer text
-    madeWithLove: "Made with Typescript & Next.js. 2025",
+    madeWithLove: "Made with Javascript & Next.js & MySQL. 2025",
     allRightsReserved: "All rights reserved.",
     scrollToTop: "Scroll to top",
   },
