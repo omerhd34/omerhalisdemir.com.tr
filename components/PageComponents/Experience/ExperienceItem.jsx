@@ -54,14 +54,26 @@ import {
  SiArduino,
  SiCplusplus,
  SiServerfault,
+ SiLibreofficemath,
+ SiWolframmathematica,
+ SiAutocad,
 } from "react-icons/si";
+import { RiEnglishInput } from "react-icons/ri";
+import { MdElectricBolt } from "react-icons/md";
+import { FcElectronics } from "react-icons/fc";
+import { MdDomain } from "react-icons/md";
 
 const iconMap = {
  FaGraduationCap,
+ MdDomain,
+ RiEnglishInput,
  FaUniversity,
  FaSchool,
+ SiAutodesk,
  FaBriefcase,
  FaBookOpen,
+ FcElectronics,
+ SiAutocad,
  FaCertificate,
  FaMicrochip,
  FaDraftingCompass,
@@ -87,7 +99,6 @@ const iconMap = {
  FaReact,
  SiReact,
  SiJavascript,
- SiAutodesk,
  SiHtml5,
  SiCss3,
  SiBootstrap,
@@ -101,6 +112,9 @@ const iconMap = {
  SiArduino,
  SiCplusplus,
  SiServerfault,
+ SiLibreofficemath,
+ SiWolframmathematica,
+ MdElectricBolt,
 };
 
 export default function ExperienceItem({ item, translations, isVisible, index }) {
