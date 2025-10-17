@@ -83,6 +83,7 @@ export async function GET(request, context) {
 
     return NextResponse.json(projects);
   } catch (error) {
+    console.error("Projects API Error:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",
@@ -91,6 +92,8 @@ export async function GET(request, context) {
       { status: 500 }
     );
   } finally {
-    await closeConnection(connection);
+    if (connection) {
+      await closeConnection(connection);
+    }
   }
 }

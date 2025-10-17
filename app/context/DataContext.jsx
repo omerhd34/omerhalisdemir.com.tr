@@ -1,17 +1,25 @@
 "use client";
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 import { useLanguage } from "./LanguageContext";
 
 const DataContext = createContext();
 
+const dataCache = {
+ skills: null,
+ contactData: null,
+ experience: {},
+ projects: {}
+};
+
 export function DataProvider({ children }) {
  const { language } = useLanguage();
- const [skills, setSkills] = useState(null);
- const [experience, setExperience] = useState(null);
- const [projects, setProjects] = useState(null);
- const [contactData, setContactData] = useState(null);
+ const [skills, setSkills] = useState(dataCache.skills);
+ const [experience, setExperience] = useState(dataCache.experience[language] || null);
+ const [projects, setProjects] = useState(dataCache.projects[language] || null);
+ const [contactData, setContactData] = useState(dataCache.contactData);
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
+ const fetchedRef = useRef({ experience: {}, projects: {} });
 
  useEffect(() => {
   fetchAllData();
@@ -22,44 +30,64 @@ export function DataProvider({ children }) {
   setError(null);
 
   try {
-   try {
-    const skillsRes = await fetch('/api/skills');
-    if (skillsRes.ok) {
-     const skillsData = await skillsRes.json();
-     setSkills(skillsData);
+   if (!dataCache.skills) {
+    try {
+     const skillsRes = await fetch('/api/skills');
+     if (skillsRes.ok) {
+      const skillsData = await skillsRes.json();
+      dataCache.skills = skillsData;
+      setSkills(skillsData);
+     }
+    } catch (err) {
+     console.error('Skills fetch error:', err);
     }
-   } catch (err) {
-    console.error('Skills fetch error:', err);
+   } else {
+    setSkills(dataCache.skills);
    }
 
-   try {
-    const experienceRes = await fetch(`/api/experience/${language}`);
-    if (experienceRes.ok) {
-     const experienceData = await experienceRes.json();
-     setExperience(experienceData);
+   if (!dataCache.experience[language]) {
+    try {
+     const experienceRes = await fetch(`/api/experience/${language}`);
+     if (experienceRes.ok) {
+      const experienceData = await experienceRes.json();
+      dataCache.experience[language] = experienceData;
+      setExperience(experienceData);
+     }
+    } catch (err) {
+     console.error('Experience fetch error:', err);
     }
-   } catch (err) {
-    console.error('Experience fetch error:', err);
+   } else {
+    setExperience(dataCache.experience[language]);
    }
 
-   try {
-    const projectsRes = await fetch(`/api/projects/${language}`);
-    if (projectsRes.ok) {
-     const projectsData = await projectsRes.json();
-     setProjects(projectsData);
+   if (!dataCache.projects[language]) {
+    try {
+     const projectsRes = await fetch(`/api/projects/${language}`);
+     if (projectsRes.ok) {
+      const projectsData = await projectsRes.json();
+      dataCache.projects[language] = projectsData;
+      setProjects(projectsData);
+     }
+    } catch (err) {
+     console.error('Projects fetch error:', err);
     }
-   } catch (err) {
-    console.error('Projects fetch error:', err);
+   } else {
+    setProjects(dataCache.projects[language]);
    }
 
-   try {
-    const contactRes = await fetch('/api/contact/info');
-    if (contactRes.ok) {
-     const contactInfo = await contactRes.json();
-     setContactData(contactInfo);
+   if (!dataCache.contactData) {
+    try {
+     const contactRes = await fetch('/api/contact/info');
+     if (contactRes.ok) {
+      const contactInfo = await contactRes.json();
+      dataCache.contactData = contactInfo;
+      setContactData(contactInfo);
+     }
+    } catch (err) {
+     console.error('Contact fetch error:', err);
     }
-   } catch (err) {
-    console.error('Contact fetch error:', err);
+   } else {
+    setContactData(dataCache.contactData);
    }
 
   } catch (error) {

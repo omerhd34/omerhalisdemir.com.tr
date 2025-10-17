@@ -54,31 +54,43 @@ export default function Header({ language = "TR", onLanguageChange }) {
   }
  }, [language, langLoading, t]);
 
+ const headerCache = {
+  navigation: null,
+  social: {}
+ };
+
  const fetchHeaderData = async () => {
   setLoading(true);
   try {
-   const navRes = await fetch('/api/header/navigation');
-   if (navRes.ok) {
-    const navData = await navRes.json();
-    const mappedNav = navData.map(item => ({
-     key: item.key_name,
-     href: item.href,
-     icon: iconMap[item.icon],
-     name: t(`header.${item.key_name}`)
-    }));
-    setNavigationItems(mappedNav);
+   if (!headerCache.navigation) {
+    const navRes = await fetch('/api/header/navigation');
+    if (navRes.ok) {
+     headerCache.navigation = await navRes.json();
+    }
    }
 
-   const socialRes = await fetch('/api/header/social');
-   if (socialRes.ok) {
-    const socialData = await socialRes.json();
-    const mappedSocial = socialData.map(item => ({
-     name: t(`header.${item.key_name}`),
-     href: language === 'EN' ? item.href_en : item.href_tr,
-     icon: iconMap[item.icon]
-    }));
-    setSocialLinks(mappedSocial);
+   const mappedNav = headerCache.navigation.map(item => ({
+    key: item.key_name,
+    href: item.href,
+    icon: iconMap[item.icon],
+    name: t(`header.${item.key_name}`)
+   }));
+   setNavigationItems(mappedNav);
+
+   if (!headerCache.social[language]) {
+    const socialRes = await fetch('/api/header/social');
+    if (socialRes.ok) {
+     headerCache.social[language] = await socialRes.json();
+    }
    }
+
+   const mappedSocial = headerCache.social[language].map(item => ({
+    name: t(`header.${item.key_name}`),
+    href: language === 'EN' ? item.href_en : item.href_tr,
+    icon: iconMap[item.icon]
+   }));
+   setSocialLinks(mappedSocial);
+
   } catch (error) {
    console.error('Header data fetch error:', error);
   } finally {

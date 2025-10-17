@@ -4,7 +4,7 @@ import AnimatedGradient from "../extra/AnimatedGradient";
 export function Logo({ isHovered, setIsHovered }) {
  return (
   <Link
-   href="/home"
+   href="/"
    className="flex items-center group relative"
    onMouseEnter={() => setIsHovered(true)}
    onMouseLeave={() => setIsHovered(false)}

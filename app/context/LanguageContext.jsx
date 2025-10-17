@@ -3,6 +3,11 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const LanguageContext = createContext();
 
+const translationCache = {
+ TR: null,
+ EN: null
+};
+
 export function LanguageProvider({ children }) {
  const [language, setLanguage] = useState("TR");
  const [translations, setTranslations] = useState({});
@@ -13,11 +18,18 @@ export function LanguageProvider({ children }) {
  }, [language]);
 
  const fetchTranslations = async (lang) => {
+  if (translationCache[lang]) {
+   setTranslations(translationCache[lang]);
+   setLoading(false);
+   return;
+  }
+
   setLoading(true);
   try {
    const response = await fetch(`/api/translations/${lang}`);
    if (response.ok) {
     const data = await response.json();
+    translationCache[lang] = data;
     setTranslations(data);
    }
   } catch (error) {

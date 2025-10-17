@@ -1,7 +1,7 @@
 import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 
 export const quickLinksConfig = [
- { key: "home", href: "/home" },
+ { key: "home", href: "/" },
  { key: "about", href: "/about" },
  { key: "skills", href: "/skills" },
  { key: "experience", href: "/experience" },

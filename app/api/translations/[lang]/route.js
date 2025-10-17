@@ -43,6 +43,7 @@ export async function GET(request, context) {
 
     return NextResponse.json(translations);
   } catch (error) {
+    console.error("Translation API Error:", error);
     return NextResponse.json(
       {
         error: "Çeviriler yüklenemedi",
@@ -51,6 +52,8 @@ export async function GET(request, context) {
       { status: 500 }
     );
   } finally {
-    await closeConnection(connection);
+    if (connection) {
+      await closeConnection(connection);
+    }
   }
 }
