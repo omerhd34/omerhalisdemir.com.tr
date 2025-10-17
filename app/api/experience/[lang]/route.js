@@ -8,8 +8,6 @@ export async function GET(request, { params }) {
     const { lang } = await params;
     const isEnglish = lang.toUpperCase() === "EN";
 
-    console.log("Experience API - Language:", lang);
-
     connection = await getConnection();
 
     const [rows] = await connection.execute(
@@ -18,10 +16,7 @@ export async function GET(request, { params }) {
        category, id`
     );
 
-    console.log("Experience API - Fetched rows:", rows.length);
-
     if (rows.length === 0) {
-      console.warn("Experience API - No data found");
       return NextResponse.json({});
     }
 
@@ -32,7 +27,6 @@ export async function GET(request, { params }) {
         };
       }
 
-      // Technologies parsing - handle both string and JSON
       let technologies = [];
       if (exp.technologies) {
         try {
@@ -41,12 +35,10 @@ export async function GET(request, { params }) {
               ? JSON.parse(exp.technologies)
               : exp.technologies;
         } catch (e) {
-          console.error("Error parsing technologies:", e);
           technologies = [];
         }
       }
 
-      // Achievements parsing
       let achievements = [];
       const achievementsField = exp[`achievements_${isEnglish ? "en" : "tr"}`];
       if (achievementsField) {
@@ -56,7 +48,6 @@ export async function GET(request, { params }) {
               ? JSON.parse(achievementsField)
               : achievementsField;
         } catch (e) {
-          console.error("Error parsing achievements:", e);
           achievements = [];
         }
       }
@@ -79,19 +70,8 @@ export async function GET(request, { params }) {
       return acc;
     }, {});
 
-    console.log("Experience API - Categories:", Object.keys(groupedExperience));
-    console.log(
-      "Experience API - Sample item:",
-      JSON.stringify(
-        groupedExperience[Object.keys(groupedExperience)[0]]?.items[0],
-        null,
-        2
-      )
-    );
-
     return NextResponse.json(groupedExperience);
   } catch (error) {
-    console.error("Experience API - Veritabanı hatası:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",

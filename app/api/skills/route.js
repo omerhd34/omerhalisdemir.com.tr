@@ -13,10 +13,7 @@ export async function GET() {
        id`
     );
 
-    console.log("Skills API - Fetched rows:", rows.length);
-
     if (rows.length === 0) {
-      console.warn("Skills API - No data found");
       return NextResponse.json({});
     }
 
@@ -39,19 +36,8 @@ export async function GET() {
       return acc;
     }, {});
 
-    console.log("Skills API - Grouped skills:", Object.keys(groupedSkills));
-    console.log(
-      "Skills API - Sample skill:",
-      JSON.stringify(
-        groupedSkills[Object.keys(groupedSkills)[0]]?.skills[0],
-        null,
-        2
-      )
-    );
-
     return NextResponse.json(groupedSkills);
   } catch (error) {
-    console.error("Skills API - Veritabanı hatası:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",

@@ -8,8 +8,6 @@ export async function GET(request, { params }) {
     const { lang } = await params;
     const isEnglish = lang.toUpperCase() === "EN";
 
-    console.log("Projects API - Language:", lang);
-
     connection = await getConnection();
 
     const [rows] = await connection.execute(
@@ -18,15 +16,11 @@ export async function GET(request, { params }) {
        id`
     );
 
-    console.log("Projects API - Fetched rows:", rows.length);
-
     if (rows.length === 0) {
-      console.warn("Projects API - No data found");
       return NextResponse.json([]);
     }
 
     const projects = rows.map((project) => {
-      // Technologies parsing
       let technologies = [];
       if (project.technologies) {
         try {
@@ -35,12 +29,10 @@ export async function GET(request, { params }) {
               ? JSON.parse(project.technologies)
               : project.technologies;
         } catch (e) {
-          console.error("Error parsing technologies:", e);
           technologies = [];
         }
       }
 
-      // Features parsing
       let features = [];
       const featuresField = project[`features_${isEnglish ? "en" : "tr"}`];
       if (featuresField) {
@@ -50,21 +42,19 @@ export async function GET(request, { params }) {
               ? JSON.parse(featuresField)
               : featuresField;
         } catch (e) {
-          console.error("Error parsing features:", e);
           features = [];
         }
       }
 
-      // Metrics parsing
       let metrics = [];
-      if (project.metrics) {
+      const metricsField = project[`metrics_${isEnglish ? "en" : "tr"}`];
+      if (metricsField) {
         try {
           metrics =
-            typeof project.metrics === "string"
-              ? JSON.parse(project.metrics)
-              : project.metrics;
+            typeof metricsField === "string"
+              ? JSON.parse(metricsField)
+              : metricsField;
         } catch (e) {
-          console.error("Error parsing metrics:", e);
           metrics = [];
         }
       }
@@ -90,15 +80,8 @@ export async function GET(request, { params }) {
       };
     });
 
-    console.log("Projects API - Processed projects:", projects.length);
-    console.log(
-      "Projects API - Sample project:",
-      JSON.stringify(projects[0], null, 2)
-    );
-
     return NextResponse.json(projects);
   } catch (error) {
-    console.error("Projects API - Veritabanı hatası:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",
