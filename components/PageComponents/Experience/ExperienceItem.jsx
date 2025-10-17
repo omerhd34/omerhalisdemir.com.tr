@@ -34,7 +34,7 @@ import {
  FaMapMarkerAlt,
  FaStar,
  FaChevronDown,
- FaChevronRight
+ FaChevronRight,
 } from "react-icons/fa";
 
 import {
@@ -53,9 +53,9 @@ import {
  SiMysql,
  SiArduino,
  SiCplusplus,
+ SiServerfault,
 } from "react-icons/si";
 
-// Icon mapping object
 const iconMap = {
  FaGraduationCap,
  FaUniversity,
@@ -100,6 +100,7 @@ const iconMap = {
  SiMysql,
  SiArduino,
  SiCplusplus,
+ SiServerfault,
 };
 
 export default function ExperienceItem({ item, translations, isVisible, index }) {
