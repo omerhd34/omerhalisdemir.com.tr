@@ -8,7 +8,6 @@ export default function SkillsContent({
  getCategoryStats,
  isVisible,
 }) {
- // Null safety kontrolü
  const skills = skillsData[activeCategory]?.skills || [];
 
  const getAverageProficiency = () => {

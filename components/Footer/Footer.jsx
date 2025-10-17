@@ -66,7 +66,6 @@ export default function Footer({ language = "TR", onLanguageChange }) {
  const fetchFooterData = async () => {
   setLoading(true);
   try {
-   // Quick links
    const quickLinksRes = await fetch('/api/footer/quicklinks');
    if (quickLinksRes.ok) {
     const quickLinksData = await quickLinksRes.json();
@@ -77,7 +76,6 @@ export default function Footer({ language = "TR", onLanguageChange }) {
     setQuickLinks(mappedQuickLinks);
    }
 
-   // Social links
    const socialRes = await fetch('/api/header/social');
    if (socialRes.ok) {
     const socialData = await socialRes.json();

@@ -35,7 +35,6 @@ export default function HomePage() {
   t('home.professionTitles.3') || "Elektrik Elektronik Mühendisi",
  ];
 
- // Calculate total skills from all categories with null safety
  const totalSkills = Object.values(skills || {}).reduce((acc, category) => {
   if (category && Array.isArray(category.skills)) {
    return acc + category.skills.length;

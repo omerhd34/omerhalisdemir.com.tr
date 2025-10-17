@@ -22,7 +22,6 @@ export async function GET(request, context) {
     }
 
     const projects = rows.map((project) => {
-      // Technologies parsing
       let technologies = [];
       if (project.technologies) {
         try {
@@ -35,7 +34,6 @@ export async function GET(request, context) {
         }
       }
 
-      // Features parsing
       let features = [];
       const featuresField = project[`features_${isEnglish ? "en" : "tr"}`];
       if (featuresField) {
@@ -49,7 +47,6 @@ export async function GET(request, context) {
         }
       }
 
-      // Metrics parsing - DİLE GÖRE
       let metrics = [];
       const metricsField = project[`metrics_${isEnglish ? "en" : "tr"}`];
       if (metricsField) {

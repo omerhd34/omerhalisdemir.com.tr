@@ -10,7 +10,6 @@ import { MobileMenuButton } from "./MobileMenuButton";
 import { MobileNav } from "./MobileNav";
 import { DesktopSocialLinks } from "./DesktopSocialLinks";
 
-// Icon mapping
 import {
  FaUser,
  FaCode,
@@ -58,7 +57,6 @@ export default function Header({ language = "TR", onLanguageChange }) {
  const fetchHeaderData = async () => {
   setLoading(true);
   try {
-   // Navigation items
    const navRes = await fetch('/api/header/navigation');
    if (navRes.ok) {
     const navData = await navRes.json();
@@ -71,7 +69,6 @@ export default function Header({ language = "TR", onLanguageChange }) {
     setNavigationItems(mappedNav);
    }
 
-   // Social links
    const socialRes = await fetch('/api/header/social');
    if (socialRes.ok) {
     const socialData = await socialRes.json();

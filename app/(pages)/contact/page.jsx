@@ -25,7 +25,6 @@ export default function ContactPage() {
   return <LoadingScreen language={language} />;
  }
 
- // Icon mapping
  const iconMap = {
   FaMapMarkerAlt,
   FaPhone,
@@ -34,7 +33,6 @@ export default function ContactPage() {
   FaGithub
  };
 
- // Contact info with translations and flag
  const contactInfoWithTranslations = contactData.contactInfo.map((info) => ({
   ...info,
   icon: iconMap[info.icon],
@@ -55,7 +53,6 @@ export default function ContactPage() {
    ),
  }));
 
- // Social links with icons
  const socialLinks = contactData.socialLinks.map((link) => ({
   ...link,
   icon: iconMap[link.icon],

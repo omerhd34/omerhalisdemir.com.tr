@@ -40,7 +40,6 @@ import {
  FaTools,
 } from "react-icons/fa";
 
-// Icon mapping
 const iconMap = {
  SiReact,
  SiNextdotjs,

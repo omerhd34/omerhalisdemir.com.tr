@@ -25,10 +25,8 @@ export default function AboutPage() {
   return () => clearTimeout(timer);
  }, []);
 
- // Loading state
  if (loading) return <LoadingScreen language={language} />;
 
- // Personal Info Data
  const personalInfo = [
   {
    label: t('about.birthDate'),
@@ -62,7 +60,6 @@ export default function AboutPage() {
   },
  ];
 
- // Text preview helper function
  const getTextPreview = (text, maxSentences = 3) => {
   if (!text) return { preview: '', hasMore: false };
 
