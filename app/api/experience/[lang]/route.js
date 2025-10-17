@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { getConnection, closeConnection } from "../../../lib/db.js";
 
-export async function GET(request, { params }) {
+export async function GET(request, context) {
   let connection;
 
   try {
-    const { lang } = await params;
+    const params = await context.params;
+    const lang = params.lang;
     const isEnglish = lang.toUpperCase() === "EN";
 
     connection = await getConnection();

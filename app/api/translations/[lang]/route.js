@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { getConnection, closeConnection } from "../../../lib/db.js";
 
-export async function GET(request, { params }) {
+export async function GET(request, context) {
   let connection;
 
   try {
-    const { lang } = await params;
+    const params = await context.params;
+    const lang = params.lang;
+
     connection = await getConnection();
 
     const [rows] = await connection.execute(
@@ -18,7 +20,6 @@ export async function GET(request, { params }) {
     );
 
     if (!rows || rows.length === 0) {
-      console.log(`${lang} dili için çeviri bulunamadı`);
       return NextResponse.json({}, { status: 200 });
     }
 
@@ -40,10 +41,8 @@ export async function GET(request, { params }) {
       });
     });
 
-    console.log(`${lang} için ${rows.length} çeviri yüklendi`);
     return NextResponse.json(translations);
   } catch (error) {
-    console.error("Veritabanı hatası:", error);
     return NextResponse.json(
       {
         error: "Çeviriler yüklenemedi",

@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { getConnection, closeConnection } from "../../../lib/db.js";
 
-export async function GET(request, { params }) {
+export async function GET(request, context) {
   let connection;
 
   try {
-    const { lang } = await params;
+    const params = await context.params;
+    const lang = params.lang;
     const isEnglish = lang.toUpperCase() === "EN";
 
     connection = await getConnection();
@@ -21,6 +22,7 @@ export async function GET(request, { params }) {
     }
 
     const projects = rows.map((project) => {
+      // Technologies parsing
       let technologies = [];
       if (project.technologies) {
         try {
@@ -33,6 +35,7 @@ export async function GET(request, { params }) {
         }
       }
 
+      // Features parsing
       let features = [];
       const featuresField = project[`features_${isEnglish ? "en" : "tr"}`];
       if (featuresField) {
@@ -46,6 +49,7 @@ export async function GET(request, { params }) {
         }
       }
 
+      // Metrics parsing - DİLE GÖRE
       let metrics = [];
       const metricsField = project[`metrics_${isEnglish ? "en" : "tr"}`];
       if (metricsField) {
