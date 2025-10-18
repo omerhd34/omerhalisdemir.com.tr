@@ -14,6 +14,13 @@ export function LanguageProvider({ children }) {
  const [loading, setLoading] = useState(true);
 
  useEffect(() => {
+  const savedLanguage = localStorage.getItem('preferredLanguage');
+  if (savedLanguage && (savedLanguage === 'TR' || savedLanguage === 'EN')) {
+   setLanguage(savedLanguage);
+  }
+ }, []);
+
+ useEffect(() => {
   fetchTranslations(language);
  }, [language]);
 
@@ -41,6 +48,7 @@ export function LanguageProvider({ children }) {
 
  const handleLanguageChange = (newLanguage) => {
   setLanguage(newLanguage);
+  localStorage.setItem('preferredLanguage', newLanguage);
  };
 
  const t = (key) => {

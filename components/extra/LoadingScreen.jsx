@@ -1,37 +1,27 @@
+import AnimatedGradient from "../extra/AnimatedGradient";
+
 export default function LoadingScreen({ language }) {
  const loadingMessage = language === "TR" ? "Yükleniyor..." : "Loading...";
 
  return (
-  <section className="min-h-screen w-full flex flex-col items-center justify-center bg-white dark:bg-[#17233a] transition-colors duration-500">
-   <div
-    className="
-          h-16 w-16 
-          border-8 
-          border-green-500 
-          border-t-transparent 
-          rounded-full 
-          animate-spin 
-          mb-6 
-          dark:border-indigo-400 dark:border-t-transparent"
-    aria-label={loadingMessage}
-   ></div>
-
-   <div
-    className="
-          text-2xl 
-          font-extrabold 
-          text-gray-800 dark:text-gray-200
-          opacity-0 
-          animate-fade-in 
-        "
-    style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-   >
-    {loadingMessage}
+  <section className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0a1f1a] via-[#0d2821] to-[#143d32] relative overflow-hidden">
+   <div className="relative z-10 flex flex-col items-center">
+    <div className="mb-8 scale-150 animate-spin-slow">
+     <AnimatedGradient isHovered={true} />
+    </div>
+    <div className="text-center mt-5 relative">
+     <h2 className="text-3xl font-extrabold bg-gradient-to-r from-green-300 via-emerald-400 to-teal-300 bg-clip-text text-transparent animate-pulse"
+      style={{ animationDuration: '2s' }}>
+      {loadingMessage}
+     </h2>
+    </div>
    </div>
 
-   <div className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-    {language === "TR" ? "Lütfen bekleyin..." : "Please wait..."}
-   </div>
+   <style jsx>{`
+    .animate-spin-slow {
+     animation: spin 3s linear infinite;
+    }
+   `}</style>
   </section>
  );
 }
