@@ -151,9 +151,9 @@ export default function ProjectCard({ project, translations, language, index }) 
          href={project.liveUrl}
          target="_blank"
          rel="noopener noreferrer"
-         className="inline-flex items-center px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-[#005bbb] to-[#0d345e] text-primary rounded-lg hover:from-[#0079fa] hover:to-[#0079fa] transition-all duration-300 group text-xs xs:text-sm"
+         className="inline-flex items-center px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-[#2e7d32] to-[#1a5745] text-primary rounded-lg hover:from-[#43a047] hover:to-[#388e3c] transition-all duration-300 group text-xs xs:text-sm"
         >
-         <FaEye className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-cyan-300" />
+         <FaEye className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-green-300" />
          {language === "TR" ? "Canlı Demo" : "Live Demo"}
          <FaExternalLinkAlt className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 group-hover:translate-x-1 transition-transform duration-200" />
         </Link>
@@ -166,7 +166,7 @@ export default function ProjectCard({ project, translations, language, index }) 
          rel="noopener noreferrer"
          className="inline-flex items-center px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-[#005bbb] to-[#0d345e] text-primary rounded-lg hover:from-[#0079fa] hover:to-[#0079fa] transition-all duration-300 group text-xs xs:text-sm"
         >
-         <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-gray-300" />
+         <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-primary" />
          {language === "TR" ? "Kaynak Kod" : "Source Code"}
          <FaArrowRight className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 group-hover:translate-x-1 transition-transform duration-200" />
         </Link>
@@ -176,10 +176,10 @@ export default function ProjectCard({ project, translations, language, index }) 
       {/* Expand Button */}
       <button
        onClick={() => setIsExpanded(!isExpanded)}
-       className="flex items-center space-x-1.5 xs:space-x-2 text-blue-400 hover:text-blue-300 transition-colors duration-200 group"
+       className="flex items-center space-x-1.5 xs:space-x-2 text-green-400 hover:text-green-300 transition-colors duration-200 group"
       >
        {isExpanded ? (
-        <FaChevronDown className="w-3 xs:w-4 h-3 xs:h-4 group-hover:translate-y-1 transition-transform duration-200" />
+        <FaChevronDown className="w-3 xs:w-4 h-3 xs:h-4 group-hover:translate-y-1 transition-transform duration-200 text-[#43a047]" />
        ) : (
         <FaChevronRight className="w-3 xs:w-4 h-3 xs:h-4 group-hover:translate-x-1 transition-transform duration-200" />
        )}
@@ -247,7 +247,7 @@ export default function ProjectCard({ project, translations, language, index }) 
            rel="noopener noreferrer"
            className="inline-flex items-center px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-[#005bbb] to-[#0d345e] text-primary rounded-lg hover:from-[#0079fa] hover:to-[#0079fa] transition-all duration-300 group text-xs xs:text-sm"
           >
-           <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-gray-300" />
+           <FaGithub className="w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 text-primary" />
            {language === "TR" ? "Kaynak Kod" : "Source Code"}
            <FaArrowRight className="w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2" />
           </Link>
@@ -324,10 +324,10 @@ export default function ProjectCard({ project, translations, language, index }) 
            key={metricIndex}
            className="bg-info rounded-lg p-3 xs:p-4 text-center hover:bg-opacity-80 transition-all duration-300"
           >
-           <div className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 text-cyan-400">
+           <div className="text-lg xs:text-xl sm:text-2xl font-bold mb-1 text-green-400">
             {metric.value}
            </div>
-           <div className="text-xs xs:text-sm text-gray-300">{metric.label}</div>
+           <div className="text-xs xs:text-sm text-primary">{metric.label}</div>
           </div>
          ))}
         </div>
@@ -335,7 +335,7 @@ export default function ProjectCard({ project, translations, language, index }) 
         {project.id === "custom-arduino-uno" && (
          <div className="text-center pt-6 border-t border-info my-6">
           <div className="relative inline-block group max-w-4xl mx-auto">
-           <div className="absolute -inset-3 bg-gradient-to-r from-cyan-300 via-purple-200 to-cyan-300 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-700"></div>
+           <div className="absolute -inset-3 bg-gradient-to-r from-green-300 via-green-100 to-green-300 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-700"></div>
            <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl">
             <Image
              src="/images/1.png"

@@ -7,7 +7,7 @@ export default function LoadingScreen({ language }) {
     className="
           h-16 w-16 
           border-8 
-          border-blue-500 
+          border-green-500 
           border-t-transparent 
           rounded-full 
           animate-spin 

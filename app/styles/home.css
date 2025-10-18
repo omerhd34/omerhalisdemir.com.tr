@@ -3,8 +3,8 @@
     from 0deg,
     transparent 0deg,
     transparent 270deg,
-    oklch(95% 0.06 254.128) 270deg,
-    #01438882 360deg
+    #66bb6a 270deg,
+    #1a5745 360deg
   );
   animation: rotate-border 5s linear infinite;
 }

@@ -41,7 +41,7 @@ const getBrandDescription = (language) => {
   <div className="space-y-2 sm:space-y-3">
    {roles.map((role, index) => (
     <div key={index} className="relative">
-     <span className="relative pb-1 hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:w-full hover:after:h-px hover:after:bg-[#718355] transition-all duration-300">
+     <span className="relative pb-1 hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:w-full hover:after:h-px hover:after:bg-[#2e7d32] transition-all duration-300">
       - {role}
      </span>
     </div>
@@ -115,7 +115,7 @@ export default function Footer({ language = "TR", onLanguageChange }) {
  return (
   <footer className="relative z-40 backdrop-blur-md mt-[171px]">
    <div className="container mx-auto px-4 pb-3 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
-    <nav className="bg-[#020617] px-6 py-8 rounded-2xl shadow-2xl">
+    <nav className="bg-[#0d2821] px-6 py-8 rounded-2xl shadow-2xl">
      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <FooterBrand brandDescription={brandDescription} />
       <QuickLinksSection title={t('footer.quickLinks')} quickLinks={quickLinks} />
@@ -131,7 +131,7 @@ export default function Footer({ language = "TR", onLanguageChange }) {
       />
      </div>
 
-     <div className="border-t border-[#ebf3fe]/20 mt-12 pt-8">
+     <div className="border-t border-[#66bb6a]/30 mt-12 pt-8">
       <FooterBottom
        languageSelector={languageSelector}
        madeWithLove={t('footer.madeWithLove')}

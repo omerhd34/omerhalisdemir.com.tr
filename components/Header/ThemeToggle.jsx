@@ -23,11 +23,11 @@ export function ThemeToggle() {
  return (
   <button
    onClick={toggleTheme}
-   className="hidden md:flex items-center justify-center px-3 py-2 rounded-lg bg-[#1a1f2e] border border-[#c4c8bd]/40 hover:bg-[#c4c8bd]/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#c4c8bd]/40 cursor-pointer hover:cursor-pointer group"
+   className="hidden md:flex items-center justify-center px-3 py-2 rounded-lg bg-[#143d32] border border-[#66bb6a]/40 hover:bg-[#2e7d32]/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#66bb6a]/40 cursor-pointer hover:cursor-pointer group"
    title={isLight ? "Dark Mode" : "Light Mode"}
   >
    {isLight ? (
-    <FaMoon className="w-5 h-5 text-blue-400 group-hover:-rotate-12 transition-transform duration-500" />
+    <FaMoon className="w-5 h-5 text-green-400 group-hover:-rotate-12 transition-transform duration-500" />
    ) : (
     <FaSun className="w-5 h-5 text-yellow-400 group-hover:rotate-180 transition-transform duration-500" />
    )}

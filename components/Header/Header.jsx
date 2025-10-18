@@ -131,7 +131,7 @@ export default function Header({ language = "TR", onLanguageChange }) {
  return (
   <header className="sticky top-0 z-50 2xl:-mb-20 backdrop-blur-md ">
    <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-2 sm:pt-3 ">
-    <nav className="bg-[#020617] backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#718355]/10 relative z-10">
+    <nav className="bg-[#0d2821] backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-t-2xl rounded-b-2xl min-[1152px]:rounded-b-none shadow-2xl border border-[#2e7d32]/30 relative z-10">
      <div className="flex justify-between items-center">
       <Logo isHovered={isHovered} setIsHovered={setIsHovered} />
       <DesktopNav navigationItems={navigationItems} activeSection={activeSection} />

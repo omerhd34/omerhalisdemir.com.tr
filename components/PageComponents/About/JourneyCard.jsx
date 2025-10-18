@@ -28,17 +28,17 @@ export default function JourneyCard({ journeyText, translations, language, isVis
 
       <button
        onClick={() => setIsExpanded(!isExpanded)}
-       className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium mx-auto animate-bounceIn"
+       className="flex items-center gap-2 text-[#43a047] hover:text-[#388e3c] transition-colors duration-300 font-medium mx-auto animate-bounceIn"
       >
        {isExpanded ? (
         <>
          <span>{language === "EN" ? "Show Less" : "Daha Az"}</span>
-         <FaChevronDown className="w-3 h-3 text-[#0083cc]" />
+         <FaChevronDown className="w-3 h-3 text-[#43a047]" />
         </>
        ) : (
         <>
          <span>{language === "EN" ? "Show More" : "Daha Fazla"}</span>
-         <FaChevronRight className="w-3 h-3 text-[#0083cc]" />
+         <FaChevronRight className="w-3 h-3 text-[#43a047]" />
         </>
        )}
       </button>

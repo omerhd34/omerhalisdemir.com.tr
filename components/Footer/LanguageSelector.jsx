@@ -16,7 +16,7 @@ export default function LanguageSelector({ language, onLanguageChange, languages
   <div className="relative">
    <button
     onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-    className="flex items-center space-x-2 px-3 py-2 text-secondary hover:text-[#c4c8bd] hover:bg-[#c4c8bd]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#c4c8bd]/50 border border-[#c4c8bd]/20 text-sm cursor-pointer hover:cursor-pointer"
+    className="flex items-center space-x-2 px-3 py-2 text-[#a5d6a7] hover:text-[#81c784] hover:bg-[#2e7d32]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#66bb6a]/50 border border-[#66bb6a]/30 text-sm cursor-pointer hover:cursor-pointer"
    >
     <div className="flex items-center">
      <ReactCountryFlag
@@ -52,14 +52,14 @@ export default function LanguageSelector({ language, onLanguageChange, languages
 
    {/* Language Dropdown */}
    {isLanguageDropdownOpen && (
-    <div className="absolute bottom-full left-0 mb-2 py-2 w-32 bg-[#020c3b] rounded-lg shadow-xl border border-[#c4c8bd]/20 z-50">
+    <div className="absolute bottom-full left-0 mb-2 py-2 w-32 bg-[#143d32] rounded-lg shadow-xl border border-[#66bb6a]/30 z-50">
      {languagesConfig.map((lang) => (
       <button
        key={lang.code}
        onClick={() => handleLanguageChange(lang.code)}
        className={`flex items-center space-x-2 w-full px-3 py-2 text-sm transition-all duration-300 cursor-pointer hover:cursor-pointer ${language === lang.code
-        ? "text-secondary bg-[#718355]/20"
-        : "text-secondary hover:text-[#c4c8bd] hover:bg-[#718355]/10"
+        ? "text-secondary bg-[#2e7d32]/20"
+        : "text-secondary hover:text-[#81c784] hover:bg-[#2e7d32]/10"
         }`}
       >
        <div className="flex items-center">

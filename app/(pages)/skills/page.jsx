@@ -112,7 +112,7 @@ export default function SkillsPage() {
       className={`text-center mb-2 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
      >
-      <FaCode className="w-8 h-8 mx-auto text-blue-300" />
+      <FaCode className="w-8 h-8 mx-auto text-green-200" />
      </div>
 
      <Title

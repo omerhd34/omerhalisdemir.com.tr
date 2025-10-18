@@ -2,14 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import ReactCountryFlag from "react-country-flag";
 
-export function LanguageSelector({
- language,
- handleLanguageChange,
- languagesConfig = [
-  { code: "TR", name: "Türkçe", countryCode: "TR" },
-  { code: "EN", name: "English", countryCode: "US" }
- ]
-}) {
+export function LanguageSelector({ language, handleLanguageChange, languagesConfig }) {
  const [isOpen, setIsOpen] = useState(false);
  const dropdownRef = useRef(null);
 
@@ -31,7 +24,7 @@ export function LanguageSelector({
   <div className="relative" ref={dropdownRef}>
    <button
     onClick={() => setIsOpen(!isOpen)}
-    className="hidden lg:flex items-center space-x-2 px-3 py-2 text-secondary hover:bg-[#c4c8bd]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#c4c8bd]/50 border border-[#c4c8bd]/20 text-sm cursor-pointer hover:cursor-pointer"
+    className="hidden lg:flex items-center space-x-2 px-3 py-2 text-[#a5d6a7] dark:text-[#a5d6a7] light:text-[#1b5e20] hover:bg-[#2e7d32]/10 dark:hover:bg-[#2e7d32]/10 light:hover:bg-[#c8e6c9] rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#66bb6a]/50 dark:focus:ring-[#66bb6a]/50 light:focus:ring-[#2e7d32] border border-[#66bb6a]/30 dark:border-[#66bb6a]/30 light:border-[#2e7d32] text-sm cursor-pointer hover:cursor-pointer font-semibold"
    >
     <div className="flex items-center">
      <ReactCountryFlag
@@ -44,10 +37,9 @@ export function LanguageSelector({
       title={currentLanguage?.name || "Turkey"}
      />
     </div>
-    <span className="font-medium">{language}</span>
+    <span className="font-semibold">{language}</span>
     <svg
-     className={`w-3 h-3 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
-      }`}
+     className={`w-3 h-3 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
      fill="none"
      stroke="currentColor"
      viewBox="0 0 24 24"
@@ -62,7 +54,7 @@ export function LanguageSelector({
    </button>
 
    {isOpen && (
-    <div className="absolute top-full left-0 mt-2 py-2 w-22 bg-[#020c3b] rounded-lg shadow-xl border border-[#c4c8bd]/20 z-50">
+    <div className="absolute top-full left-0 mt-2 py-2 w-22 bg-[#143d32] dark:bg-[#143d32] light:bg-[#c8e6c9] rounded-lg shadow-xl border border-[#66bb6a]/30 dark:border-[#66bb6a]/30 light:border-[#2e7d32] z-50">
      {languagesConfig.map((lang) => (
       <button
        key={lang.code}
@@ -70,9 +62,9 @@ export function LanguageSelector({
         handleLanguageChange(lang.code);
         setIsOpen(false);
        }}
-       className={`flex items-center space-x-2 w-full px-3 py-2 text-sm transition-all duration-300 cursor-pointer hover:cursor-pointer ${language === lang.code
-        ? "text-primary bg-[#718355]/20"
-        : "text-primary hover:text-[#c4c8bd] hover:bg-[#718355]/10"
+       className={`flex items-center space-x-2 w-full px-3 py-2 text-sm transition-all duration-300 cursor-pointer hover:cursor-pointer font-semibold ${language === lang.code
+        ? "text-[#c8e6c9] dark:text-[#c8e6c9] light:text-[#1b5e20] bg-[#2e7d32]/20 dark:bg-[#2e7d32]/20 light:bg-[#81c784]"
+        : "text-[#a5d6a7] dark:text-[#a5d6a7] light:text-[#2e7d32] hover:text-[#81c784] dark:hover:text-[#81c784] light:hover:text-[#1b5e20] hover:bg-[#2e7d32]/10 dark:hover:bg-[#2e7d32]/10 light:hover:bg-[#a5d6a7]"
         }`}
       >
        <div className="flex items-center">

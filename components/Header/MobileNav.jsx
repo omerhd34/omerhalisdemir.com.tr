@@ -35,7 +35,7 @@ export function MobileNav({
    className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? "max-h-[700px] opacity-100 mt-6" : "max-h-0 opacity-0"
     }`}
   >
-   <div className="bg-[#020c3b]/95 backdrop-blur-sm rounded-xl p-4 space-y-1 md:space-y-2 border border-[#718355]/10">
+   <div className="bg-[#143d32]/95 backdrop-blur-sm rounded-xl p-4 space-y-1 md:space-y-2 border border-[#2e7d32]/30">
     {navigationItems.map((item, index) => {
      const IconComponent = item.icon;
      const isActive = activeSection === item.key;
@@ -46,8 +46,8 @@ export function MobileNav({
        href={item.href}
        onClick={handleNavigationClick}
        className={`flex items-center space-x-4 sm:space-x-5 py-2 md:py-3 px-3 rounded-lg text-[15px] md:text-[18px] font-medium transition-all duration-300 ${isActive
-        ? "text-[#ebf3fe] bg-info border-l-4 border-[#ebf3fe]"
-        : "text-[#ebf3fe] hover:bg-[#020617]/10"
+        ? "text-[#c8e6c9] bg-info border-l-4 border-[#66bb6a]"
+        : "text-[#c8e6c9] hover:bg-[#1a5745]/10"
         }`}
        style={{ animationDelay: `${index * 50}ms` }}
       >
@@ -57,11 +57,11 @@ export function MobileNav({
      );
     })}
 
-    <div className="py-3 my-0 border-t border-[#718355]/20 ">
+    <div className="py-3 my-0 border-t border-[#2e7d32]/30">
      <div className="flex justify-center space-x-3">
       <button
        onClick={toggleTheme}
-       className="flex items-center justify-center px-3 py-2 rounded-lg bg-gradient-to-r from-[#020617] to-[#020617] hover:from-[#000] hover:to-[#000] transition-all duration-300 group"
+       className="flex items-center justify-center px-3 py-2 rounded-lg bg-gradient-to-r from-[#143d32] to-[#1a5745] hover:from-[#2e7d32] hover:to-[#388e3c] transition-all duration-300 group"
       >
        {isLight ? (
         <FaMoon className="w-5 h-5 text-blue-400" />
@@ -74,9 +74,9 @@ export function MobileNav({
        <button
         key={lang.code}
         onClick={() => handleLanguageChange(lang.code)}
-        className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${language === lang.code
-         ? "text-[#ebf3fe] bg-black border border-[#ebf3fe]"
-         : "text-[#ebf3fe] hover:bg-[#020617]/10"
+        className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${language === lang.code
+         ? "text-[#c8e6c9] dark:text-[#c8e6c9] light:text-white bg-[#1b5e20] dark:bg-[#1b5e20] light:bg-[#2e7d32] border border-[#66bb6a] dark:border-[#66bb6a] light:border-[#43a047]"
+         : "text-[#c8e6c9] dark:text-[#c8e6c9] light:text-[#1b5e20] hover:bg-[#1a5745]/10 dark:hover:bg-[#1a5745]/10 light:hover:bg-[#c8e6c9]"
          }`}
        >
         <div className="flex items-center">
@@ -88,12 +88,11 @@ export function MobileNav({
          />
         </div>
         <span className="text-xs">{lang.code}</span>
-       </button>
-      ))}
+       </button>))}
      </div>
     </div>
 
-    <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#ebf3fe]/20">
+    <div className="grid grid-cols-2 gap-2 pt-3 border-t border-[#66bb6a]/30 dark:border-[#66bb6a]/30 light:border-[#2e7d32]">
      {socialLinks.map((link) => {
       const IconComponent = link.icon;
       return (
@@ -102,11 +101,11 @@ export function MobileNav({
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center space-x-1.5 px-3 py-2.5 text-primary bg-gradient-to-r from-[#020617] to-[#020617] hover:from-[#000] hover:to-[#000] rounded-lg text-xs font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+        className="flex items-center justify-center space-x-1.5 px-3 py-2.5 text-primary bg-gradient-to-r from-[#143d32] to-[#1a5745] dark:from-[#143d32] dark:to-[#1a5745] light:from-[#1b5e20] light:to-[#2e7d32] hover:from-[#2e7d32] hover:to-[#388e3c] rounded-lg text-xs font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
        >
-        <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
+        <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-[#c8e6c9] dark:text-[#c8e6c9] light:text-white" />
         {link.name === t.cv && (
-         <span className="truncate">{link.name}</span>
+         <span className="truncate text-[#c8e6c9] dark:text-[#c8e6c9] light:text-white font-semibold">{link.name}</span>
         )}
        </Link>
       );

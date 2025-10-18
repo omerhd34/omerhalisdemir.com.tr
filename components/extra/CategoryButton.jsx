@@ -31,7 +31,7 @@ export default function CategoryButton({
     </div>
    </div>
    {isActive && (
-    <div className="absolute -bottom-1 xs:-bottom-2 left-1/2 transform -translate-x-1/2 w-6 xs:w-8 h-0.5 xs:h-1 bg-white rounded-full"></div>
+    <div className="absolute -bottom-1 xs:-bottom-2 left-1/2 transform -translate-x-1/2 w-6 xs:w-8 h-0.5 xs:h-1 bg-green-400 rounded-full"></div>
    )}
   </button>
  );

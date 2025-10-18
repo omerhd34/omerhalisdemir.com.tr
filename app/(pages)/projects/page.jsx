@@ -30,9 +30,9 @@ export default function ProjectsPage() {
   };
 
   const categoryColors = {
-   all: "from-red-900 to-red-400",
-   web: "from-green-900 to-green-400",
-   electronics: "from-orange-900 to-orange-400"
+   all: "from-green-900 to-green-400",
+   web: "from-green-700 to-green-500",
+   electronics: "from-green-600 to-green-300"
   };
 
   return {
@@ -110,7 +110,7 @@ export default function ProjectsPage() {
    <div className="min-h-screen relative overflow-hidden text-primary">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 relative z-10">
      <FaProjectDiagram
-      className={`w-8 h-8 text-blue-300 mx-auto mb-2 transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`w-8 h-8 text-green-200 mx-auto mb-2 transition-all duration-1000 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
        }`}
      />
 

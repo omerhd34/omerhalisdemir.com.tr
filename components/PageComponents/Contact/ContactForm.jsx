@@ -95,8 +95,7 @@ export default function ContactForm({ translations, language, isVisible }) {
   }
  };
 
- const inputStyles =
-  "w-full px-4 py-3 bg-info border border-[#ffffff97] rounded-lg placeholder-[#ffffff97] focus:outline-none focus:border-[#ffffff97] focus:ring-2 focus:ring-[#ffffff97]/20 transition-all duration-300 text-[16px] sm:text-base hover:border-[#ffffff] hover:scale-[1.02] transform";
+ const inputStyles = "w-full px-4 py-3 bg-info border border-[#66bb6a] rounded-lg placeholder-[#a5d6a7] focus:outline-none focus:border-[#81c784] focus:ring-2 focus:ring-[#66bb6a]/20 transition-all duration-300 text-[16px] sm:text-base hover:border-[#81c784] hover:scale-[1.02] transform";
 
  return (
   <div
@@ -195,7 +194,7 @@ export default function ContactForm({ translations, language, isVisible }) {
      <button
       type="submit"
       disabled={isSubmitting}
-      className="w-25 sm:w-full max-w-xs sm:max-w-sm md:max-w-md py-2 sm:py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#082039] to-[#d4e2f9] hover:from-[#000] hover:to-[#000] border-0 hover:ring-2 hover:ring-white hover:ring-opacity-50 mb-2"
+      className="w-25 sm:w-full max-w-xs sm:max-w-sm md:max-w-md py-2 sm:py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#2e7d32] to-[#66bb6a] hover:from-[#1b5e20] hover:to-[#2e7d32] border-0 hover:ring-2 hover:ring-[#81c784] hover:ring-opacity-50 mb-2"
      >
       <FaPaperPlane className="w-4 h-4" />
       <span>{isSubmitting ? translations.sending : translations.send}</span>

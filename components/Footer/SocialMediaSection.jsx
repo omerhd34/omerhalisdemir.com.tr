@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function SocialMediaSection({ title, socialLinks }) {
  return (
   <div className="space-y-4">
-   <h3 className="text-secondary font-semibold text-lg border-b border-[#ebf3fe]/30 pb-2">
+   <h3 className="text-secondary font-semibold text-lg border-b border-[#66bb6a]/40 pb-2">
     {title}
    </h3>
    <div className="space-y-3">

@@ -8,7 +8,7 @@ export default function LayoutContent({ children }) {
  const { language, handleLanguageChange } = useLanguage();
 
  return (
-  <div className="min-h-screen select-none transition-colors duration-300 ease-in-out bg-[#17233a] relative">
+  <div className="min-h-screen select-none transition-colors duration-300 ease-in-out bg-[#0a1f1a] relative">
    <div className="relative z-10">
     <Header language={language} onLanguageChange={handleLanguageChange} />
     <main>{children}</main>

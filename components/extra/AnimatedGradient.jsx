@@ -9,20 +9,20 @@ export default function AnimatedGradient({ isHovered = false }) {
       style={{
        background: `conic-gradient(
                 from 0deg at 50% 50%,
-                #040d348d,
-                #0ea5e9,
-                #2563eb,
-                #1d4ed8,
-                #01438882,
-                #020c3b
+                #0a1f1a,
+                #2e7d32,
+                #43a047,
+                #388e3c,
+                #1a5745,
+                #0d2821
               )`,
        animation: isHovered
         ? "rotate 1s linear infinite, pulse 2s ease-in-out infinite alternate, hover-spin 0.5s ease-out"
         : "rotate 2s linear infinite, pulse 4s ease-in-out infinite alternate",
        filter: isHovered ? "brightness(1.3) saturate(1.4)" : "brightness(1) saturate(1)",
        boxShadow: isHovered
-        ? "0 0 30px rgba(1, 112, 230, 0.6), 0 0 60px rgba(1, 112, 230, 0.3)"
-        : "0 0 20px rgba(1, 112, 230, 0.3)",
+        ? "0 0 30px rgba(46, 125, 50, 0.6), 0 0 60px rgba(46, 125, 50, 0.3)"
+        : "0 0 20px rgba(46, 125, 50, 0.3)",
       }}
      >
       <div
@@ -82,13 +82,12 @@ export default function AnimatedGradient({ isHovered = false }) {
       style={{
        background: `conic-gradient(
                 from 0deg at 50% 50%,
-                #1e3a8a,
-                #3b82f6,
-                #06b6d4,
-                #0ea5e9,
-                #2563eb,
-                #1d4ed8,
-                #1e3a8a
+                #1b5e20,
+                #43a047,
+                #66bb6a,
+                #2e7d32,
+                #388e3c,
+                #1b5e20
               )`,
        animation: isHovered
         ? "rotate 4s linear infinite, glow-pulse 1.5s ease-in-out infinite alternate"

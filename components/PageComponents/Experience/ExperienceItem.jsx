@@ -227,11 +227,11 @@ export default function ExperienceItem({ item, translations, isVisible, index })
         className="flex items-center space-x-2 transition-colors duration-200 sm:hidden sm:mb-4"
        >
         {isMobileExpanded ? (
-         <FaChevronDown className="w-3 h-3 text-[#0083cc]" />
+         <FaChevronDown className="w-3 h-3 text-[#43a047]" />
         ) : (
-         <FaChevronRight className="w-3 h-3 text-[#0083cc]" />
+         <FaChevronRight className="w-3 h-3 text-[#43a047]" />
         )}
-        <span className="text-[15px] text-[#0083cc]">
+        <span className="text-[15px] text-[#43a047]">
          {isMobileExpanded ? translations.showLess : translations.showMore}
         </span>
        </button>
@@ -262,7 +262,7 @@ export default function ExperienceItem({ item, translations, isVisible, index })
        <ul className="space-y-2 mb-4">
         {item.achievements?.map((achievement, achievementIndex) => (
          <li key={achievementIndex} className="flex items-start space-x-3">
-          <div className="w-2 h-2 rounded-full bg-[#daf1ff] mt-2 flex-shrink-0"></div>
+          <div className="w-2 h-2 rounded-full bg-[#a5d6a7] mt-2 flex-shrink-0"></div>
           <span className="text-[16px]">{achievement}</span>
          </li>
         ))}

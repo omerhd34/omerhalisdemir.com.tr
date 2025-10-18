@@ -47,13 +47,13 @@ export default function SkillCard({ skill, index, isMobile = false, translations
  const getLevelColor = (level) => {
   switch (level) {
    case "beginner":
-    return "from-yellow-500 to-orange-500";
+    return "from-green-300 to-green-400";
    case "intermediate":
-    return "from-blue-500 to-cyan-500";
+    return "from-green-500 to-green-600";
    case "advanced":
-    return "from-purple-500 to-pink-500";
+    return "from-green-600 to-green-700";
    case "expert":
-    return "from-green-500 to-emerald-500";
+    return "from-green-800 to-green-900";
    default:
     return "from-gray-500 to-gray-600";
   }
