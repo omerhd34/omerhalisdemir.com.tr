@@ -2,7 +2,7 @@ export default function LoadingScreen({ language }) {
  const loadingMessage = language === "TR" ? "Yükleniyor..." : "Loading...";
 
  return (
-  <section className="min-h-screen w-full flex flex-col items-center justify-center bg-white dark:bg-gray-900 transition-colors duration-500">
+  <section className="min-h-screen w-full flex flex-col items-center justify-center bg-white dark:bg-[#17233a] transition-colors duration-500">
    <div
     className="
           h-16 w-16 

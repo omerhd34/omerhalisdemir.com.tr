@@ -5,7 +5,7 @@ import { DataProvider } from "./context/DataContext";
 import LayoutContent from "./LayoutContent.jsx";
 
 export const metadata = {
- title: "Ömer Halis | Full Stack Developer",
+ title: "Ömer Halis Demir | Full Stack Developer",
  description: "Modern web uygulamaları geliştiriyorum.",
 };
 

@@ -16,7 +16,7 @@ export default function LanguageSelector({ language, onLanguageChange, languages
   <div className="relative">
    <button
     onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
-    className="flex items-center space-x-2 px-3 py-2 text-primary hover:text-[#c4c8bd] hover:bg-[#c4c8bd]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#c4c8bd]/50 border border-[#c4c8bd]/20 text-sm cursor-pointer hover:cursor-pointer"
+    className="flex items-center space-x-2 px-3 py-2 text-secondary hover:text-[#c4c8bd] hover:bg-[#c4c8bd]/10 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#c4c8bd]/50 border border-[#c4c8bd]/20 text-sm cursor-pointer hover:cursor-pointer"
    >
     <div className="flex items-center">
      <ReactCountryFlag
@@ -58,8 +58,8 @@ export default function LanguageSelector({ language, onLanguageChange, languages
        key={lang.code}
        onClick={() => handleLanguageChange(lang.code)}
        className={`flex items-center space-x-2 w-full px-3 py-2 text-sm transition-all duration-300 cursor-pointer hover:cursor-pointer ${language === lang.code
-        ? "text-primary bg-[#718355]/20"
-        : "text-primary hover:text-[#c4c8bd] hover:bg-[#718355]/10"
+        ? "text-secondary bg-[#718355]/20"
+        : "text-secondary hover:text-[#c4c8bd] hover:bg-[#718355]/10"
         }`}
       >
        <div className="flex items-center">

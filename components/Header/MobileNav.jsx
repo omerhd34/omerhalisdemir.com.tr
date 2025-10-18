@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ReactCountryFlag from "react-country-flag";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { useState, useEffect } from "react";
 
 export function MobileNav({
  isMenuOpen,
@@ -12,6 +14,22 @@ export function MobileNav({
  socialLinks,
  t,
 }) {
+ const [isLight, setIsLight] = useState(false);
+
+ useEffect(() => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+   setIsLight(savedTheme === 'light');
+  }
+ }, []);
+
+ const toggleTheme = () => {
+  const newTheme = !isLight;
+  setIsLight(newTheme);
+  localStorage.setItem('theme', newTheme ? 'light' : 'dark');
+  document.documentElement.classList.toggle('light', newTheme);
+ };
+
  return (
   <div
    className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? "max-h-[700px] opacity-100 mt-6" : "max-h-0 opacity-0"
@@ -41,6 +59,17 @@ export function MobileNav({
 
     <div className="py-3 my-0 border-t border-[#718355]/20 ">
      <div className="flex justify-center space-x-3">
+      <button
+       onClick={toggleTheme}
+       className="flex items-center justify-center px-3 py-2 rounded-lg bg-gradient-to-r from-[#020617] to-[#020617] hover:from-[#000] hover:to-[#000] transition-all duration-300 group"
+      >
+       {isLight ? (
+        <FaMoon className="w-5 h-5 text-blue-400" />
+       ) : (
+        <FaSun className="w-5 h-5 text-yellow-400" />
+       )}
+      </button>
+
       {languagesConfig.map((lang) => (
        <button
         key={lang.code}

@@ -6,28 +6,79 @@
     font-family: "Zain-Light", sans-serif;
     transition: all 0.3s ease;
   }
+
+  :root {
+    --bg-primary: #040d348d;
+    --bg-secondary: #020617;
+    --bg-info: #020c3b;
+    --bg-muted: #01438882;
+    --bg-accent: #f0eaff;
+
+    --text-primary: #daf1ff;
+    --text-secondary: #daf1ff;
+    --text-tertiary: #fff;
+
+    --border-primary: #415d12;
+    --border-info: #dfdfdfe5;
+    --border-accent: oklch(95% 0.06 254.128);
+  }
+
+  :root.light {
+    --bg-primary: #e8f4ff;
+    --bg-secondary: #f8fafc;
+    --bg-info: #e0f2fe;
+    --bg-muted: #bae6fd;
+    --bg-accent: #3800c7;
+
+    --text-primary: #0c4a6e;
+    --text-secondary: #b3c2cb;
+    --text-tertiary: #d4d4d4;
+
+    --border-primary: #7dd3fc;
+    --border-info: #0369a1;
+    --border-accent: #0284c7;
+  }
+
+  body {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+  }
 }
+
 .text-primary {
-  color: #daf1ff;
+  color: var(--text-primary);
 }
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
 .bg-primary {
-  background-color: #040d348d;
+  background-color: var(--bg-primary);
 }
+
 .bg-secondary {
-  background-color: #020617;
+  background-color: var(--bg-secondary);
 }
+
 .bg-info {
-  background-color: #020c3b;
+  background-color: var(--bg-info);
 }
+
 .bg-muted {
-  background-color: #01438882;
+  background-color: var(--bg-muted);
 }
+
 .border-primary {
-  border-color: #415d12;
+  border-color: var(--border-primary);
 }
+
 .border-info {
-  border-color: #dfdfdf24;
+  border-color: var(--border-info);
 }
+
 .border-accent {
-  border-color: oklch(95% 0.06 254.128);
+  border-color: var(--border-accent);
 }

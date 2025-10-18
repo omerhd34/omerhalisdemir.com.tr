@@ -14,7 +14,7 @@ export function DesktopSocialLinks({ socialLinks, t }) {
          href={link.href}
          target="_blank"
          rel="noopener noreferrer"
-         className="group relative flex items-center justify-center px-3 py-2.5 text-primary bg-[#151b36] hover:bg-[#040d348d] rounded-lg text-xs font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#ebf3fe]/30 hover:border-[#fff] min-w-[40px]"
+         className="group relative flex items-center justify-center px-3 py-2.5 text-secondary bg-[#151b36] hover:bg-[#040d348d] rounded-lg text-xs font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 border border-[#ebf3fe]/30 hover:border-[#fff] min-w-[40px]"
         >
          {link.name === t.cv ? (
           <div className="flex items-center space-x-1">
