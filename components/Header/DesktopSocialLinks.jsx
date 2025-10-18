@@ -5,7 +5,7 @@ export function DesktopSocialLinks({ socialLinks, t }) {
   <div className="hidden lg:block">
    <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 z-[0]">
     <div className="flex justify-end">
-     <div className="flex items-center justify-center space-x-3 p-3 bg-gradient-to-r from-[#0a1f1a] via-[#143d32] to-[#0d2821] dark:from-[#0a1f1a] dark:via-[#143d32] dark:to-[#0d2821] light:from-[#a5d6a7] light:via-[#81c784] light:to-[#a5d6a7] backdrop-blur-sm rounded-b-2xl shadow-xl border-x border-b border-[#2e7d32]/30">
+     <div className="flex items-center justify-center bg-info space-x-3 p-3 rounded-b-2xl shadow-xl border-x border-b border-[#2e7d32]/30">
       {socialLinks.map((link) => {
        const IconComponent = link.icon;
        return (

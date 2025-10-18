@@ -8,6 +8,7 @@
   }
 
   :root {
+    /* Dark mode colors */
     --bg-primary: #0a1f1a;
     --bg-secondary: #0d2821;
     --bg-info: #143d32;
@@ -25,20 +26,21 @@
   }
 
   :root.light {
-    --bg-primary: #e8f5e9;
-    --bg-secondary: #f1f8e9;
-    --bg-info: #c8e6c9;
-    --bg-muted: #a5d6a7;
-    --bg-accent: #1b5e20;
+    /* Light mode colors - updated for better contrast */
+    --bg-primary: #f1f8e9;
+    --bg-secondary: #e8f5e9;
+    --bg-info: #dcedc8;
+    --bg-muted: #c5e1a5;
+    --bg-accent: #2e7d32;
 
     --text-primary: #1b5e20;
     --text-secondary: #2e7d32;
     --text-tertiary: #388e3c;
     --text-accent: #c8e6c9;
 
-    --border-primary: #66bb6a;
-    --border-info: #2e7d32;
-    --border-accent: #43a047;
+    --border-primary: #43a047;
+    --border-info: #66bb6a;
+    --border-accent: #81c784;
   }
 
   body {
@@ -47,6 +49,7 @@
   }
 }
 
+/* Text color utilities */
 .text-primary {
   color: var(--text-primary);
 }
@@ -60,6 +63,7 @@
   color: var(--text-accent);
 }
 
+/* Background color utilities */
 .bg-primary {
   background-color: var(--bg-primary);
 }
@@ -76,6 +80,7 @@
   background-color: var(--bg-accent);
 }
 
+/* Border color utilities */
 .border-primary {
   border-color: var(--border-primary);
 }
@@ -83,5 +88,36 @@
   border-color: var(--border-info);
 }
 .border-accent {
+  border-color: var(--border-accent);
+}
+
+/* Hover states */
+.hover\:text-primary:hover {
+  color: var(--text-primary);
+}
+.hover\:text-secondary:hover {
+  color: var(--text-secondary);
+}
+.hover\:text-accent:hover {
+  color: var(--text-accent);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--bg-primary);
+}
+.hover\:bg-secondary:hover {
+  background-color: var(--bg-secondary);
+}
+.hover\:bg-info:hover {
+  background-color: var(--bg-info);
+}
+
+.hover\:border-primary:hover {
+  border-color: var(--border-primary);
+}
+.hover\:border-info:hover {
+  border-color: var(--border-info);
+}
+.hover\:border-accent:hover {
   border-color: var(--border-accent);
 }
