@@ -17,6 +17,7 @@
     --text-primary: #c8e6c9;
     --text-secondary: #a5d6a7;
     --text-tertiary: #dcedc8;
+    --text-accent: #c8e6c9;
 
     --border-primary: #2e7d32;
     --border-info: #66bb6a;
@@ -33,6 +34,7 @@
     --text-primary: #1b5e20;
     --text-secondary: #2e7d32;
     --text-tertiary: #388e3c;
+    --text-accent: #c8e6c9;
 
     --border-primary: #66bb6a;
     --border-info: #2e7d32;
@@ -53,6 +55,9 @@
 }
 .text-tertiary {
   color: var(--text-tertiary);
+}
+.text-accent {
+  color: var(--text-accent);
 }
 
 .bg-primary {
