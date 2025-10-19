@@ -2,8 +2,12 @@
 import { useState } from "react";
 import { FaRocket, FaChevronDown, FaChevronRight } from "react-icons/fa";
 
-export default function JourneyCard({ journeyText, translations, language, isVisible }) {
+export default function JourneyCard({ journeyText, language, isVisible }) {
  const [isExpanded, setIsExpanded] = useState(false);
+
+ const showMoreText = language === "EN" ? "Show More" : "Daha Fazla";
+ const showLessText = language === "EN" ? "Show Less" : "Daha Az";
+ const journey = language === "EN" ? "My Journey" : "Yolculuğum";
 
  return (
   <div
@@ -12,7 +16,7 @@ export default function JourneyCard({ journeyText, translations, language, isVis
   >
    <div className="text-center mb-3 sm:mb-6">
     <FaRocket className="w-8 h-8 mx-auto mb-2 sm:mb-3" />
-    <h3 className="text-2xl font-bold">{translations.journey}</h3>
+    <h3 className="text-2xl font-bold">{journey}</h3>
    </div>
    <div className="text-[16px] text-left leading-relaxed">
     <p className="mb-4">{journeyText.preview}</p>
@@ -32,12 +36,12 @@ export default function JourneyCard({ journeyText, translations, language, isVis
       >
        {isExpanded ? (
         <>
-         <span>{language === "EN" ? "Show Less" : "Daha Az"}</span>
+         <span>{showLessText}</span>
          <FaChevronDown className="w-3 h-3 text-[#43a047]" />
         </>
        ) : (
         <>
-         <span>{language === "EN" ? "Show More" : "Daha Fazla"}</span>
+         <span>{showMoreText}</span>
          <FaChevronRight className="w-3 h-3 text-[#43a047]" />
         </>
        )}

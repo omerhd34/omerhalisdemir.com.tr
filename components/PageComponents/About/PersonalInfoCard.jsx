@@ -1,39 +1,116 @@
-"use client";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaGraduationCap, FaBirthdayCake, FaMapMarkerAlt, FaCode } from "react-icons/fa";
+import ReactCountryFlag from "react-country-flag";
 
-export default function PersonalInfoCard({ personalInfo, translations, isVisible }) {
+export default function PersonalInfoCard({ language, isVisible }) {
+ const translations = {
+  title: {
+   'EN': "Personal Information",
+   'TR': "Kişisel Bilgiler",
+  },
+  birthDate: {
+   'EN': "Birth Date",
+   'TR': "Doğum Tarihi",
+  },
+  location: {
+   'EN': "Location",
+   'TR': "Konum",
+  },
+  education: {
+   'EN': "Education",
+   'TR': "Eğitim",
+  },
+  passion: {
+   'EN': "Passion",
+   'TR': "Tutku",
+  },
+  istanbulCommerce: {
+   'EN': "Istanbul Commerce University",
+   'TR': "İstanbul Ticaret Üniversitesi",
+  },
+  softwareDev: {
+   'EN': "Software Development",
+   'TR': "Yazılım Geliştirme",
+  }
+ };
+
+ const personalInfo = [
+  {
+   label: translations.birthDate[language],
+   value: "29.03.1998",
+   icon: FaBirthdayCake,
+  },
+  {
+   label: translations.location[language],
+   value: (
+    <span className="flex items-center justify-center gap-2">
+     İstanbul, Türkiye
+     <ReactCountryFlag
+      countryCode="TR"
+      svg
+      style={{ width: "20px", height: "15px" }}
+      aria-label="Turkey"
+     />
+    </span>
+   ),
+   icon: FaMapMarkerAlt,
+  },
+  {
+   label: translations.education[language],
+   value: translations.istanbulCommerce[language],
+   icon: FaGraduationCap,
+  },
+  {
+   label: translations.passion[language],
+   value: translations.softwareDev[language],
+   icon: FaCode,
+  },
+ ];
+
+ const cardClasses = `
+    bg-secondary p-4 sm:p-8 rounded-4xl shadow-4xl
+    transition-all duration-1000 delay-300
+    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+  `;
+
  return (
-  <div
-   className={`bg-secondary p-4 sm:p-8 rounded-4xl shadow-4xl transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-    }`}
-  >
+  <section className={cardClasses.trim()} aria-labelledby="personal-info-heading">
    <div className="text-center mb-6 sm:mb-8">
-    <FaUser className="w-8 h-8 mx-auto mb-3" />
-    <h3 className="text-2xl font-bold">{translations.personalInfo}</h3>
+    <FaUser className="w-8 h-8 mx-auto mb-3 text-primary" aria-hidden="true" />
+    <h2 id="personal-info-heading" className="text-2xl font-bold text-gray-800 dark:text-white">
+     {translations.title[language]}
+    </h2>
    </div>
 
-   <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 lg:gap-6">
-    {personalInfo.map((info, index) => {
+   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+    {personalInfo.map((info) => {
      const IconComponent = info.icon;
+
+     const itemClasses = `
+            text-center p-3 sm:p-4 rounded-2xl bg-info hover:bg-info-dark
+            transition-all duration-300 transform hover:scale-105 hover:shadow-xl
+            h-full min-h-[90px] sm:min-h-[150px] flex flex-col justify-between
+            ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
+          `;
+
      return (
-      <div
+      <article
        key={info.label}
-       className={`text-center :p-4 rounded-2xl bg-info transition-all duration-300 transform hover:scale-105 hover:shadow-lg sm:h-[150px] h-[90px] flex flex-col ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-        }`}
+       className={itemClasses.trim()}
+       style={{ transitionDelay: isVisible ? '0ms' : '0ms' }}
       >
-       <div className="flex-1 flex flex-col items-center justify-between py-1 sm:py-5">
-        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
-        <div className="font-semibold text-xs sm:text-[16px] tracking-wide">
+       <div className="flex flex-col items-center justify-center flex-grow py-1 sm:py-3">
+        <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-accent" aria-hidden="true" />
+        <h4 className="mt-2 font-semibold text-xs sm:text-[16px] tracking-wide text-gray-700 dark:text-gray-300">
          {info.label}
-        </div>
-        <div className="font-medium text-sm sm:text-base break-words text-center">
+        </h4>
+        <p className="font-medium text-sm sm:text-base break-words text-center mt-1">
          {info.value}
-        </div>
+        </p>
        </div>
-      </div>
+      </article>
      );
     })}
    </div>
-  </div>
+  </section>
  );
 }

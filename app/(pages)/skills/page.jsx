@@ -1,16 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaLaptopCode, FaServer, FaTools } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 import { useData } from "../../context/DataContext";
 import CategoryButton from "../../../components/extra/CategoryButton";
 import Title from "../../../components/extra/Title";
 import SkillsContent from "../../../components/PageComponents/Skill/SkillsContent";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
-import { FaLaptopCode, FaServer, FaTools } from "react-icons/fa";
 
 export default function SkillsPage() {
- const { language, t, loading: langLoading } = useLanguage();
+ const { language, loading: langLoading } = useLanguage();
  const { skills, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("frontend");
@@ -45,6 +44,61 @@ export default function SkillsPage() {
   return acc;
  }, {});
 
+ const pageTranslations = {
+  title: language === "EN" ? "Skills" : "Yetenekler",
+  subtitle: language === "EN" ? "Technical Skills" : "Teknik Beceriler",
+  description: language === "EN"
+   ? "Technologies I use and my proficiency levels"
+   : "Kullandığım teknolojiler ve yetkinlik seviyelerim",
+ };
+
+ const categoryTranslations = {
+  frontend: {
+   title: language === "EN" ? "Frontend" : "Frontend",
+   description: language === "EN"
+    ? "Frontend technologies and frameworks"
+    : "Frontend teknolojileri ve framework'ler",
+  },
+  backend: {
+   title: language === "EN" ? "Backend" : "Backend",
+   description: language === "EN"
+    ? "Backend technologies and databases"
+    : "Backend teknolojileri ve veritabanları",
+  },
+  tools: {
+   title: language === "EN" ? "Tools" : "Araçlar",
+   description: language === "EN"
+    ? "Development tools and platforms"
+    : "Geliştirme araçları ve platformlar",
+  },
+ };
+
+ const statsTranslations = {
+  skills: language === "EN" ? "Skills" : "Yetenek",
+  technologies: language === "EN" ? "Technologies" : "Teknoloji",
+  avgLevel: language === "EN" ? "Average Level" : "Ortalama Seviye",
+ };
+
+ const levelTranslations = {
+  beginner: language === "EN" ? "Beginner" : "Başlangıç",
+  intermediate: language === "EN" ? "Intermediate" : "Orta",
+  advanced: language === "EN" ? "Advanced" : "İleri",
+  expert: language === "EN" ? "Expert" : "Uzman",
+ };
+
+ const otherTranslations = {
+  yearsExp: language === "EN" ? "Years Experience" : "Yıl Deneyim",
+  proficiency: language === "EN" ? "Proficiency" : "Yetkinlik",
+ };
+
+ const translations = {
+  ...pageTranslations,
+  categories: categoryTranslations,
+  categoryStats: statsTranslations,
+  levels: levelTranslations,
+  ...otherTranslations,
+ };
+
  const getCategoryStats = (category) => {
   const categorySkills = skills[category]?.skills || [];
 
@@ -62,39 +116,6 @@ export default function SkillsPage() {
 
  const handleCategoryChange = (category) => {
   setActiveCategory(category);
- };
-
- const translations = {
-  title: t('skills.title') || 'Yetenekler',
-  subtitle: t('skills.subtitle') || 'Teknik Beceriler',
-  description: t('skills.description') || 'Kullandığım teknolojiler ve yetkinlik seviyelerim',
-  categories: {
-   frontend: {
-    title: t('skills.categories.frontend.title') || 'Frontend',
-    description: t('skills.categories.frontend.description') || 'Frontend teknolojileri',
-   },
-   backend: {
-    title: t('skills.categories.backend.title') || 'Backend',
-    description: t('skills.categories.backend.description') || 'Backend teknolojileri',
-   },
-   tools: {
-    title: t('skills.categories.tools.title') || 'Araçlar',
-    description: t('skills.categories.tools.description') || 'Geliştirme araçları',
-   },
-  },
-  categoryStats: {
-   skills: t('skills.categoryStats.skills') || 'Yetenek',
-   technologies: t('skills.categoryStats.technologies') || 'Teknoloji',
-   avgLevel: t('skills.categoryStats.avgLevel') || 'Ortalama Seviye',
-  },
-  levels: {
-   beginner: t('skills.levels.beginner') || 'Başlangıç',
-   intermediate: t('skills.levels.intermediate') || 'Orta',
-   advanced: t('skills.levels.advanced') || 'İleri',
-   expert: t('skills.levels.expert') || 'Uzman',
-  },
-  yearsExp: t('skills.yearsExp') || 'Yıl Deneyim',
-  proficiency: t('skills.proficiency') || 'Yetkinlik',
  };
 
  return (

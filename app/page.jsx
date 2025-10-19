@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaCode, FaRocket, FaGraduationCap } from "react-icons/fa";
 import { useLanguage } from "../app/context/LanguageContext";
 import { useData } from "../app/context/DataContext";
 import ProfileImage from "../components/PageComponents/Home/ProfileImage.jsx";
@@ -23,32 +22,12 @@ export default function HomePage() {
   return <LoadingScreen language={language} />;
  }
 
- const cvUrl =
-  language === "EN"
-   ? "/pdf/cv-english.pdf#zoom=35"
-   : "/pdf/cv.pdf#zoom=35";
-
- const professionTitles = [
-  t('home.professionTitles.0') || "Full Stack Geliştirici",
-  t('home.professionTitles.1') || "Frontend Geliştirici",
-  t('home.professionTitles.2') || "Backend Geliştirici",
-  t('home.professionTitles.3') || "Elektrik Elektronik Mühendisi",
- ];
-
  const totalSkills = Object.values(skills || {}).reduce((acc, category) => {
   if (category && Array.isArray(category.skills)) {
    return acc + category.skills.length;
   }
   return acc;
  }, 0);
-
- const stats = [
-  {
-   number: `${totalSkills}+`, label: t('home.stats.skills'), icon: FaCode
-  },
-  { number: "4", label: t('home.stats.experience'), icon: FaGraduationCap },
-  { number: `${projects?.length}`, label: t('home.stats.projects'), icon: FaRocket },
- ];
 
  return (
   <section className="min-h-[80vh] flex items-center justify-center pt-3 sm:pt-5 md:pt-10 lg:pt-10 2xl:pt-30">
@@ -63,13 +42,15 @@ export default function HomePage() {
       >
        <ProfileImage />
        <MainContent
-        professionTitles={professionTitles}
         description={t('home.shortDescription')}
-        cvUrl={cvUrl}
-        downloadText={t('home.downloadCV') || 'CV İndir'}
-        viewProjectsText={t('home.viewProjects') || 'Projeleri Gör'}
+        language={language}
        />
-       <StatsCard stats={stats} isVisible={isVisible} />
+       <StatsCard
+        totalSkills={totalSkills}
+        projectsCount={projects?.length}
+        language={language}
+        isVisible={isVisible}
+       />
       </div>
      </div>
     </div>

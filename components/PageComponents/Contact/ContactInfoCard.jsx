@@ -1,8 +1,39 @@
 "use client";
 import Link from "next/link";
-import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import ReactCountryFlag from "react-country-flag";
 
-export default function ContactInfoCard({ contactInfo, translations, language, isVisible }) {
+export default function ContactInfoCard({ language, isVisible }) {
+ const title = language === "EN" ? "Contact Information" : "İletişim Bilgileri";
+
+ const contactInfo = [
+  {
+   icon: FaMapMarkerAlt,
+   label: language === "EN" ? "Location:" : "Konum:",
+   value: (
+    <div className="flex items-center gap-2">
+     <span>İstanbul, Türkiye</span>
+     <ReactCountryFlag
+      countryCode="TR"
+      svg
+      style={{ width: "30px", height: "30px" }}
+      title="Turkey"
+     />
+    </div>
+   ),
+  },
+  {
+   icon: FaPhone,
+   label: language === "EN" ? "Phone:" : "Telefon:",
+   value: "+90 507 849 29 03",
+  },
+  {
+   icon: FaEnvelope,
+   label: language === "EN" ? "Email:" : "E-posta:",
+   value: "omerhd16@outlook.com",
+  },
+ ];
+
  return (
   <div
    className={`space-y-4 sm:space-y-8 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
@@ -11,7 +42,7 @@ export default function ContactInfoCard({ contactInfo, translations, language, i
    <div className="bg-secondary p-3 sm:p-8 rounded-t-2xl shadow-t-2xl sm:rounded-t-4xl sm:shadow-t-4xl">
     <h3 className="text-[20px] sm:text-2xl font-bold mb-6 flex items-center space-x-2">
      <FaPhone className="w-5 h-5 mr-4" />
-     <span>{translations.contactInfo}</span>
+     <span>{title}</span>
     </h3>
 
     <div className="space-y-5">

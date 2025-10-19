@@ -10,7 +10,7 @@ import "../../styles/experience.css";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
 
 export default function ExperiencePage() {
- const { language, t, loading: langLoading } = useLanguage();
+ const { language, loading: langLoading } = useLanguage();
  const { experience, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
  const [activeCategory, setActiveCategory] = useState("education");
@@ -45,37 +45,57 @@ export default function ExperiencePage() {
   return acc;
  }, {});
 
+ const pageTranslations = {
+  title: language === "EN" ? "Experience" : "Deneyim",
+  subtitle: language === "EN" ? "Professional Journey" : "Profesyonel Yolculuğum",
+  description: language === "EN"
+   ? "My education, internships and professional experiences"
+   : "Eğitim hayatım, stajlarım ve sertifikalarım",
+ };
+
+ const categoryTranslations = {
+  education: {
+   title: language === "EN" ? "Education" : "Eğitim",
+   description: language === "EN"
+    ? "My academic background and educational journey"
+    : "Akademik geçmişim ve eğitim yolculuğum",
+  },
+  internship: {
+   title: language === "EN" ? "Internship & Work Experience" : "Staj & İş Deneyimi",
+   description: language === "EN"
+    ? "Professional experiences and internships"
+    : "Profesyonel deneyimlerim ve stajlarım",
+  },
+  certificates: {
+   title: language === "EN" ? "Certificates" : "Sertifikalar",
+   description: language === "EN"
+    ? "Professional certifications and achievements"
+    : "Profesyonel sertifikalar ve başarılar",
+  },
+ };
+
+ const statusTranslations = {
+  completed: language === "EN" ? "Completed" : "Tamamlandı",
+  current: language === "EN" ? "Ongoing" : "Devam Ediyor",
+  upcoming: language === "EN" ? "Upcoming" : "Yakında",
+ };
+
+ const otherTranslations = {
+  duration: language === "EN" ? "Duration" : "Süre",
+  location: language === "EN" ? "Location" : "Konum",
+  gpa: language === "EN" ? "GPA" : "Not Ortalaması",
+  technologies: language === "EN" ? "Technologies" : "Teknolojiler",
+  achievements: language === "EN" ? "Achievements" : "Başarılar",
+  details: language === "EN" ? "Details" : "Detaylar",
+  showMore: language === "EN" ? "Show More" : "Daha Fazla",
+  showLess: language === "EN" ? "Show Less" : "Daha Az",
+ };
+
  const translations = {
-  title: t('experience.title') || 'Deneyim',
-  subtitle: t('experience.subtitle') || 'Eğitim & Deneyim',
-  description: t('experience.description') || 'Eğitim ve profesyonel deneyimlerim',
-  categories: {
-   education: {
-    title: t('experience.categories.education.title') || 'Eğitim',
-    description: t('experience.categories.education.description') || 'Eğitim geçmişim',
-   },
-   internship: {
-    title: t('experience.categories.internship.title') || 'Staj',
-    description: t('experience.categories.internship.description') || 'Staj deneyimlerim',
-   },
-   certificates: {
-    title: t('experience.categories.certificates.title') || 'Sertifikalar',
-    description: t('experience.categories.certificates.description') || 'Aldığım sertifikalar',
-   },
-  },
-  status: {
-   completed: t('experience.status.completed') || 'Tamamlandı',
-   current: t('experience.status.current') || 'Devam Ediyor',
-   upcoming: t('experience.status.upcoming') || 'Yakında',
-  },
-  duration: t('experience.duration') || 'Süre',
-  location: t('experience.location') || 'Konum',
-  gpa: t('experience.gpa') || 'Not Ortalaması',
-  technologies: t('experience.technologies') || 'Teknolojiler',
-  achievements: t('experience.achievements') || 'Başarılar',
-  details: t('experience.details') || 'Detaylar',
-  showMore: t('experience.showMore') || 'Daha Fazla',
-  showLess: t('experience.showLess') || 'Daha Az',
+  ...pageTranslations,
+  categories: categoryTranslations,
+  status: statusTranslations,
+  ...otherTranslations,
  };
 
  const getCategoryStats = (category) => {
@@ -113,6 +133,7 @@ export default function ExperiencePage() {
       onCategoryChange={handleCategoryChange}
       getCategoryStats={getCategoryStats}
       isVisible={isVisible}
+      language={language}
      />
 
      <div

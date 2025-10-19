@@ -1,13 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaUser } from "react-icons/fa";
-import ReactCountryFlag from "react-country-flag";
-import {
- FaGraduationCap,
- FaBirthdayCake,
- FaMapMarkerAlt,
- FaCode,
-} from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 import Title from "../../../components/extra/Title";
 import "../../styles/about.css";
@@ -26,39 +19,6 @@ export default function AboutPage() {
  }, []);
 
  if (loading) return <LoadingScreen language={language} />;
-
- const personalInfo = [
-  {
-   label: t('about.birthDate'),
-   value: `29.03.1998`,
-   icon: FaBirthdayCake,
-  },
-  {
-   label: t('about.location'),
-   value: (
-    <span className="flex items-center justify-center gap-2">
-     İstanbul, Türkiye
-     <ReactCountryFlag
-      countryCode="TR"
-      svg
-      style={{ width: "20px", height: "15px" }}
-      title="Turkey"
-     />
-    </span>
-   ),
-   icon: FaMapMarkerAlt,
-  },
-  {
-   label: t('about.education'),
-   value: t('about.university'),
-   icon: FaGraduationCap,
-  },
-  {
-   label: t('about.passion'),
-   value: t('about.passionText'),
-   icon: FaCode,
-  },
- ];
 
  const getTextPreview = (text, maxSentences = 3) => {
   if (!text) return { preview: '', hasMore: false };
@@ -95,39 +55,17 @@ export default function AboutPage() {
      />
 
      <Title
-      title={t('about.title')}
-      subtitle={t('about.subtitle')}
+      title={language === "EN" ? "About" : "Hakkımda"}
+      subtitle={language === "EN" ? "Career and Vision" : "Kariyerim ve Vizyonum"}
       isVisible={isVisible}
      />
 
      <div className="max-w-none mx-auto space-y-8">
       <div className="grid md:grid-cols-2 gap-6">
-       <JourneyCard
-        journeyText={journeyText}
-        translations={{
-         journey: t('about.journey')
-        }}
-        language={language}
-        isVisible={isVisible}
-       />
-
-       <InterestsCard
-        interestsText={interestsText}
-        translations={{
-         interests: t('about.interests')
-        }}
-        language={language}
-        isVisible={isVisible}
-       />
+       <JourneyCard journeyText={journeyText} language={language} isVisible={isVisible} />
+       <InterestsCard interestsText={interestsText} language={language} isVisible={isVisible} />
       </div>
-
-      <PersonalInfoCard
-       personalInfo={personalInfo}
-       translations={{
-        personalInfo: t('about.personalInfo')
-       }}
-       isVisible={isVisible}
-      />
+      <PersonalInfoCard language={language} isVisible={isVisible} />
      </div>
     </div>
    </div>

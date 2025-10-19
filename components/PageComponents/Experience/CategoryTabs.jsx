@@ -8,7 +8,10 @@ export default function CategoryTabs({
  onCategoryChange,
  getCategoryStats,
  isVisible,
+ language,
 }) {
+ const itemsText = language === "EN" ? "items" : "öğe";
+
  return (
   <div
    className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-5 sm:mb-12 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -20,9 +23,9 @@ export default function CategoryTabs({
      <CategoryButton
       key={key}
       categoryKey={key}
-      title={translations.categories[key].title}
+      title={translations.categories[key]?.title || key}
       count={stats.total}
-      countLabel="items"
+      countLabel={itemsText}
       icon={data.icon}
       color={data.color}
       isActive={activeCategory === key}

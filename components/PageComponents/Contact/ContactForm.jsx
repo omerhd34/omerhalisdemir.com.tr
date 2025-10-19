@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaPaperPlane, FaUser, FaComment, FaEnvelope, FaPhone, FaTag } from "react-icons/fa";
 import toast from "react-hot-toast";
 
-export default function ContactForm({ translations, language, isVisible }) {
+export default function ContactForm({ language, isVisible }) {
  const initialFormData = {
   name: "",
   email: "",
@@ -14,6 +14,22 @@ export default function ContactForm({ translations, language, isVisible }) {
 
  const [formData, setFormData] = useState(initialFormData);
  const [isSubmitting, setIsSubmitting] = useState(false);
+
+ const translations = {
+  formTitle: language === "EN" ? "Send Message" : "Mesaj Gönder",
+  name: language === "EN" ? "Name" : "İsim",
+  email: language === "EN" ? "Email" : "E-posta",
+  phone: language === "EN" ? "Phone" : "Telefon",
+  subject: language === "EN" ? "Subject" : "Konu",
+  message: language === "EN" ? "Message" : "Mesaj",
+  send: language === "EN" ? "Send Message" : "Mesajı Gönder",
+  sending: language === "EN" ? "Sending..." : "Gönderiliyor...",
+  namePlaceholder: language === "EN" ? "Your name" : "Adınız",
+  emailPlaceholder: language === "EN" ? "Your email" : "E-posta adresiniz",
+  phonePlaceholder: language === "EN" ? "Your phone (optional)" : "Telefonunuz (opsiyonel)",
+  subjectPlaceholder: language === "EN" ? "Subject" : "Konu",
+  messagePlaceholder: language === "EN" ? "Your message..." : "Mesajınız...",
+ };
 
  const handleChange = (e) => {
   setFormData({

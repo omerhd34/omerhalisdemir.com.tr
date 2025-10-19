@@ -1,14 +1,30 @@
 "use client";
 import Link from "next/link";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-export default function SocialLinksCard({ socialLinks, translations, isVisible }) {
+export default function SocialLinksCard({ language, isVisible }) {
+ const title = language === "EN" ? "Social Media" : "Sosyal Medya";
+
+ const socialLinks = [
+  {
+   name: "LinkedIn",
+   url: "https://www.linkedin.com/in/%C3%B6mer-halis-demir-7a9b79169/",
+   icon: FaLinkedin,
+  },
+  {
+   name: "GitHub",
+   url: "https://github.com/omerhd34",
+   icon: FaGithub,
+  },
+ ];
+
  return (
   <div
    className={`bg-secondary p-3 sm:p-8 rounded-b-2xl shadow-b-2xl sm:rounded-b-4xl sm:shadow-b-4xl transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
     }`}
   >
    <h3 className="text-xl font-bold mb-3 sm:mb-6 flex items-center justify-center space-x-2">
-    <span>{translations.socialMedia}</span>
+    <span>{title}</span>
    </h3>
    <div className="flex justify-center space-x-10">
     {socialLinks.map((social, index) => {
@@ -19,7 +35,7 @@ export default function SocialLinksCard({ socialLinks, translations, isVisible }
        href={social.url}
        target="_blank"
        rel="noopener noreferrer"
-       className={`group relative transition-all duration-300 ${social.color}`}
+       className="group relative transition-all duration-300"
        style={{
         animationDelay: `${index * 100}ms`,
         animation: `bounceIn 0.8s ease-out ${index * 100}ms both`,

@@ -1,11 +1,9 @@
-"use client";
 import SkillCard from "./SkillCard";
 
 export default function SkillsContent({
  activeCategory,
  skillsData,
  translations,
- getCategoryStats,
  isVisible,
 }) {
  const skills = skillsData[activeCategory]?.skills || [];
