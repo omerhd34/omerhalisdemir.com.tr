@@ -96,7 +96,6 @@
   animation: glow 2s ease-in-out infinite;
 }
 
-/* Progress bar fill animation */
 @keyframes progressFill {
   from {
     width: 0%;
@@ -106,7 +105,6 @@
   }
 }
 
-/* Skill card hover glow effect */
 .skill-card-glow {
   position: relative;
   overflow: hidden;

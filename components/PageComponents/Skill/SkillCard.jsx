@@ -47,13 +47,13 @@ export default function SkillCard({ skill, index, isMobile = false, translations
  const getLevelColor = (level) => {
   switch (level) {
    case "beginner":
-    return "from-green-300 to-green-400";
+    return "from-yellow-500 to-orange-500";
    case "intermediate":
-    return "from-green-500 to-green-600";
+    return "from-blue-500 to-cyan-500";
    case "advanced":
-    return "from-green-600 to-green-700";
+    return "from-purple-500 to-pink-500";
    case "expert":
-    return "from-green-800 to-green-900";
+    return "from-red-700 to-red-900";
    default:
     return "from-gray-500 to-gray-600";
   }
@@ -68,12 +68,11 @@ export default function SkillCard({ skill, index, isMobile = false, translations
    case "advanced":
     return "bg-gradient-to-r from-purple-500 to-pink-500";
    case "expert":
-    return "bg-gradient-to-r from-green-500 to-emerald-500";
+    return "bg-gradient-to-r from-red-700 to-red-900";
    default:
     return "bg-gradient-to-r from-gray-500 to-gray-600";
   }
  };
-
  if (isMobile) {
   return (
    <div
@@ -124,7 +123,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
     animation: `fadeInUp 0.6s ease-out ${index * 100}ms both`,
    }}
   >
-   {/* Arka plan glow efekti */}
    <div
     className={`absolute inset-0 bg-gradient-to-r ${getLevelColor(
      skill.level
@@ -132,7 +130,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
    />
 
    <div className="relative bg-info p-5 sm:p-6 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:scale-105 border border-info hover:border-primary/30">
-    {/* Üst Kısım: Icon, İsim ve Level */}
     <div className="flex items-start justify-between mb-4">
      <div className="flex items-center space-x-3 flex-1">
       <div
@@ -148,7 +145,6 @@ export default function SkillCard({ skill, index, isMobile = false, translations
       </div>
      </div>
 
-     {/* Level Badge */}
      <span
       className={`text-[11px] sm:text-xs px-2.5 py-1 rounded-full bg-gradient-to-r ${getLevelColor(
        skill.level
@@ -158,19 +154,15 @@ export default function SkillCard({ skill, index, isMobile = false, translations
      </span>
     </div>
 
-    {/* Progress Bar Section */}
     <div className="space-y-2">
      <div className="flex justify-between items-center text-xs sm:text-sm">
       <span className="text-primary/70">{translations.proficiency}</span>
       <span className="font-semibold text-primary">{skill.percentage}%</span>
      </div>
 
-     {/* Progress Bar */}
      <div className="relative w-full bg-muted rounded-full h-2.5 sm:h-3 overflow-hidden">
-      {/* Background pattern */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
-      {/* Progress */}
       <div
        className={`relative h-full ${getProgressColor(
         skill.level
@@ -179,13 +171,11 @@ export default function SkillCard({ skill, index, isMobile = false, translations
         width: `${skill.percentage}%`,
        }}
       >
-       {/* Shine effect */}
        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
       </div>
      </div>
     </div>
 
-    {/* Skill Level Indicator Dots */}
     <div className="flex justify-center space-x-1.5 mt-4">
      {[1, 2, 3, 4].map((dot) => {
       const levelValue = {

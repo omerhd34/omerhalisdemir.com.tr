@@ -36,6 +36,10 @@ import {
  FaChevronDown,
  FaChevronRight,
  FaClock,
+ FaTools,
+ FaGitAlt,
+ FaJsSquare,
+ FaNodeJs,
 } from "react-icons/fa";
 
 import {
@@ -60,9 +64,8 @@ import {
  SiAutocad,
 } from "react-icons/si";
 import { RiEnglishInput } from "react-icons/ri";
-import { MdElectricBolt } from "react-icons/md";
+import { MdElectricBolt, MdDomain } from "react-icons/md";
 import { FcElectronics } from "react-icons/fc";
-import { MdDomain } from "react-icons/md";
 
 const iconMap = {
  FaGraduationCap,
@@ -116,11 +119,21 @@ const iconMap = {
  SiLibreofficemath,
  SiWolframmathematica,
  MdElectricBolt,
+ FaTools,
+ FaGitAlt,
+ FaJsSquare,
+ FaNodeJs,
 };
 
 export default function ExperienceItem({ item, translations, isVisible, index }) {
  const [isExpanded, setIsExpanded] = useState(false);
  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
+
+ // Debug log
+ console.log(`[ExperienceItem] ${item.title}:`, {
+  technologies: item.technologies,
+  technologyColors: item.technologyColors,
+ });
 
  const Icon = typeof item.icon === 'string' ? iconMap[item.icon] : item.icon;
  const showExpandButton = item.achievements && item.achievements.length > 0;
@@ -136,6 +149,23 @@ export default function ExperienceItem({ item, translations, isVisible, index })
    default:
     return "bg-gray-500/20 border-accent";
   }
+ };
+
+ // İkon rengini al
+ const getIconColor = (iconName) => {
+  if (!item.technologyColors || item.technologyColors.length === 0) {
+   console.warn(`[WARNING] No colors for: ${item.title}`);
+   return "text-primary"; // Default
+  }
+
+  const colorInfo = item.technologyColors.find(tc => tc.icon === iconName);
+  if (colorInfo) {
+   console.log(`[COLOR FOUND] ${iconName}: ${colorInfo.color}`);
+   return colorInfo.color;
+  }
+
+  console.warn(`[WARNING] Color not found for icon: ${iconName}`);
+  return "text-primary";
  };
 
  return (
@@ -207,15 +237,29 @@ export default function ExperienceItem({ item, translations, isVisible, index })
         {item.description}
        </p>
 
+       {/* TECHNOLOGY ICONS */}
        {item.technologies && item.technologies.length > 0 && (
         <div
          className={`flex flex-wrap gap-2 mb-4 ${!isMobileExpanded ? "hidden sm:flex" : ""}`}
         >
          {item.technologies.map((techIconName, techIndex) => {
           const TechIcon = iconMap[techIconName];
+          const iconColorClass = getIconColor(techIconName);
+
+          if (!TechIcon) {
+           console.warn(`[WARNING] Icon not found: ${techIconName}`);
+           return null;
+          }
+
           return (
-           <div key={techIndex} className="p-2 bg-muted rounded-lg">
-            {TechIcon && <TechIcon className="h-4 w-4 sm:w-5 sm:h-5" />}
+           <div
+            key={techIndex}
+            className="p-2 bg-muted rounded-lg hover:scale-110 transition-all duration-300 group"
+            title={techIconName}
+           >
+            <TechIcon
+             className={`h-4 w-4 sm:w-5 sm:h-5 ${iconColorClass} transition-colors duration-300`}
+            />
            </div>
           );
          })}
@@ -268,7 +312,7 @@ export default function ExperienceItem({ item, translations, isVisible, index })
         ))}
        </ul>
 
-       {item.id === "university" && (
+       {item.id === 1 && (
         <div className="flex flex-wrap gap-8 justify-center mt-5">
          <Link
           href="/images/UstunBasari.png"

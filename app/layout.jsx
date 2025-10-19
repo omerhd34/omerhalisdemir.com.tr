@@ -1,5 +1,4 @@
 import "./styles/globals.css";
-import ScrollToTop from "../components/extra/ScrollToTop";
 import { LanguageProvider } from "./context/LanguageContext";
 import { DataProvider } from "./context/DataContext";
 import LayoutContent from "./LayoutContent.jsx";
@@ -13,7 +12,6 @@ export default function RootLayout({ children }) {
  return (
   <html lang="en">
    <body>
-    <ScrollToTop />
     <LanguageProvider>
      <DataProvider>
       <LayoutContent>{children}</LayoutContent>

@@ -36,8 +36,42 @@ export async function GET(request, context) {
               ? JSON.parse(exp.technologies)
               : exp.technologies;
         } catch (e) {
+          console.error(
+            `[ERROR] Technologies parse failed for ID ${exp.id}:`,
+            e.message
+          );
           technologies = [];
         }
+      }
+
+      let technologyColors = [];
+      if (exp.technology_colors) {
+        try {
+          technologyColors =
+            typeof exp.technology_colors === "string"
+              ? JSON.parse(exp.technology_colors)
+              : exp.technology_colors;
+
+          if (technologyColors && technologyColors.length > 0) {
+            console.log(
+              `[SUCCESS] ID ${exp.id} (${exp.title_en}): ${technologyColors.length} colors loaded`
+            );
+          } else {
+            console.warn(
+              `[WARNING] ID ${exp.id} (${exp.title_en}): technology_colors is empty`
+            );
+          }
+        } catch (e) {
+          console.error(
+            `[ERROR] Technology colors parse failed for ID ${exp.id}:`,
+            e.message
+          );
+          technologyColors = [];
+        }
+      } else {
+        console.warn(
+          `[WARNING] ID ${exp.id} (${exp.title_en}): technology_colors column is NULL`
+        );
       }
 
       let achievements = [];
@@ -49,6 +83,10 @@ export async function GET(request, context) {
               ? JSON.parse(achievementsField)
               : achievementsField;
         } catch (e) {
+          console.error(
+            `[ERROR] Achievements parse failed for ID ${exp.id}:`,
+            e.message
+          );
           achievements = [];
         }
       }
@@ -63,6 +101,7 @@ export async function GET(request, context) {
         gpa: exp.gpa,
         description: isEnglish ? exp.description_en : exp.description_tr,
         technologies: technologies,
+        technologyColors: technologyColors,
         achievements: achievements,
         icon: exp.icon,
         color: exp.color,
@@ -73,7 +112,7 @@ export async function GET(request, context) {
 
     return NextResponse.json(groupedExperience);
   } catch (error) {
-    console.error("Experience API Error:", error);
+    console.error("[FATAL ERROR] Experience API Error:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",

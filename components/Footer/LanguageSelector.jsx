@@ -50,7 +50,6 @@ export default function LanguageSelector({ language, onLanguageChange, languages
     </svg>
    </button>
 
-   {/* Language Dropdown */}
    {isLanguageDropdownOpen && (
     <div className="absolute bottom-full left-0 mb-2 py-2 w-32 bg-[#143d32] rounded-lg shadow-xl border border-[#66bb6a]/30 z-50">
      {languagesConfig.map((lang) => (

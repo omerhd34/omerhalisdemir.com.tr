@@ -73,7 +73,6 @@ export default function SkillsContent({
     </div>
    </div>
 
-   {/* Mobile View */}
    <div className="block sm:hidden">
     <div className="grid grid-cols-2 gap-3">
      {skills.map((skill, index) => (
@@ -88,7 +87,6 @@ export default function SkillsContent({
     </div>
    </div>
 
-   {/* Desktop View */}
    <div className="hidden sm:block">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
      {skills.map((skill, index) => (
