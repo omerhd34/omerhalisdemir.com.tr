@@ -21,92 +21,67 @@ import {
  FaFileDownload,
 } from "react-icons/fa";
 
-const iconMap = {
- FaUser,
- FaCode,
- FaBriefcase,
- FaProjectDiagram,
- FaEnvelope,
- FaLinkedin,
- FaGithub,
- FaFileDownload,
-};
-
 const languagesConfig = [
  { code: "TR", name: "Türkçe", countryCode: "TR" },
  { code: "EN", name: "English", countryCode: "US" },
 ];
 
-const headerCache = {
- navigation: null,
- social: {}
-};
+const getNavigationItems = (t) => [
+ {
+  key: 'about',
+  href: '/about',
+  icon: FaUser,
+  name: t('header.about')
+ },
+ {
+  key: 'skills',
+  href: '/skills',
+  icon: FaCode,
+  name: t('header.skills')
+ },
+ {
+  key: 'experience',
+  href: '/experience',
+  icon: FaBriefcase,
+  name: t('header.experience')
+ },
+ {
+  key: 'projects',
+  href: '/projects',
+  icon: FaProjectDiagram,
+  name: t('header.projects')
+ },
+ {
+  key: 'contact',
+  href: '/contact',
+  icon: FaEnvelope,
+  name: t('header.contact')
+ }
+];
+
+const getSocialLinks = (t, language) => [
+ {
+  name: t('header.linkedin'),
+  href: 'https://www.linkedin.com/in/%C3%B6mer-halis-demir-7a9b79169/',
+  icon: FaLinkedin
+ },
+ {
+  name: t('header.github'),
+  href: 'https://github.com/omerhd34',
+  icon: FaGithub
+ },
+ {
+  name: t('header.cv'),
+  href: language === 'EN' ? '/pdf/cv-english.pdf#zoom=35' : '/pdf/cv.pdf#zoom=35',
+  icon: FaFileDownload
+ }
+];
 
 export default function Header({ language = "TR", onLanguageChange }) {
  const pathname = usePathname();
  const { t, loading: langLoading } = useLanguage();
  const [isMenuOpen, setIsMenuOpen] = useState(false);
  const [isHovered, setIsHovered] = useState(false);
- const [navigationItems, setNavigationItems] = useState([]);
- const [socialLinks, setSocialLinks] = useState([]);
- const [loading, setLoading] = useState(true);
-
- useEffect(() => {
-  if (!langLoading) {
-   fetchHeaderData();
-  }
- }, [language, langLoading, t]);
-
- const fetchHeaderData = async () => {
-  setLoading(true);
-  try {
-   if (!headerCache.navigation) {
-    const navRes = await fetch('/api/header/navigation');
-    if (navRes.ok) {
-     headerCache.navigation = await navRes.json();
-    }
-   }
-
-   if (headerCache.navigation && Array.isArray(headerCache.navigation)) {
-    const mappedNav = headerCache.navigation.map(item => ({
-     key: item.key_name,
-     href: item.href,
-     icon: iconMap[item.icon],
-     name: t(`header.${item.key_name}`)
-    }));
-    setNavigationItems(mappedNav);
-   }
-
-   if (!headerCache.social[language]) {
-    const socialRes = await fetch('/api/header/social');
-    if (socialRes.ok) {
-     headerCache.social[language] = await socialRes.json();
-    }
-   }
-
-   if (headerCache.social[language] && Array.isArray(headerCache.social[language])) {
-    const mappedSocial = headerCache.social[language].map(item => ({
-     name: t(`header.${item.key_name}`),
-     href: language === 'EN' ? item.href_en : item.href_tr,
-     icon: iconMap[item.icon]
-    }));
-    setSocialLinks(mappedSocial);
-   }
-
-  } catch (error) {
-   console.error('Header data fetch error:', error);
-  } finally {
-   setLoading(false);
-  }
- };
-
- const getActiveSection = () => {
-  const currentPath = pathname;
-  const activeItem = navigationItems.find((item) => item.href === currentPath);
-  return activeItem?.key || null;
- };
-
- const activeSection = getActiveSection();
 
  const toggleMenu = () => {
   setIsMenuOpen((prev) => !prev);
@@ -126,7 +101,18 @@ export default function Header({ language = "TR", onLanguageChange }) {
   setIsMenuOpen(false);
  }, [pathname]);
 
- if (loading || langLoading) return null;
+ if (langLoading) return null;
+
+ const navigationItems = getNavigationItems(t);
+ const socialLinks = getSocialLinks(t, language);
+
+ const getActiveSection = () => {
+  const currentPath = pathname;
+  const activeItem = navigationItems.find((item) => item.href === currentPath);
+  return activeItem?.key || null;
+ };
+
+ const activeSection = getActiveSection();
 
  return (
   <header className="sticky top-0 z-50 2xl:-mb-20 backdrop-blur-md ">

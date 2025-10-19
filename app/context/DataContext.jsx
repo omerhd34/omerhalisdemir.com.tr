@@ -6,7 +6,6 @@ const DataContext = createContext();
 
 const dataCache = {
  skills: null,
- contactData: null,
  experience: {},
  projects: {}
 };
@@ -16,7 +15,6 @@ export function DataProvider({ children }) {
  const [skills, setSkills] = useState(dataCache.skills);
  const [experience, setExperience] = useState(dataCache.experience[language] || null);
  const [projects, setProjects] = useState(dataCache.projects[language] || null);
- const [contactData, setContactData] = useState(dataCache.contactData);
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
  const fetchedRef = useRef({ experience: {}, projects: {} });
@@ -75,21 +73,6 @@ export function DataProvider({ children }) {
     setProjects(dataCache.projects[language]);
    }
 
-   if (!dataCache.contactData) {
-    try {
-     const contactRes = await fetch('/api/contact/info');
-     if (contactRes.ok) {
-      const contactInfo = await contactRes.json();
-      dataCache.contactData = contactInfo;
-      setContactData(contactInfo);
-     }
-    } catch (err) {
-     console.error('Contact fetch error:', err);
-    }
-   } else {
-    setContactData(dataCache.contactData);
-   }
-
   } catch (error) {
    setError(error.message);
   } finally {
@@ -102,7 +85,6 @@ export function DataProvider({ children }) {
    skills,
    experience,
    projects,
-   contactData,
    loading,
    error
   }}>

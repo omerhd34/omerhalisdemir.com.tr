@@ -4,16 +4,68 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaLinkedin, FaGithub } from "react
 import ReactCountryFlag from "react-country-flag";
 import { Toaster } from "react-hot-toast";
 import { useLanguage } from "../../context/LanguageContext";
-import { useData } from "../../context/DataContext";
 import ContactForm from "../../../components/PageComponents/Contact/ContactForm";
 import ContactInfoCard from "../../../components/PageComponents/Contact/ContactInfoCard";
 import SocialLinksCard from "../../../components/PageComponents/Contact/SocialLinksCard";
 import Title from "../../../components/extra/Title";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
 
+const iconMap = {
+ FaMapMarkerAlt,
+ FaPhone,
+ FaEnvelope,
+ FaLinkedin,
+ FaGithub
+};
+
+// Contact info'yu frontend'de tanımlayalım
+const getContactInfo = (t) => [
+ {
+  icon: FaMapMarkerAlt,
+  label: t('contact.location'),
+  value: (
+   <div className="flex items-center space-x-2">
+    <span>İstanbul, Türkiye</span>
+    <ReactCountryFlag
+     countryCode="TR"
+     svg
+     style={{ width: "16px", height: "12px" }}
+     title="Turkey"
+    />
+   </div>
+  ),
+  display_order: 1
+ },
+ {
+  icon: FaPhone,
+  label: t('contact.phone'),
+  value: "+90 507 849 29 03",
+  display_order: 2
+ },
+ {
+  icon: FaEnvelope,
+  label: t('contact.emailLabel'),
+  value: "omerhd16@outlook.com",
+  display_order: 3
+ }
+];
+
+// Social links'i frontend'de tanımlayalım
+const getSocialLinks = () => [
+ {
+  name: "LinkedIn",
+  url: "https://www.linkedin.com/in/%C3%B6mer-halis-demir-7a9b79169/",
+  icon: FaLinkedin
+ },
+ {
+  name: "GitHub",
+  url: "https://github.com/omerhd34",
+  icon: FaGithub
+ }
+];
+
 export default function ContactPage() {
  const { language, t, loading: langLoading } = useLanguage();
- const { contactData, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
 
  useEffect(() => {
@@ -21,43 +73,12 @@ export default function ContactPage() {
   return () => clearTimeout(timer);
  }, []);
 
- if (langLoading || dataLoading || !contactData) {
+ if (langLoading) {
   return <LoadingScreen language={language} />;
  }
 
- const iconMap = {
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-  FaLinkedin,
-  FaGithub
- };
-
- const contactInfoWithTranslations = contactData.contactInfo.map((info) => ({
-  ...info,
-  icon: iconMap[info.icon],
-  label: t(info.label_key),
-  value:
-   info.label_key === "location" ? (
-    <div className="flex items-center space-x-2">
-     <span>{info.value}</span>
-     <ReactCountryFlag
-      countryCode={info.country_code || "TR"}
-      svg
-      style={{ width: "16px", height: "12px" }}
-      title={info.country_code || "TR"}
-     />
-    </div>
-   ) : (
-    info.value
-   ),
- }));
-
- const socialLinks = contactData.socialLinks.map((link) => ({
-  ...link,
-  icon: iconMap[link.icon],
-  url: link.url,
- }));
+ const contactInfo = getContactInfo(t);
+ const socialLinks = getSocialLinks();
 
  return (
   <section id="contact" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">
@@ -106,7 +127,7 @@ export default function ContactPage() {
         }}
         language={language}
         isVisible={isVisible}
-        contactInfo={contactInfoWithTranslations}
+        contactInfo={contactInfo}
        />
 
        <SocialLinksCard

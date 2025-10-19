@@ -1,6 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useData } from "../../app/context/DataContext";
 import { useLanguage } from "../../app/context/LanguageContext";
 import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
 import FooterBrand from "./FooterBrand";
@@ -19,6 +17,15 @@ const iconMap = {
 const languagesConfig = [
  { code: "TR", name: "TR", countryCode: "TR" },
  { code: "EN", name: "EN", countryCode: "US" },
+];
+
+const getQuickLinks = (t) => [
+ { name: t('footer.home'), href: '/' },
+ { name: t('footer.about'), href: '/about' },
+ { name: t('footer.skills'), href: '/skills' },
+ { name: t('footer.experience'), href: '/experience' },
+ { name: t('footer.projects'), href: '/projects' },
+ { name: t('footer.contact'), href: '/contact' },
 ];
 
 const getBrandDescription = (language) => {
@@ -50,59 +57,37 @@ const getBrandDescription = (language) => {
  );
 };
 
+const getSocialLinks = (t, language) => [
+ {
+  name: t('footer.linkedin'),
+  href: 'https://www.linkedin.com/in/%C3%B6mer-halis-demir-7a9b79169/',
+  icon: iconMap.FaLinkedin,
+  color: 'hover:text-blue-400'
+ },
+ {
+  name: t('footer.github'),
+  href: 'https://github.com/omerhd34',
+  icon: iconMap.FaGithub,
+  color: 'hover:text-gray-300'
+ },
+ {
+  name: t('footer.cv'),
+  href: language === 'EN' ? '/pdf/cv-english.pdf#zoom=35' : '/pdf/cv.pdf#zoom=35',
+  icon: iconMap.FaFileDownload,
+  color: 'hover:text-[#b5c99a]'
+ }
+];
+
 export default function Footer({ language = "TR", onLanguageChange }) {
- const { contactData } = useData();
  const { t, loading: langLoading } = useLanguage();
- const [quickLinks, setQuickLinks] = useState([]);
- const [socialLinks, setSocialLinks] = useState([]);
- const [loading, setLoading] = useState(true);
 
- useEffect(() => {
-  if (!langLoading) {
-   fetchFooterData();
-  }
- }, [language, langLoading, t]);
-
- const fetchFooterData = async () => {
-  setLoading(true);
-  try {
-   const quickLinksRes = await fetch('/api/footer/quicklinks');
-   if (quickLinksRes.ok) {
-    const quickLinksData = await quickLinksRes.json();
-    const mappedQuickLinks = quickLinksData.map(item => ({
-     name: t(`footer.${item.key_name}`),
-     href: item.href
-    }));
-    setQuickLinks(mappedQuickLinks);
-   }
-
-   const socialRes = await fetch('/api/header/social');
-   if (socialRes.ok) {
-    const socialData = await socialRes.json();
-    const mappedSocial = socialData.map(item => ({
-     name: t(`footer.${item.key_name}`),
-     href: language === 'EN' ? item.href_en : item.href_tr,
-     icon: iconMap[item.icon],
-     color: item.key_name === 'linkedin' ? 'hover:text-blue-400' :
-      item.key_name === 'github' ? 'hover:text-gray-300' :
-       'hover:text-[#b5c99a]'
-    }));
-    setSocialLinks(mappedSocial);
-   }
-  } catch (error) {
-   console.error('Footer data fetch error:', error);
-  } finally {
-   setLoading(false);
-  }
- };
-
- if (!contactData || loading || langLoading) {
+ if (langLoading) {
   return null;
  }
 
+ const quickLinks = getQuickLinks(t);
+ const socialLinks = getSocialLinks(t);
  const brandDescription = getBrandDescription(language);
- const contactInfo = contactData.contactInfo.find((info) => info.type === "phone");
- const emailInfo = contactData.contactInfo.find((info) => info.type === "email");
 
  const languageSelector = (
   <LanguageSelector
@@ -126,8 +111,8 @@ export default function Footer({ language = "TR", onLanguageChange }) {
       <ContactInfoSection
        title={t('footer.contactInfo')}
        location={t('footer.location')}
-       tel={contactInfo?.value || "+90 507 849 29 03"}
-       email={emailInfo?.value || "omerhd16@outlook.com"}
+       tel="+90 507 849 29 03"
+       email="omerhd16@outlook.com"
       />
      </div>
 

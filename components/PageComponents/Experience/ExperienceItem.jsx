@@ -248,14 +248,14 @@ export default function ExperienceItem({ item, translations, isVisible, index })
         {item.location && (
          <div className="flex items-center space-x-2">
           <FaMapMarkerAlt className="w-4 h-4" />
-          <span>{item.location}</span>
+          <span>İstanbul, Türkiye</span>
          </div>
         )}
         {item.gpa && (
          <div className="flex items-center space-x-2">
           <FaStar className="w-4 h-4" />
           <span>
-           {translations.gpa}: {item.gpa}
+           GPA: {item.gpa}
           </span>
          </div>
         )}
