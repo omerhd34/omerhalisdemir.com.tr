@@ -3,7 +3,6 @@ import TypeWriter from "./TypeWriter";
 import ActionButtons from "./ActionButtons";
 
 export default function MainContent({
- name,
  professionTitles,
  description,
  cvUrl,
@@ -13,7 +12,7 @@ export default function MainContent({
  return (
   <div className="flex-grow text-center lg:text-left">
    <h1 className="text-[24px] lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary mb-[1px] sm:mb-3">
-    {name}
+    Ömer Halis DEMİR
    </h1>
 
    <TypeWriter texts={professionTitles} />

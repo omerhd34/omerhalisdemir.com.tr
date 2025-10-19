@@ -26,52 +26,52 @@ const languagesConfig = [
  { code: "EN", name: "English", countryCode: "US" },
 ];
 
-const getNavigationItems = (t) => [
+const getNavigationItems = (t, currentLanguage) => [
  {
   key: 'about',
   href: '/about',
   icon: FaUser,
-  name: t('header.about')
+  name: currentLanguage === 'TR' ? "Hakkımda" : "About"
  },
  {
   key: 'skills',
   href: '/skills',
   icon: FaCode,
-  name: t('header.skills')
+  name: currentLanguage === 'TR' ? "Yetenekler" : "Skills"
  },
  {
   key: 'experience',
   href: '/experience',
   icon: FaBriefcase,
-  name: t('header.experience')
+  name: currentLanguage === 'TR' ? "Deneyim" : "Experience"
  },
  {
   key: 'projects',
   href: '/projects',
   icon: FaProjectDiagram,
-  name: t('header.projects')
+  name: currentLanguage === 'TR' ? "Projeler" : "Projects"
  },
  {
   key: 'contact',
   href: '/contact',
   icon: FaEnvelope,
-  name: t('header.contact')
+  name: currentLanguage === 'TR' ? "İletişim" : "Contact"
  }
 ];
 
 const getSocialLinks = (t, language) => [
  {
-  name: t('header.linkedin'),
+  name: "Linkedin",
   href: 'https://www.linkedin.com/in/%C3%B6mer-halis-demir-7a9b79169/',
   icon: FaLinkedin
  },
  {
-  name: t('header.github'),
+  name: "FaGithub",
   href: 'https://github.com/omerhd34',
   icon: FaGithub
  },
  {
-  name: t('header.cv'),
+  name: "CV",
   href: language === 'EN' ? '/pdf/cv-english.pdf#zoom=35' : '/pdf/cv.pdf#zoom=35',
   icon: FaFileDownload
  }
@@ -103,7 +103,7 @@ export default function Header({ language = "TR", onLanguageChange }) {
 
  if (langLoading) return null;
 
- const navigationItems = getNavigationItems(t);
+ const navigationItems = getNavigationItems(t, language);
  const socialLinks = getSocialLinks(t, language);
 
  const getActiveSection = () => {

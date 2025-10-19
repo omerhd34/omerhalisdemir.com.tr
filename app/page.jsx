@@ -43,9 +43,11 @@ export default function HomePage() {
  }, 0);
 
  const stats = [
-  { number: `${totalSkills}+`, label: t('home.stats.skills') || 'Yetenekler', icon: FaCode },
-  { number: "4", label: t('home.stats.experience') || 'Yıl Deneyim', icon: FaGraduationCap },
-  { number: `${projects?.length || 0}`, label: t('home.stats.projects') || 'Projeler', icon: FaRocket },
+  {
+   number: `${totalSkills}+`, label: t('home.stats.skills'), icon: FaCode
+  },
+  { number: "4", label: t('home.stats.experience'), icon: FaGraduationCap },
+  { number: `${projects?.length}`, label: t('home.stats.projects'), icon: FaRocket },
  ];
 
  return (
@@ -61,7 +63,6 @@ export default function HomePage() {
       >
        <ProfileImage />
        <MainContent
-        name={t('home.name') || "Ömer Halis DEMİR"}
         professionTitles={professionTitles}
         description={t('home.shortDescription')}
         cvUrl={cvUrl}
