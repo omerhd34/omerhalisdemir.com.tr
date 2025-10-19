@@ -37,41 +37,11 @@ export async function GET(request, context) {
               : exp.technologies;
         } catch (e) {
           console.error(
-            `[ERROR] Technologies parse failed for ID ${exp.id}:`,
+            `Technologies parse error for ID ${exp.id}:`,
             e.message
           );
           technologies = [];
         }
-      }
-
-      let technologyColors = [];
-      if (exp.technology_colors) {
-        try {
-          technologyColors =
-            typeof exp.technology_colors === "string"
-              ? JSON.parse(exp.technology_colors)
-              : exp.technology_colors;
-
-          if (technologyColors && technologyColors.length > 0) {
-            console.log(
-              `[SUCCESS] ID ${exp.id} (${exp.title_en}): ${technologyColors.length} colors loaded`
-            );
-          } else {
-            console.warn(
-              `[WARNING] ID ${exp.id} (${exp.title_en}): technology_colors is empty`
-            );
-          }
-        } catch (e) {
-          console.error(
-            `[ERROR] Technology colors parse failed for ID ${exp.id}:`,
-            e.message
-          );
-          technologyColors = [];
-        }
-      } else {
-        console.warn(
-          `[WARNING] ID ${exp.id} (${exp.title_en}): technology_colors column is NULL`
-        );
       }
 
       let achievements = [];
@@ -84,7 +54,7 @@ export async function GET(request, context) {
               : achievementsField;
         } catch (e) {
           console.error(
-            `[ERROR] Achievements parse failed for ID ${exp.id}:`,
+            `Achievements parse error for ID ${exp.id}:`,
             e.message
           );
           achievements = [];
@@ -93,6 +63,7 @@ export async function GET(request, context) {
 
       acc[exp.category].items.push({
         id: exp.id,
+        category: exp.category,
         title: isEnglish ? exp.title_en : exp.title_tr,
         institution: isEnglish ? exp.institution_en : exp.institution_tr,
         period: exp.period,
@@ -101,10 +72,8 @@ export async function GET(request, context) {
         gpa: exp.gpa,
         description: isEnglish ? exp.description_en : exp.description_tr,
         technologies: technologies,
-        technologyColors: technologyColors,
         achievements: achievements,
         icon: exp.icon,
-        color: exp.color,
       });
 
       return acc;
@@ -112,7 +81,7 @@ export async function GET(request, context) {
 
     return NextResponse.json(groupedExperience);
   } catch (error) {
-    console.error("[FATAL ERROR] Experience API Error:", error);
+    console.error("Experience API Error:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",

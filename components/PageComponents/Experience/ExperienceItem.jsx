@@ -125,18 +125,68 @@ const iconMap = {
  FaNodeJs,
 };
 
+const categoryColorMap = {
+ education: "from-blue-900 to-cyan-900",
+ internship: "from-purple-900 to-pink-900",
+ certificates: "from-yellow-900 to-orange-900",
+};
+
+const iconColorMap = {
+ FaReact: "text-cyan-400",
+ SiReact: "text-cyan-400",
+ SiJavascript: "text-yellow-400",
+ SiTypescript: "text-blue-600",
+ SiNextdotjs: "text-white",
+ SiNodedotjs: "text-green-600",
+ FaNodeJs: "text-green-600",
+
+ FaHtml5: "text-orange-600",
+ SiHtml5: "text-orange-600",
+ FaCss3: "text-blue-500",
+ SiCss3: "text-blue-500",
+ SiBootstrap: "text-purple-600",
+ SiTailwindcss: "text-cyan-500",
+
+ SiExpress: "text-black",
+ SiMongodb: "text-green-500",
+ SiMysql: "text-blue-600",
+ FaDatabase: "text-gray-600",
+
+ FaGithub: "text-black",
+ FaGitAlt: "text-orange-600",
+ FaCloud: "text-blue-400",
+ FaServer: "text-gray-900",
+ FaTools: "text-gray-600",
+
+ SiArduino: "text-teal-500",
+ SiCplusplus: "text-blue-600",
+ FaJava: "text-red-600",
+ SiAutocad: "text-red-600",
+ SiAutodesk: "text-blue-600",
+ SiServerfault: "text-orange-500",
+
+ FcElectronics: "text-blue-500",
+ MdElectricBolt: "text-yellow-500",
+ FaMicrochip: "text-purple-500",
+
+ FaGlobe: "text-cyan-500",
+ FaLanguage: "text-indigo-500",
+ RiEnglishInput: "text-blue-600",
+ SiLibreofficemath: "text-green-600",
+ SiWolframmathematica: "text-red-500",
+
+ FaNetworkWired: "text-indigo-500",
+ MdDomain: "text-purple-500",
+};
+
 export default function ExperienceItem({ item, translations, isVisible, index }) {
  const [isExpanded, setIsExpanded] = useState(false);
  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
 
- // Debug log
- console.log(`[ExperienceItem] ${item.title}:`, {
-  technologies: item.technologies,
-  technologyColors: item.technologyColors,
- });
-
  const Icon = typeof item.icon === 'string' ? iconMap[item.icon] : item.icon;
  const showExpandButton = item.achievements && item.achievements.length > 0;
+
+ const iconBgColor = categoryColorMap[item.category] || "from-green-900 to-green-400";
 
  const getStatusBg = (status) => {
   switch (status) {
@@ -151,21 +201,8 @@ export default function ExperienceItem({ item, translations, isVisible, index })
   }
  };
 
- // İkon rengini al
  const getIconColor = (iconName) => {
-  if (!item.technologyColors || item.technologyColors.length === 0) {
-   console.warn(`[WARNING] No colors for: ${item.title}`);
-   return "text-primary"; // Default
-  }
-
-  const colorInfo = item.technologyColors.find(tc => tc.icon === iconName);
-  if (colorInfo) {
-   console.log(`[COLOR FOUND] ${iconName}: ${colorInfo.color}`);
-   return colorInfo.color;
-  }
-
-  console.warn(`[WARNING] Color not found for icon: ${iconName}`);
-  return "text-primary";
+  return iconColorMap[iconName] || "text-primary";
  };
 
  return (
@@ -179,7 +216,7 @@ export default function ExperienceItem({ item, translations, isVisible, index })
    <div className="bg-info rounded-4xl transition-all duration-300 overflow-hidden">
     <div className="p-5 sm:p-6">
      <div className="flex items-start space-x-5 sm:space-x-4">
-      <div className={`flex-shrink-0 p-3 rounded-full bg-muted ${item.color} float-animation`}>
+      <div className={`flex-shrink-0 p-3 rounded-full bg-gradient-to-r ${iconBgColor} float-animation`}>
        {Icon && <Icon className="w-5 h-5 sm:h-6 sm:w-6" />}
       </div>
 
@@ -237,17 +274,16 @@ export default function ExperienceItem({ item, translations, isVisible, index })
         {item.description}
        </p>
 
-       {/* TECHNOLOGY ICONS */}
        {item.technologies && item.technologies.length > 0 && (
         <div
-         className={`flex flex-wrap gap-2 mb-4 ${!isMobileExpanded ? "hidden sm:flex" : ""}`}
+         className={`flex flex-wrap gap-2 mb-4 ${!isMobileExpanded ? "hidden sm:flex" : ""
+          }`}
         >
          {item.technologies.map((techIconName, techIndex) => {
           const TechIcon = iconMap[techIconName];
           const iconColorClass = getIconColor(techIconName);
 
           if (!TechIcon) {
-           console.warn(`[WARNING] Icon not found: ${techIconName}`);
            return null;
           }
 

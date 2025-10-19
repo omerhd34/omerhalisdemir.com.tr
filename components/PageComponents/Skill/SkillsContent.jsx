@@ -16,13 +16,7 @@ export default function SkillsContent({
   return Math.round(total / skills.length);
  };
 
- const getTotalExperience = () => {
-  const total = skills.reduce((sum, skill) => sum + parseInt(skill.experience || 0), 0);
-  return total;
- };
-
  const avgProficiency = getAverageProficiency();
- const totalExp = getTotalExperience();
 
  return (
   <div
@@ -38,8 +32,8 @@ export default function SkillsContent({
     </p>
    </div>
 
-   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-105">
+   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-[1.02]">
      <div className="text-center">
       <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1">
        {skills.length}
@@ -50,24 +44,13 @@ export default function SkillsContent({
      </div>
     </div>
 
-    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-105">
+    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-[1.02]">
      <div className="text-center">
       <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1">
        {avgProficiency}%
       </div>
       <div className="text-xs sm:text-sm text-primary/70">
        {translations.categoryStats.avgLevel}
-      </div>
-     </div>
-    </div>
-
-    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-105">
-     <div className="text-center">
-      <div className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">
-       {totalExp}+
-      </div>
-      <div className="text-xs sm:text-sm text-primary/70">
-       {translations.categoryStats.totalExp}
       </div>
      </div>
     </div>

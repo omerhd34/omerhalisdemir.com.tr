@@ -19,6 +19,7 @@ import {
  SiTailwindcss,
  SiMongodb,
  SiMysql,
+ SiExpress
 } from "react-icons/si";
 
 const iconMap = {
@@ -39,10 +40,32 @@ const iconMap = {
  SiTailwindcss,
  SiMongodb,
  SiMysql,
+ SiExpress,
+};
+
+const iconColorMap = {
+ "HTML5": "text-orange-600",
+ "CSS3": "text-blue-400",
+ "JavaScript": "text-yellow-400",
+ "TypeScript": "text-blue-400",
+ "React": "text-blue-500",
+ "Next.js": "text-white",
+ "Tailwind CSS": "text-teal-400",
+ "Bootstrap": "text-purple-700",
+ "Java & OOP": "text-red-500",
+ "Node.js": "text-green-500",
+ "SiExpress": "text-black",
+ "MongoDB": "text-green-400",
+ "MySQL": "text-green-400",
+ "Git": "text-orange-600",
+ "GitHub": "text-gray-300",
+ "VS Code": "text-blue-500",
+ "IntelliJ IDEA": "text-purple-500",
 };
 
 export default function SkillCard({ skill, index, isMobile = false, translations }) {
  const IconComponent = iconMap[skill.icon];
+ const iconColor = iconColorMap[skill.name] || "text-primary";
 
  const getLevelColor = (level) => {
   switch (level) {
@@ -73,6 +96,7 @@ export default function SkillCard({ skill, index, isMobile = false, translations
     return "bg-gradient-to-r from-gray-500 to-gray-600";
   }
  };
+
  if (isMobile) {
   return (
    <div
@@ -85,9 +109,9 @@ export default function SkillCard({ skill, index, isMobile = false, translations
     <div className="bg-info p-3 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105 border border-info hover:border-primary/30">
      <div className="flex flex-col items-center text-center mb-2">
       <div
-       className={`p-2 rounded-lg bg-muted ${skill.color} transition-transform duration-300 group-hover:scale-110 mb-1`}
+       className={`p-2 rounded-lg bg-muted transition-transform duration-300 group-hover:scale-110 mb-1`}
       >
-       {IconComponent && <IconComponent className="w-4 h-4" />}
+       {IconComponent && <IconComponent className={`w-4 h-4 ${iconColor}`} />}
       </div>
       <h4 className="font-semibold text-xs leading-tight">{skill.name}</h4>
      </div>
@@ -133,9 +157,9 @@ export default function SkillCard({ skill, index, isMobile = false, translations
     <div className="flex items-start justify-between mb-4">
      <div className="flex items-center space-x-3 flex-1">
       <div
-       className={`p-3 rounded-xl bg-muted ${skill.color} transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}
+       className={`p-3 rounded-xl bg-muted transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}
       >
-       {IconComponent && <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />}
+       {IconComponent && <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 ${iconColor}`} />}
       </div>
       <div className="flex-1">
        <h4 className="font-bold text-[16px] sm:text-lg mb-1">{skill.name}</h4>
