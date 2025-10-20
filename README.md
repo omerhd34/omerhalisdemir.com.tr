@@ -2,6 +2,25 @@
 
 > Modern ve dinamik kişisel portföy web sitesi - Next.js 15 & MySQL ile geliştirilmiştir.
 
+[![Next.js](https://img.shields.io/badge/Next.js-15.3.3-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-blue?style=flat&logo=react)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.10-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+## 📋 İçindekiler
+
+- [Hakkında](#-hakkında)
+- [Özellikler](#-özellikler)
+- [Teknolojiler](#-teknolojiler)
+- [Kurulum](#-kurulum)
+- [Veritabanı Yapısı](#-veritabanı-yapısı)
+- [Ortam Değişkenleri](#-ortam-değişkenleri)
+- [Proje Yapısı](#-proje-yapısı)
+- [Ekran Görüntüleri](#-ekran-görüntüleri)
+- [Lisans](#-lisans)
+- [İletişim](#-iletişim)
+
 ## 🎯 Hakkında
 
 Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamamladığım projeleri ve teknik yeteneklerimi sergilemek amacıyla geliştirdiğim kişisel portföy web sitesidir. Modern web teknolojileri kullanılarak, responsive tasarım prensipleri ve kullanıcı deneyimi odaklı bir yaklaşımla oluşturulmuştur.
@@ -63,8 +82,8 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 | Teknoloji | Versiyon | Kullanım Alanı |
 |-----------|----------|----------------|
 | **Node.js** | 20.x | Runtime |
+| **Express.js** | 20.x | Runtime |
 | **MySQL** | 8.0 | Veritabanı |
-| **mysql2** | 3.15.2 | MySQL Driver |
 | **Nodemailer** | 7.0.6 | Email Servisi |
 
 ### DevOps & Tools
