@@ -1,4 +1,4 @@
-﻿# 🚀 omerhalisdemir.com.tr
+# 🚀 omerhalisdemir.com.tr
 
 > Modern ve dinamik kişisel portföy web sitesi - Next.js 15 & MySQL ile geliştirilmiştir.
 
