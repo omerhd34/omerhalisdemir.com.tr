@@ -43,7 +43,7 @@ const getNavigationItems = (t, currentLanguage) => [
   key: 'experience',
   href: '/experience',
   icon: FaBriefcase,
-  name: currentLanguage === 'TR' ? "Deneyim" : "Experience"
+  name: currentLanguage === 'TR' ? "Deneyimler" : "Experiences"
  },
  {
   key: 'projects',

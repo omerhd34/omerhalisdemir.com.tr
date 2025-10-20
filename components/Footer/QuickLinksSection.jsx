@@ -15,7 +15,7 @@ export default function QuickLinksSection({ language }) {
   { name: languageCode === "TR" ? "Ana Sayfa" : "Home", href: '/' },
   { name: languageCode === "TR" ? "Hakkımda" : "About", href: '/about' },
   { name: languageCode === "TR" ? "Yetenekler" : "Skills", href: '/skills' },
-  { name: languageCode === "TR" ? "Deneyim" : "Experience", href: '/experience' },
+  { name: languageCode === "TR" ? "Deneyimler" : "Experiences", href: '/experience' },
   { name: languageCode === "TR" ? "Projeler" : "Projects", href: '/projects' },
   { name: languageCode === "TR" ? "İletişim" : "Contact", href: '/contact' },
  ];

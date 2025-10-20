@@ -48,25 +48,25 @@ export default function SkillsPage() {
   title: language === "EN" ? "Skills" : "Yetenekler",
   subtitle: language === "EN" ? "Technical Skills" : "Teknik Beceriler",
   description: language === "EN"
-   ? "Technologies I use and my proficiency levels"
-   : "Kullandığım teknolojiler ve yetkinlik seviyelerim",
+   ? "With the deep technical knowledge and experience I've gained throughout my web development journey, I create user-centric and innovative solutions. I confidently navigate across a broad technology spectrum from frontend to backend, excelling at every layer."
+   : "Web geliştirme serüvenimde edindiğim derin teknik bilgi ve deneyimle, kullanıcı odaklı ve yenilikçi çözümler üretiyorum. Frontend'den backend'e uzanan geniş teknoloji yelpazesinde, her katmanda güvenle hareket ediyorum.",
  };
 
  const categoryTranslations = {
   frontend: {
-   title: language === "EN" ? "Frontend" : "Frontend",
+   title: language === "EN" ? "Frontend Technologies" : "Frontend Teknolojileri",
    description: language === "EN"
     ? "Frontend technologies and frameworks"
     : "Frontend teknolojileri ve framework'ler",
   },
   backend: {
-   title: language === "EN" ? "Backend" : "Backend",
+   title: language === "EN" ? "Backend & Database Technologies" : "Backend ve Veritabanı Teknolojileri",
    description: language === "EN"
     ? "Backend technologies and databases"
     : "Backend teknolojileri ve veritabanları",
   },
   tools: {
-   title: language === "EN" ? "Tools" : "Araçlar",
+   title: language === "EN" ? "Development Environment" : "Geliştirme Ortamı",
    description: language === "EN"
     ? "Development tools and platforms"
     : "Geliştirme araçları ve platformlar",

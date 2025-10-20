@@ -44,12 +44,12 @@ export default function ProjectsPage() {
    web: {
     icon: categoryIcons.web,
     color: categoryColors.web,
-    title: language === "TR" ? "Web Siteleri" : "Web Sites",
+    title: language === "TR" ? "Web Geliştirme" : "Web Development",
    },
    electronics: {
     icon: categoryIcons.electronics,
     color: categoryColors.electronics,
-    title: language === "TR" ? "Elektrik & Elektronik" : "Electric & Electronics",
+    title: language === "TR" ? "IoT & Elektronik" : "IoT & Electronics",
    },
   };
  }, [language]);
@@ -94,9 +94,6 @@ export default function ProjectsPage() {
  }
 
  const translations = {
-  title: t('projects.title'),
-  subtitle: t('projects.subtitle'),
-  description: t('projects.description'),
   status: {
    completed: t('projects.status.completed'),
    current: t('projects.status.current'),
@@ -115,9 +112,9 @@ export default function ProjectsPage() {
      />
 
      <Title
-      title={translations.title}
-      subtitle={translations.subtitle}
-      description={translations.description}
+      title={language === "EN" ? "Projects" : "Projeler"}
+      subtitle={language === "EN" ? "Portfolio" : "Çalışmalarım"}
+      description={language === "EN" ? "My projects in web, mobile, and electronics fields" : "Web, mobil ve elektronik alanlarındaki çalışmalarım"}
       isVisible={isVisible}
      />
 

@@ -17,16 +17,16 @@ export default function ContactForm({ language, isVisible }) {
 
  const translations = {
   formTitle: language === "EN" ? "Send Message" : "Mesaj Gönder",
-  name: language === "EN" ? "Name" : "İsim",
+  name: language === "EN" ? "Name & Surname" : "İsim & Soyisim",
   email: language === "EN" ? "Email" : "E-posta",
   phone: language === "EN" ? "Phone" : "Telefon",
   subject: language === "EN" ? "Subject" : "Konu",
   message: language === "EN" ? "Message" : "Mesaj",
   send: language === "EN" ? "Send Message" : "Mesajı Gönder",
   sending: language === "EN" ? "Sending..." : "Gönderiliyor...",
-  namePlaceholder: language === "EN" ? "Your name" : "Adınız",
+  namePlaceholder: language === "EN" ? "Your name and surname" : "Adınız ve soyadınız",
   emailPlaceholder: language === "EN" ? "Your email" : "E-posta adresiniz",
-  phonePlaceholder: language === "EN" ? "Your phone (optional)" : "Telefonunuz (opsiyonel)",
+  phonePlaceholder: language === "EN" ? "Your phone" : "Telefonu numaranız",
   subjectPlaceholder: language === "EN" ? "Subject" : "Konu",
   messagePlaceholder: language === "EN" ? "Your message..." : "Mesajınız...",
  };

@@ -58,6 +58,7 @@ export default function AboutPage() {
       title={language === "EN" ? "About" : "Hakkımda"}
       subtitle={language === "EN" ? "Career and Vision" : "Kariyerim ve Vizyonum"}
       isVisible={isVisible}
+      description={language === "EN" ? "The experiences I have gained throughout my career, my personal development journey, and my future goals are detailed below." : "Kariyerim boyunca edindiğim deneyimler, kişisel gelişim yolculuğum ve geleceğe dair hedeflerim aşağıda detaylandırılmıştır."}
      />
 
      <div className="max-w-none mx-auto space-y-8">

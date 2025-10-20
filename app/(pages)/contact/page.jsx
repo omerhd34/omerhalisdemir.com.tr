@@ -25,8 +25,8 @@ export default function ContactPage() {
  const title = language === "EN" ? "Contact" : "İletişim";
  const subtitle = language === "EN" ? "Get in Touch" : "İletişime Geçin";
  const description = language === "EN"
-  ? "Feel free to reach out for collaborations or just a friendly hello"
-  : "İş birlikleri veya sadece merhaba demek için bana ulaşabilirsiniz";
+  ? "Feel free to reach out for collaborations or just a friendly hello."
+  : "İş birlikleri veya sadece merhaba demek için bana ulaşabilirsiniz.";
 
  return (
   <section id="contact" className="relative mt-5 sm:mt-10 md:mt-20 min-h-screen">

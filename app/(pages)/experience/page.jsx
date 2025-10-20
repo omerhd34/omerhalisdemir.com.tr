@@ -46,22 +46,22 @@ export default function ExperiencePage() {
  }, {});
 
  const pageTranslations = {
-  title: language === "EN" ? "Experience" : "Deneyim",
-  subtitle: language === "EN" ? "Professional Journey" : "Profesyonel Yolculuğum",
+  title: language === "EN" ? "Experiences" : "Deneyimler",
+  subtitle: language === "EN" ? "Career Journey" : "Kariyer Yolculuğu",
   description: language === "EN"
-   ? "My education, internships and professional experiences"
-   : "Eğitim hayatım, stajlarım ve sertifikalarım",
+   ? "The processes I've gone through from my academic life to my professional career and the experiences I've gained"
+   : "Akademik hayatımdan profesyonel kariyerime kadar geçirdiğim süreçler ve kazandığım deneyimler",
  };
 
  const categoryTranslations = {
   education: {
-   title: language === "EN" ? "Education" : "Eğitim",
+   title: language === "EN" ? "Academic" : "Akademik",
    description: language === "EN"
     ? "My academic background and educational journey"
     : "Akademik geçmişim ve eğitim yolculuğum",
   },
   internship: {
-   title: language === "EN" ? "Internship & Work Experience" : "Staj & İş Deneyimi",
+   title: language === "EN" ? "Career" : "Kariyer",
    description: language === "EN"
     ? "Professional experiences and internships"
     : "Profesyonel deneyimlerim ve stajlarım",
