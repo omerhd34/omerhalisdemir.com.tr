@@ -294,29 +294,6 @@ omerhalisdemir.com.tr/
 └── package.json
 ```
 
-## 🚀 Deployment
-
-### Vercel (Önerilen)
-
-```bash
-# Vercel CLI yükleyin
-npm i -g vercel
-
-# Deploy edin
-vercel
-```
-
-### Manuel Deployment
-
-```bash
-# Production build
-npm run build
-
-# PM2 ile başlatın
-pm2 start npm --name "portfolio" -- start
-```
-
-
 ## 👤 İletişim
 
 **Ömer Halis Demir**
