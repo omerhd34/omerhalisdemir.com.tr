@@ -12,10 +12,9 @@ export default function ProjectCard({ project, translations, language, index }) 
 
  const buttonTexts = useMemo(
   () => ({
-   demo: language === "TR" ? "Demo" : "Demo",
    sourceCode: language === "TR" ? "Kaynak Kod" : "Source Code",
    showLess: language === "TR" ? "Daha Az Göster" : "Show Less",
-   showDetails: language === "TR" ? "Detayları Göster" : "Show Details",
+   showDetails: language === "TR" ? "Daha Fazla" : "Show More",
    projectDetails: language === "TR" ? "Proje Detayları" : "Project Details",
    allFeatures: language === "TR" ? "Tüm Özellikler" : "All Features",
    team: language === "TR" ? "Takım" : "Team",

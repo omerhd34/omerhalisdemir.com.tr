@@ -15,7 +15,6 @@ export default function ProjectActionButtons({
 
  return (
   <div className={`${baseClasses} ${displayClasses}`}>
-   {/* Web projesi için Live Demo butonu */}
    {project.liveUrl && (
     <Link
      href={project.liveUrl}
@@ -30,7 +29,7 @@ export default function ProjectActionButtons({
       className={`w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 ${isMobile ? "text-cyan-300" : "text-green-300"
        }`}
      />
-     {buttonTexts.demo}
+     Demo
      <FaExternalLinkAlt
       className={`w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 ${!isMobile ? "group-hover:translate-x-1" : ""
        } transition-transform duration-200`}
@@ -38,7 +37,6 @@ export default function ProjectActionButtons({
     </Link>
    )}
 
-   {/* Electronics projesi için Demo butonu */}
    {!project.liveUrl && electronicsImageUrl && (
     <Link
      href={electronicsImageUrl}
@@ -53,7 +51,7 @@ export default function ProjectActionButtons({
       className={`w-3 xs:w-4 h-3 xs:h-4 mr-1.5 xs:mr-2 ${isMobile ? "text-cyan-300" : "text-green-300"
        }`}
      />
-     {buttonTexts.demo}
+     Demo
      <FaExternalLinkAlt
       className={`w-2.5 xs:w-3 h-2.5 xs:h-3 ml-1.5 xs:ml-2 ${!isMobile ? "group-hover:translate-x-1" : ""
        } transition-transform duration-200`}

@@ -304,31 +304,41 @@ export default function ExperienceItem({ item, translations, isVisible, index })
 
        <button
         onClick={() => setIsMobileExpanded(!isMobileExpanded)}
-        className="flex items-center space-x-2 transition-colors duration-200 sm:hidden sm:mb-4"
+        className="flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors duration-200 sm:hidden group"
+        aria-expanded={isMobileExpanded}
+        aria-label={isMobileExpanded ? translations.showLess : translations.showMore}
        >
         {isMobileExpanded ? (
-         <FaChevronDown className="w-3 h-3 text-[#43a047]" />
+         <>
+          <FaChevronDown className="w-3 h-3 group-hover:translate-y-1 transition-transform duration-200" />
+          <span className="text-[15px] font-medium">{translations.showLess}</span>
+         </>
         ) : (
-         <FaChevronRight className="w-3 h-3 text-[#43a047]" />
+         <>
+          <FaChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" />
+          <span className="text-[15px] font-medium">{translations.showMore}</span>
+         </>
         )}
-        <span className="text-[15px] text-[#43a047]">
-         {isMobileExpanded ? translations.showLess : translations.showMore}
-        </span>
        </button>
 
        {showExpandButton && (
         <button
          onClick={() => setIsExpanded(!isExpanded)}
-         className="hidden sm:flex items-center space-x-2 transition-colors duration-200 text-primary"
+         className="hidden sm:flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors duration-200 group"
+         aria-expanded={isExpanded}
+         aria-label={isExpanded ? translations.showLess : translations.showMore}
         >
          {isExpanded ? (
-          <FaChevronDown className="w-4 h-4" />
+          <>
+           <FaChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-200" />
+           <span className="text-[15px] font-medium">{translations.showLess}</span>
+          </>
          ) : (
-          <FaChevronRight className="w-4 h-4" />
+          <>
+           <FaChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+           <span className="text-[15px] font-medium">{translations.showMore}</span>
+          </>
          )}
-         <span className="text-[15px] text-[#0083cc]">
-          {isExpanded ? translations.showLess : translations.showMore}
-         </span>
         </button>
        )}
       </div>
