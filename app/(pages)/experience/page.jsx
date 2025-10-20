@@ -157,6 +157,7 @@ export default function ExperiencePage() {
          translations={translations}
          isVisible={isVisible}
          index={index}
+         language={language}
         />
        ))}
       </div>

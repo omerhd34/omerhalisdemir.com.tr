@@ -34,15 +34,41 @@ export default function ProjectCard({ project, translations, language, index }) 
   [language]
  );
 
+ const iconNameMap = {
+  SiReact: "React",
+  SiNextdotjs: "Next.js",
+  SiTailwindcss: "Tailwind CSS",
+  SiNodedotjs: "Node.js",
+  SiExpress: "Express.js",
+  SiArduino: "Arduino",
+  SiCplusplus: "C++",
+  SiMongodb: "MongoDB",
+  SiJavascript: "JavaScript",
+  SiMysql: "MySQL",
+  SiTypescript: "TypeScript",
+  SiBootstrap: "Bootstrap",
+  FaGitAlt: "Git",
+  FaGithub: "GitHub",
+  FaHtml5: "HTML5",
+  FaCss3Alt: "CSS3",
+  FaJsSquare: "JavaScript",
+  FaNodeJs: "Node.js",
+  FaJava: "Java",
+  FaMicrochip: "Microchip",
+  FaTools: "Tools",
+ };
+
  const technologyIcons = useMemo(() => {
   if (!project.technologies || !Array.isArray(project.technologies)) {
    return [];
   }
 
+
   return project.technologies
    .map((techIconName, techIndex) => {
     const TechIcon = ICON_MAP[techIconName];
     const iconColorClass = ICON_COLOR_CLASSES[techIndex % ICON_COLOR_CLASSES.length];
+    const displayName = iconNameMap[techIconName] || techIconName;
 
     if (!TechIcon) {
      console.warn(`Icon not found: ${techIconName}`);
@@ -53,7 +79,7 @@ export default function ProjectCard({ project, translations, language, index }) 
      id: `${project.id}-tech-${techIndex}`,
      Icon: TechIcon,
      colorClass: iconColorClass,
-     name: techIconName,
+     name: displayName,
     };
    })
    .filter(Boolean);

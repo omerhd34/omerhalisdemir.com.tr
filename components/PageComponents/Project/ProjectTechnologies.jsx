@@ -6,15 +6,18 @@ export default function ProjectTechnologies({ technologyIcons, isMobile = false 
 
  return (
   <div className={`${baseClasses} ${displayClasses}`}>
-   {technologyIcons.map(({ id, Icon, colorClass }) => (
+   {technologyIcons.map(({ id, Icon, colorClass, name }) => (
     <div
      key={id}
-     className="p-1.5 xs:p-2 bg-muted rounded-lg transition-all duration-300 group hover:scale-110 hover:shadow-lg"
+     className="p-1.5 xs:p-2 bg-muted rounded-lg transition-all duration-300 group hover:scale-110 hover:shadow-lg relative"
     >
      <Icon
       className={`w-3 xs:w-4 ${!isMobile ? "sm:w-5" : ""} h-3 xs:h-4 ${!isMobile ? "sm:h-5" : ""
        } transition-all duration-300 ${colorClass}`}
      />
+     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+      {name}
+     </div>
     </div>
    ))}
   </div>
