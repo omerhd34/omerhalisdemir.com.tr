@@ -74,7 +74,6 @@ export default function ContactInfoCard({ language, isVisible }) {
             <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
            </Link>
           )}
-
           {/* E-posta butonu */}
           {info.label === (language === "TR" ? "E-posta:" : "Email:") && (
            <Link

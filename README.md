@@ -16,7 +16,6 @@
 - [Veritabanı Yapısı](#-veritabanı-yapısı)
 - [Ortam Değişkenleri](#-ortam-değişkenleri)
 - [Proje Yapısı](#-proje-yapısı)
-- [Lisans](#-lisans)
 - [İletişim](#-iletişim)
 
 ## 🎯 Hakkında
@@ -293,29 +292,6 @@ omerhalisdemir.com.tr/
 ├── tailwind.config.js
 └── package.json
 ```
-
-## 🚀 Deployment
-
-### Vercel (Önerilen)
-
-```bash
-# Vercel CLI yükleyin
-npm i -g vercel
-
-# Deploy edin
-vercel
-```
-
-### Manuel Deployment
-
-```bash
-# Production build
-npm run build
-
-# PM2 ile başlatın
-pm2 start npm --name "portfolio" -- start
-```
-
 
 ## 👤 İletişim
 
