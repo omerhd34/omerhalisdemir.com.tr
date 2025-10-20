@@ -31,9 +31,9 @@ export default function ExperiencePage() {
  };
 
  const categoryColors = {
-  education: "from-green-900 to-green-400",
-  internship: "from-green-700 to-green-500",
-  certificates: "from-green-600 to-green-300"
+  education: "bg-green-700",
+  internship: "bg-green-700",
+  certificates: "bg-green-700"
  };
 
  const experienceData = Object.keys(experience).reduce((acc, key) => {

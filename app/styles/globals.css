@@ -26,7 +26,7 @@
   }
 
   :root.light {
-    /* Light mode colors - updated for better contrast */
+    /* Light mode colors  */
     --bg-primary: #f1f8e9;
     --bg-secondary: #e8f5e9;
     --bg-info: #dcedc8;

@@ -46,7 +46,7 @@ export function MobileNav({
        href={item.href}
        onClick={handleNavigationClick}
        className={`flex items-center space-x-4 sm:space-x-5 py-2 md:py-3 px-3 rounded-lg text-[15px] md:text-[18px] font-medium transition-all duration-300 ${isActive
-        ? "text-[#c8e6c9] bg-info border-l-4 border-[#66bb6a]"
+        ? "text-[#c8e6c9] bg-info border-l-4 border-[# 66bb6a]"
         : "text-[#c8e6c9] hover:bg-[#1a5745]/10"
         }`}
        style={{ animationDelay: `${index * 50}ms` }}

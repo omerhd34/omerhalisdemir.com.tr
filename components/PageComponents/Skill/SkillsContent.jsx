@@ -1,4 +1,5 @@
 import SkillCard from "./SkillCard";
+import SkillStatsCards from "./SkillStatsCards";
 
 export default function SkillsContent({
  activeCategory,
@@ -30,30 +31,13 @@ export default function SkillsContent({
     </p>
    </div>
 
-   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-[1.02]">
-     <div className="text-center">
-      <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1">
-       {skills.length}
-      </div>
-      <div className="text-xs sm:text-sm text-primary/70">
-       {translations.categoryStats.technologies}
-      </div>
-     </div>
-    </div>
+   <SkillStatsCards
+    skillsCount={skills.length}
+    avgProficiency={avgProficiency}
+    translations={translations}
+   />
 
-    <div className="bg-info p-4 rounded-xl border border-info hover:border-primary/30 transition-all duration-300 hover:scale-[1.02]">
-     <div className="text-center">
-      <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1">
-       {avgProficiency}%
-      </div>
-      <div className="text-xs sm:text-sm text-primary/70">
-       {translations.categoryStats.avgLevel}
-      </div>
-     </div>
-    </div>
-   </div>
-
+   {/* Mobile View */}
    <div className="block sm:hidden">
     <div className="grid grid-cols-2 gap-3">
      {skills.map((skill, index) => (
@@ -68,6 +52,7 @@ export default function SkillsContent({
     </div>
    </div>
 
+   {/* Desktop View */}
    <div className="hidden sm:block">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
      {skills.map((skill, index) => (

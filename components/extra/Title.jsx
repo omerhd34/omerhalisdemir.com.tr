@@ -21,7 +21,7 @@ export default function Title({ title, subtitle, description, isVisible }) {
      className={`mt-6 transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-     <p className="text-[16px] sm:text-lg max-w-3xl mx-auto px-2">{description}</p>
+     <p className="text-[16px] sm:text-lg max-w-3xl mx-auto px-2 text-accent">{description}</p>
     </div>
    )}
   </div>

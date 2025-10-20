@@ -30,9 +30,9 @@ export default function SkillsPage() {
  };
 
  const categoryColors = {
-  frontend: "from-red-900 to-red-400",
-  backend: "from-green-900 to-green-400",
-  tools: "from-orange-900 to-orange-400"
+  frontend: "bg-green-700",
+  backend: "bg-green-700",
+  tools: "bg-green-700"
  };
 
  const skillsData = Object.keys(skills).reduce((acc, key) => {

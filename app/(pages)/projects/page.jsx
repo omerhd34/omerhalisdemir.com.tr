@@ -30,9 +30,9 @@ export default function ProjectsPage() {
   };
 
   const categoryColors = {
-   all: "from-green-900 to-green-400",
-   web: "from-green-700 to-green-500",
-   electronics: "from-green-600 to-green-300"
+   all: "bg-green-700",
+   web: "bg-green-700",
+   electronics: "bg-green-700"
   };
 
   return {
