@@ -16,7 +16,6 @@
 - [Veritabanı Yapısı](#-veritabanı-yapısı)
 - [Ortam Değişkenleri](#-ortam-değişkenleri)
 - [Proje Yapısı](#-proje-yapısı)
-- [Lisans](#-lisans)
 - [İletişim](#-iletişim)
 
 ## 🎯 Hakkında
