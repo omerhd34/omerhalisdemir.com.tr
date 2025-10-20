@@ -8,7 +8,6 @@
   }
 
   :root {
-    /* Dark mode colors */
     --bg-primary: #0a1f1a;
     --bg-secondary: #0d2821;
     --bg-info: #143d32;
@@ -26,7 +25,6 @@
   }
 
   :root.light {
-    /* Light mode colors  */
     --bg-primary: #f1f8e9;
     --bg-secondary: #e8f5e9;
     --bg-info: #dcedc8;
@@ -49,7 +47,6 @@
   }
 }
 
-/* Text color utilities */
 .text-primary {
   color: var(--text-primary);
 }
@@ -63,7 +60,6 @@
   color: var(--text-accent);
 }
 
-/* Background color utilities */
 .bg-primary {
   background-color: var(--bg-primary);
 }
@@ -80,7 +76,6 @@
   background-color: var(--bg-accent);
 }
 
-/* Border color utilities */
 .border-primary {
   border-color: var(--border-primary);
 }
@@ -91,7 +86,6 @@
   border-color: var(--border-accent);
 }
 
-/* Hover states */
 .hover\:text-primary:hover {
   color: var(--text-primary);
 }

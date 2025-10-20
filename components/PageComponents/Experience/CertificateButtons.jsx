@@ -32,9 +32,9 @@ export default function CertificateButtons({ language, isMobile = false }) {
       rel="noopener noreferrer"
       className={buttonBaseClass}
      >
-      <IconComponent className="w-4 h-4 mr-2 text-yellow-300" />
+      <IconComponent className="w-4 h-4 mr-2 text-orange-300" />
       {button.text}
-      <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200 text-yellow-300" />
+      <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200 text-orange-300" />
      </Link>
     );
    })}
