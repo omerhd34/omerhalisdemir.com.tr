@@ -13,6 +13,6 @@ export default function SkillIcon({ iconName, size = "default" }) {
  if (!IconComponent) return null;
 
  return (
-  <IconComponent className={`${sizeClasses[size]} ${iconColor}`} />
+  <IconComponent className={`${sizeClasses[size]} ${iconColor} transition-colors duration-300`} />
  );
 }

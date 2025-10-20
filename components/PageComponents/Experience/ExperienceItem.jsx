@@ -6,6 +6,7 @@ import ExperienceMetaInfo from "./ExperienceMetaInfo";
 import ExperienceTechnologies from "./ExperienceTechnologies";
 import { MobileToggleButton, DesktopToggleButton } from "./ExperienceToggleButtons";
 import ExperienceAchievements from "./ExperienceAchievements";
+import CertificateButtons from "./CertificateButtons";
 
 export default function ExperienceItem({ item, translations, isVisible, index, language }) {
  const [isExpanded, setIsExpanded] = useState(false);
@@ -51,6 +52,9 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       language={language}
      />
 
+     {/* Full Stack Development için Sertifika Butonları - Desktop */}
+     {item.id === 7 && <CertificateButtons language={language} isMobile={false} />}
+
      <MobileToggleButton
       isExpanded={isMobileExpanded}
       onClick={() => setIsMobileExpanded(!isMobileExpanded)}
@@ -63,6 +67,11 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       translations={translations}
       showExpandButton={showExpandButton}
      />
+
+     {/* Full Stack Development için Sertifika Butonları - Mobile */}
+     {item.id === 7 && isMobileExpanded && (
+      <CertificateButtons language={language} isMobile={true} />
+     )}
     </div>
    </div>
 
@@ -71,6 +80,7 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
     translations={translations}
     isExpanded={isExpanded}
     isMobileExpanded={isMobileExpanded}
+    language={language}
    />
   </div>
  );

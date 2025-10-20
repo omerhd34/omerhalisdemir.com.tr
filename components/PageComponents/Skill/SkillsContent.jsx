@@ -1,5 +1,4 @@
 import SkillCard from "./SkillCard";
-import SkillStatsCards from "./SkillStatsCards";
 
 export default function SkillsContent({
  activeCategory,
@@ -30,12 +29,6 @@ export default function SkillsContent({
      {translations.categories[activeCategory]?.description || ""}
     </p>
    </div>
-
-   <SkillStatsCards
-    skillsCount={skills.length}
-    avgProficiency={avgProficiency}
-    translations={translations}
-   />
 
    {/* Mobile View */}
    <div className="block sm:hidden">

@@ -1,6 +1,5 @@
 import SkillIcon from "./SkillIcon";
 import SkillLevelBadge from "./SkillLevelBadge";
-import SkillProgressBar from "./SkillProgressBar";
 
 export default function SkillCardMobile({ skill, index, translations }) {
  return (
@@ -16,19 +15,15 @@ export default function SkillCardMobile({ skill, index, translations }) {
      <div className="p-2 rounded-lg bg-muted transition-transform duration-300 group-hover:scale-110 mb-1">
       <SkillIcon iconName={skill.icon} size="small" />
      </div>
-     <h4 className="font-semibold text-xs leading-tight">{skill.name}</h4>
+     <h4 className="font-semibold text-xs leading-tight mb-1">{skill.name}</h4>
+     <p className="text-[10px] text-primary/70">
+      {skill.experience} {translations.yearsExp}
+     </p>
     </div>
 
-    <div className="flex justify-center mb-1.5">
+    <div className="flex justify-center">
      <SkillLevelBadge level={skill.level} translations={translations} size="small" />
     </div>
-
-    <SkillProgressBar
-     level={skill.level}
-     percentage={skill.percentage}
-     translations={translations}
-     showLabel={false}
-    />
    </div>
   </div>
  );

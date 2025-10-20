@@ -1,7 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
-
-export default function ExperienceAchievements({ item, translations, isExpanded, isMobileExpanded }) {
+export default function ExperienceAchievements({ item, translations, isExpanded, isMobileExpanded, language }) {
  if (!isExpanded && !isMobileExpanded) return null;
  if (!item.achievements || item.achievements.length === 0) return null;
 
@@ -17,39 +14,6 @@ export default function ExperienceAchievements({ item, translations, isExpanded,
       </li>
      ))}
     </ul>
-
-    {item.id === 7 && (
-     <div className="flex flex-wrap gap-8 justify-center mt-5">
-      <Link
-       href="/images/UstunBasari.png"
-       target="_blank"
-       rel="noopener noreferrer"
-       className="w-[160px] sm:w-[400px] md:w-[500px] xl:w-[550px]"
-      >
-       <Image
-        src="/images/UstunBasari.png"
-        alt="Üstün Başarı Sertifikası"
-        width={500}
-        height={500}
-        className="w-full h-auto rounded-4xl shadow-4xl hover:opacity-90 transition duration-300"
-       />
-      </Link>
-      <Link
-       href="/images/Sertifika.png"
-       target="_blank"
-       rel="noopener noreferrer"
-       className="w-[160px] sm:w-[400px] md:w-[500px] xl:w-[550px]"
-      >
-       <Image
-        src="/images/Sertifika.png"
-        alt="Sertifika"
-        width={500}
-        height={500}
-        className="w-full h-auto rounded-4xl shadow-4xl hover:opacity-90 transition duration-300"
-       />
-      </Link>
-     </div>
-    )}
    </div>
   </div>
  );
