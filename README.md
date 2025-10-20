@@ -72,9 +72,6 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 | **Next.js** | 15.3.3 | Framework |
 | **React** | 19.1.0 | UI Library |
 | **Tailwind CSS** | 4.1.10 | Styling |
-| **React Icons** | 5.5.0 | İkonlar |
-| **React Hot Toast** | 2.6.0 | Bildirimler |
-| **React Country Flag** | 3.1.0 | Bayrak İkonları |
 
 ### Backend
 
@@ -352,10 +349,6 @@ test: Test ekleme/düzeltme
 chore: Yapılandırma değişiklikleri
 ```
 
-## 📝 Lisans
-
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
-
 ## 👤 İletişim
 
 **Ömer Halis Demir**
@@ -371,6 +364,5 @@ Bu projeyi geliştirirken kullandığım açık kaynak toplulukların ve teknolo
 
 ---
 
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
 
-**Made with ❤️ by Ömer Halis Demir**
+**Made with by Ömer Halis Demir**
