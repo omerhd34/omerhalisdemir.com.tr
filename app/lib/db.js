@@ -29,9 +29,14 @@ export async function getConnection() {
 export async function closeConnection(connection) {
   if (connection) {
     try {
-      connection.release();
+      await connection.release();
     } catch (error) {
       console.error("Bağlantı kapatma hatası:", error);
+      try {
+        await connection.destroy();
+      } catch (destroyError) {
+        console.error("Connection destroy error:", destroyError);
+      }
     }
   }
 }

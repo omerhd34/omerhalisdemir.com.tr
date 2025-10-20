@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, useEffect, useRef } from "react";
+import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { useLanguage } from "./LanguageContext";
 
 const DataContext = createContext();
@@ -17,27 +17,30 @@ export function DataProvider({ children }) {
  const [projects, setProjects] = useState(dataCache.projects[language] || null);
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState(null);
- const fetchedRef = useRef({ experience: {}, projects: {} });
 
- useEffect(() => {
-  fetchAllData();
- }, [language]);
-
- const fetchAllData = async () => {
+ const fetchAllData = useCallback(async () => {
   setLoading(true);
   setError(null);
 
   try {
    if (!dataCache.skills) {
     try {
-     const skillsRes = await fetch('/api/skills');
-     if (skillsRes.ok) {
-      const skillsData = await skillsRes.json();
-      dataCache.skills = skillsData;
-      setSkills(skillsData);
+     const skillsRes = await fetch('/api/skills', {
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!skillsRes.ok) {
+      throw new Error(`Skills API error: ${skillsRes.status}`);
      }
+
+     const skillsData = await skillsRes.json();
+     dataCache.skills = skillsData;
+     setSkills(skillsData);
     } catch (err) {
      console.error('Skills fetch error:', err);
+     setError(prev => ({ ...prev, skills: err.message }));
     }
    } else {
     setSkills(dataCache.skills);
@@ -45,14 +48,22 @@ export function DataProvider({ children }) {
 
    if (!dataCache.experience[language]) {
     try {
-     const experienceRes = await fetch(`/api/experience/${language}`);
-     if (experienceRes.ok) {
-      const experienceData = await experienceRes.json();
-      dataCache.experience[language] = experienceData;
-      setExperience(experienceData);
+     const experienceRes = await fetch(`/api/experience/${language}`, {
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!experienceRes.ok) {
+      throw new Error(`Experience API error: ${experienceRes.status}`);
      }
+
+     const experienceData = await experienceRes.json();
+     dataCache.experience[language] = experienceData;
+     setExperience(experienceData);
     } catch (err) {
      console.error('Experience fetch error:', err);
+     setError(prev => ({ ...prev, experience: err.message }));
     }
    } else {
     setExperience(dataCache.experience[language]);
@@ -60,34 +71,50 @@ export function DataProvider({ children }) {
 
    if (!dataCache.projects[language]) {
     try {
-     const projectsRes = await fetch(`/api/projects/${language}`);
-     if (projectsRes.ok) {
-      const projectsData = await projectsRes.json();
-      dataCache.projects[language] = projectsData;
-      setProjects(projectsData);
+     const projectsRes = await fetch(`/api/projects/${language}`, {
+      headers: {
+       'Content-Type': 'application/json',
+      },
+     });
+
+     if (!projectsRes.ok) {
+      throw new Error(`Projects API error: ${projectsRes.status}`);
      }
+
+     const projectsData = await projectsRes.json();
+     dataCache.projects[language] = projectsData;
+     setProjects(projectsData);
     } catch (err) {
      console.error('Projects fetch error:', err);
+     setError(prev => ({ ...prev, projects: err.message }));
     }
    } else {
     setProjects(dataCache.projects[language]);
    }
 
   } catch (error) {
-   setError(error.message);
+   console.error('Unexpected error in fetchAllData:', error);
+   setError(prev => ({ ...prev, general: error.message }));
   } finally {
    setLoading(false);
   }
+ }, [language]);
+
+ useEffect(() => {
+  fetchAllData();
+ }, [fetchAllData]);
+
+ const contextValue = {
+  skills,
+  experience,
+  projects,
+  loading,
+  error,
+  refetch: fetchAllData,
  };
 
  return (
-  <DataContext.Provider value={{
-   skills,
-   experience,
-   projects,
-   loading,
-   error
-  }}>
+  <DataContext.Provider value={contextValue}>
    {children}
   </DataContext.Provider>
  );
