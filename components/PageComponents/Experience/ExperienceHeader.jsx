@@ -17,7 +17,7 @@ export default function ExperienceHeader({ item, Icon, iconBgColor, statusTexts,
      </div>
      <div className="text-left sm:text-right flex-shrink-0">
       <div
-       className={`inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${statusBadgeClass}`}
+       className={`text-white inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${statusBadgeClass}`}
       >
        {statusTexts[item.status]}
       </div>

@@ -139,7 +139,7 @@ export default function ProjectCard({ project, translations, language, index }) 
        <div className="sm:hidden mt-4 space-y-4">
         <div className="flex justify-start">
          <div
-          className={`inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${statusBadgeClass}`}
+          className={`text-white inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${statusBadgeClass}`}
          >
           {statusTexts[project.status]}
          </div>

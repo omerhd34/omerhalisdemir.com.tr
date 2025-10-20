@@ -140,7 +140,6 @@
   }
 }
 
-/* Level badge pulse */
 .level-badge {
   animation: badgePulse 2s ease-in-out infinite;
 }
@@ -157,7 +156,6 @@
   }
 }
 
-/* Stats counter animation */
 @keyframes countUp {
   from {
     opacity: 0;
@@ -173,7 +171,6 @@
   animation: countUp 0.6s ease-out;
 }
 
-/* Gradient text animation */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;

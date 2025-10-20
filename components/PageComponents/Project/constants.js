@@ -69,7 +69,7 @@ export const ELECTRONICS_IMAGES = {
 export const getStatusBg = (status) => {
   switch (status) {
     case "completed":
-      return "bg-black border-accent";
+      return "bg-blue-900 border-accent";
     case "current":
       return "bg-red-900 border-accent";
     case "upcoming":

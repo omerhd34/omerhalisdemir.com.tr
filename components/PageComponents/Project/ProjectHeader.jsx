@@ -11,7 +11,7 @@ export default function ProjectHeader({ project, statusTexts, statusBadgeClass }
    {/* Status Badge - Desktop Only */}
    <div className="hidden sm:flex flex-col space-y-2 flex-shrink-0">
     <div
-     className={`inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${statusBadgeClass}`}
+     className={`text-white inline-flex items-center px-3 py-1 rounded-full text-[14px] font-medium border ${statusBadgeClass}`}
     >
      {statusTexts[project.status]}
     </div>

@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
-import { FaPaperPlane, FaUser, FaComment, FaEnvelope, FaPhone, FaTag } from "react-icons/fa";
+import {
+ FaPaperPlane,
+ FaUser,
+ FaComment,
+ FaEnvelope,
+ FaPhone,
+ FaTag,
+} from "react-icons/fa";
 import toast from "react-hot-toast";
 
 export default function ContactForm({ language, isVisible }) {
@@ -17,16 +24,18 @@ export default function ContactForm({ language, isVisible }) {
 
  const translations = {
   formTitle: language === "EN" ? "Send Message" : "Mesaj Gönder",
-  name: language === "EN" ? "Name & Surname" : "İsim & Soyisim",
-  email: language === "EN" ? "Email" : "E-posta",
-  phone: language === "EN" ? "Phone" : "Telefon",
-  subject: language === "EN" ? "Subject" : "Konu",
-  message: language === "EN" ? "Message" : "Mesaj",
+  name: language === "EN" ? "Name & Surname:" : "İsim & Soyisim:",
+  email: language === "EN" ? "Email:" : "E-posta:",
+  phone: language === "EN" ? "Phone:" : "Telefon:",
+  subject: language === "EN" ? "Subject:" : "Konu:",
+  message: language === "EN" ? "Message:" : "Mesaj:",
   send: language === "EN" ? "Send Message" : "Mesajı Gönder",
   sending: language === "EN" ? "Sending..." : "Gönderiliyor...",
-  namePlaceholder: language === "EN" ? "Your name and surname" : "Adınız ve soyadınız",
+  namePlaceholder:
+   language === "EN" ? "Your name and surname" : "Adınız ve soyadınız",
   emailPlaceholder: language === "EN" ? "Your email" : "E-posta adresiniz",
-  phonePlaceholder: language === "EN" ? "Your phone" : "Telefonu numaranız",
+  phonePlaceholder:
+   language === "EN" ? "Your phone number" : "Telefon numaranız",
   subjectPlaceholder: language === "EN" ? "Subject" : "Konu",
   messagePlaceholder: language === "EN" ? "Your message..." : "Mesajınız...",
  };
@@ -111,7 +120,8 @@ export default function ContactForm({ language, isVisible }) {
   }
  };
 
- const inputStyles = "w-full px-4 py-3 bg-info border border-[#66bb6a] rounded-lg placeholder-[#a5d6a7] focus:outline-none focus:border-[#81c784] focus:ring-2 focus:ring-[#66bb6a]/20 transition-all duration-300 text-[16px] sm:text-base hover:border-[#81c784] hover:scale-[1.02] transform";
+ const inputStyles =
+  "w-full px-4 py-3 bg-info border border-[#66bb6a] rounded-lg placeholder-[#a5d6a7] focus:outline-none focus:border-[#81c784] focus:ring-2 focus:ring-[#66bb6a]/20 transition-all duration-300 text-[16px] sm:text-base hover:border-[#81c784] hover:scale-[1.02] transform";
 
  return (
   <div
@@ -126,83 +136,98 @@ export default function ContactForm({ language, isVisible }) {
 
     <form onSubmit={handleSubmit} className="space-y-6">
      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* Name */}
       <div className="group">
-       <label className="block text-[17px] sm:text-md font-medium mb-2">
+       <label htmlFor="name" className="block text-[17px] sm:text-md font-medium mb-2">
         <FaUser className="inline w-4 h-4 mr-2 mb-1" />
         {translations.name}
        </label>
        <input
+        id="name"
         type="text"
         name="name"
         value={formData.name}
         onChange={handleChange}
         placeholder={translations.namePlaceholder}
         required
+        autoComplete="name"
         className={inputStyles}
        />
       </div>
 
+      {/* Email */}
       <div className="group">
-       <label className="block text-[17px] sm:text-md font-medium mb-2">
+       <label htmlFor="email" className="block text-[17px] sm:text-md font-medium mb-2">
         <FaEnvelope className="inline w-4 h-4 mr-2 mb-1" />
         {translations.email}
        </label>
        <input
+        id="email"
         type="email"
         name="email"
         value={formData.email}
         onChange={handleChange}
         placeholder={translations.emailPlaceholder}
         required
+        autoComplete="email"
         className={inputStyles}
        />
       </div>
      </div>
 
      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* Phone */}
       <div className="group">
-       <label className="block text-[17px] sm:text-md font-medium mb-2">
+       <label htmlFor="phone" className="block text-[17px] sm:text-md font-medium mb-2">
         <FaPhone className="inline w-4 h-4 mr-2 mb-1" />
         {translations.phone}
        </label>
        <input
+        id="phone"
         type="tel"
         name="phone"
         value={formData.phone}
         onChange={handleChange}
         placeholder={translations.phonePlaceholder}
+        autoComplete="tel"
         className={inputStyles}
        />
       </div>
 
+      {/* Subject */}
       <div className="group">
-       <label className="block text-[17px] sm:text-md font-medium mb-2">
+       <label htmlFor="subject" className="block text-[17px] sm:text-md font-medium mb-2">
         <FaTag className="inline w-4 h-4 mr-2 mb-1" />
         {translations.subject}
        </label>
        <input
+        id="subject"
         type="text"
         name="subject"
         value={formData.subject}
         onChange={handleChange}
         placeholder={translations.subjectPlaceholder}
         required
+        autoComplete="off"
         className={inputStyles}
        />
       </div>
      </div>
 
+     {/* Message */}
      <div className="group mb-2">
-      <label className="block text-[17px] sm:text-md font-medium mb-2">
+      <label htmlFor="message" className="block text-[17px] sm:text-md font-medium mb-2">
        <FaComment className="inline w-4 h-4 mr-2 mb-1" />
        {translations.message}
       </label>
       <textarea
+       id="message"
        name="message"
        value={formData.message}
        onChange={handleChange}
        placeholder={translations.messagePlaceholder}
        rows={5}
+       autoComplete="off"
        className={`${inputStyles} resize-none`}
       />
      </div>

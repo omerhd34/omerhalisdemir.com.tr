@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaMapMarkerAlt, FaEnvelope, FaEnvelopeOpen } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag";
+import { MdEmail } from "react-icons/md";
 
 export default function ContactInfoCard({ language, isVisible }) {
  const title = language === "EN" ? "Contact Information" : "İletişim Bilgileri";
@@ -60,6 +61,8 @@ export default function ContactInfoCard({ language, isVisible }) {
          <span className="text-[15px] block">{info.label}</span>
          <div className="font-medium text-[16px] break-words flex items-center gap-2">
           {info.value}
+
+          {/* WhatsApp butonu */}
           {info.label === (language === "TR" ? "Telefon:" : "Phone:") && (
            <Link
             href="https://wa.me/905078492903"
@@ -69,6 +72,17 @@ export default function ContactInfoCard({ language, isVisible }) {
             title="WhatsApp"
            >
             <FaWhatsapp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+           </Link>
+          )}
+
+          {/* E-posta butonu */}
+          {info.label === (language === "TR" ? "E-posta:" : "Email:") && (
+           <Link
+            href="mailto:omerhd16@outlook.com"
+            className="inline-flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300 hover:scale-110"
+            title="Outlook ile e-posta gönder"
+           >
+            <MdEmail className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
            </Link>
           )}
          </div>
