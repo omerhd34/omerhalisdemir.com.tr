@@ -71,11 +71,11 @@ export const getLevelColor = (level) => {
     case "intermediate":
       return "from-blue-500 to-cyan-500";
     case "advanced":
-      return "from-purple-500 to-pink-500";
+      return "bg-purple-500";
     case "expert":
-      return "from-red-700 to-red-900";
+      return "bg-red-900";
     default:
-      return "from-gray-500 to-gray-600";
+      return "bg-gray-600";
   }
 };
 
