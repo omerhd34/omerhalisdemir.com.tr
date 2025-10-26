@@ -32,10 +32,10 @@ export default function ContactForm({ language, isVisible }) {
   send: language === "EN" ? "Send Message" : "Mesajı Gönder",
   sending: language === "EN" ? "Sending..." : "Gönderiliyor...",
   namePlaceholder:
-   language === "EN" ? "Your name and surname" : "Adınız ve soyadınız",
+   language === "EN" ? "Name & Surname" : "Adınız ve soyadınız",
   emailPlaceholder: language === "EN" ? "Your email" : "E-posta adresiniz",
   phonePlaceholder:
-   language === "EN" ? "Your phone number" : "Telefon numaranız",
+   language === "EN" ? "Phone number" : "Telefon numaranız",
   subjectPlaceholder: language === "EN" ? "Subject" : "Konu",
   messagePlaceholder: language === "EN" ? "Your message..." : "Mesajınız...",
  };
@@ -235,7 +235,7 @@ export default function ContactForm({ language, isVisible }) {
      <button
       type="submit"
       disabled={isSubmitting}
-      className="w-25 sm:w-full max-w-xs sm:max-w-sm md:max-w-md py-2 sm:py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-gradient-to-r from-[#2e7d32] to-[#66bb6a] hover:from-[#1b5e20] hover:to-[#2e7d32] border-0 hover:ring-2 hover:ring-[#81c784] hover:ring-opacity-50 mb-2"
+      className="w-25 sm:w-full max-w-xs sm:max-w-sm md:max-w-md py-2 sm:py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-linear-to-r from-[#2e7d32] to-[#66bb6a] hover:from-[#1b5e20] hover:to-[#2e7d32] border-0 hover:ring-2 hover:ring-[#81c784] hover:ring-opacity-50 mb-2"
      >
       <FaPaperPlane className="w-4 h-4" />
       <span>{isSubmitting ? translations.sending : translations.send}</span>

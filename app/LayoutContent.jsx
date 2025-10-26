@@ -1,8 +1,13 @@
 "use client";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import ScrollToTopButton from "../components/extra/ScrollTopButton";
 import { useLanguage } from "./context/LanguageContext";
+import dynamic from 'next/dynamic';
+
+const ScrollToTopButton = dynamic(
+ () => import("../components/extra/ScrollTopButton"),
+ { ssr: false }
+);
 
 export default function LayoutContent({ children }) {
  const { language, handleLanguageChange } = useLanguage();
