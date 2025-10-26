@@ -34,7 +34,6 @@ const translationsData = [
 ];
 
 async function seedLanguages() {
-  console.log("🗑️  Languages tablosu temizleniyor...");
   await prisma.language.deleteMany({});
 
   const createdLanguages = {};
@@ -45,17 +44,13 @@ async function seedLanguages() {
         data: lang,
       });
       createdLanguages[lang.code] = created;
-      console.log(`✅ Dil eklendi: ${lang.name} (${lang.code})`);
-    } catch (error) {
-      console.error(`❌ ${lang.name} eklenirken hata: ${error.message}`);
-    }
+    } catch (error) {}
   }
 
   return createdLanguages;
 }
 
 async function seedTranslations(languages) {
-  console.log("\n🗑️  Translation Keys ve Translations temizleniyor...");
   await prisma.translation.deleteMany({});
   await prisma.translationKey.deleteMany({});
 
@@ -82,17 +77,9 @@ async function seedTranslations(languages) {
           });
         }
       }
-
       successCount++;
-      console.log(`✅ ${item.keyPath} çevirileri eklendi`);
-    } catch (error) {
-      console.error(`❌ ${item.keyPath} eklenirken hata: ${error.message}`);
-    }
+    } catch (error) {}
   }
-
-  console.log(
-    `\n🎉 ${successCount}/${translationsData.length} adet çeviri başarıyla eklendi!`
-  );
 }
 
 async function main() {
@@ -100,11 +87,9 @@ async function main() {
     const languages = await seedLanguages();
     await seedTranslations(languages);
   } catch (e) {
-    console.error("❌ Hata:", e);
     process.exit(1);
   } finally {
     await prisma.$disconnect();
   }
 }
-
 main();

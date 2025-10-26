@@ -175,7 +175,6 @@ const skillsData = [
 ];
 
 async function seedSkills() {
-  console.log("🗑️  Skills tablosu temizleniyor...");
   await prisma.skill.deleteMany({});
 
   let successCount = 0;
@@ -186,22 +185,14 @@ async function seedSkills() {
         data: data,
       });
       successCount++;
-      console.log(`✅ ${data.name} eklendi`);
-    } catch (error) {
-      console.error(`❌ ${data.name} eklenirken hata: ${error.message}`);
-    }
+    } catch (error) {}
   }
-
-  console.log(
-    `\n🎉 ${successCount}/${skillsData.length} adet skill başarıyla eklendi!`
-  );
 }
 
 async function main() {
   try {
     await seedSkills();
   } catch (e) {
-    console.error("❌ Hata:", e);
     process.exit(1);
   } finally {
     await prisma.$disconnect();

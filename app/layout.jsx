@@ -1,7 +1,9 @@
 import "./styles/globals.css";
+import { Suspense } from "react";
 import { LanguageProvider } from "./context/LanguageContext";
 import { DataProvider } from "./context/DataContext";
 import LayoutContent from "./LayoutContent.jsx";
+import ScrollToTop from "../components/extra/ScrollToTop";
 
 export const metadata = {
  title: "Ömer Halis Demir | Full Stack Developer",
@@ -15,6 +17,14 @@ export const metadata = {
  },
 };
 
+function LoadingFallback() {
+ return (
+  <div className="min-h-screen flex items-center justify-center">
+   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-500"></div>
+  </div>
+ );
+}
+
 export default function RootLayout({ children }) {
  return (
   <html lang="en">
@@ -26,7 +36,12 @@ export default function RootLayout({ children }) {
    <body>
     <LanguageProvider>
      <DataProvider>
-      <LayoutContent>{children}</LayoutContent>
+      <Suspense fallback={<LoadingFallback />}>
+       <LayoutContent>
+        <ScrollToTop />
+        {children}
+       </LayoutContent>
+      </Suspense>
      </DataProvider>
     </LanguageProvider>
    </body>

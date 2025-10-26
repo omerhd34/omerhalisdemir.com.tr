@@ -285,9 +285,6 @@ const projectsData = [
 ];
 
 async function seedProjects() {
-  console.log("\n🚀 Projects tablosu dolduruluyor...");
-  console.log("🗑️  Mevcut veriler temizleniyor...\n");
-
   await prisma.project.deleteMany({});
 
   let successCount = 0;
@@ -299,33 +296,19 @@ async function seedProjects() {
         data: data,
       });
       successCount++;
-      console.log(`✅ ${data.titleTr} başarıyla eklendi`);
     } catch (error) {
       errorCount++;
-      console.error(`❌ ${data.titleTr} eklenirken hata:`, error.message);
     }
   }
-
-  console.log("\n" + "=".repeat(60));
-  console.log(
-    `📊 Toplam: ${projectsData.length} | Başarılı: ${successCount} | Hata: ${errorCount}`
-  );
-  console.log("=".repeat(60));
-  console.log(`\n🎉 Projects seed işlemi tamamlandı!\n`);
 }
 
 async function main() {
   try {
-    console.log("🌱 Projects seed işlemi başlatılıyor...");
-    console.log("=".repeat(60));
-
     await seedProjects();
   } catch (e) {
-    console.error("\n❌ Genel hata oluştu:", e);
     process.exit(1);
   } finally {
     await prisma.$disconnect();
-    console.log("✅ Veritabanı bağlantısı kapatıldı.\n");
   }
 }
 

@@ -26,7 +26,7 @@ export default function AnimatedGradient({ isHovered = false }) {
       }}
      >
       <div
-       className={`absolute inset-0 opacity-30 mix-blend-overlay bg-gradient-to-r from-transparent via-white to-transparent transition-opacity duration-300 ${isHovered ? "opacity-50" : "opacity-30"
+       className={`absolute inset-0 opacity-30 mix-blend-overlay bg-linear-to-r from-transparent via-white to-transparent transition-opacity duration-300 ${isHovered ? "opacity-50" : "opacity-30"
         }`}
       ></div>
 

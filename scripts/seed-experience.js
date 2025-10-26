@@ -205,11 +205,7 @@ const experienceData = [
 ];
 
 async function seedExperience() {
-  console.log("\n🚀 Experience tablosu dolduruluyor...");
-  console.log("🗑️  Mevcut veriler temizleniyor...\n");
-
   await prisma.experience.deleteMany({});
-
   let successCount = 0;
   let errorCount = 0;
 
@@ -219,33 +215,19 @@ async function seedExperience() {
         data: data,
       });
       successCount++;
-      console.log(`✅ ${data.titleTr} başarıyla eklendi`);
     } catch (error) {
       errorCount++;
-      console.error(`❌ ${data.titleTr} eklenirken hata:`, error.message);
     }
   }
-
-  console.log("\n" + "=".repeat(60));
-  console.log(
-    `📊 Toplam: ${experienceData.length} | Başarılı: ${successCount} | Hata: ${errorCount}`
-  );
-  console.log("=".repeat(60));
-  console.log(`\n🎉 Experience seed işlemi tamamlandı!\n`);
 }
 
 async function main() {
   try {
-    console.log("🌱 Experience seed işlemi başlatılıyor...");
-    console.log("=".repeat(60));
-
     await seedExperience();
   } catch (e) {
-    console.error("\n❌ Genel hata oluştu:", e);
     process.exit(1);
   } finally {
     await prisma.$disconnect();
-    console.log("✅ Veritabanı bağlantısı kapatıldı.\n");
   }
 }
 

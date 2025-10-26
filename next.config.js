@@ -2,6 +2,7 @@
 const nextConfig = {
   output: "standalone",
   trailingSlash: true,
+  reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
@@ -13,11 +14,36 @@ const nextConfig = {
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@/public": "./public",
     };
+
+    if (!isServer) {
+      if (!config.optimization) {
+        config.optimization = {};
+      }
+
+      if (!config.optimization.splitChunks) {
+        config.optimization.splitChunks = {};
+      }
+
+      if (typeof config.optimization.splitChunks === "object") {
+        config.optimization.splitChunks = {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...(config.optimization.splitChunks.cacheGroups || {}),
+            commons: {
+              test: /[\\/]node_modules[\\/]/,
+              name: "vendors",
+              chunks: "all",
+            },
+          },
+        };
+      }
+    }
+
     return config;
   },
 };

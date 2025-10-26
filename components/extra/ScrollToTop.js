@@ -8,11 +8,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (previousPathname.current !== pathname) {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "instant",
-      });
+      window.scrollTo(0, 0);
       previousPathname.current = pathname;
     }
   }, [pathname]);

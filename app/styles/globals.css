@@ -115,3 +115,15 @@
 .hover\:border-accent:hover {
   border-color: var(--border-accent);
 }
+
+.transition-all,
+.transition-transform,
+.transition-opacity {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+html {
+  scroll-behavior: auto;
+}
