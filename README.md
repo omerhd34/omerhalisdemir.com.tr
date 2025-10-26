@@ -1,11 +1,11 @@
 # 🚀 omerhalisdemir.com.tr
 
-> Modern ve dinamik kişisel portföy web sitesi - Next.js 15 & MySQL ile geliştirilmiştir.
+> Modern ve dinamik kişisel portföy web sitesi - Next.js 15 & MongoDB ile geliştirilmiştir.
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.3-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-blue?style=flat&logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.10-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql)](https://www.mysql.com/)
+[![MySQL](https://img.shields.io/badge/MongoDB-8.1.2-green)](https://www.mongodb.com/)
 
 ## 📋 İçindekiler
 
@@ -58,7 +58,7 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 
 - **Server-Side Rendering**: Next.js App Router
 - **Image Optimization**: Next.js Image component
-- **Database Connection Pooling**: MySQL connection optimization
+- **Database Connection Pooling**: MongoDB connection optimization
 - **Caching Strategy**: Statik ve dinamik içerik cache'leme
 
 ## 🛠 Teknolojiler
@@ -77,7 +77,7 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 |-----------|----------|----------------|
 | **Node.js** | 20.x | Runtime |
 | **Express.js** | 20.x | Runtime |
-| **MySQL** | 8.0 | Veritabanı |
+| **MongoDB** | 8.0 | Veritabanı |
 | **Nodemailer** | 7.0.6 | Email Servisi |
 
 ### DevOps & Tools
@@ -92,7 +92,7 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 ### Gereksinimler
 
 - Node.js 18.x veya üzeri
-- MySQL 8.0 veya üzeri
+- MongoDB 8.1.2 veya üzeri
 - npm veya yarn
 
 ### Adım 1: Projeyi Klonlayın
@@ -133,16 +133,9 @@ PORT=3000
 
 ### Adım 4: Veritabanını Oluşturun
 
-```bash
-# MySQL'e bağlanın
-mysql -u root -p
+MongoDB kullandığımız için ayrıca bir SQL dosyası çalıştırmaya gerek yoktur. Uygulama, ilk çalıştığında Mongoose modelleri aracılığıyla gerekli koleksiyonları otomatik olarak oluşturacaktır.
 
-# Veritabanını oluşturun
-CREATE DATABASE portfolio_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# SQL dosyasını import edin
-mysql -u root -p portfolio_db < database/schema.sql
-```
+İpucu: İlk verilerinizi (örneğin diller, çeviriler, yetenekler) MongoDB Compass veya bir yönetim arayüzü ile portfolio_db veritabanına ekleyebilirsiniz.
 
 ### Adım 5: Geliştirme Sunucusunu Başlatın
 
@@ -161,86 +154,32 @@ npm run build
 npm start
 ```
 
-## 🗄 Veritabanı Yapısı
+## 🗄 Veritabanı Yapısı (MongoDB Koleksiyonları)
 
-### Tablolar
+MongoDB, şemasız bir veritabanı olsa da, verilerinizi aşağıdaki koleksiyon ve alan yapılarına göre düzenlemeniz beklenir.
+
+### Koleksiyonlar
 
 #### `languages`
 Desteklenen diller
-```sql
-- id: INT (PK)
-- code: VARCHAR(10) (TR, EN)
-- name: VARCHAR(50)
-```
-
-#### `translation_keys`
-Çeviri anahtarları
-```sql
-- id: INT (PK)
-- key_path: VARCHAR(255) (örn: home.title)
-```
 
 #### `translation`
-Çeviriler
-```sql
-- id: INT (PK)
-- key_id: INT (FK → translation_keys)
-- language_id: INT (FK → languages)
-- translation_text: TEXT
-```
+Çeviri anahtarları ve değerleri
 
 #### `skills`
 Teknik yetenekler
-```sql
-- id: INT (PK)
-- category: VARCHAR(50)
-- name: VARCHAR(100)
-- icon: VARCHAR(50)
-- experience: DECIMAL(3,1)
-- level: VARCHAR(20)
-- percentage: INT
-- display_order: INT
-```
 
 #### `experience`
 Eğitim ve iş deneyimleri
-```sql
-- id: INT (PK)
-- category: VARCHAR(50)
-- title_tr/title_en: VARCHAR(200)
-- institution_tr/institution_en: VARCHAR(200)
-- period: VARCHAR(100)
-- status: VARCHAR(20)
-- location: VARCHAR(100)
-- gpa: VARCHAR(10)
-- technologies: JSON
-- achievements_tr/achievements_en: JSON
-```
 
 #### `projects`
 Projeler
-```sql
-- id: INT (PK)
-- category: VARCHAR(50)
-- title_tr/title_en: VARCHAR(200)
-- description_tr/description_en: TEXT
-- long_description_tr/long_description_en: TEXT
-- status: VARCHAR(20)
-- technologies: JSON
-- features_tr/features_en: JSON
-- live_url: VARCHAR(500)
-- github_url: VARCHAR(500)
-- metrics_tr/metrics_en: JSON
-```
 
 ## 🔐 Ortam Değişkenleri
 
 | Değişken | Açıklama | Örnek |
 |----------|----------|-------|
-| `DB_HOST` | MySQL sunucu adresi | `localhost` |
-| `DB_USER` | Veritabanı kullanıcı adı | `root` |
-| `DB_PASSWORD` | Veritabanı şifresi | `password123` |
-| `DB_NAME` | Veritabanı adı | `portfolio_db` |
+| `DB_URK` | Veritabanı adı | `portfolio_db` |
 | `EMAIL_USER` | Gönderici email adresi | `your@gmail.com` |
 | `EMAIL_PASS` | Email uygulama şifresi | `xxxx xxxx xxxx xxxx` |
 | `EMAIL_TO` | Alıcı email adresi | `contact@example.com` |
@@ -274,8 +213,6 @@ omerhalisdemir.com.tr/
 │   ├── context/           # React Context
 │   │   ├── DataContext.jsx
 │   │   └── LanguageContext.jsx
-│   ├── lib/               # Utility fonksiyonlar
-│   │   └── db.js
 │   ├── styles/            # CSS dosyaları
 │   └── layout.jsx
 ├── components/
