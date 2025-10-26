@@ -39,7 +39,6 @@ model Translation {
   language        Language       @relation(fields: [languageId], references: [id], onDelete: Cascade)
   createdAt       DateTime       @default(now())
   updatedAt       DateTime       @updatedAt
-
   @@unique([keyId, languageId])
   @@map("translation")
 }

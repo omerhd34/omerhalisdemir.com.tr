@@ -63,7 +63,6 @@ async function seedTranslations(languages) {
 
   for (const item of translationsData) {
     try {
-      // Translation key oluştur
       const translationKey = await prisma.translationKey.create({
         data: {
           keyPath: item.keyPath,
@@ -71,7 +70,6 @@ async function seedTranslations(languages) {
         },
       });
 
-      // Her dil için translation oluştur
       for (const [langCode, text] of Object.entries(item.translations)) {
         const language = languages[langCode];
         if (language) {

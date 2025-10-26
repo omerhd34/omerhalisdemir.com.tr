@@ -16,7 +16,7 @@ const projectsData = [
       "SiReact",
       "SiTailwindcss",
       "SiJavascript",
-      "SiMysql",
+      "SiMongoDB",
       "SiNodedotjs",
       "SiExpress",
       "FaGithub",
