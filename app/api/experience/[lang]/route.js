@@ -1,76 +1,43 @@
 import { NextResponse } from "next/server";
-import { getConnection, closeConnection } from "../../../lib/db.js";
+import prisma from "../../../lib/prisma.js";
 
 export async function GET(request, context) {
-  let connection;
-
   try {
     const params = await context.params;
     const lang = params.lang;
     const isEnglish = lang.toUpperCase() === "EN";
 
-    connection = await getConnection();
+    const experiences = await prisma.experience.findMany({
+      orderBy: [{ displayOrder: "asc" }, { category: "asc" }, { id: "asc" }],
+    });
 
-    const [rows] = await connection.execute(
-      `SELECT * FROM experience ORDER BY 
-       CASE WHEN display_order IS NOT NULL THEN display_order ELSE id END, 
-       category, id`
-    );
-
-    if (rows.length === 0) {
+    if (experiences.length === 0) {
       return NextResponse.json({});
     }
 
-    const groupedExperience = rows.reduce((acc, exp) => {
+    const groupedExperience = experiences.reduce((acc, exp) => {
       if (!acc[exp.category]) {
         acc[exp.category] = {
           items: [],
         };
       }
 
-      let technologies = [];
-      if (exp.technologies) {
-        try {
-          technologies =
-            typeof exp.technologies === "string"
-              ? JSON.parse(exp.technologies)
-              : exp.technologies;
-        } catch (e) {
-          console.error(
-            `Technologies parse error for ID ${exp.id}:`,
-            e.message
-          );
-          technologies = [];
-        }
-      }
-
-      let achievements = [];
-      const achievementsField = exp[`achievements_${isEnglish ? "en" : "tr"}`];
-      if (achievementsField) {
-        try {
-          achievements =
-            typeof achievementsField === "string"
-              ? JSON.parse(achievementsField)
-              : achievementsField;
-        } catch (e) {
-          console.error(
-            `Achievements parse error for ID ${exp.id}:`,
-            e.message
-          );
-          achievements = [];
-        }
-      }
+      // MongoDB'de zaten array olarak saklanıyor, parse etmeye gerek yok
+      const technologies = exp.technologies || [];
+      const achievements = isEnglish
+        ? exp.achievementsEn || []
+        : exp.achievementsTr || [];
 
       acc[exp.category].items.push({
         id: exp.id,
         category: exp.category,
-        title: isEnglish ? exp.title_en : exp.title_tr,
-        institution: isEnglish ? exp.institution_en : exp.institution_tr,
+        title: isEnglish ? exp.titleEn : exp.titleTr,
+        institution: isEnglish ? exp.institutionEn : exp.institutionTr,
         period: exp.period,
         status: exp.status,
         location: exp.location,
         gpa: exp.gpa,
-        description: isEnglish ? exp.description_en : exp.description_tr,
+        description: isEnglish ? exp.descriptionEn : exp.descriptionTr,
         technologies: technologies,
         achievements: achievements,
         icon: exp.icon,
@@ -89,9 +56,5 @@ export async function GET(request, context) {
       },
       { status: 500 }
     );
-  } finally {
-    if (connection) {
-      await closeConnection(connection);
-    }
   }
 }

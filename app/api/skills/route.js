@@ -1,23 +1,17 @@
 import { NextResponse } from "next/server";
-import { getConnection, closeConnection } from "../../lib/db.js";
+import prisma from "../../lib/prisma.js";
 
 export async function GET() {
-  let connection;
-
   try {
-    connection = await getConnection();
+    const skills = await prisma.skill.findMany({
+      orderBy: [{ displayOrder: "asc" }, { id: "asc" }],
+    });
 
-    const [rows] = await connection.execute(
-      `SELECT * FROM skills ORDER BY 
-       CASE WHEN display_order IS NOT NULL THEN display_order ELSE id END, 
-       id`
-    );
-
-    if (rows.length === 0) {
+    if (skills.length === 0) {
       return NextResponse.json({});
     }
 
-    const groupedSkills = rows.reduce((acc, skill) => {
+    const groupedSkills = skills.reduce((acc, skill) => {
       if (!acc[skill.category]) {
         acc[skill.category] = {
           skills: [],
@@ -38,6 +32,7 @@ export async function GET() {
 
     return NextResponse.json(groupedSkills);
   } catch (error) {
+    console.error("Skills API Error:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",
@@ -45,7 +40,5 @@ export async function GET() {
       },
       { status: 500 }
     );
-  } finally {
-    await closeConnection(connection);
   }
 }

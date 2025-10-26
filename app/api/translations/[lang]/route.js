@@ -1,37 +1,42 @@
 import { NextResponse } from "next/server";
-import { getConnection, closeConnection } from "../../../lib/db.js";
+import prisma from "../../../lib/prisma.js";
 
 export async function GET(request, context) {
-  let connection;
-
   try {
     const params = await context.params;
     const lang = params.lang;
+    const languageCode = lang.toUpperCase();
 
-    connection = await getConnection();
+    const language = await prisma.language.findUnique({
+      where: { code: languageCode },
+    });
 
-    const [rows] = await connection.execute(
-      `SELECT tk.key_path, t.translation_text
-       FROM translation t
-       JOIN translation_keys tk ON t.key_id = tk.id
-       JOIN languages l ON t.language_id = l.id
-       WHERE l.code = ?`,
-      [lang.toUpperCase()]
-    );
+    if (!language) {
+      return NextResponse.json({}, { status: 200 });
+    }
 
-    if (!rows || rows.length === 0) {
+    const translationsData = await prisma.translation.findMany({
+      where: {
+        languageId: language.id,
+      },
+      include: {
+        key: true,
+      },
+    });
+
+    if (!translationsData || translationsData.length === 0) {
       return NextResponse.json({}, { status: 200 });
     }
 
     const translations = {};
 
-    rows.forEach((row) => {
-      const keys = row.key_path.split(".");
+    translationsData.forEach((translation) => {
+      const keys = translation.key.keyPath.split(".");
       let current = translations;
 
       keys.forEach((key, index) => {
         if (index === keys.length - 1) {
-          current[key] = row.translation_text;
+          current[key] = translation.translationText;
         } else {
           if (typeof current[key] !== "object" || current[key] === null) {
             current[key] = {};
@@ -51,9 +56,5 @@ export async function GET(request, context) {
       },
       { status: 500 }
     );
-  } finally {
-    if (connection) {
-      await closeConnection(connection);
-    }
   }
 }
