@@ -18,7 +18,7 @@ export default function Footer({ language = "TR", onLanguageChange }) {
  }
 
  return (
-  <footer className="relative z-40 backdrop-blur-md mt-[171px]">
+  <footer className="relative z-40 backdrop-blur-md mt-[30px] sm:mt-[171px]">
    <div className="container mx-auto px-4 pb-3 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
     <nav className="bg-[#0d2821] px-6 py-8 rounded-2xl shadow-2xl">
      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
