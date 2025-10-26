@@ -77,7 +77,7 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 |-----------|----------|----------------|
 | **Node.js** | 20.x | Runtime |
 | **Express.js** | 20.x | Runtime |
-| **MongoDB** | 8.0 | Veritabanı |
+| **MongoDB** | 8.1.2 | Veritabanı |
 | **Nodemailer** | 7.0.6 | Email Servisi |
 
 ### DevOps & Tools
