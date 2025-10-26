@@ -22,7 +22,6 @@ export async function GET(request, context) {
         };
       }
 
-      // MongoDB'de zaten array olarak saklanıyor, parse etmeye gerek yok
       const technologies = exp.technologies || [];
       const achievements = isEnglish
         ? exp.achievementsEn || []

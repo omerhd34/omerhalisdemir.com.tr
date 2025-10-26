@@ -2,7 +2,6 @@
   "name": "omerhalisdemir-portfolio",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
@@ -11,7 +10,7 @@
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",
-    "seed:all": "node scripts/seed-all.js",
+    "seed:all": "node scripts/seed-skills.js scripts/seed-translations.js scripts/seed-projects.js",
     "seed:skills": "node scripts/seed-skills.js",
     "seed:translations": "node scripts/seed-translations.js",
     "seed:projects": "node scripts/seed-projects.js"
