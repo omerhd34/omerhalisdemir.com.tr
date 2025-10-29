@@ -5,14 +5,14 @@ export default function Title({ title, subtitle, description, isVisible }) {
     }`}
   >
    <div className="inline-flex items-center space-x-3 mb-2">
-    <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-green-300"></div>
-    <span className="text-[16px] sm:text-base font-medium bg-gradient-to-r from-green-100 to-green-300 bg-clip-text text-transparent">
+    <div className="w-12 h-0.5 bg-linear-to-r from-transparent to-green-300"></div>
+    <span className="text-[16px] sm:text-base font-medium bg-linear-to-r from-green-100 to-green-300 bg-clip-text text-transparent">
      {subtitle}
     </span>
-    <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-green-300"></div>
+    <div className="w-12 h-0.5 bg-linear-to-r from-transparent to-green-300"></div>
    </div>
 
-   <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r bg-clip-text text-green-300 font-extrabold">
+   <h1 className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-linear-to-r bg-clip-text text-green-300 font-extrabold">
     {title}
    </h1>
 

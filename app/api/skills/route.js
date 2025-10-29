@@ -12,19 +12,20 @@ export async function GET() {
     }
 
     const groupedSkills = skills.reduce((acc, skill) => {
-      if (!acc[skill.category]) {
-        acc[skill.category] = {
-          skills: [],
-        };
-      }
-
-      acc[skill.category].skills.push({
-        name: skill.name,
-        icon: skill.icon,
-        experience: skill.experience.toString(),
-        level: skill.level,
-        percentage: skill.percentage,
-        color: skill.color,
+      skill.categories.forEach((category) => {
+        if (!acc[category]) {
+          acc[category] = {
+            skills: [],
+          };
+        }
+        acc[category].skills.push({
+          name: skill.name,
+          icon: skill.icon,
+          experience: skill.experience.toString(),
+          level: skill.level,
+          percentage: skill.percentage,
+          color: skill.color,
+        });
       });
 
       return acc;
@@ -32,7 +33,7 @@ export async function GET() {
 
     return NextResponse.json(groupedSkills);
   } catch (error) {
-    console.error("Skills API Error:", error);
+    console.error("Yetenekler API Hatası:", error);
     return NextResponse.json(
       {
         error: "Veriler yüklenemedi",

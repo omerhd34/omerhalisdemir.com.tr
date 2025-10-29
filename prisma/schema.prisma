@@ -45,9 +45,9 @@ model Translation {
 
 model Skill {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  category     String
-  name         String
-  experience   Int
+  categories   String[]
+  name         String   @unique
+  experience   Int 
   level        String
   percentage   Int?
   icon         String
@@ -55,7 +55,6 @@ model Skill {
   displayOrder Int      @default(0)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-
   @@map("skills")
 }
 

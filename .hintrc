@@ -7,7 +7,21 @@
       "default",
       {
         "ignore": [
-          "-webkit-text-size-adjust"
+          "-webkit-text-size-adjust",
+          "border-color: color-mix(in oklab, #2e7d32 30%, transparent)",
+          "border-color: color-mix(in oklab, #66bb6a 30%, transparent)",
+          "border-color: color-mix(in oklab, #66bb6a 40%, transparent)",
+          "border-color: color-mix(in srgb, #fff 20%, transparent)",
+          "border-color: color-mix(in srgb, #fff 10%, transparent)",
+          "border-color: color-mix(in oklab, #ebf3fe 30%, transparent)",
+          "background-color: color-mix(in oklab, #2e7d32 20%, transparent)",
+          "background-color: color-mix(in oklab, #143d32 95%, transparent)",
+          "background-color: color-mix(in srgb, oklch(79.5% 0.184 86.047) 20%, transparent)",
+          "background-color: color-mix(in srgb, oklch(55.1% 0.027 264.364) 20%, transparent)",
+          "background-color: color-mix(in oklab, #2e7d32 10%, transparent)",
+          "background-color: color-mix(in oklab, #1a5745 50%, transparent)",
+          "background-color: color-mix(in oklab, #1a5745 10%, transparent)",
+          "background-color: color-mix(in oklab, #718355 10%, transparent)"
         ]
       }
     ]

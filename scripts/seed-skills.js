@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 const skillsData = [
   {
-    category: "frontend",
+    categories: ["frontend"],
     name: "HTML5",
     experience: 4,
     level: "expert",
@@ -13,7 +13,7 @@ const skillsData = [
     displayOrder: 1,
   },
   {
-    category: "frontend",
+    categories: ["frontend"],
     name: "CSS3",
     experience: 4,
     level: "expert",
@@ -23,7 +23,7 @@ const skillsData = [
     displayOrder: 2,
   },
   {
-    category: "frontend",
+    categories: ["frontend", "backend"],
     name: "JavaScript",
     experience: 4,
     level: "expert",
@@ -33,7 +33,7 @@ const skillsData = [
     displayOrder: 3,
   },
   {
-    category: "frontend",
+    categories: ["frontend", "backend"],
     name: "TypeScript",
     experience: 2,
     level: "intermediate",
@@ -43,7 +43,7 @@ const skillsData = [
     displayOrder: 4,
   },
   {
-    category: "frontend",
+    categories: ["frontend"],
     name: "React",
     experience: 4,
     level: "expert",
@@ -53,7 +53,7 @@ const skillsData = [
     displayOrder: 5,
   },
   {
-    category: "frontend",
+    categories: ["frontend", "backend"],
     name: "Next.js",
     experience: 3,
     level: "expert",
@@ -63,7 +63,7 @@ const skillsData = [
     displayOrder: 6,
   },
   {
-    category: "frontend",
+    categories: ["frontend"],
     name: "Tailwind CSS",
     experience: 3,
     level: "expert",
@@ -73,7 +73,7 @@ const skillsData = [
     displayOrder: 7,
   },
   {
-    category: "frontend",
+    categories: ["frontend"],
     name: "Bootstrap",
     experience: 3,
     level: "advanced",
@@ -83,7 +83,7 @@ const skillsData = [
     displayOrder: 8,
   },
   {
-    category: "backend",
+    categories: ["backend"],
     name: "Java & OOP",
     experience: 2,
     level: "intermediate",
@@ -93,7 +93,7 @@ const skillsData = [
     displayOrder: 9,
   },
   {
-    category: "backend",
+    categories: ["backend"],
     name: "Node.js",
     experience: 2,
     level: "intermediate",
@@ -103,7 +103,7 @@ const skillsData = [
     displayOrder: 10,
   },
   {
-    category: "backend",
+    categories: ["database"],
     name: "MongoDB",
     experience: 2,
     level: "intermediate",
@@ -113,7 +113,7 @@ const skillsData = [
     displayOrder: 11,
   },
   {
-    category: "backend",
+    categories: ["database"],
     name: "MySQL",
     experience: 2,
     level: "intermediate",
@@ -123,7 +123,7 @@ const skillsData = [
     displayOrder: 12,
   },
   {
-    category: "tools",
+    categories: ["tools"],
     name: "Git",
     experience: 3,
     level: "intermediate",
@@ -133,7 +133,7 @@ const skillsData = [
     displayOrder: 13,
   },
   {
-    category: "tools",
+    categories: ["tools"],
     name: "GitHub",
     experience: 3,
     level: "advanced",
@@ -143,7 +143,7 @@ const skillsData = [
     displayOrder: 14,
   },
   {
-    category: "tools",
+    categories: ["tools"],
     name: "VS Code",
     experience: 4,
     level: "advanced",
@@ -153,7 +153,7 @@ const skillsData = [
     displayOrder: 15,
   },
   {
-    category: "tools",
+    categories: ["tools"],
     name: "IntelliJ IDEA",
     experience: 1,
     level: "advanced",
@@ -163,14 +163,14 @@ const skillsData = [
     displayOrder: 16,
   },
   {
-    category: "backend",
+    categories: ["backend"],
     name: "Express.js",
     experience: 2,
     level: "intermediate",
     percentage: 75,
     icon: "SiExpress",
     color: "text-gray-500",
-    displayOrder: 17,
+    displayOrder: 18,
   },
 ];
 

@@ -1,6 +1,13 @@
 "use client";
+
 import { useState, useEffect } from "react";
-import { FaCode, FaLaptopCode, FaServer, FaTools } from "react-icons/fa";
+import {
+ FaCode,
+ FaDatabase,
+ FaLaptopCode,
+ FaServer,
+ FaTools,
+} from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 import { useData } from "../../context/DataContext";
 import CategoryButton from "../../../components/extra/CategoryButton";
@@ -23,23 +30,35 @@ export default function SkillsPage() {
   return <LoadingScreen language={language} />;
  }
 
+ const groupedSkills = Array.isArray(skills)
+  ? skills.reduce((acc, skill) => {
+   skill.categories.forEach((category) => {
+    if (!acc[category]) acc[category] = { skills: [] };
+    acc[category].skills.push(skill);
+   });
+   return acc;
+  }, {})
+  : skills;
+
  const categoryIcons = {
   frontend: FaLaptopCode,
   backend: FaServer,
-  tools: FaTools
+  tools: FaTools,
+  database: FaDatabase,
  };
 
  const categoryColors = {
   frontend: "bg-green-700",
   backend: "bg-green-700",
-  tools: "bg-green-700"
+  database: "bg-green-700",
+  tools: "bg-green-700",
  };
 
- const skillsData = Object.keys(skills).reduce((acc, key) => {
+ const skillsData = Object.keys(groupedSkills).reduce((acc, key) => {
   acc[key] = {
-   ...skills[key],
+   ...groupedSkills[key],
    icon: categoryIcons[key],
-   color: categoryColors[key]
+   color: categoryColors[key],
   };
   return acc;
  }, {});
@@ -47,29 +66,48 @@ export default function SkillsPage() {
  const pageTranslations = {
   title: language === "EN" ? "Skills" : "Yetenekler",
   subtitle: language === "EN" ? "Technical Skills" : "Teknik Beceriler",
-  description: language === "EN"
-   ? "With the deep technical knowledge and experience I've gained throughout my web development journey, I create user-centric and innovative solutions. I confidently navigate across a broad technology spectrum from frontend to backend, excelling at every layer."
-   : "Web geliştirme serüvenimde edindiğim derin teknik bilgi ve deneyimle, kullanıcı odaklı ve yenilikçi çözümler üretiyorum. Frontend'den backend'e uzanan geniş teknoloji yelpazesinde, her katmanda güvenle hareket ediyorum.",
+  description:
+   language === "EN"
+    ? "With the deep technical knowledge and experience I've gained throughout my web development journey, I create user-centric and innovative solutions. I confidently navigate across a broad technology spectrum from frontend to backend, excelling at every layer."
+    : "Web geliştirme serüvenimde edindiğim derin teknik bilgi ve deneyimle, kullanıcı odaklı ve yenilikçi çözümler üretiyorum. Frontend'den backend'e uzanan geniş teknoloji yelpazesinde, her katmanda güvenle hareket ediyorum.",
  };
 
  const categoryTranslations = {
   frontend: {
-   title: language === "EN" ? "Frontend Technologies" : "Frontend Teknolojileri",
-   description: language === "EN"
-    ? "Frontend technologies and frameworks"
-    : "Frontend teknolojileri ve framework'ler",
+   title:
+    language === "EN" ? "Frontend Technologies" : "Frontend Teknolojileri",
+   description:
+    language === "EN"
+     ? "Frontend technologies and frameworks"
+     : "Frontend teknolojileri ve framework'ler",
   },
   backend: {
-   title: language === "EN" ? "Backend & Database Technologies" : "Backend ve Veritabanı Teknolojileri",
-   description: language === "EN"
-    ? "Backend technologies and databases"
-    : "Backend teknolojileri ve veritabanları",
+   title:
+    language === "EN" ? "Backend Technologies" : "Backend Teknolojileri",
+   description:
+    language === "EN"
+     ? "Backend technologies and frameworks"
+     : "Backend teknolojileri ve framework'ler",
+  },
+  database: {
+   title:
+    language === "EN"
+     ? "Database Technologies"
+     : "Veritabanı Teknolojileri",
+   description:
+    language === "EN"
+     ? "Database Technologies"
+     : "Veritabanı Teknolojileri",
   },
   tools: {
-   title: language === "EN" ? "Development Environment" : "Geliştirme Ortamı",
-   description: language === "EN"
-    ? "Development tools and platforms"
-    : "Geliştirme araçları ve platformlar",
+   title:
+    language === "EN"
+     ? "Development Environment"
+     : "Geliştirme Ortamı",
+   description:
+    language === "EN"
+     ? "Development tools and platforms"
+     : "Geliştirme araçları ve platformlar",
   },
  };
 
@@ -100,13 +138,17 @@ export default function SkillsPage() {
  };
 
  const getCategoryStats = (category) => {
-  const categorySkills = skills[category]?.skills || [];
+  const categorySkills = skillsData[category]?.skills || [];
 
-  const avgProficiency = categorySkills.length > 0
-   ? Math.round(
-    categorySkills.reduce((sum, skill) => sum + (skill.percentage || 0), 0) / categorySkills.length
-   )
-   : 0;
+  const avgProficiency =
+   categorySkills.length > 0
+    ? Math.round(
+     categorySkills.reduce(
+      (sum, skill) => sum + (skill.percentage || 0),
+      0
+     ) / categorySkills.length
+    )
+    : 0;
 
   return {
    count: categorySkills.length,

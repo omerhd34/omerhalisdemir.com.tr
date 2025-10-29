@@ -54,12 +54,12 @@ export default function ContactInfoCard({ language, isVisible }) {
         key={info.label}
         className="mt-5 flex items-start space-x-4 p-1 sm:p-3 rounded-lg hover:bg-[#01438882] transition-colors duration-300"
        >
-        <div className="w-9 h-9 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center shrink-0">
          <IconComponent className="w-5 h-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
          <span className="text-[15px] block">{info.label}</span>
-         <div className="font-medium text-[16px] break-words flex items-center gap-2">
+         <div className="font-medium text-[16px] wrap-break-words flex items-center gap-2">
           {info.value}
 
           {/* WhatsApp butonu */}

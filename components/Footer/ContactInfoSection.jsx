@@ -1,5 +1,6 @@
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import Link from "next/link";
+import ReactCountryFlag from "react-country-flag";
 
 export default function ContactInfoSection({ language }) {
 
@@ -12,6 +13,12 @@ export default function ContactInfoSection({ language }) {
     <div className="flex items-start space-x-3 text-accent text-sm">
      <FaMapMarkerAlt className="w-4 h-4 mt-0.5 text-accent" />
      <span>İstanbul / Türkiye</span>
+     <ReactCountryFlag
+      countryCode="TR"
+      svg
+      style={{ width: "20px", height: "20px" }}
+      aria-label="Turkey"
+     />
     </div>
     <div className="flex items-start space-x-3 text-accent text-sm">
      <FaPhone className="w-4 h-4 mt-0.5 text-accent" />
