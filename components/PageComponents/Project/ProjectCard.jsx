@@ -1,6 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
-import { ICON_MAP, ICON_COLOR_CLASSES, ELECTRONICS_IMAGES, getStatusBg } from "./constants";
+import { ICON_MAP, ICON_SPECIFIC_COLORS, ELECTRONICS_IMAGES, getStatusBg } from "./constants";
 import ProjectHeader from "./ProjectHeader";
 import ProjectTechnologies from "./ProjectTechnologies";
 import ProjectActionButtons from "./ProjectActionButtons";
@@ -69,7 +69,7 @@ export default function ProjectCard({ project, translations, language, index }) 
   return project.technologies
    .map((techIconName, techIndex) => {
     const TechIcon = ICON_MAP[techIconName];
-    const iconColorClass = ICON_COLOR_CLASSES[techIndex % ICON_COLOR_CLASSES.length];
+    const iconColorClass = ICON_SPECIFIC_COLORS[techIconName] || "text-gray-400";
     const displayName = iconNameMap[techIconName] || techIconName;
 
     if (!TechIcon) {

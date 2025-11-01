@@ -52,21 +52,31 @@ export const ICON_MAP = {
   SiVercel,
 };
 
-export const ICON_COLOR_CLASSES = [
-  "text-cyan-400 hover:text-cyan-300",
-  "text-white hover:text-gray-200",
-  "text-blue-500 hover:text-blue-400",
-  "text-yellow-400 hover:text-yellow-300",
-  "text-teal-400 hover:text-teal-300",
-  "text-green-500 hover:text-green-400",
-  "text-teal-500 hover:text-teal-400",
-  "text-blue-600 hover:text-blue-500",
-  "text-purple-400 hover:text-purple-300",
-  "text-orange-400 hover:text-orange-300",
-  "text-black hover:text-gray-200",
-  "text-orange-600 hover:text-orange-500",
-  "text-black hover:text-gray-200",
-];
+export const ICON_SPECIFIC_COLORS = {
+  SiReact: "text-cyan-400",
+  SiNextdotjs: "text-black",
+  SiTailwindcss: "text-cyan-500",
+  SiNodedotjs: "text-green-600",
+  SiExpress: "text-gray-500",
+  SiArduino: "text-teal-500",
+  SiCplusplus: "text-blue-600",
+  SiMongodb: "text-green-500",
+  SiJavascript: "text-yellow-400",
+  SiMysql: "text-blue-600",
+  SiTypescript: "text-blue-600",
+  SiBootstrap: "text-purple-600",
+  SiVercel: "text-black",
+  FaGitAlt: "text-orange-600",
+  FaGithub: "text-gray-500",
+  FaHtml5: "text-orange-600",
+  FaCss3Alt: "text-blue-500",
+  FaJsSquare: "text-yellow-400",
+  FaNodeJs: "text-green-600",
+  FaJava: "text-red-600",
+  FaMicrochip: "text-purple-500",
+  FaTools: "text-gray-600",
+  FaCpanel: "text-orange-500",
+};
 
 export const ELECTRONICS_IMAGES = {
   4: "/images/1.png",

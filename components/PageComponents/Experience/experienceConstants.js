@@ -112,7 +112,6 @@ export const iconMap = {
   FaGitAlt,
   FaJsSquare,
   FaNodeJs,
-  FaCpanel,
 };
 
 export const categoryColorMap = {
