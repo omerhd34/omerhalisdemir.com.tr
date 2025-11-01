@@ -31,6 +31,7 @@ import {
   FaGitAlt,
   FaJsSquare,
   FaNodeJs,
+  FaCpanel,
 } from "react-icons/fa";
 
 import {
@@ -46,7 +47,7 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiExpress,
-  SiMysql,
+  SiVercel,
   SiArduino,
   SiCplusplus,
   SiServerfault,
@@ -103,7 +104,6 @@ export const iconMap = {
   SiTypescript,
   SiTailwindcss,
   SiExpress,
-  SiMysql,
   SiArduino,
   SiCplusplus,
   SiServerfault,
@@ -114,6 +114,8 @@ export const iconMap = {
   FaGitAlt,
   FaJsSquare,
   FaNodeJs,
+  FaCpanel,
+  SiVercel,
 };
 
 export const categoryColorMap = {
@@ -139,7 +141,6 @@ export const iconColorMap = {
   SiTailwindcss: "text-cyan-500",
   SiExpress: "text-gray-500",
   SiMongodb: "text-green-500",
-  SiMysql: "text-blue-600",
   FaDatabase: "text-gray-600",
   FaGithub: "text-gray-500",
   FaGitAlt: "text-orange-600",
@@ -162,6 +163,8 @@ export const iconColorMap = {
   SiWolframmathematica: "text-red-500",
   FaNetworkWired: "text-indigo-500",
   MdDomain: "text-purple-500",
+  SiVercel: "text-black",
+  FaCpanel: "text-orange-600",
 };
 
 export const getStatusBg = (status) => {
