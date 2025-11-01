@@ -6,10 +6,14 @@ const projectsData = [
     category: "web",
     titleTr: "Uzman Klinik Psikolog Nisa Demir",
     titleEn: "Expert Clinical Psychologist Nisa Demir",
-    descriptionTr: "Proje yapımı devam etmektedir.",
-    descriptionEn: "Project construction is ongoing.",
-    longDescriptionTr: "Proje yapımı devam etmektedir.",
-    longDescriptionEn: "Project construction is ongoing.",
+    descriptionTr:
+      "Uzman Klinik Psikolog Nisa Demir için geliştirilen modern ve profesyonel web platformu. Ziyaretçiler, uzman hizmetler hakkında detaylı bilgi alabilir, randevu talep edebilir ve iletişime geçebilirler. Modern tasarım anlayışı ile şekillendirilmiş, responsive yapıya sahip platform tüm cihazlarda mükemmel bir kullanıcı deneyimi sunmaktadır.",
+    descriptionEn:
+      "A modern and professional web platform developed for Expert Clinical Psychologist Nisa Demir. Visitors can access detailed information about expert services, request appointments, and get in touch. Shaped with a modern design approach, the responsive platform delivers an excellent user experience across all devices.",
+    longDescriptionTr:
+      "Bu proje, Uzman Klinik Psikolog Nisa Demir için Next.js ve React teknolojileri kullanılarak geliştirilmiş, profesyonel kimliği yansıtan modern bir web platformudur. MongoDB veritabanı altyapısı ve Prisma ORM ile güvenli ve ölçeklenebilir bir yapı kurulmuştur. Tailwind CSS ile şekillendirilmiş modern ve responsive tasarım, tüm cihazlarda mükemmel kullanıcı deneyimi sağlar. Server-side rendering ile SEO optimizasyonu sağlanmış, dinamik içerik yönetimi ile kolay güncelleme imkanı sunulmuştur. İletişim formu entegrasyonu, ziyaretçilerin doğrudan uzmanla bağlantı kurabilmesini mümkün kılar. Proje, Vercel platformunda yayınlanmış ve modern deployment yöntemleri ile yönetilmektedir. Bu platform, profesyonel psikoloji hizmetlerinin dijital dünyada etkili bir şekilde sunulmasını hedefler.",
+    longDescriptionEn:
+      "This project is a modern web platform developed using Next.js and React technologies for Expert Clinical Psychologist Nisa Demir, reflecting a professional identity. A secure and scalable structure has been established with MongoDB database infrastructure and Prisma ORM. The modern and responsive design shaped with Tailwind CSS ensures an excellent user experience across all devices. SEO optimization has been achieved with server-side rendering, and dynamic content management offers easy update capabilities. Contact form integration enables visitors to connect directly with the expert. The project is published on the Vercel platform and managed through modern deployment methods. This platform aims to effectively present professional psychology services in the digital world.",
     status: "current",
     technologies: [
       "SiNextdotjs",
@@ -31,7 +35,12 @@ const projectsData = [
       "Server-side rendering",
       "Veritabanı entegrasyonu",
       "İletişim formu",
+      "Randevu talep sistemi",
       "Dinamik içerik yönetimi",
+      "SEO optimizasyonu",
+      "Güvenli veri koruma ve gizlilik",
+      "Performans optimizasyonu",
+      "Erişilebilirlik özellikleri",
     ],
     featuresEn: [
       "Responsive design",
@@ -40,7 +49,12 @@ const projectsData = [
       "Server-side rendering",
       "Database integration",
       "Contact form",
+      "Appointment booking system",
       "Dynamic content management",
+      "SEO optimization",
+      "Secure data protection and privacy",
+      "Performance optimization",
+      "Accessibility features",
     ],
     liveUrl: "https://nisademir.com/",
     githubUrl: "https://github.com/omerhd34/nisa",
@@ -49,13 +63,12 @@ const projectsData = [
     roleTr: "Full Stack Developer",
     roleEn: "Full Stack Developer",
     metricsTr: [
-      { label: "Geliştirme Süresi", value: "..." },
-      { label: "Boyut", value: "..." },
+      { label: "Geliştirme Süresi", value: "1.5 hafta" },
+      { label: "Boyut", value: "1.16 GB" },
     ],
     metricsEn: [
-      { label: "Development Time", value: "1 week" },
-      { label: "Languages", value: "2" },
-      { label: "Size", value: "603 MB" },
+      { label: "Development Time", value: "1.5 weeks" },
+      { label: "Size", value: "1.16 GB" },
     ],
     displayOrder: 1,
   },
@@ -194,9 +207,9 @@ const projectsData = [
     titleTr: "Yazıcı Ticaret",
     titleEn: "Yazıcı Ticaret",
     descriptionTr:
-      "Beyaz eşya mağazası çalışanları ile müşterilerin sorunsuz bir şekilde iletişim kurmasını sağlayan web sitesi",
+      "Yazıcı Ticaret, beyaz eşya sektöründe faaliyet gösteren köklü bir firmanın dijital katalog ve müşteri iletişim platformudur. Müşteriler, geniş ürün yelpazesini inceleyebilir, stoklarda bulunmayan veya özel ürünler için talep oluşturabilir ve bu taleplerin durumunu benzersiz takip numaraları ile sistem üzerinden sorgulayabilirler. Platform, müşteri odaklı bir yaklaşımla geliştirilmiş olup, kullanıcılar ürün talebi oluşturma formunu doldurarak ihtiyaçlarını detaylı bir şekilde iletebilmektedir. Güçlü admin paneli sayesinde site yöneticileri ürün yönetimi, müşteri talepleri ve iletişim süreçlerini kolayca yönetebilmektedir.",
     descriptionEn:
-      "A website that allows customers to communicate seamlessly with appliance store employees",
+      "Yazıcı Ticaret is a digital catalog and customer communication platform for an established company operating in the home appliances sector. Customers can browse the extensive product range, submit requests for out-of-stock or special products, and track the status of these requests using unique tracking numbers through the system. The platform has been developed with a customer-centric approach, allowing users to submit their needs in detail by filling out a product request form. With the powerful admin panel, site administrators can easily manage products, customer requests, and communication processes.",
     longDescriptionTr:
       "Yazıcı Ticaret, beyaz eşya sektöründe faaliyet gösteren köklü bir firmanın dijital katalog ve müşteri iletişim platformudur. Müşteriler, geniş ürün yelpazesini inceleyebilir, stoklarda bulunmayan veya özel ürünler için talepte bulunabilir ve bu taleplerin durumunu sistem üzerinden takip edebilirler. Platform, müşteri odaklı bir yaklaşımla geliştirilmiş olup, kullanıcılar ürün talebi oluşturma formunu doldurarak ihtiyaçlarını detaylı bir şekilde iletebilmektedir. Her talep için benzersiz bir takip numarası oluşturulur ve müşteriler bu numara ile taleplerinin güncel durumunu sorgulayabilirler. Entegre iletişim modülü sayesinde, müşteriler doğrudan firma yetkilileriyle iletişime geçebilir, ürünler hakkında detaylı bilgi alabilir veya teknik destek talep edebilirler. Güçlü admin paneli ile site yöneticileri, ürün ekleme/güncelleme, müşteri taleplerini yönetme, talep durumlarını güncelleme ve iletişim formlarını yanıtlama gibi işlemleri kolayca gerçekleştirebilmektedir. React.js, Next.js ve Node.js teknolojileriyle geliştirilen platform, MongoDB veritabanı ile desteklenerek yüksek performans ve güvenilirlik sağlamaktadır. Proje, ixirhost(İksir İnternet Hizmetleri A.Ş.) şirketinden alınan domain ile yayınlanmış ve cPanel üzerinden yönetilmektedir.",
     longDescriptionEn:
