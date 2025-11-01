@@ -11,6 +11,7 @@ import {
   SiMysql,
   SiTypescript,
   SiBootstrap,
+  SiVercel,
 } from "react-icons/si";
 import {
   FaGitAlt,
@@ -22,6 +23,7 @@ import {
   FaJava,
   FaMicrochip,
   FaTools,
+  FaCpanel,
 } from "react-icons/fa";
 
 export const ICON_MAP = {
@@ -46,6 +48,8 @@ export const ICON_MAP = {
   FaJava,
   FaMicrochip,
   FaTools,
+  FaCpanel,
+  SiVercel,
 };
 
 export const ICON_COLOR_CLASSES = [
@@ -59,6 +63,9 @@ export const ICON_COLOR_CLASSES = [
   "text-blue-600 hover:text-blue-500",
   "text-purple-400 hover:text-purple-300",
   "text-orange-400 hover:text-orange-300",
+  "text-black hover:text-gray-200",
+  "text-orange-600 hover:text-orange-500",
+  "text-black hover:text-gray-200",
 ];
 
 export const ELECTRONICS_IMAGES = {

@@ -60,8 +60,6 @@ export default function ExperienceTechnologies({ technologies, isMobileExpanded,
    FaGitAlt: { EN: "Git", TR: "Git" },
    FaJsSquare: { EN: "JavaScript", TR: "JavaScript" },
    FaNodeJs: { EN: "Node.js", TR: "Node.js" },
-   FaCpanel: { EN: "cPanel", TR: "cPanel" },
-   SiVercel: { EN: "Vercel", TR: "Vercel" },
   };
 
   return iconNames[iconKey]?.[language] || iconKey;
