@@ -56,6 +56,8 @@ export default function ProjectCard({ project, translations, language, index }) 
   FaJava: "Java",
   FaMicrochip: "Microchip",
   FaTools: "Tools",
+  FaCpanel: "cPanel",
+  SiVercel: "Vercel",
  };
 
  const technologyIcons = useMemo(() => {
