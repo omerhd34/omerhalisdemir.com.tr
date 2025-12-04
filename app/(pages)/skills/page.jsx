@@ -114,45 +114,24 @@ export default function SkillsPage() {
  const statsTranslations = {
   skills: language === "EN" ? "Skills" : "Yetenek",
   technologies: language === "EN" ? "Technologies" : "Teknoloji",
-  avgLevel: language === "EN" ? "Average Level" : "Ortalama Seviye",
- };
-
- const levelTranslations = {
-  beginner: language === "EN" ? "Beginner" : "Başlangıç",
-  intermediate: language === "EN" ? "Intermediate" : "Orta",
-  advanced: language === "EN" ? "Advanced" : "İleri",
-  expert: language === "EN" ? "Expert" : "Uzman",
  };
 
  const otherTranslations = {
   yearsExp: language === "EN" ? "Years Experience" : "Yıl Deneyim",
-  proficiency: language === "EN" ? "Proficiency" : "Yetkinlik",
  };
 
  const translations = {
   ...pageTranslations,
   categories: categoryTranslations,
   categoryStats: statsTranslations,
-  levels: levelTranslations,
   ...otherTranslations,
  };
 
  const getCategoryStats = (category) => {
   const categorySkills = skillsData[category]?.skills || [];
 
-  const avgProficiency =
-   categorySkills.length > 0
-    ? Math.round(
-     categorySkills.reduce(
-      (sum, skill) => sum + (skill.percentage || 0),
-      0
-     ) / categorySkills.length
-    )
-    : 0;
-
   return {
    count: categorySkills.length,
-   avgProficiency,
   };
  };
 
@@ -205,7 +184,6 @@ export default function SkillsPage() {
       activeCategory={activeCategory}
       skillsData={skillsData}
       translations={translations}
-      getCategoryStats={getCategoryStats}
       isVisible={isVisible}
      />
     </div>

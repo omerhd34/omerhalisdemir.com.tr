@@ -48,8 +48,6 @@ model Skill {
   categories   String[]
   name         String   @unique
   experience   Int 
-  level        String
-  percentage   Int?
   icon         String
   color        String?
   displayOrder Int      @default(0)

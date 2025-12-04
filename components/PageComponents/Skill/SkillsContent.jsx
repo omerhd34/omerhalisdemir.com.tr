@@ -8,14 +8,6 @@ export default function SkillsContent({
 }) {
  const skills = skillsData[activeCategory]?.skills || [];
 
- const getAverageProficiency = () => {
-  if (!skills.length) return 0;
-  const total = skills.reduce((sum, skill) => sum + (skill.percentage || 0), 0);
-  return Math.round(total / skills.length);
- };
-
- const avgProficiency = getAverageProficiency();
-
  return (
   <div
    className={`bg-secondary p-4 sm:p-8 rounded-2xl shadow-2xl sm:rounded-4xl sm:shadow-4xl transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -47,7 +39,7 @@ export default function SkillsContent({
 
    {/* Desktop View */}
    <div className="hidden sm:block">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6">
      {skills.map((skill, index) => (
       <SkillCard
        key={skill.name}
