@@ -187,19 +187,25 @@ const experienceData = [
    "SiExpress",
    "FaGithub",
   ],
-
   achievementsTr: [
-   "Kişisel ve profesyonel portföy web sitesi tasarımı ve geliştirilmesi",
-   "Yeniden kullanılabilir React komponentleri kütüphanesi oluşturulması",
-   "Responsive tasarım prensipleriyle mobil uyumlu web uygulamaları geliştirme",
-   "Proje teslim sürelerini zamanında ve kaliteli bir şekilde yerine getirme",
+   "Node.js ve Express ile RESTful API tasarımı ve backend geliştirme",
+   "React kullanarak dinamik ve interaktif kullanıcı arayüzleri oluşturma",
+   "SQL veritabanı tasarımı ve CRUD operasyonlarının implementasyonu",
+   "Git ve GitHub ile versiyon kontrolü ve ekip çalışması deneyimi",
+   "Responsive ve cross-browser uyumlu web uygulamaları geliştirme",
+   "Full stack e-ticaret projesi geliştirerek frontend ve backend entegrasyonu",
+   "Bootstrap ile modern ve kullanıcı dostu arayüz tasarımı",
   ],
   achievementsEn: [
-   "Design and development of personal and professional portfolio websites",
-   "Creation of a library of reusable React components",
-   "Developing mobile-compatible web applications with responsive design principles",
-   "Meeting project deadlines on time and with high quality",
+   "RESTful API design and backend development with Node.js and Express",
+   "Creating dynamic and interactive user interfaces using React",
+   "SQL database design and implementation of CRUD operations",
+   "Version control and team collaboration experience with Git and GitHub",
+   "Developing responsive and cross-browser compatible web applications",
+   "Full stack e-commerce project development with frontend and backend integration",
+   "Modern and user-friendly interface design with Bootstrap",
   ],
+
   icon: "FaCertificate",
   displayOrder: 7,
  },
@@ -238,10 +244,6 @@ const experienceData = [
   icon: "FaCertificate",
   displayOrder: 8,
  },
-
-
-
-
 ];
 
 async function seedExperience() {

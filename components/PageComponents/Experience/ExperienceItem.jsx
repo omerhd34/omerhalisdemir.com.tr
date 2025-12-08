@@ -67,8 +67,7 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       showExpandButton={showExpandButton}
      />
 
-     {/* Full Stack Development için Sertifika Butonları - Mobile */}
-     {item.id === 7 && isMobileExpanded && (
+     {item.category === "certificates" && isMobileExpanded && (
       <CertificateButtons language={language} isMobile={true} />
      )}
     </div>
