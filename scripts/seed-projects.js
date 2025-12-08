@@ -4,8 +4,8 @@ const prisma = new PrismaClient();
 const projectsData = [
  {
   category: "web",
-  titleTr: "Uzman Klinik Psikolog Nisa Demir",
-  titleEn: "Expert Clinical Psychologist Nisa Demir",
+  titleTr: "Uzman Klinik Psikolog Web Sitesi",
+  titleEn: "Expert Clinical Psychologist Website",
   descriptionTr:
    "Uzman Klinik Psikolog Nisa Demir için geliştirilen modern ve profesyonel web platformu. Ziyaretçiler, uzman hizmetler hakkında detaylı bilgi alabilir, randevu talep edebilir ve iletişime geçebilirler. Modern tasarım anlayışı ile şekillendirilmiş, responsive yapıya sahip platform tüm cihazlarda mükemmel bir kullanıcı deneyimi sunmaktadır.",
   descriptionEn:
@@ -68,8 +68,8 @@ const projectsData = [
  },
  {
   category: "web",
-  titleTr: "Serbest Muhasebeci Mali Müşavir Şahin Demir",
-  titleEn: "Free Certified Public Accountant Şahin Demir",
+  titleTr: "Serbest Muhasebeci Mali Müşavir Web Sitesi",
+  titleEn: "Free Certified Public Accountant Website",
   descriptionTr:
    "Modern ve profesyonel tasarım anlayışıyla geliştirilmiş, serbest muhasebeci mali müşavir Şahin Demir'in dijital kimliğini yansıtan kapsamlı web platformu. Ziyaretçiler, uzman hizmetler hakkında detaylı bilgi alabilir, koyu/açık mod özelliği ile kişiselleştirilmiş deneyim yaşayabilir ve doğrudan iletişime geçebilir.",
   descriptionEn:
@@ -187,8 +187,8 @@ const projectsData = [
  },
  {
   category: "web",
-  titleTr: "Yazıcı Ticaret",
-  titleEn: "Yazıcı Ticaret",
+  titleTr: "Yazıcı Ticaret Web Sitesi",
+  titleEn: "Yazıcı Ticaret Website",
   descriptionTr:
    "Yazıcı Ticaret, beyaz eşya sektöründe faaliyet gösteren köklü bir firmanın dijital katalog ve müşteri iletişim platformudur. Müşteriler, geniş ürün yelpazesini inceleyebilir, stoklarda bulunmayan veya özel ürünler için talep oluşturabilir ve bu taleplerin durumunu benzersiz takip numaraları ile sistem üzerinden sorgulayabilirler. Platform, müşteri odaklı bir yaklaşımla geliştirilmiş olup, kullanıcılar ürün talebi oluşturma formunu doldurarak ihtiyaçlarını detaylı bir şekilde iletebilmektedir. Güçlü admin paneli sayesinde site yöneticileri ürün yönetimi, müşteri talepleri ve iletişim süreçlerini kolayca yönetebilmektedir.",
   descriptionEn:
