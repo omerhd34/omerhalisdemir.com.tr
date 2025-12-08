@@ -111,7 +111,7 @@ const experienceData = [
    "%95+ müşteri memnuniyet oranı sağlama",
    "Proje teslim sürelerini zamanında ve kaliteli bir şekilde yerine getirme",
   ],
-  achievementsTr: [
+  achievementsEn: [
    "Developing scalable solutions for e-commerce platforms",
    "Designing responsive and performance-oriented web applications",
    "Creating backend systems with RESTful APIs",
