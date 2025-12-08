@@ -52,7 +52,7 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       language={language}
      />
 
-     {item.category === "certificates" && <CertificateButtons language={language} isMobile={false} />}
+     {item.displayOrder === 7 && <CertificateButtons language={language} isMobile={false} />}
 
      <MobileToggleButton
       isExpanded={isMobileExpanded}
@@ -67,7 +67,7 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       showExpandButton={showExpandButton}
      />
 
-     {item.category === "certificates" && isMobileExpanded && (
+     {item.displayOrder === 7 && isMobileExpanded && (
       <CertificateButtons language={language} isMobile={true} />
      )}
     </div>
