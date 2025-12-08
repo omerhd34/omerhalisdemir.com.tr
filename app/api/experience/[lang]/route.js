@@ -40,6 +40,7 @@ export async function GET(request, context) {
     technologies: technologies,
     achievements: achievements,
     icon: exp.icon,
+    displayOrder: exp.displayOrder,
    });
 
    return acc;
