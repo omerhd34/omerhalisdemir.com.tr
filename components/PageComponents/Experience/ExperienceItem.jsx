@@ -52,8 +52,7 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       language={language}
      />
 
-     {/* Full Stack Development için Sertifika Butonları - Desktop */}
-     {item.id === 7 && <CertificateButtons language={language} isMobile={false} />}
+     {item.category === "certificates" && <CertificateButtons language={language} isMobile={false} />}
 
      <MobileToggleButton
       isExpanded={isMobileExpanded}
