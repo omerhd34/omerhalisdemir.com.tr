@@ -8,7 +8,7 @@ export default function ExperienceMetaInfo({ item, isMobileExpanded }) {
    {item.location && (
     <div className="flex items-center space-x-2">
      <FaMapMarkerAlt className="w-4 h-4" />
-     <span>İstanbul, Türkiye</span>
+     <span>{item.location}</span>
     </div>
    )}
    {item.gpa && (
