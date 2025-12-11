@@ -72,7 +72,7 @@ const getSocialLinks = (t, language) => [
  },
  {
   name: "CV",
-  href: language === 'EN' ? '/pdf/cv-english.pdf#zoom=35' : '/pdf/cv.pdf#zoom=35',
+  href: language === 'EN' ? '/pdf/cv-eng.pdf#zoom=35' : '/pdf/cv.pdf#zoom=35',
   icon: FaFileDownload
  }
 ];
