@@ -47,6 +47,8 @@ export default function ProjectCard({ project, translations, language, index }) 
   SiMysql: "MySQL",
   SiTypescript: "TypeScript",
   SiBootstrap: "Bootstrap",
+  SiPrisma: "Prisma",
+  FaReact: "React",
   FaGitAlt: "Git",
   FaGithub: "GitHub",
   FaHtml5: "HTML5",

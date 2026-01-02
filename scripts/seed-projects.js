@@ -16,12 +16,12 @@ const projectsData = [
    "This project is a modern web platform developed using Next.js and React technologies for Expert Clinical Psychologist Nisa Demir, reflecting a professional identity. A secure and scalable structure has been established with MongoDB database infrastructure and Prisma ORM. The modern and responsive design shaped with Tailwind CSS ensures an excellent user experience across all devices. SEO optimization has been achieved with server-side rendering, and dynamic content management offers easy update capabilities. Contact form integration enables visitors to connect directly with the expert. The project is published on the Vercel platform and managed through modern deployment methods. This platform aims to effectively present professional psychology services in the digital world.",
   status: "completed",
   technologies: [
+   "FaReact",
    "SiNextdotjs",
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
    "SiNodedotjs",
-   "SiExpress",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -68,6 +68,73 @@ const projectsData = [
  },
  {
   category: "web",
+  titleTr: "Yazıcı Ticaret E-Ticaret Sitesi",
+  titleEn: "Yazıcı Ticaret E-Commerce Website",
+  descriptionTr:
+   "Yazıcı Ticaret, beyaz eşya, TV, elektrikli süpürge ve benzeri ev aletleri sektöründe faaliyet gösteren köklü bir firmanın modern e-ticaret platformudur. Profilo ve LG gibi önde gelen markaların ürünlerini satan platform, müşterilere geniş bir ürün kataloğu sunmaktadır. Müşteriler, ürünleri inceleyebilir, karşılaştırabilir, sepete ekleyebilir, güvenli ödeme işlemlerini gerçekleştirebilir ve siparişlerini benzersiz takip numaraları ile sistem üzerinden takip edebilirler. Platform, kullanıcı hesapları, sepet yönetimi, ödeme entegrasyonu, sipariş takip sistemi ve ürün karşılaştırma gibi kapsamlı e-ticaret özellikleri sunmaktadır. Güçlü admin paneli sayesinde site yöneticileri yeni ürün ekleme, ürün güncelleme/silme, stok takibi, sipariş yönetimi ve müşteri ilişkilerini kolayca yönetebilmektedir.",
+  descriptionEn:
+   "Yazıcı Ticaret is a modern e-commerce platform for an established company operating in the home appliances, TV, vacuum cleaners, and similar household appliances sector. The platform sells products from leading brands such as Profilo and LG, offering customers a wide product catalog. Customers can browse products, compare them, add to cart, complete secure payment transactions, and track their orders using unique tracking numbers through the system. The platform offers comprehensive e-commerce features including user accounts, cart management, payment integration, order tracking system, and product comparison. With the powerful admin panel, site administrators can easily manage adding new products, updating/deleting products, inventory tracking, order management, and customer relations.",
+  longDescriptionTr:
+   "Yazıcı Ticaret, beyaz eşya, TV, elektrikli süpürge ve benzeri ev aletleri sektöründe faaliyet gösteren köklü bir firmanın tam özellikli e-ticaret platformudur. Profilo ve LG gibi önde gelen markaların ürünlerini satan platform, müşterilere geniş bir ürün kataloğu sunmaktadır. Müşteriler, ürün detay sayfalarında teknik özellikleri ve görselleri görüntüleyebilir, ürünleri kategorilere göre filtreleyebilir, arama yapabilir ve ürün karşılaştırma özelliği ile farklı ürünleri yan yana karşılaştırabilirler. Gelişmiş sepet sistemi sayesinde kullanıcılar ürünleri sepete ekleyebilir, miktar değişiklikleri yapabilir ve sepet içeriğini yönetebilirler. Güvenli ödeme entegrasyonu ile müşteriler kredi kartı, banka kartı veya diğer ödeme yöntemleriyle alışverişlerini tamamlayabilirler. Her sipariş için benzersiz bir takip numarası oluşturulur ve müşteriler bu numara ile siparişlerinin durumunu (hazırlanıyor, kargoya verildi, teslim edildi) gerçek zamanlı olarak takip edebilirler. Kullanıcı hesapları sayesinde müşteriler sipariş geçmişlerini görüntüleyebilir, adres bilgilerini yönetebilir ve favori ürünlerini kaydedebilirler. Güçlü admin paneli ile site yöneticileri, yeni ürün ekleme, ürün güncelleme ve silme, stok yönetimi, fiyat güncellemeleri, sipariş durumu yönetimi, müşteri bilgileri ve iletişim formlarını yönetme gibi tüm e-ticaret operasyonlarını kolayca gerçekleştirebilmektedir. React.js, Next.js ve Node.js teknolojileriyle geliştirilen platform, MongoDB veritabanı ile desteklenerek yüksek performans, güvenlik ve güvenilirlik sağlamaktadır. Proje, ixirhost şirketinden alınan domain ile Vercel platformunda yayınlanmış ve modern deployment yöntemleri ile yönetilmektedir.",
+  longDescriptionEn:
+   "Yazıcı Ticaret is a full-featured e-commerce platform for an established company operating in the home appliances, TV, vacuum cleaners, and similar household appliances sector. The platform sells products from leading brands such as Profilo and LG, offering customers a wide product catalog. Customers can view technical specifications and images on product detail pages, filter products by categories, perform searches, and compare different products side by side using the product comparison feature. Through the advanced shopping cart system, users can add products to cart, modify quantities, and manage cart contents. With secure payment integration, customers can complete their purchases using credit cards, debit cards, or other payment methods. A unique tracking number is generated for each order, and customers can track their order status (preparing, shipped, delivered) in real-time using this number. Through user accounts, customers can view their order history, manage address information, and save favorite products. With the powerful admin panel, site administrators can easily perform all e-commerce operations such as adding new products, updating and deleting products, inventory management, price updates, order status management, customer information, and managing contact forms. Developed with React.js, Next.js and Node.js technologies, the platform is supported by MongoDB database, ensuring high performance, security, and reliability. The project is published on the Vercel platform with a domain obtained from ixirhost company and managed through modern deployment methods.",
+  status: "completed",
+  technologies: [
+   "FaReact",
+   "SiNextdotjs",
+   "SiTailwindcss",
+   "SiMongodb",
+   "SiNodedotjs",
+  ],
+  featuresTr: [
+   "Responsive tasarım",
+   "Bileşen tabanlı mimari",
+   "Güvenli ve Ölçeklenebilir Altyapı",
+   "Server-side rendering",
+   "Veritabanı entegrasyonu",
+   "Kullanıcı hesap sistemi",
+   "Sepet yönetimi",
+   "Ödeme entegrasyonu",
+   "Sipariş takip sistemi",
+   "Ürün filtreleme ve arama",
+   "Ürün karşılaştırma",
+   "Favoriye ekleme",
+   "Stok yönetimi",
+   "Admin paneli",
+  ],
+  featuresEn: [
+   "Responsive design",
+   "Component-based architecture",
+   "Secure and Scalable Infrastructure",
+   "Server-side rendering",
+   "Database integration",
+   "User account system",
+   "Shopping cart management",
+   "Payment integration",
+   "Order tracking system",
+   "Product filtering and search",
+   "Product comparison",
+   "Add to favorites",
+   "Inventory management",
+   "Admin panel",
+  ],
+  liveUrl: "",
+  teamTr: "Bireysel",
+  teamEn: "Individual",
+  roleTr: "Full Stack Developer",
+  roleEn: "Full Stack Developer",
+  metricsTr: [
+   { label: "Geliştirme Süresi", value: "6 hafta" },
+   { label: "Boyut", value: "1065 MB" },
+  ],
+  metricsEn: [
+   { label: "Development Time", value: "6 week" },
+   { label: "Size", value: "1065 MB" },
+  ],
+  displayOrder: 2,
+ },
+ {
+  category: "web",
   titleTr: "Serbest Muhasebeci Mali Müşavir Web Sitesi",
   titleEn: "Free Certified Public Accountant Website",
   descriptionTr:
@@ -80,12 +147,12 @@ const projectsData = [
    "This project is a web platform developed using Next.js and React technologies for certified public accountant Şahin Demir, providing a strong digital presence. A secure, fast, and scalable structure has been established with MongoDB database infrastructure and Node.js backend support. The modern and responsive design shaped with Tailwind CSS ensures an excellent user experience across all devices. The dark/light mode feature offers a personalized visual experience according to user preferences, while component-based architecture provides an easily maintainable and high-performance system. SEO optimization has been achieved with server-side rendering, and dynamic content management offers easy update capabilities. Contact form integration enables customers to connect directly. The project is published with a domain obtained from ixirhost company and managed through cPanel. This platform aims to effectively present professional accounting services in the digital world.",
   status: "completed",
   technologies: [
+   "FaReact",
    "SiNextdotjs",
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
    "SiNodedotjs",
-   "SiExpress",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -138,12 +205,12 @@ const projectsData = [
    "This project is a personal portfolio developed using JavaScript, React, and Next.js, built upon modern design principles. The visual design is enhanced with Tailwind CSS, while Node.js and MongoDB provide a secure and scalable backend structure. It embraces modern software approaches such as multi-language support, responsive design, performance optimization, and component-based architecture. As a result, the project stands out with its reusability, maintainability, and high-quality user experience. The project is published by transferring the domain obtained from ixirhost company to the Vercel platform and is managed through Vercel. The goal is to create a clean yet powerful interface that reflects my professional identity through a modern digital showcase.",
   status: "completed",
   technologies: [
+   "FaReact",
    "SiNextdotjs",
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
    "SiNodedotjs",
-   "SiExpress",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -183,7 +250,7 @@ const projectsData = [
    { label: "Languages", value: "2" },
    { label: "Size", value: "603 MB" },
   ],
-  displayOrder: 2,
+  displayOrder: 1,
  },
  {
   category: "web",
@@ -199,12 +266,12 @@ const projectsData = [
    "Yazıcı Ticaret is a digital catalog and customer communication platform for an established company operating in the home appliances sector. Customers can browse the extensive product range, submit requests for out-of-stock or special products, and track the status of these requests through the system. The platform has been developed with a customer-centric approach, allowing users to submit their needs in detail by filling out a product request form. A unique tracking number is generated for each request, and customers can check the current status of their requests using this number. Through the integrated communication module, customers can directly contact company representatives, obtain detailed information about products, or request technical support. With the powerful admin panel, site administrators can easily perform operations such as adding/updating products, managing customer requests, updating request statuses, and responding to contact forms. Developed with React.js, Next.js and Node.js technologies, the platform is supported by MongoDB database, ensuring high performance and reliability. The project is published with a domain obtained from ixirhost company and managed through cPanel.",
   status: "completed",
   technologies: [
+   "FaReact",
    "SiNextdotjs",
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
    "SiNodedotjs",
-   "SiExpress",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -235,7 +302,7 @@ const projectsData = [
    { label: "Development Time", value: "1 week" },
    { label: "Size", value: "603 MB" },
   ],
-  displayOrder: 4,
+  displayOrder: 5,
  },
  {
   category: "electronics",
@@ -287,7 +354,7 @@ const projectsData = [
    { label: "Development Time", value: "2 months" },
    { label: "PCB Size", value: "141.1 x 61.3 mm" },
   ],
-  displayOrder: 5,
+  displayOrder: 6,
  },
  {
   category: "electronics",
@@ -339,7 +406,7 @@ const projectsData = [
    { label: "Development Time", value: "2 months" },
    { label: "Operating Frequency", value: "~10kHz" },
   ],
-  displayOrder: 6,
+  displayOrder: 7,
  },
 ];
 
