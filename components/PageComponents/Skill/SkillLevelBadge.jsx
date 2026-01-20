@@ -11,7 +11,7 @@ export default function SkillLevelBadge({ level, translations, size = "default" 
 
  return (
   <span
-   className={`${sizeClasses[size]} rounded-full bg-gradient-to-r ${levelColor} text-white font-semibold shadow-lg`}
+   className={`${sizeClasses[size]} rounded-full bg-linear-to-r ${levelColor} text-white font-semibold shadow-lg`}
   >
    {translations.levels[level]}
   </span>

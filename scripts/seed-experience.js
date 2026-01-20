@@ -30,46 +30,6 @@ const experienceData = [
   displayOrder: 1,
  },
  {
-  category: "education",
-  titleTr: "İngilizce Hazırlık Sınıfı",
-  titleEn: "English Preparatory Class",
-  institutionTr: "İstanbul Ticaret Üniversitesi",
-  institutionEn: "Istanbul Commerce University",
-  period: "2018 - 2019",
-  status: "completed",
-  location: "İstanbul, Türkiye",
-  gpa: null,
-  descriptionTr:
-   "İngilizce hazırlık programını başarıyla tamamlayarak B1+ seviyesinde yetkinlik kazandım. Bu süreçte sadece dil becerilerimi geliştirmekle kalmadım, aynı zamanda uluslararası kaynaklara erişim ve global teknoloji topluluğuyla etkileşim kurma yeteneğimi güçlendirdim. Teknik dokümantasyon okuma ve yazılım geliştirme alanında İngilizce içeriklerle çalışabilme becerim bu dönemde olgunlaştı.",
-  descriptionEn:
-   "I successfully completed the English preparatory program and achieved B1+ proficiency. This experience not only enhanced my language skills but also opened doors to the global technology community. My ability to read technical documentation, learn from international resources, and communicate with software communities was developed during this period.",
-  technologies: ["RiEnglishInput", "FaLanguage", "FaGlobe"],
-  achievementsTr: [],
-  achievementsEn: [],
-  icon: "FaLanguage",
-  displayOrder: 2,
- },
- {
-  category: "education",
-  titleTr: "Lise Eğitimi",
-  titleEn: "High School Education",
-  institutionTr: "Ataşehir Fen Bilimleri",
-  institutionEn: "Ataşehir Science High School",
-  period: "2014 - 2018",
-  status: "completed",
-  location: "İstanbul, Türkiye",
-  gpa: null,
-  descriptionTr:
-   "Sayısal ağırlıklı eğitim programında matematik, fizik ve kimya alanlarında güçlü bir temel edindim. Analitik düşünme ve problem çözme becerilerimi geliştiren bu süreç, yazılım dünyasına olan ilgimi ateşledi ve akademik disiplinimi şekillendirdi. Bilimsel yaklaşım ve mantıksal düşünme yeteneğim, bugünkü kariyerimin temel taşlarını oluşturdu.",
-  descriptionEn:
-   "I built a strong foundation in mathematics, physics, and chemistry through a science-focused curriculum. This period shaped my analytical thinking and problem-solving skills, igniting my passion for software development and establishing my academic discipline. The logical reasoning abilities and scientific approach I gained during this time formed the cornerstone of my current career.",
-  technologies: ["SiLibreofficemath", "SiWolframmathematica"],
-  achievementsTr: [],
-  achievementsEn: [],
-  icon: "FaSchool",
-  displayOrder: 3,
- },
- {
   category: "internship",
   titleTr: "Full Stack Developer",
   titleEn: "Full Stack Developer",
@@ -95,12 +55,8 @@ const experienceData = [
    "SiNodedotjs",
    "SiExpress",
    "SiMongodb",
+   "SiPostgresql",
    "SiMysql",
-   "MdDomain",
-   "FaServer",
-   "FaNetworkWired",
-   "FaCloud",
-   "FaDatabase",
    "FaGitAlt",
    "FaGithub",
   ],
@@ -108,7 +64,7 @@ const experienceData = [
    "E-ticaret platformları için ölçeklenebilir çözümler geliştirme",
    "Responsive ve performans odaklı web uygulamaları tasarlama",
    "RESTful API'ler ile backend sistemleri oluşturma",
-   "MongoDB ve MySQL ile veritabanı tasarımı ve optimizasyonu",
+   "PostgreSQL ve MongoDB ile veritabanı tasarımı ve optimizasyonu",
    "React ve Next.js ile modern frontend uygulamaları geliştirme",
    "%95+ müşteri memnuniyet oranı sağlama",
    "Proje teslim sürelerini zamanında ve kaliteli bir şekilde yerine getirme",
@@ -117,13 +73,13 @@ const experienceData = [
    "Developing scalable solutions for e-commerce platforms",
    "Designing responsive and performance-oriented web applications",
    "Creating backend systems with RESTful APIs",
-   "Database design and optimization with MongoDB and MySQL",
+   "Database design and optimization with PostgreSQL and MongoDB",
    "Developing modern frontend applications with React and Next.js",
    "Providing a 95%+ customer satisfaction rate",
    "Meeting project deadlines on time and with high quality",
   ],
   icon: "FaBookOpen",
-  displayOrder: 4,
+  displayOrder: 2,
  },
  {
   category: "internship",
@@ -143,7 +99,7 @@ const experienceData = [
   achievementsTr: [],
   achievementsEn: [],
   icon: "FaBriefcase",
-  displayOrder: 5,
+  displayOrder: 3,
  },
  {
   category: "internship",
@@ -163,7 +119,7 @@ const experienceData = [
   achievementsTr: [],
   achievementsEn: [],
   icon: "FaCertificate",
-  displayOrder: 6,
+  displayOrder: 4,
  },
  {
   category: "certificates",
@@ -204,7 +160,7 @@ const experienceData = [
    "Modern and user-friendly interface design with Bootstrap",
   ],
   icon: "FaCertificate",
-  displayOrder: 7,
+  displayOrder: 5,
  },
  {
   category: "certificates",
@@ -239,7 +195,7 @@ const experienceData = [
    "Responsive interface design with Bootstrap and Tailwind CSS",
   ],
   icon: "FaCertificate",
-  displayOrder: 8,
+  displayOrder: 6,
  },
  {
   category: "certificates",
@@ -282,7 +238,7 @@ const experienceData = [
    "Deploying a Full Stack project and completing the deployment process"
   ],
   icon: "FaCertificate",
-  displayOrder: 9,
+  displayOrder: 7,
  },
  {
   category: "certificates",
@@ -331,7 +287,7 @@ const experienceData = [
    "Deploying and launching full-stack e-commerce projects to production"
   ],
   icon: "FaCertificate",
-  displayOrder: 10,
+  displayOrder: 8,
  },
  {
   category: "certificates",
@@ -379,7 +335,7 @@ const experienceData = [
    "Reaching advanced web programming skills starting from scratch"
   ],
   icon: "FaCertificate",
-  displayOrder: 11,
+  displayOrder: 9,
  },
 ];
 

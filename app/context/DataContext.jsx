@@ -23,15 +23,14 @@ export function DataProvider({ children }) {
   setError(null);
 
   try {
-   if (!dataCache.skills) {
-    const skillsRes = await fetch('/api/skills');
-    if (skillsRes.ok) {
-     const skillsData = await skillsRes.json();
-     dataCache.skills = skillsData;
-     setSkills(skillsData);
-    }
-   } else {
-    setSkills(dataCache.skills);
+   // Her zaman fresh data çek (cache'i bypass et)
+   const skillsRes = await fetch(`/api/skills?t=${Date.now()}`, {
+    cache: 'no-store'
+   });
+   if (skillsRes.ok) {
+    const skillsData = await skillsRes.json();
+    dataCache.skills = skillsData;
+    setSkills(skillsData);
    }
 
    if (!dataCache.experience[language]) {

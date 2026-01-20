@@ -19,7 +19,11 @@ import {
  SiMongodb,
  SiMysql,
  SiExpress,
+ SiPostgresql,
+ SiPrisma,
 } from "react-icons/si";
+import { BsCursorFill } from "react-icons/bs";
+import { DiVisualstudio } from "react-icons/di";
 
 export const iconMap = {
  FaLaptopCode,
@@ -34,34 +38,16 @@ export const iconMap = {
  FaNodeJs,
  FaJava,
  FaGithub,
+ BsCursorFill,
  SiNextdotjs,
  SiTypescript,
  SiTailwindcss,
  SiMongodb,
  SiMysql,
+ SiPostgresql,
  SiExpress,
-};
-
-export const iconColorMap = {
- FaHtml5: "text-orange-600",
- FaCss3Alt: "text-blue-500",
- FaJsSquare: "text-yellow-400",
- FaReact: "text-cyan-400",
- SiNextdotjs: "text-black",
- SiTypescript: "text-blue-600",
- SiTailwindcss: "text-cyan-500",
- FaBootstrap: "text-purple-600",
- FaNodeJs: "text-green-600",
- SiNodedotjs: "text-green-600",
- SiExpress: "text-gray-500",
- SiMongodb: "text-green-500",
- SiMysql: "text-blue-600",
- FaJava: "text-red-600",
- FaGitAlt: "text-orange-600",
- FaGithub: "text-gray-500",
- FaLaptopCode: "text-blue-400",
- FaServer: "text-gray-600",
- FaTools: "text-gray-500",
+ SiPrisma,
+ DiVisualstudio,
 };
 
 export const getLevelColor = (level) => {

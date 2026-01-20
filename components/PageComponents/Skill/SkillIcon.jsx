@@ -1,8 +1,8 @@
-import { iconMap, iconColorMap } from "./skillConstants";
+import { iconMap } from "./skillConstants";
 
-export default function SkillIcon({ iconName, size = "default" }) {
+export default function SkillIcon({ iconName, size = "default", color }) {
  const IconComponent = iconMap[iconName];
- const iconColor = iconColorMap[iconName] || "text-primary";
+ const iconColor = color || "text-primary";
 
  const sizeClasses = {
   small: "w-4 h-4",

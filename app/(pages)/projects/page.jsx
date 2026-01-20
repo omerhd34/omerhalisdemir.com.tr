@@ -13,7 +13,7 @@ export default function ProjectsPage() {
  const { language, t, loading: langLoading } = useLanguage();
  const { projects, loading: dataLoading } = useData();
  const [isVisible, setIsVisible] = useState(false);
- const [activeCategory, setActiveCategory] = useState("web"); // ✅ varsayılan olarak web seçildi
+ const [activeCategory, setActiveCategory] = useState("web");
  const [searchTerm] = useState("");
  const [filteredProjects, setFilteredProjects] = useState([]);
 
@@ -22,7 +22,6 @@ export default function ProjectsPage() {
   return () => clearTimeout(timer);
  }, []);
 
- // ✅ "all" kategorisi kaldırıldı
  const categories = useMemo(() => {
   const categoryIcons = {
    web: FaGlobe,
@@ -62,7 +61,6 @@ export default function ProjectsPage() {
 
   let filtered = projects;
 
-  // ✅ Artık sadece seçili kategoriye göre filtrele
   if (activeCategory) {
    filtered = filtered.filter(
     (project) => project.category === activeCategory
@@ -112,7 +110,6 @@ export default function ProjectsPage() {
 
     <ProjectStats stats={stats} language={language} isVisible={isVisible} />
 
-    {/* ✅ Artık "all" kategorisi burada görünmeyecek */}
     <div
      className={`flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >

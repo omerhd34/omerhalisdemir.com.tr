@@ -3,12 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Language {
-  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  id           String        @id @default(uuid())
   code         String        @unique
   name         String
   translations Translation[]
@@ -19,7 +19,7 @@ model Language {
 }
 
 model TranslationKey {
-  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  id           String        @id @default(uuid())
   keyPath      String
   category     String?
   translations Translation[]
@@ -31,9 +31,9 @@ model TranslationKey {
 }
 
 model Translation {
-  id              String         @id @default(auto()) @map("_id") @db.ObjectId
-  keyId           String         @db.ObjectId
-  languageId      String         @db.ObjectId
+  id              String         @id @default(uuid())
+  keyId           String
+  languageId      String
   translationText String
   key             TranslationKey @relation(fields: [keyId], references: [id], onDelete: Cascade)
   language        Language       @relation(fields: [languageId], references: [id], onDelete: Cascade)
@@ -44,7 +44,7 @@ model Translation {
 }
 
 model Skill {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  id           String   @id @default(uuid())
   categories   String[]
   name         String   @unique
   experience   Int 
@@ -57,7 +57,7 @@ model Skill {
 }
 
 model Experience {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  id              String   @id @default(uuid())
   category        String
   titleTr         String
   titleEn         String
@@ -81,7 +81,7 @@ model Experience {
 }
 
 model Project {
-  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  id                 String   @id @default(uuid())
   category           String
   titleTr            String
   titleEn            String

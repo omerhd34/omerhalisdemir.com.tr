@@ -47,7 +47,7 @@ const skillsData = [
   name: "Next.js",
   experience: 4,
   icon: "SiNextdotjs",
-  color: "text-black",
+  color: "text-white",
   displayOrder: 6,
  },
  {
@@ -111,23 +111,55 @@ const skillsData = [
   name: "GitHub",
   experience: 4,
   icon: "FaGithub",
-  color: "text-gray-500",
+  color: "text-white",
   displayOrder: 14,
+ },
+ {
+  categories: ["database"],
+  name: "PostgreSQL",
+  experience: 3,
+  icon: "SiPostgresql",
+  color: "text-blue-600",
+  displayOrder: 15,
  },
  {
   categories: ["backend"],
   name: "Express.js",
   experience: 3,
   icon: "SiExpress",
-  color: "text-gray-500",
+  color: "text-white",
+  displayOrder: 16,
+ },
+ {
+  categories: ["database"],
+  name: "Prisma",
+  experience: 3,
+  icon: "SiPrisma",
+  color: "text-indigo-600",
+  displayOrder: 17,
+ },
+ {
+  categories: ["tools"],
+  name: "Visual Studio Code",
+  experience: 5,
+  icon: "DiVisualstudio",
+  color: "text-blue-500",
   displayOrder: 18,
+ },
+ {
+  categories: ["tools"],
+  name: "Cursor",
+  experience: 3,
+  icon: "BsCursorFill",
+  color: "text-white",
+  displayOrder: 19,
  },
 ];
 
 async function seedSkills() {
  await prisma.skill.deleteMany({});
-
  let successCount = 0;
+ let errorCount = 0;
 
  for (const data of skillsData) {
   try {
@@ -135,7 +167,9 @@ async function seedSkills() {
     data: data,
    });
    successCount++;
-  } catch (error) { }
+  } catch (error) {
+   errorCount++;
+  }
  }
 }
 

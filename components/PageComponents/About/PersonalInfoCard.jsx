@@ -43,7 +43,7 @@ export default function PersonalInfoCard({ language, isVisible }) {
    label: translations.location[language],
    value: (
     <span className="flex items-center justify-center gap-2">
-     İstanbul, Türkiye
+     İstanbul, Çekmeköy
      <span className="hidden lg:inline-block">
       <ReactCountryFlag
        countryCode="TR"

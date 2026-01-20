@@ -13,6 +13,7 @@ import {
  SiBootstrap,
  SiVercel,
  SiPrisma,
+ SiPostgresql,
 } from "react-icons/si";
 import {
  FaGitAlt,
@@ -54,6 +55,7 @@ export const ICON_MAP = {
  FaTools,
  FaCpanel,
  SiVercel,
+ SiPostgresql,
 };
 
 export const ICON_SPECIFIC_COLORS = {
@@ -61,7 +63,7 @@ export const ICON_SPECIFIC_COLORS = {
  SiNextdotjs: "text-black",
  SiTailwindcss: "text-cyan-500",
  SiNodedotjs: "text-green-600",
- SiExpress: "text-gray-500",
+ SiExpress: "text-black",
  SiArduino: "text-teal-500",
  SiCplusplus: "text-blue-600",
  SiMongodb: "text-green-500",
@@ -73,7 +75,7 @@ export const ICON_SPECIFIC_COLORS = {
  SiVercel: "text-black",
  FaReact: "text-cyan-400",
  FaGitAlt: "text-orange-600",
- FaGithub: "text-gray-500",
+ FaGithub: "text-black",
  FaHtml5: "text-orange-600",
  FaCss3Alt: "text-blue-500",
  FaJsSquare: "text-yellow-400",
@@ -82,6 +84,8 @@ export const ICON_SPECIFIC_COLORS = {
  FaMicrochip: "text-purple-500",
  FaTools: "text-gray-600",
  FaCpanel: "text-orange-500",
+ SiPostgresql: "text-blue-600",
+ SiPrisma: "text-indigo-600",
 };
 
 export const ELECTRONICS_IMAGES = {
