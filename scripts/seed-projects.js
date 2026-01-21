@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const projectsData = [
@@ -21,7 +21,7 @@ const projectsData = [
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
-   "SiNodedotjs",
+   "FaNodeJs",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -84,7 +84,7 @@ const projectsData = [
    "SiNextdotjs",
    "SiTailwindcss",
    "SiMongodb",
-   "SiNodedotjs",
+   "FaNodeJs",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -152,7 +152,7 @@ const projectsData = [
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
-   "SiNodedotjs",
+   "FaNodeJs",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -210,7 +210,7 @@ const projectsData = [
    "SiTailwindcss",
    "SiPostgresql",
    "SiPrisma",
-   "SiNodedotjs",
+   "FaNodeJs",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -271,7 +271,7 @@ const projectsData = [
    "SiTailwindcss",
    "SiMongodb",
    "SiPrisma",
-   "SiNodedotjs",
+   "FaNodeJs",
   ],
   featuresTr: [
    "Responsive tasarım",
@@ -303,110 +303,6 @@ const projectsData = [
    { label: "Size", value: "603 MB" },
   ],
   displayOrder: 5,
- },
- {
-  category: "electronics",
-  titleTr: "Özel Arduino Uno Kartı Tasarımı",
-  titleEn: "Custom Arduino Uno Board Design",
-  descriptionTr:
-   "Arduino Uno R3 modelinin hafızasını 256KB'ye çıkaran, 24LC512 EEPROM ve I²C destekli özel kart tasarımı.",
-  descriptionEn:
-   "A custom Arduino Uno R3 design enhanced with 256KB memory using 24LC512 EEPROM and I²C interface.",
-  longDescriptionTr:
-   "Bu projede, Arduino'nun bir modeli olan Arduino Uno R3'ün hafızasının artırılması hedeflenmiştir. Hafıza kapasitesi, 24LC512 seri EEPROM yongasıyla en az 256 KB seviyesine çıkarılmıştır. EEPROM, I²C protokolü ile Arduino'ya bağlanmıştır. 24LC512, 128 bayta kadar sayfa yazma desteği, rastgele ve ardışık okuma özelliklerine sahiptir. Bellek yongası; dirençler, kapasitörler ve transistörlerden oluşan bir depolama aygıtıdır. PCB tasarımı Autodesk EAGLE ile gerçekleştirilmiş, çift katmanlı yapı kullanılmıştır. Yazılım C/C++ dilinde geliştirilmiş, Wire kütüphanesi ile I²C iletişimi sağlanmıştır. Türkiye haritası şeklinde özel PCB tasarımı ile estetik ve fonksiyonel bir görünüm elde edilmiştir.",
-  longDescriptionEn:
-   "This project aims to enhance the memory of Arduino Uno R3 by integrating a 24LC512 serial EEPROM chip. The system increases memory capacity to at least 256KB using I²C communication. The 24LC512 supports page writes up to 128 bytes and allows both random and sequential reads. The memory chip is composed of resistors, capacitors, and transistors and functions as a storage device, either temporarily (RAM) or permanently (ROM). A double-layer PCB was designed in Autodesk EAGLE with a custom Turkey map shape for aesthetic and functional appeal. The firmware was developed in C/C++ using the Wire library for I²C communication.",
-  status: "completed",
-  technologies: ["SiArduino", "SiCplusplus", "FaMicrochip", "FaTools"],
-  featuresTr: [
-   "256KB genişletilmiş EEPROM kapasitesi",
-   "24LC512 EEPROM yongası entegrasyonu",
-   "I2C protokolü ile haberleşme",
-   "Çift katmanlı PCB tasarımı",
-   "Autodesk EAGLE ile şematik tasarım",
-   "C programlama dili ile firmware geliştirme",
-   "Wire kütüphanesi I2C implementasyonu",
-  ],
-  featuresEn: [
-   "256KB extended EEPROM capacity",
-   "24LC512 EEPROM chip integration",
-   "Communication via I2C protocol",
-   "Double-layer PCB design",
-   "Schematic design with Autodesk EAGLE",
-   "Firmware development with C programming language",
-   "Wire library I2C implementation",
-  ],
-  teamTr: "Bireysel",
-  teamEn: "Individual",
-  roleTr: "PCB Tasarımcısı & Gömülü Sistem Mühendisi",
-  roleEn: "PCB Designer & Embedded Systems Engineer",
-  metricsTr: [
-   { label: "EEPROM Kapasitesi", value: "256KB" },
-   { label: "PCB Katman Sayısı", value: "2" },
-   { label: "I2C Hızı", value: "100kHz" },
-   { label: "Geliştirme Süresi", value: "2 ay" },
-   { label: "PCB Boyutu", value: "141.1 x 61.3 mm" },
-  ],
-  metricsEn: [
-   { label: "EEPROM Capacity", value: "256KB" },
-   { label: "PCB Layer Count", value: "2" },
-   { label: "I2C Speed", value: "100kHz" },
-   { label: "Development Time", value: "2 months" },
-   { label: "PCB Size", value: "141.1 x 61.3 mm" },
-  ],
-  displayOrder: 6,
- },
- {
-  category: "electronics",
-  titleTr: "Metal Dedektör",
-  titleEn: "Metal Detector",
-  descriptionTr:
-   "Sesli uyarı sistemi olan, hassas metal dedektörü. Farklı metal türlerini algılayabilen gelişmiş sensör teknolojisi.",
-  descriptionEn:
-   "Sensitive metal detector with audio alert system. Advanced sensor technology capable of detecting different types of metals.",
-  longDescriptionTr:
-   "Bu proje, özel olarak tasarlanmış elektronik devreler ile geliştirilmiş bir metal dedektör sistemidir. Arduino veya benzeri bir mikrodenetleyici kullanılmamıştır. Elektromanyetik indüksiyon prensibi ile çalışan dedektör, metal nesneleri algıladığında sesli uyarı verir ve LED'ler ile görsel bildirim sağlar. 1 metre uzunluğundaki yapısı sayesinde ergonomik kullanım sunar. Farklı metal türlerini ayırt edebilme yeteneğine sahiptir ve düşük güç tüketimiyle verimli çalışır. Analog devre tasarımı, osilator devreleri ve sinyal işleme teknikleri kullanılarak geliştirilmiştir.",
-  longDescriptionEn:
-   "This project is a metal detector system developed using custom-designed electronic circuits, without using an Arduino or similar microcontroller. It operates based on the principle of electromagnetic induction, providing an audible alert and visual feedback via LEDs when metal objects are detected. With its 1-meter length, it offers ergonomic handling. It is capable of distinguishing between different types of metals and operates efficiently with low power consumption. The system was developed using analog circuit design, oscillator circuits, and signal processing techniques.",
-  status: "completed",
-  technologies: ["SiArduino", "SiCplusplus", "FaMicrochip", "FaTools"],
-  featuresTr: [
-   "Hassas metal algılama (15cm menzil)",
-   "Sesli uyarı sistemi (buzzer)",
-   "LED görsel uyarı sistemi",
-   "Metal türü ayrımı (demir/demir olmayan)",
-   "Taşınabilir ergonomik tasarım",
-   "1 metre uzunluk teleskopik gövde",
-  ],
-  featuresEn: [
-   "Sensitive metal detection (15cm range)",
-   "Audio warning system (buzzer)",
-   "LED visual warning system",
-   "Metal type discrimination (ferrous/non-ferrous)",
-   "Portable ergonomic design",
-   "1 meter long telescopic body",
-  ],
-  teamTr: "Bireysel",
-  teamEn: "Individual",
-  roleTr: "Elektronik Mühendisi & Devre Tasarımcısı",
-  roleEn: "Electronics Engineer & Circuit Designer",
-  metricsTr: [
-   { label: "Algılama Mesafesi", value: "15cm" },
-   { label: "Doğruluk Oranı", value: "90%" },
-   { label: "Güç Tüketimi", value: "50mA" },
-   { label: "Dedektör Uzunluğu", value: "1m" },
-   { label: "Geliştirme Süresi", value: "2 ay" },
-   { label: "Çalışma Frekansı", value: "~10kHz" },
-  ],
-  metricsEn: [
-   { label: "Detection Range", value: "15cm" },
-   { label: "Accuracy Rate", value: "90%" },
-   { label: "Power Consumption", value: "50mA" },
-   { label: "Detector Length", value: "1m" },
-   { label: "Development Time", value: "2 months" },
-   { label: "Operating Frequency", value: "~10kHz" },
-  ],
-  displayOrder: 7,
  },
 ];
 

@@ -1,54 +1,6 @@
-import {
- FaLaptopCode,
- FaServer,
- FaTools,
- FaGitAlt,
- FaReact,
- FaHtml5,
- FaCss3Alt,
- FaJsSquare,
- FaBootstrap,
- FaNodeJs,
- FaJava,
- FaGithub,
-} from "react-icons/fa";
-import {
- SiNextdotjs,
- SiTypescript,
- SiTailwindcss,
- SiMongodb,
- SiMysql,
- SiExpress,
- SiPostgresql,
- SiPrisma,
-} from "react-icons/si";
-import { BsCursorFill } from "react-icons/bs";
-import { DiVisualstudio } from "react-icons/di";
+import { ICON_MAP } from "../../extra/icons";
 
-export const iconMap = {
- FaLaptopCode,
- FaServer,
- FaTools,
- FaGitAlt,
- FaReact,
- FaHtml5,
- FaCss3Alt,
- FaJsSquare,
- FaBootstrap,
- FaNodeJs,
- FaJava,
- FaGithub,
- BsCursorFill,
- SiNextdotjs,
- SiTypescript,
- SiTailwindcss,
- SiMongodb,
- SiMysql,
- SiPostgresql,
- SiExpress,
- SiPrisma,
- DiVisualstudio,
-};
+export const iconMap = ICON_MAP;
 
 export const getLevelColor = (level) => {
  switch (level) {

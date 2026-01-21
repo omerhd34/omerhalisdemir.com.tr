@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FaCertificate, FaAward, FaExternalLinkAlt } from "react-icons/fa";
+import { FaAward, FaExternalLinkAlt } from "react-icons/fa";
+import { GrCertificate } from "react-icons/gr";
 
 export default function CertificateButtons({ language, isMobile = false }) {
  const certificateText = language === "EN" ? "Certificate" : "Sertifika";
@@ -10,7 +11,7 @@ export default function CertificateButtons({ language, isMobile = false }) {
  const buttons = [
   {
    href: "/images/Sertifika.png",
-   icon: FaCertificate,
+   icon: GrCertificate,
    text: certificateText,
   },
   {
@@ -21,7 +22,7 @@ export default function CertificateButtons({ language, isMobile = false }) {
  ];
 
  return (
-  <div className={`mt-5 flex-wrap gap-3 ${isMobile ? "flex sm:hidden mt-4" : "hidden sm:flex mb-4"}`}>
+  <div className={`flex flex-wrap gap-3 ${isMobile ? "flex lg:hidden" : ""}`}>
    {buttons.map((button, index) => {
     const IconComponent = button.icon;
     return (

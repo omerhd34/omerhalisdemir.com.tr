@@ -35,18 +35,13 @@ export default function ProjectCard({ project, translations, language, index }) 
  );
 
  const iconNameMap = {
-  SiReact: "React",
   SiNextdotjs: "Next.js",
   SiTailwindcss: "Tailwind CSS",
-  SiNodedotjs: "Node.js",
   SiExpress: "Express.js",
-  SiArduino: "Arduino",
-  SiCplusplus: "C++",
   SiMongodb: "MongoDB",
-  SiJavascript: "JavaScript",
   SiMysql: "MySQL",
   SiTypescript: "TypeScript",
-  SiBootstrap: "Bootstrap",
+  FaBootstrap: "Bootstrap",
   SiPrisma: "Prisma",
   FaReact: "React",
   FaGitAlt: "Git",
@@ -56,10 +51,9 @@ export default function ProjectCard({ project, translations, language, index }) 
   FaJsSquare: "JavaScript",
   FaNodeJs: "Node.js",
   FaJava: "Java",
-  FaMicrochip: "Microchip",
-  FaTools: "Tools",
-  FaCpanel: "cPanel",
   SiVercel: "Vercel",
+  SiPrisma: "Prisma",
+  SiPostgresql: "PostgreSQL",
  };
 
  const technologyIcons = useMemo(() => {

@@ -1,0 +1,105 @@
+import {
+ FaGraduationCap,
+ FaBriefcase,
+ FaBookOpen,
+ FaServer,
+ FaCloud,
+ FaDatabase,
+ FaGithub,
+ FaHtml5,
+ FaCss3Alt,
+ FaJava,
+ FaGitAlt,
+ FaJsSquare,
+ FaNodeJs,
+ FaBootstrap,
+ FaReact,
+} from "react-icons/fa";
+
+import {
+ SiAutodesk,
+ SiNextdotjs,
+ SiMongodb,
+ SiTypescript,
+ SiTailwindcss,
+ SiExpress,
+ SiAutocad,
+ SiPostgresql,
+ SiPrisma,
+ SiMysql,
+ SiVercel,
+} from "react-icons/si";
+
+import { MdElectricBolt, MdDomain } from "react-icons/md";
+import { FcElectronics } from "react-icons/fc";
+import { BsCursorFill } from "react-icons/bs";
+import { DiVisualstudio } from "react-icons/di";
+import { GrCertificate } from "react-icons/gr";
+
+export const ICON_MAP = {
+ FaGraduationCap,
+ FaBriefcase,
+ FaBookOpen,
+ FaServer,
+ FaCloud,
+ FaDatabase,
+ FaGithub,
+ FaHtml5,
+ FaCss3Alt,
+ FaJava,
+ FaReact,
+ FaGitAlt,
+ FaJsSquare,
+ FaNodeJs,
+ FaBootstrap,
+ SiAutodesk,
+ SiNextdotjs,
+ SiMongodb,
+ SiTypescript,
+ SiTailwindcss,
+ SiExpress,
+ SiAutocad,
+ SiPostgresql,
+ SiPrisma,
+ SiMysql,
+ SiVercel,
+ MdElectricBolt,
+ MdDomain,
+ FcElectronics,
+ BsCursorFill,
+ DiVisualstudio,
+ GrCertificate
+};
+
+export const ICON_COLOR_MAP = {
+ FaHtml5: "text-orange-600",
+ FaCss3Alt: "text-blue-500",
+ FaJsSquare: "text-yellow-400",
+ FaReact: "text-cyan-400",
+ FaNodeJs: "text-green-600",
+ FaBootstrap: "text-purple-600",
+ FaDatabase: "text-adaptive-icon",
+ FaGithub: "text-adaptive-icon",
+ FaGitAlt: "text-orange-600",
+ FaCloud: "text-blue-400",
+ FaServer: "text-gray-900",
+ FaJava: "text-red-600",
+
+ SiNextdotjs: "text-adaptive-icon",
+ SiTypescript: "text-blue-600",
+ SiTailwindcss: "text-cyan-500",
+ SiExpress: "text-adaptive-icon",
+ SiMongodb: "text-green-500",
+ SiMysql: "text-blue-600",
+ SiPostgresql: "text-blue-600",
+ SiPrisma: "text-indigo-600",
+ SiVercel: "text-adaptive-icon",
+ SiAutocad: "text-red-600",
+ SiAutodesk: "text-blue-600",
+
+ FcElectronics: "text-blue-500",
+ MdElectricBolt: "text-yellow-500",
+ MdDomain: "text-purple-500",
+ BsCursorFill: "text-adaptive-icon",
+ DiVisualstudio: "text-blue-500",
+};

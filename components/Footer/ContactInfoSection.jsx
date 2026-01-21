@@ -12,7 +12,7 @@ export default function ContactInfoSection({ language }) {
    <div className="space-y-3">
     <div className="flex items-start space-x-3 text-accent text-sm">
      <FaMapMarkerAlt className="w-4 h-4 mt-0.5 text-accent" />
-     <span>İstanbul / Türkiye</span>
+     <span>İstanbul, Türkiye</span>
      <ReactCountryFlag
       countryCode="TR"
       svg

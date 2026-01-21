@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FaEye, FaGithub, FaExternalLinkAlt, FaImage, FaCertificate, FaAward } from "react-icons/fa";
+import { FaEye, FaGithub, FaExternalLinkAlt, FaImage, FaAward } from "react-icons/fa";
+import { GrCertificate } from "react-icons/gr";
 
 export default function ProjectActionButtons({
  project,
@@ -22,7 +23,7 @@ export default function ProjectActionButtons({
      rel="noopener noreferrer"
      className="inline-flex items-center px-4 py-2 bg-linear-to-rrom-[#2e7d32] to-[#1a5745] hover:from-[#43a047] hover:to-[#388e3c] text-accent rounded-lg transition-all duration-300 group text-sm shadow-lg hover:shadow-xl"
     >
-     <FaCertificate className="w-4 h-4 mr-2 text-orange-300" />
+     <GrCertificate className="w-4 h-4 mr-2 text-orange-300" />
      {buttonTexts.certificate || "Sertifika"}
      <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200 text-orange-300" />
     </Link>

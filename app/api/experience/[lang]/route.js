@@ -8,7 +8,7 @@ export async function GET(request, context) {
   const isEnglish = lang.toUpperCase() === "EN";
 
   const experiences = await prisma.experience.findMany({
-   orderBy: [{ displayOrder: "asc" }, { category: "asc" }, { id: "asc" }],
+   orderBy: [{ createdAt: "desc" }, { category: "asc" }],
   });
 
   if (experiences.length === 0) {
@@ -40,7 +40,6 @@ export async function GET(request, context) {
     technologies: technologies,
     achievements: achievements,
     icon: exp.icon,
-    displayOrder: exp.displayOrder,
    });
 
    return acc;
@@ -49,7 +48,7 @@ export async function GET(request, context) {
   return NextResponse.json(groupedExperience);
  } catch (error) {
   console.error("Experience API Error:", error);
-  
+
   // Veritabanı bağlantı hatası kontrolü
   if (error.code === 'P1001' || error.message?.includes('Can\'t reach database server')) {
    return NextResponse.json(
@@ -61,7 +60,7 @@ export async function GET(request, context) {
     { status: 500 }
    );
   }
-  
+
   return NextResponse.json(
    {
     error: "Veriler yüklenemedi",

@@ -28,8 +28,8 @@ export default function PersonalInfoCard({ language, isVisible }) {
    'TR': "İstanbul Ticaret Üniversitesi",
   },
   softwareDev: {
-   'EN': "Software Development",
-   'TR': "Yazılım Geliştirme",
+   'EN': "Full Stack Development",
+   'TR': "Full Stack Development",
   },
  };
 
@@ -43,7 +43,7 @@ export default function PersonalInfoCard({ language, isVisible }) {
    label: translations.location[language],
    value: (
     <span className="flex items-center justify-center gap-2">
-     İstanbul, Çekmeköy
+     İstanbul, Türkiye
      <span className="hidden lg:inline-block">
       <ReactCountryFlag
        countryCode="TR"

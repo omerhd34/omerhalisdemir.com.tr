@@ -6,53 +6,33 @@ export default function ExperienceTechnologies({ technologies, isMobileExpanded,
  const getIconName = (iconKey) => {
   const iconNames = {
    FaGraduationCap: { EN: "Graduation Cap", TR: "Mezuniyet" },
-   FaUniversity: { EN: "University", TR: "Üniversite" },
    SiAutodesk: { EN: "Autodesk", TR: "Autodesk" },
-   FaBriefcase: { EN: "Briefcase", TR: "Çanta" },
-   FaBookOpen: { EN: "Book", TR: "Kitap" },
    FcElectronics: { EN: "Electronics", TR: "Elektronik" },
    SiAutocad: { EN: "AutoCAD", TR: "AutoCAD" },
-   FaCertificate: { EN: "Certificate", TR: "Sertifika" },
-   FaMicrochip: { EN: "Microchip", TR: "Mikroçip" },
-   FaDraftingCompass: { EN: "Drafting Compass", TR: "Pergel" },
-   FaCubes: { EN: "Cubes", TR: "Küpler" },
+   GrCertificate: { EN: "Certificate", TR: "Sertifika" },
    FaServer: { EN: "Server", TR: "Sunucu" },
-   FaNetworkWired: { EN: "Network", TR: "Ağ" },
    FaCloud: { EN: "Cloud", TR: "Cloud" },
    FaDatabase: { EN: "Database", TR: "Veritabanı" },
-   FaHdd: { EN: "Hard Drive", TR: "Sabit Disk" },
-   FaCogs: { EN: "Cogs", TR: "Dişliler" },
-   FaShieldAlt: { EN: "Shield", TR: "Kalkan" },
-   FaAtom: { EN: "Atom", TR: "Atom" },
-   FaBrain: { EN: "Brain", TR: "Beyin" },
    FaGithub: { EN: "GitHub", TR: "GitHub" },
    FaHtml5: { EN: "HTML5", TR: "HTML5" },
-   FaCss3: { EN: "CSS3", TR: "CSS3" },
    FaJava: { EN: "Java", TR: "Java" },
    FaReact: { EN: "React", TR: "React" },
-   SiReact: { EN: "React", TR: "React" },
-   SiJavascript: { EN: "JavaScript", TR: "JavaScript" },
-   SiHtml5: { EN: "HTML5", TR: "HTML5" },
-   SiCss3: { EN: "CSS3", TR: "CSS3" },
-   SiBootstrap: { EN: "Bootstrap", TR: "Bootstrap" },
+   FaCss3Alt: { EN: "CSS3", TR: "CSS3" },
+   FaBootstrap: { EN: "Bootstrap", TR: "Bootstrap" },
    SiNextdotjs: { EN: "Next.js", TR: "Next.js" },
-   SiNodedotjs: { EN: "Node.js", TR: "Node.js" },
    SiMongodb: { EN: "MongoDB", TR: "MongoDB" },
    SiTypescript: { EN: "TypeScript", TR: "TypeScript" },
    SiTailwindcss: { EN: "Tailwind CSS", TR: "Tailwind CSS" },
    SiExpress: { EN: "Express.js", TR: "Express.js" },
    SiMysql: { EN: "MySQL", TR: "MySQL" },
-   SiArduino: { EN: "Arduino", TR: "Arduino" },
-   SiCplusplus: { EN: "C++", TR: "C++" },
-   SiServerfault: { EN: "Server", TR: "Sunucu" },
    MdElectricBolt: { EN: "Electric", TR: "Elektrik" },
    MdDomain: { EN: "Domain", TR: "Domain" },
-   FaTools: { EN: "Tools", TR: "Araçlar" },
    FaGitAlt: { EN: "Git", TR: "Git" },
    FaJsSquare: { EN: "JavaScript", TR: "JavaScript" },
    FaNodeJs: { EN: "Node.js", TR: "Node.js" },
+   SiPrisma: { EN: "Prisma", TR: "Prisma" },
+   SiVercel: { EN: "Vercel", TR: "Vercel" },
    SiPostgresql: { EN: "PostgreSQL", TR: "PostgreSQL" },
-
   };
 
   return iconNames[iconKey]?.[language] || iconKey;
@@ -63,7 +43,7 @@ export default function ExperienceTechnologies({ technologies, isMobileExpanded,
  };
 
  return (
-  <div className={`flex flex-wrap gap-2 mb-4 ${!isMobileExpanded ? "hidden sm:flex" : ""}`}>
+  <div className={`flex flex-wrap gap-2 ${!isMobileExpanded ? "hidden sm:flex" : ""}`}>
    {technologies.map((techIconName, techIndex) => {
     const TechIcon = iconMap[techIconName];
     const iconColorClass = getIconColor(techIconName);

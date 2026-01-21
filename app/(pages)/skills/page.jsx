@@ -74,16 +74,14 @@ export default function SkillsPage() {
 
  const categoryTranslations = {
   frontend: {
-   title:
-    language === "EN" ? "Frontend" : "Frontend",
+   title: "Frontend",
    description:
     language === "EN"
      ? "Frontend technologies and frameworks"
      : "Frontend teknolojileri ve framework'ler",
   },
   backend: {
-   title:
-    language === "EN" ? "Backend" : "Backend",
+   title: "Backend",
    description:
     language === "EN"
      ? "Backend technologies and frameworks"

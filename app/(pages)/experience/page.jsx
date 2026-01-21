@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaBriefcase, FaGraduationCap, FaCertificate } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { useLanguage } from "../../context/LanguageContext";
 import { useData } from "../../context/DataContext";
 import CategoryTabs from "../../../components/PageComponents/Experience/CategoryTabs";
@@ -8,6 +8,7 @@ import ExperienceItem from "../../../components/PageComponents/Experience/Experi
 import Title from "../../../components/extra/Title";
 import "../../styles/experience.css";
 import LoadingScreen from "../../../components/extra/LoadingScreen";
+import { GrCertificate } from "react-icons/gr";
 
 export default function ExperiencePage() {
  const { language, loading: langLoading } = useLanguage();
@@ -27,7 +28,7 @@ export default function ExperiencePage() {
  const categoryIcons = {
   education: FaGraduationCap,
   internship: FaBriefcase,
-  certificates: FaCertificate
+  certificates: GrCertificate
  };
 
  const categoryColors = {

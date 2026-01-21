@@ -46,8 +46,7 @@ export async function GET(request, context) {
   return NextResponse.json(projects);
  } catch (error) {
   console.error("Projects API Error:", error);
-  
-  // Veritabanı bağlantı hatası kontrolü
+
   if (error.code === 'P1001' || error.message?.includes('Can\'t reach database server')) {
    return NextResponse.json(
     {
@@ -58,7 +57,7 @@ export async function GET(request, context) {
     { status: 500 }
    );
   }
-  
+
   return NextResponse.json(
    {
     error: "Veriler yüklenemedi",

@@ -23,7 +23,6 @@ export function DataProvider({ children }) {
   setError(null);
 
   try {
-   // Her zaman fresh data çek (cache'i bypass et)
    const skillsRes = await fetch(`/api/skills?t=${Date.now()}`, {
     cache: 'no-store'
    });

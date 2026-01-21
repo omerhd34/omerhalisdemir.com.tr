@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const skillsData = [
@@ -47,7 +47,7 @@ const skillsData = [
   name: "Next.js",
   experience: 4,
   icon: "SiNextdotjs",
-  color: "text-white",
+  color: "text-adaptive-icon",
   displayOrder: 6,
  },
  {
@@ -111,7 +111,7 @@ const skillsData = [
   name: "GitHub",
   experience: 4,
   icon: "FaGithub",
-  color: "text-white",
+  color: "text-adaptive-icon",
   displayOrder: 14,
  },
  {
@@ -127,7 +127,7 @@ const skillsData = [
   name: "Express.js",
   experience: 3,
   icon: "SiExpress",
-  color: "text-white",
+  color: "text-adaptive-icon",
   displayOrder: 16,
  },
  {
@@ -151,7 +151,7 @@ const skillsData = [
   name: "Cursor",
   experience: 3,
   icon: "BsCursorFill",
-  color: "text-white",
+  color: "text-adaptive-icon",
   displayOrder: 19,
  },
 ];

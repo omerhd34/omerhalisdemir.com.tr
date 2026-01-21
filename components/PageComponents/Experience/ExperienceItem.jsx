@@ -15,6 +15,9 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
  const Icon = typeof item.icon === 'string' ? iconMap[item.icon] : item.icon;
  const showExpandButton = item.achievements && item.achievements.length > 0;
 
+ const showCertificateButtons = item.category === "certificates" &&
+  (item.institution === "Europe Coding School & Ecodation" || item.institution?.includes("Europe Coding School & Ecodation"));
+
  const iconBgColor = categoryColorMap[item.category] || "from-green-900 to-green-400";
  const statusBadgeClass = getStatusBg(item.status);
 
@@ -46,13 +49,25 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       {item.description}
      </p>
 
-     <ExperienceTechnologies
-      technologies={item.technologies}
-      isMobileExpanded={isMobileExpanded}
-      language={language}
-     />
+     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+      <ExperienceTechnologies
+       technologies={item.technologies}
+       isMobileExpanded={isMobileExpanded}
+       language={language}
+      />
 
-     {item.displayOrder === 7 && <CertificateButtons language={language} isMobile={false} />}
+      {showCertificateButtons && (
+       <div className="hidden lg:flex lg:items-center">
+        <CertificateButtons language={language} isMobile={false} />
+       </div>
+      )}
+     </div>
+
+     {showCertificateButtons && (
+      <div className="flex lg:hidden mb-4">
+       <CertificateButtons language={language} isMobile={false} />
+      </div>
+     )}
 
      <MobileToggleButton
       isExpanded={isMobileExpanded}
@@ -67,7 +82,7 @@ export default function ExperienceItem({ item, translations, isVisible, index, l
       showExpandButton={showExpandButton}
      />
 
-     {item.displayOrder === 7 && isMobileExpanded && (
+     {showCertificateButtons && isMobileExpanded && (
       <CertificateButtons language={language} isMobile={true} />
      )}
     </div>

@@ -33,7 +33,6 @@ export async function GET() {
  } catch (error) {
   console.error("Yetenekler API Hatası:", error);
 
-  // Veritabanı bağlantı hatası kontrolü
   if (error.code === 'P1001' || error.message?.includes('Can\'t reach database server')) {
    return NextResponse.json(
     {
