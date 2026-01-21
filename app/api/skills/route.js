@@ -32,6 +32,19 @@ export async function GET() {
   return NextResponse.json(groupedSkills);
  } catch (error) {
   console.error("Yetenekler API Hatası:", error);
+
+  // Veritabanı bağlantı hatası kontrolü
+  if (error.code === 'P1001' || error.message?.includes('Can\'t reach database server')) {
+   return NextResponse.json(
+    {
+     error: "Veritabanı bağlantı hatası",
+     details: "DATABASE_URL ortam değişkenini kontrol edin",
+     message: error.message,
+    },
+    { status: 500 }
+   );
+  }
+
   return NextResponse.json(
    {
     error: "Veriler yüklenemedi",
