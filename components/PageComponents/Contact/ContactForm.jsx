@@ -130,7 +130,7 @@ export default function ContactForm({ language, isVisible }) {
   >
    <div className="bg-secondary p-3 sm:p-8 rounded-2xl shadow-2xl sm:rounded-4xl sm:shadow-4xl h-full">
     <h3 className="text-[20px] sm:text-2xl font-bold mb-5 sm:mb-6 flex items-center space-x-4 sm:space-x-2">
-     <FaPaperPlane className="w-5 h-5" />
+     <FaPaperPlane className="w-5 h-5 mr-4" />
      <span>{translations.formTitle}</span>
     </h3>
 
@@ -235,7 +235,7 @@ export default function ContactForm({ language, isVisible }) {
      <button
       type="submit"
       disabled={isSubmitting}
-      className="w-60 sm:w-full max-w-xs sm:max-w-sm md:max-w-md py-2 sm:py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-linear-to-r from-[#2e7d32] to-[#66bb6a] hover:from-[#1b5e20] hover:to-[#2e7d32] border-0 hover:ring-2 hover:ring-[#81c784] hover:ring-opacity-50 mb-2"
+      className="w-60 sm:w-full max-w-xs sm:max-w-sm md:max-w-md py-2 sm:py-3 font-semibold rounded-2xl transition-all duration-300 transform hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-base shadow-lg hover:shadow-xl text-[15px] mx-auto lg:text-base bg-linear-to-r from-[#2e7d32] to-[#66bb6a] hover:from-[#1b5e20] hover:to-[#2e7d32] border-0 hover:ring-2 hover:ring-[#81c784] hover:ring-opacity-50 mb-2 mt-5 cursor-pointer"
      >
       <FaPaperPlane className="w-4 h-4" />
       <span>{isSubmitting ? translations.sending : translations.send}</span>
