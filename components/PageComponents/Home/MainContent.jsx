@@ -19,8 +19,8 @@ export default function MainContent({ description, language }) {
   ];
 
  return (
-  <div className="flex-grow text-center lg:text-left">
-   <h1 className="text-[24px] lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary mb-[1px] sm:mb-3">
+  <div className="grow text-center lg:text-left">
+   <h1 className="text-[24px] lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-primary mb-px sm:mb-3">
     Ömer Halis DEMİR
    </h1>
    <TypeWriter texts={professionTitles} />

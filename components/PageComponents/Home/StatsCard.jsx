@@ -9,7 +9,7 @@ export default function StatsCard({ totalSkills, projectsCount, language, isVisi
    icon: FaCode
   },
   {
-   number: "4",
+   number: "5",
    label: language === "EN" ? "Years Experience" : "Yıl Deneyim",
    icon: FaGraduationCap
   },
@@ -23,7 +23,7 @@ export default function StatsCard({ totalSkills, projectsCount, language, isVisi
 
  return (
   <div
-   className={`flex-shrink-0 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+   className={`shrink-0 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
     }`}
   >
    <div className="flex flex-row lg:flex-col gap-8 lg:gap-6 my-4 sm:my-5">

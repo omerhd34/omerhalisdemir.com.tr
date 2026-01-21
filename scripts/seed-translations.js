@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const languagesData = [
@@ -11,8 +11,8 @@ const translationsData = [
   keyPath: "home.shortDescription",
   category: null,
   translations: {
-   TR: "Web geliştirme tutkusuyla 4+ yıldır dijital dünyada iz bırakıyorum. Frontend'de React ve Next.js ile kullanıcıların gözlerini kamaştıran arayüzler tasarlarken, backend'de Node.js ve Express.js ile sağlam temeller atıyorum. MySQL ve MongoDB ile veri yönetiminde güçlü çözümler sunarak, her proje benim için bir sanat eseri haline geliyor: performanslı, erişilebilir ve kullanıcı dostu. Yeteneklerimle işinizi bir üst seviyeye taşımaya hazırım.",
-   EN: "I've been making my mark in the digital world for over 4 years with a passion for web development. While crafting eye-catching interfaces with React and Next.js on the frontend, I build solid foundations with Node.js and Express.js on the backend. By delivering powerful solutions in data management with MySQL and MongoDB, every project becomes a work of art for me: performant, accessible, and user-friendly. Ready to elevate your business with my skills.",
+   TR: "Web geliştirme tutkusuyla 4+ yıldır dijital dünyada iz bırakıyorum. Frontend'de React ve Next.js ile kullanıcıların gözlerini kamaştıran arayüzler tasarlarken, backend'de Node.js ve Express.js ile sağlam temeller atıyorum. PostgreSQL ve MongoDB ile veri yönetiminde güçlü çözümler sunarak, her proje benim için bir sanat eseri haline geliyor: performanslı, erişilebilir ve kullanıcı dostu. Yeteneklerimle işinizi bir üst seviyeye taşımaya hazırım.",
+   EN: "I've been making my mark in the digital world for over 4 years with a passion for web development. While crafting eye-catching interfaces with React and Next.js on the frontend, I build solid foundations with Node.js and Express.js on the backend. By delivering powerful solutions in data management with PostgreSQL and MongoDB, every project becomes a work of art for me: performant, accessible, and user-friendly. Ready to elevate your business with my skills.",
   },
  },
  {
