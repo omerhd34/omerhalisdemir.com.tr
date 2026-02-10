@@ -5,7 +5,7 @@ const skillsData = [
  {
   categories: ["frontend"],
   name: "HTML5",
-  experience: 4,
+  experience: 5,
   icon: "FaHtml5",
   color: "text-orange-600",
   displayOrder: 1,
@@ -13,7 +13,7 @@ const skillsData = [
  {
   categories: ["frontend"],
   name: "CSS3",
-  experience: 4,
+  experience: 5,
   icon: "FaCss3Alt",
   color: "text-blue-500",
   displayOrder: 2,
@@ -21,7 +21,7 @@ const skillsData = [
  {
   categories: ["frontend", "backend"],
   name: "JavaScript",
-  experience: 4,
+  experience: 5,
   icon: "FaJsSquare",
   color: "text-yellow-400",
   displayOrder: 3,
@@ -29,7 +29,7 @@ const skillsData = [
  {
   categories: ["frontend", "backend"],
   name: "TypeScript",
-  experience: 3,
+  experience: 4,
   icon: "SiTypescript",
   color: "text-blue-600",
   displayOrder: 4,
@@ -37,7 +37,7 @@ const skillsData = [
  {
   categories: ["frontend"],
   name: "React",
-  experience: 4,
+  experience: 5,
   icon: "FaReact",
   color: "text-cyan-400",
   displayOrder: 5,
@@ -45,7 +45,7 @@ const skillsData = [
  {
   categories: ["frontend", "backend"],
   name: "Next.js",
-  experience: 4,
+  experience: 5,
   icon: "SiNextdotjs",
   color: "text-adaptive-icon",
   displayOrder: 6,
@@ -53,7 +53,7 @@ const skillsData = [
  {
   categories: ["frontend"],
   name: "Tailwind CSS",
-  experience: 4,
+  experience: 5,
   icon: "SiTailwindcss",
   color: "text-cyan-500",
   displayOrder: 7,
@@ -61,7 +61,7 @@ const skillsData = [
  {
   categories: ["frontend"],
   name: "Bootstrap",
-  experience: 4,
+  experience: 5,
   icon: "FaBootstrap",
   color: "text-purple-600",
   displayOrder: 8,
@@ -77,7 +77,7 @@ const skillsData = [
  {
   categories: ["backend"],
   name: "Node.js",
-  experience: 3,
+  experience: 4,
   icon: "FaNodeJs",
   color: "text-green-600",
   displayOrder: 10,
@@ -85,7 +85,7 @@ const skillsData = [
  {
   categories: ["backend"],
   name: "Express.js",
-  experience: 3,
+  experience: 4,
   icon: "SiExpress",
   color: "text-adaptive-icon",
   displayOrder: 11,
@@ -93,7 +93,7 @@ const skillsData = [
  {
   categories: ["database"],
   name: "SQL & NoSQL",
-  experience: 3,
+  experience: 4,
   icon: "FaDatabase",
   color: "text-green-500",
   displayOrder: 12,
@@ -101,7 +101,7 @@ const skillsData = [
  {
   categories: ["database"],
   name: "MongoDB",
-  experience: 3,
+  experience: 4,
   icon: "SiMongodb",
   color: "text-green-500",
   displayOrder: 13,
@@ -109,7 +109,7 @@ const skillsData = [
  {
   categories: ["database"],
   name: "MySQL",
-  experience: 3,
+  experience: 4,
   icon: "SiMysql",
   color: "text-blue-600",
   displayOrder: 14,
@@ -117,7 +117,7 @@ const skillsData = [
  {
   categories: ["database"],
   name: "PostgreSQL",
-  experience: 3,
+  experience: 4,
   icon: "SiPostgresql",
   color: "text-blue-600",
   displayOrder: 15,
@@ -125,7 +125,7 @@ const skillsData = [
  {
   categories: ["database"],
   name: "Prisma",
-  experience: 3,
+  experience: 4,
   icon: "SiPrisma",
   color: "text-indigo-600",
   displayOrder: 16,
@@ -141,7 +141,7 @@ const skillsData = [
  {
   categories: ["tools"],
   name: "Cursor",
-  experience: 3,
+  experience: 4,
   icon: "BsCursorFill",
   color: "text-adaptive-icon",
   displayOrder: 18,
@@ -149,7 +149,7 @@ const skillsData = [
  {
   categories: ["tools"],
   name: "Git",
-  experience: 4,
+  experience: 5,
   icon: "FaGitAlt",
   color: "text-orange-600",
   displayOrder: 19,
@@ -157,7 +157,7 @@ const skillsData = [
  {
   categories: ["tools"],
   name: "GitHub",
-  experience: 4,
+  experience: 5,
   icon: "FaGithub",
   color: "text-adaptive-icon",
   displayOrder: 20,

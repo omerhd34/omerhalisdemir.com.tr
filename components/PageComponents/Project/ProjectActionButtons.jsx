@@ -67,19 +67,6 @@ export default function ProjectActionButtons({
      <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200 text-orange-300" />
     </Link>
    )}
-
-   {project.githubUrl && (
-    <Link
-     href={project.githubUrl}
-     target="_blank"
-     rel="noopener noreferrer"
-     className="inline-flex items-center px-4 py-2 bg-linear-to-r from-[#2e7d32] to-[#1a5745] hover:from-[#43a047] hover:to-[#388e3c] text-accent rounded-lg transition-all duration-300 group text-sm shadow-lg hover:shadow-xl"
-    >
-     <FaGithub className="w-4 h-4 mr-2 text-orange-300" />
-     {buttonTexts.sourceCode}
-     <FaExternalLinkAlt className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform duration-200 text-orange-300" />
-    </Link>
-   )}
   </div>
  );
 }
