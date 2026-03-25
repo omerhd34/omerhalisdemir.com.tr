@@ -27,7 +27,7 @@ export default function MainContent({ description, language }) {
    <p className="text-primary tracking-tight sm:tracking-normal lg:tracking-wide text-[16px] lg:text-[18px] mb-3 sm:mb-6 max-w-2xl mx-auto lg:mx-0 text-left">
     {description}
    </p>
-   <ActionButtons language={language} />
+   <ActionButtons />
   </div>
  );
 }
