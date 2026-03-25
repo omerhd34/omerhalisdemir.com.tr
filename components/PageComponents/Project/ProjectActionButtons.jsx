@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaEye, FaGithub, FaExternalLinkAlt, FaImage, FaAward } from "react-icons/fa";
+import { FaEye, FaExternalLinkAlt, FaImage, FaAward } from "react-icons/fa";
 import { GrCertificate } from "react-icons/gr";
 
 export default function ProjectActionButtons({

@@ -61,7 +61,7 @@ export function MobileNav({
      <div className="flex justify-center space-x-3">
       <button
        onClick={toggleTheme}
-       className="flex items-center justify-center px-3 py-2 rounded-lg bg-gradient-to-r from-[#143d32] to-[#1a5745] hover:from-[#2e7d32] hover:to-[#388e3c] transition-all duration-300 group"
+       className="flex items-center justify-center px-3 py-2 rounded-lg bg-linear-to-r from-[#143d32] to-[#1a5745] hover:from-[#2e7d32] hover:to-[#388e3c] transition-all duration-300 group"
       >
        {isLight ? (
         <FaMoon className="w-5 h-5 text-blue-400" />
@@ -101,7 +101,7 @@ export function MobileNav({
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center space-x-1.5 px-3 py-2.5 text-primary bg-gradient-to-r from-[#143d32] to-[#1a5745] dark:from-[#143d32] dark:to-[#1a5745] light:from-[#1b5e20] light:to-[#2e7d32] hover:from-[#2e7d32] hover:to-[#388e3c] rounded-lg text-xs font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+        className="flex items-center justify-center space-x-1.5 px-3 py-2.5 text-primary bg-linear-to-r from-[#143d32] to-[#1a5745] dark:from-[#143d32] dark:to-[#1a5745] light:from-[#1b5e20] light:to-[#2e7d32] hover:from-[#2e7d32] hover:to-[#388e3c] rounded-lg text-xs font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
        >
         <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-[#c8e6c9] dark:text-[#c8e6c9] light:text-white" />
         {link.name === t.cv && (

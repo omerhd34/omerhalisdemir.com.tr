@@ -12,7 +12,7 @@ export default function ProjectFeatures({ featuresList, buttonTexts }) {
    <ul className="space-y-1.5 xs:space-y-2">
     {featuresList.map((feature, featureIndex) => (
      <li key={featureIndex} className="flex items-start space-x-2 xs:space-x-3">
-      <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 rounded-full bg-blue-800 mt-1.5 xs:mt-2 flex-shrink-0"></div>
+      <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 rounded-full bg-blue-800 mt-1.5 xs:mt-2 shrink-0"></div>
       <span className="text-sm xs:text-base">{feature}</span>
      </li>
     ))}

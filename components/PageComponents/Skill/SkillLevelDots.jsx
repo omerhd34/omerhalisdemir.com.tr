@@ -16,7 +16,7 @@ export default function SkillLevelDots({ level }) {
     <div
      key={dot}
      className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${dot <= levelValue
-      ? `bg-gradient-to-r ${levelColor} scale-110`
+      ? `bg-linear-to-r ${levelColor} scale-110`
       : "bg-muted scale-100"
       }`}
     />

@@ -13,13 +13,13 @@ export default function SkillProgressBar({ level, percentage, translations, show
    )}
 
    <div className="relative w-full bg-muted rounded-full h-2.5 sm:h-3 overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent" />
 
     <div
      className={`relative h-full ${progressColor} rounded-full`}
      style={{ width: `${percentage}%` }}
     >
-     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+     <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
     </div>
    </div>
 

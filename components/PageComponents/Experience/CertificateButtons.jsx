@@ -6,7 +6,7 @@ export default function CertificateButtons({ language, isMobile = false }) {
  const certificateText = language === "EN" ? "Certificate" : "Sertifika";
  const achievementText = language === "EN" ? "Achievement Certificate" : "Başarı Belgesi";
 
- const buttonBaseClass = "inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#2e7d32] to-[#1a5745] hover:from-[#43a047] hover:to-[#388e3c] text-accent rounded-lg transition-all duration-300 group text-sm shadow-lg hover:shadow-xl";
+ const buttonBaseClass = "inline-flex items-center px-4 py-2 bg-linear-to-r from-[#2e7d32] to-[#1a5745] hover:from-[#43a047] hover:to-[#388e3c] text-accent rounded-lg transition-all duration-300 group text-sm shadow-lg hover:shadow-xl";
 
  const buttons = [
   {
