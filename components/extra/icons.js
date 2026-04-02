@@ -28,6 +28,10 @@ import {
  SiPrisma,
  SiMysql,
  SiVercel,
+ SiPostman,
+ SiClaude,
+ SiOpenai,
+ SiStripe,
 } from "react-icons/si";
 
 import { MdElectricBolt, MdDomain } from "react-icons/md";
@@ -35,6 +39,7 @@ import { FcElectronics } from "react-icons/fc";
 import { BsCursorFill } from "react-icons/bs";
 import { DiVisualstudio } from "react-icons/di";
 import { GrCertificate } from "react-icons/gr";
+import { TbApi } from "react-icons/tb";
 
 export const ICON_MAP = {
  FaGraduationCap,
@@ -68,7 +73,12 @@ export const ICON_MAP = {
  FcElectronics,
  BsCursorFill,
  DiVisualstudio,
- GrCertificate
+ GrCertificate,
+ SiClaude,
+ SiOpenai,
+ SiStripe,
+ TbApi,
+ SiPostman,
 };
 
 export const ICON_COLOR_MAP = {
@@ -96,6 +106,11 @@ export const ICON_COLOR_MAP = {
  SiVercel: "text-adaptive-icon",
  SiAutocad: "text-red-600",
  SiAutodesk: "text-blue-600",
+ SiPostman: "text-orange-500",
+ SiClaude: "text-orange-400",
+ SiOpenai: "text-adaptive-icon",
+ TbApi: "text-green-500",
+ SiStripe: "text-purple-500",
 
  FcElectronics: "text-blue-500",
  MdElectricBolt: "text-yellow-500",

@@ -33,6 +33,11 @@ export default function ExperienceTechnologies({ technologies, isMobileExpanded,
    SiPrisma: { EN: "Prisma", TR: "Prisma" },
    SiVercel: { EN: "Vercel", TR: "Vercel" },
    SiPostgresql: { EN: "PostgreSQL", TR: "PostgreSQL" },
+   SiPostman: { EN: "Postman", TR: "Postman" },
+   SiClaude: { EN: "Claude", TR: "Claude" },
+   SiOpenai: { EN: "OpenAI", TR: "OpenAI" },
+   SiStripe: { EN: "İyzico", TR: "İyzico" },
+   TbApi: { EN: "REST API", TR: "REST API" },
   };
 
   return iconNames[iconKey]?.[language] || iconKey;
