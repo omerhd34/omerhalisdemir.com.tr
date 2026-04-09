@@ -53,6 +53,7 @@ export default function ProjectCard({ project, translations, language, index }) 
   SiVercel: "Vercel",
   SiPrisma: "Prisma",
   SiPostgresql: "PostgreSQL",
+  SiOpenai: "OpenAI",
  };
 
  const technologyIcons = useMemo(() => {
