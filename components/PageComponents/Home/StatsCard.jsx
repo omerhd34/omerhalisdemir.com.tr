@@ -9,7 +9,7 @@ export default function StatsCard({ totalSkills, projectsCount, language, isVisi
    icon: FaCode
   },
   {
-   number: "5",
+   number: "8",
    label: language === "EN" ? "Years Experience" : "Yıl Deneyim",
    icon: FaGraduationCap
   },
