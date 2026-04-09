@@ -1,11 +1,12 @@
 # 🚀 omerhalisdemir.com.tr
 
-> Modern ve dinamik kişisel portföy web sitesi - Next.js 15 & MongoDB ile geliştirilmiştir.
+> Modern ve dinamik kişisel portföy web sitesi - Next.js 15, Prisma ve PostgreSQL ile geliştirilmiştir.
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.3.3-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.1.0-blue?style=flat&logo=react)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.10-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
-[![MySQL](https://img.shields.io/badge/MongoDB-8.1.2-green)](https://www.mongodb.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.5-black?style=flat&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue?style=flat&logo=react)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat&logo=prisma&logoColor=white)](https://www.prisma.io/)
 
 ## 📋 İçindekiler
 
@@ -58,7 +59,7 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 
 - **Server-Side Rendering**: Next.js App Router
 - **Image Optimization**: Next.js Image component
-- **Database Connection Pooling**: MongoDB connection optimization
+- **Prisma + PostgreSQL**: Tip güvenli sorgular ve bağlantı yönetimi
 - **Caching Strategy**: Statik ve dinamik içerik cache'leme
 
 ## 🛠 Teknolojiler
@@ -67,18 +68,18 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 
 | Teknoloji | Versiyon | Kullanım Alanı |
 |-----------|----------|----------------|
-| **Next.js** | 15.3.3 | Framework |
-| **React** | 19.1.0 | UI Library |
-| **Tailwind CSS** | 4.1.10 | Styling |
+| **Next.js** | 15.5.x | Framework |
+| **React** | 19.2.x | UI Library |
+| **Tailwind CSS** | 4.1.x | Styling |
 
 ### Backend
 
 | Teknoloji | Versiyon | Kullanım Alanı |
 |-----------|----------|----------------|
 | **Node.js** | 20.x | Runtime |
-| **Express.js** | 20.x | Runtime |
-| **MongoDB** | 8.1.2 | Veritabanı |
-| **Nodemailer** | 7.0.6 | Email Servisi |
+| **Prisma** | 6.x | ORM |
+| **PostgreSQL** | 14+ | Veritabanı |
+| **Nodemailer** | 7.x | Email Servisi |
 
 ### DevOps & Tools
 
@@ -92,7 +93,7 @@ Bu proje, yazılım geliştirme kariyerim boyunca edindiğim deneyimleri, tamaml
 ### Gereksinimler
 
 - Node.js 18.x veya üzeri
-- MongoDB 8.1.2 veya üzeri
+- PostgreSQL 14 veya üzeri
 - npm veya yarn
 
 ### Adım 1: Projeyi Klonlayın
@@ -115,11 +116,8 @@ yarn install
 `.env.local` dosyası oluşturun:
 
 ```env
-# Database
-DB_HOST=localhost
-DB_USER=your_username
-DB_PASSWORD=your_password
-DB_NAME=portfolio_db
+# PostgreSQL (Prisma)
+DATABASE_URL="postgresql://KULLANICI:SIFRE@localhost:5432/portfolio_db?schema=public"
 
 # Email (Nodemailer)
 EMAIL_USER=your_email@gmail.com
@@ -131,11 +129,20 @@ NODE_ENV=development
 PORT=3000
 ```
 
-### Adım 4: Veritabanını Oluşturun
+### Adım 4: Veritabanını Hazırlayın
 
-MongoDB kullandığımız için ayrıca bir SQL dosyası çalıştırmaya gerek yoktur. Uygulama, ilk çalıştığında Mongoose modelleri aracılığıyla gerekli koleksiyonları otomatik olarak oluşturacaktır.
+PostgreSQL üzerinde `portfolio_db` veritabanını oluşturun, ardından şemayı uygulayın:
 
-İpucu: İlk verilerinizi (örneğin diller, çeviriler, yetenekler) MongoDB Compass veya bir yönetim arayüzü ile portfolio_db veritabanına ekleyebilirsiniz.
+```bash
+npx prisma db push
+# veya migration kullanıyorsanız: npx prisma migrate dev
+```
+
+İsteğe bağlı örnek veriler:
+
+```bash
+npm run seed:all
+```
 
 ### Adım 5: Geliştirme Sunucusunu Başlatın
 
@@ -154,32 +161,24 @@ npm run build
 npm start
 ```
 
-## 🗄 Veritabanı Yapısı (MongoDB Koleksiyonları)
+## 🗄 Veritabanı Yapısı (PostgreSQL / Prisma)
 
-MongoDB, şemasız bir veritabanı olsa da, verilerinizi aşağıdaki koleksiyon ve alan yapılarına göre düzenlemeniz beklenir.
+Şema `prisma/schema.prisma` içinde tanımlıdır. Tablolar (`@@map`) özetle:
 
-### Koleksiyonlar
-
-#### `languages`
-Desteklenen diller
-
-#### `translation`
-Çeviri anahtarları ve değerleri
-
-#### `skills`
-Teknik yetenekler
-
-#### `experience`
-Eğitim ve iş deneyimleri
-
-#### `projects`
-Projeler
+| Tablo | Açıklama |
+|-------|----------|
+| `languages` | Desteklenen diller |
+| `translation_keys` | Çeviri anahtarları |
+| `translation` | Dil bazlı çeviri metinleri |
+| `skills` | Teknik yetenekler |
+| `experience` | Eğitim ve iş deneyimleri |
+| `projects` | Projeler |
 
 ## 🔐 Ortam Değişkenleri
 
 | Değişken | Açıklama | Örnek |
 |----------|----------|-------|
-| `DB_URK` | Veritabanı adı | `portfolio_db` |
+| `DATABASE_URL` | PostgreSQL bağlantı URL’si (Prisma) | `postgresql://user:pass@localhost:5432/portfolio_db` |
 | `EMAIL_USER` | Gönderici email adresi | `your@gmail.com` |
 | `EMAIL_PASS` | Email uygulama şifresi | `xxxx xxxx xxxx xxxx` |
 | `EMAIL_TO` | Alıcı email adresi | `contact@example.com` |
@@ -220,10 +219,14 @@ omerhalisdemir.com.tr/
 │   ├── Footer/
 │   ├── Header/
 │   └── PageComponents/    # Sayfa özel bileşenler
+├── lib/
+│   └── prisma.js          # Prisma istemcisi
+├── prisma/
+│   └── schema.prisma      # PostgreSQL şeması
 ├── public/
 │   ├── images/
 │   └── pdf/
-├── database/              # SQL dosyaları
+├── scripts/               # Seed scriptleri
 ├── .env.local
 ├── next.config.js
 ├── tailwind.config.js
