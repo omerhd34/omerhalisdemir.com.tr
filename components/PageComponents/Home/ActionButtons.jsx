@@ -30,7 +30,7 @@ export default function ActionButtons() {
    </Link>
 
    <Link
-    href="https://www.upwork.com/freelancers/~01f41f1b6bb1a95b5a?s=1110580755107926016"
+    href="https://www.upwork.com/services/product/development-it-full-stack-web-developer-2041191025072031480?ref=fl_profile"
     className="group flex items-center justify-center space-x-2 lg:space-x-3 px-6 lg:px-8 py-1 lg:py-2 bg-linear-to-r bg-muted border hover:border-2 border-info text-primary rounded-2xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 lg:text-base w-full sm:w-auto min-w-[200px]"
     target="blank"
    >
