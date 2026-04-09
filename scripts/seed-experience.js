@@ -75,9 +75,9 @@ const experienceData = [
   location: "Online",
   gpa: null,
   descriptionTr:
-   "Freelance Full Stack Developer olarak e-ticaret, sağlık ve muhasebe sektörlerinde 5+ gerçek müşteri projesi geliştirdim. Next.js, React ve Node.js ile uçtan uca web uygulamaları üretirken, Cursor ve Claude AI gibi araçlarla geliştirme süreçlerini hızlandırıyorum. iyzico ve PayTR ödeme entegrasyonları, admin panel sistemleri ve sipariş takip altyapıları dahil tam kapsamlı çözümler teslim ettim. Tüm projeler aktif olarak kullanımda.",
+   "Freelance Full Stack Developer olarak e-ticaret, sağlık ve muhasebe sektörlerinde 8+ gerçek müşteri projesi geliştirdim. Next.js, React ve Node.js ile uçtan uca web uygulamaları üretirken, Cursor ve Claude AI gibi araçlarla geliştirme süreçlerini hızlandırıyorum. iyzico ve PayTR ödeme entegrasyonları, admin panel sistemleri ve sipariş takip altyapıları dahil tam kapsamlı çözümler teslim ettim. Tüm projeler aktif olarak kullanımda.",
   descriptionEn:
-   "As a freelance Full Stack Developer, I have delivered 5+ real client projects across e-commerce, healthcare, and accounting sectors. I build end-to-end web applications with Next.js, React, and Node.js, while accelerating development workflows with tools like Cursor and Claude AI. I have delivered full-featured solutions including iyzico and PayTR payment integrations, admin panel systems, and order tracking infrastructure. All projects are actively in use.",
+   "As a freelance Full Stack Developer, I have delivered 8+ real client projects across e-commerce, healthcare, and accounting sectors. I build end-to-end web applications with Next.js, React, and Node.js, while accelerating development workflows with tools like Cursor and Claude AI. I have delivered full-featured solutions including iyzico and PayTR payment integrations, admin panel systems, and order tracking infrastructure. All projects are actively in use.",
   technologies: [
    "FaHtml5",
    "FaCss3Alt",
