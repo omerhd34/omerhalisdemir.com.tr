@@ -66,15 +66,15 @@ const projectsData = [
  {
   category: "web",
   titleTr: "Yazıcı Ticaret E-Ticaret Sitesi",
-  titleEn: "Yazıcı Ticaret E-Commerce Website",
+  titleEn: "Yazici Ticaret E-Commerce Website",
   descriptionTr:
    "Beyaz eşya ve ev elektroniği sektöründe faaliyet gösteren Yazıcı Ticaret için geliştirilen tam kapsamlı e-ticaret platformu. Profilo ve LG ürünlerini listeleyen platform; ödeme entegrasyonu, sipariş takip sistemi ve güçlü admin paneliyle aktif olarak kullanılmaktadır.",
   descriptionEn:
-   "A full-featured e-commerce platform developed for Yazıcı Ticaret, operating in the home appliances and electronics sector. Listing Profilo and LG products, the platform is actively used with payment integration, order tracking, and a powerful admin panel.",
+   "A full-featured e-commerce platform developed for Yazici Ticaret, operating in the home appliances and electronics sector. Listing Profilo and LG products, the platform is actively used with payment integration, order tracking, and a powerful admin panel.",
   longDescriptionTr:
    "Yazıcı Ticaret için Next.js, React ve Node.js teknolojileriyle geliştirilen bu e-ticaret platformu, müşterilerin Profilo ve LG gibi markalardan ürün satın almasını, siparişlerini takip etmesini ve hesaplarını yönetmesini sağlar. Ürün filtreleme, karşılaştırma ve arama özellikleriyle kullanıcı deneyimi ön planda tutulmuştur. Güvenli ödeme entegrasyonu ile kredi/banka kartı işlemleri sorunsuz gerçekleşmekte; her sipariş için üretilen benzersiz takip numarası sayesinde müşteriler siparişlerini anlık olarak takip edebilmektedir. Kapsamlı admin paneli aracılığıyla ürün yönetimi, stok takibi, fiyat güncellemeleri ve sipariş süreçleri kolayca yönetilebilmektedir. MongoDB altyapısı ve Vercel deployment ile yüksek performans ve güvenilirlik sağlanmıştır.",
   longDescriptionEn:
-   "Built with Next.js, React, and Node.js for Yazıcı Ticaret, this e-commerce platform allows customers to purchase products from brands like Profilo and LG, track their orders, and manage their accounts. Product filtering, comparison, and search features ensure a smooth user experience. Secure payment integration handles credit and debit card transactions reliably, while unique tracking numbers keep customers informed about their order status in real time. The comprehensive admin panel makes product management, inventory tracking, price updates, and order processing straightforward. MongoDB and Vercel deployment ensure high performance and reliability.",
+   "Built with Next.js, React, and Node.js for Yazici Ticaret, this e-commerce platform allows customers to purchase products from brands like Profilo and LG, track their orders, and manage their accounts. Product filtering, comparison, and search features ensure a smooth user experience. Secure payment integration handles credit and debit card transactions reliably, while unique tracking numbers keep customers informed about their order status in real time. The comprehensive admin panel makes product management, inventory tracking, price updates, and order processing straightforward. MongoDB and Vercel deployment ensure high performance and reliability.",
   status: "completed",
   liveUrl: "https://yazici.gen.tr/",
   technologies: [
@@ -254,15 +254,15 @@ const projectsData = [
  {
   category: "web",
   titleTr: "Yazıcı Ticaret Dijital Katalog Platformu",
-  titleEn: "Yazıcı Ticaret Digital Catalog Platform",
+  titleEn: "Yazici Ticaret Digital Catalog Platform",
   descriptionTr:
    "Beyaz eşya sektöründe faaliyet gösteren Yazıcı Ticaret için geliştirilen dijital katalog ve müşteri talep platformu. Stokta olmayan ürünler için talep oluşturma, benzersiz takip numarasıyla talep sorgulama ve kapsamlı admin paneliyle aktif olarak kullanılan bir çözüm.",
   descriptionEn:
-   "A digital catalog and customer request platform developed for Yazıcı Ticaret, operating in the home appliances sector. An actively used solution featuring request submission for out-of-stock products, request tracking with unique numbers, and a comprehensive admin panel.",
+   "A digital catalog and customer request platform developed for Yazici Ticaret, operating in the home appliances sector. An actively used solution featuring request submission for out-of-stock products, request tracking with unique numbers, and a comprehensive admin panel.",
   longDescriptionTr:
    "Yazıcı Ticaret'in müşterilerine daha iyi hizmet sunmasını sağlamak amacıyla Next.js, React ve Node.js ile geliştirilen bu platform, standart bir katalog sitesinin ötesine geçer. Stokta bulunmayan veya özel ürünler için müşteriler talep formu doldurabilir; her talep için üretilen benzersiz takip numarasıyla taleplerinin güncel durumunu sorgulayabilirler. Entegre iletişim modülü sayesinde müşteriler doğrudan firma yetkilileriyle iletişime geçebilmektedir. Admin paneli aracılığıyla ürün yönetimi, talep durumu güncellemeleri ve iletişim süreçleri kolayca yönetilmektedir. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış, platform cPanel üzerinden yönetilmekte ve aktif olarak kullanılmaktadır.",
   longDescriptionEn:
-   "Developed with Next.js, React, and Node.js to help Yazıcı Ticaret serve its customers more effectively, this platform goes beyond a standard catalog site. Customers can submit request forms for out-of-stock or special products, and track their request status using unique tracking numbers generated for each submission. The integrated communication module allows customers to contact company representatives directly. Product management, request status updates, and communication processes are handled easily through the admin panel. Secure data management is powered by MongoDB and Prisma ORM, and the platform is managed via cPanel and actively in use.",
+   "Developed with Next.js, React, and Node.js to help Yazici Ticaret serve its customers more effectively, this platform goes beyond a standard catalog site. Customers can submit request forms for out-of-stock or special products, and track their request status using unique tracking numbers generated for each submission. The integrated communication module allows customers to contact company representatives directly. Product management, request status updates, and communication processes are handled easily through the admin panel. Secure data management is powered by MongoDB and Prisma ORM, and the platform is managed via cPanel and actively in use.",
   status: "completed",
   technologies: [
    "FaJsSquare",
