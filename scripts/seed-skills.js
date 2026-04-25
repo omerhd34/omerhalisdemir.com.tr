@@ -210,6 +210,14 @@ const skillsData = [
   color: "text-purple-500",
   displayOrder: 26,
  },
+ {
+  categories: ["frontend"],
+  name: "Redux",
+  experience: 3,
+  icon: "SiRedux",
+  color: "text-purple-500",
+  displayOrder: 27,
+ },
 ];
 
 async function seedSkills() {

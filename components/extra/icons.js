@@ -32,6 +32,7 @@ import {
  SiClaude,
  SiOpenai,
  SiStripe,
+ SiRedux,
 } from "react-icons/si";
 
 import { MdElectricBolt, MdDomain } from "react-icons/md";
@@ -79,6 +80,7 @@ export const ICON_MAP = {
  SiStripe,
  TbApi,
  SiPostman,
+ SiRedux,
 };
 
 export const ICON_COLOR_MAP = {
@@ -111,6 +113,7 @@ export const ICON_COLOR_MAP = {
  SiOpenai: "text-adaptive-icon",
  TbApi: "text-green-500",
  SiStripe: "text-purple-500",
+ SiRedux: "text-purple-500",
 
  FcElectronics: "text-blue-500",
  MdElectricBolt: "text-yellow-500",

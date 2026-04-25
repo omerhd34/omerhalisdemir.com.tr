@@ -104,7 +104,7 @@ const experienceData = [
   ],
   achievementsTr: [
    "E-ticaret, sağlık ve muhasebe sektörlerinde 5+ müşteri projesi teslim ettim",
-   "iyzico ve PayTR ödeme entegrasyonlu tam kapsamlı e-ticaret platformu geliştirdim",
+   "iyzico, PayTR ve Shopier ödeme entegrasyonlu tam kapsamlı e-ticaret platformu geliştirdim",
    "Sipariş takip sistemi ve kapsamlı admin paneli içeren çözümler ürettim",
    "Cursor ve Claude AI ile geliştirme süreçlerini hızlandırıyorum",
    "Tüm projeler Vercel ve cPanel üzerinde aktif olarak kullanımda",
@@ -112,7 +112,7 @@ const experienceData = [
   ],
   achievementsEn: [
    "Delivered 5+ client projects across e-commerce, healthcare, and accounting sectors",
-   "Built a full-featured e-commerce platform with iyzico and PayTR payment integration",
+   "Built a full-featured e-commerce platform with iyzico, PayTR and Shopier payment integration",
    "Developed solutions with order tracking systems and comprehensive admin panels",
    "Accelerating development workflows with Cursor and Claude AI",
    "All projects actively running on Vercel and cPanel",

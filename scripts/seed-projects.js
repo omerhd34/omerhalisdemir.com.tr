@@ -65,6 +65,64 @@ const projectsData = [
  },
  {
   category: "web",
+  titleTr: "IQfinansAI",
+  titleEn: "IQfinansAI",
+  descriptionTr:
+   "Google Gemini AI destekli, yeni nesil finansal analiz, görselleştirme ve yönetim platformu. Gelişmiş veri grafikleri ve saatlik güncellenen analizlerle finansal süreçlerinizi tek bir merkezden, güvenle yönetmenizi sağlar.",
+  descriptionEn:
+   "Next-generation, Google Gemini AI-powered financial analysis, visualization, and management platform. It allows you to securely manage your financial processes from a single hub with advanced data charts and hourly updated analytics.",
+  longDescriptionTr:
+   "IQfinansAI, kullanıcıların finansal verilerini Google Gemini AI entegrasyonu ile analiz ederek kişiselleştirilmiş içgörüler ve öngörüler sunan modern bir web uygulamasıdır. Next.js, React ve Redux kullanılarak hızlı ve dinamik bir kullanıcı deneyimi hedeflenirken, arka uçta Node.js, Prisma ve MySQL ile güvenli, ölçeklenebilir bir veri mimarisi kurulmuştur. Uygulama aynı zamanda Recharts ile detaylı grafiksel analizler, PDF formatında finansal raporlama ve NextAuth destekli güvenli kimlik doğrulama altyapısına sahiptir.",
+  longDescriptionEn:
+   "IQfinansAI is a modern web application that leverages Google Gemini AI integration to analyze financial data, providing users with personalized insights and forecasts. Designed for a fast and dynamic user experience using Next.js, React, and Redux, the platform relies on a secure, scalable backend architecture powered by Node.js, Prisma, and MySQL. It also features detailed graphical analysis with Recharts, financial PDF reporting, and a secure authentication infrastructure supported by NextAuth.",
+  status: "completed",
+  liveUrl: "https://www.iqfinansai.com",
+  technologies: [
+   "SiTypescript",
+   "FaReact",
+   "SiNextdotjs",
+   "SiTailwindcss",
+   "FaNodeJs",
+   "SiMysql",
+   "SiPrisma",
+   "SiRedux",
+  ],
+  featuresTr: [
+   "Google Gemini AI tabanlı finansal veri analizi",
+   "Recharts ile detaylı grafiksel görselleştirme",
+   "PDF formatında dinamik finansal rapor oluşturma",
+   "Prisma & MySQL ile güvenli veri yönetimi",
+   "NextAuth ile güvenli kimlik doğrulama",
+   "Güvenli ödeme entegrasyonu"
+  ],
+  featuresEn: [
+   "Google Gemini AI-powered financial data analysis",
+   "Detailed graphical visualization with Recharts",
+   "Dynamic financial report generation in PDF format",
+   "Secure data management with Prisma & MySQL",
+   "Secure authentication with NextAuth",
+   "Secure payment integration"
+  ],
+  teamTr: "Bireysel",
+  teamEn: "Individual",
+  roleTr: "Full Stack Developer",
+  roleEn: "Full Stack Developer",
+  metricsTr: [
+   { label: "Geliştirme Süresi", value: "9 hafta" },
+   { label: "Veritabanı", value: "MySQL" },
+   { label: "Yapay Zeka", value: "Google Gemini" },
+   { label: "Deploy", value: "Vercel" },
+  ],
+  metricsEn: [
+   { label: "Development Time", value: "9 weeks" },
+   { label: "Database", value: "MySQL" },
+   { label: "AI Engine", value: "Google Gemini" },
+   { label: "Deploy", value: "Vercel" },
+  ],
+  displayOrder: 2,
+ },
+ {
+  category: "web",
   titleTr: "Yazıcı Ticaret E-Ticaret Sitesi",
   titleEn: "Yazici Ticaret E-Commerce Website",
   descriptionTr:
@@ -125,7 +183,7 @@ const projectsData = [
    { label: "Payment", value: "Integrated" },
    { label: "Deploy", value: "Vercel" },
   ],
-  displayOrder: 2,
+  displayOrder: 3,
  },
  {
   category: "web",
@@ -188,7 +246,7 @@ const projectsData = [
    { label: "SEO", value: "Server-side Rendering" },
    { label: "Deploy", value: "Vercel" },
   ],
-  displayOrder: 3,
+  displayOrder: 4,
  },
  {
   category: "web",
@@ -249,7 +307,7 @@ const projectsData = [
    { label: "SEO", value: "Server-side Rendering" },
    { label: "Deploy", value: "cPanel" },
   ],
-  displayOrder: 4,
+  displayOrder: 5,
  },
  {
   category: "web",
@@ -309,7 +367,7 @@ const projectsData = [
    { label: "Request Tracking", value: "Unique Number" },
    { label: "Deploy", value: "cPanel" },
   ],
-  displayOrder: 5,
+  displayOrder: 6,
  },
  {
   category: "web",
@@ -369,7 +427,7 @@ const projectsData = [
    { label: "Listings", value: "1,200+" },
    { label: "Deploy", value: "Vercel" },
   ],
-  displayOrder: 6,
+  displayOrder: 7,
  },
  {
   category: "web",
@@ -433,7 +491,7 @@ const projectsData = [
    { label: "Registered Users", value: "900+" },
    { label: "Deploy", value: "Vercel" },
   ],
-  displayOrder: 7,
+  displayOrder: 8,
  },
  {
   category: "web",
@@ -497,7 +555,7 @@ const projectsData = [
    { label: "Product Records", value: "5,000+" },
    { label: "Deploy", value: "Vercel" },
   ],
-  displayOrder: 8,
+  displayOrder: 9,
  },
 ];
 
