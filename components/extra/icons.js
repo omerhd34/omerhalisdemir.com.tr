@@ -33,6 +33,7 @@ import {
  SiOpenai,
  SiStripe,
  SiRedux,
+ SiGooglegemini,
 } from "react-icons/si";
 
 import { MdElectricBolt, MdDomain } from "react-icons/md";
@@ -41,6 +42,7 @@ import { BsCursorFill } from "react-icons/bs";
 import { DiVisualstudio } from "react-icons/di";
 import { GrCertificate } from "react-icons/gr";
 import { TbApi } from "react-icons/tb";
+import IyzicoIcon from "./IyzicoIcon";
 
 export const ICON_MAP = {
  FaGraduationCap,
@@ -81,6 +83,8 @@ export const ICON_MAP = {
  TbApi,
  SiPostman,
  SiRedux,
+ SiGooglegemini,
+ SiIyzico: IyzicoIcon,
 };
 
 export const ICON_COLOR_MAP = {
@@ -113,7 +117,9 @@ export const ICON_COLOR_MAP = {
  SiOpenai: "text-adaptive-icon",
  TbApi: "text-green-500",
  SiStripe: "text-purple-500",
+ SiIyzico: "",
  SiRedux: "text-purple-500",
+ SiGooglegemini: "text-blue-400",
 
  FcElectronics: "text-blue-500",
  MdElectricBolt: "text-yellow-500",

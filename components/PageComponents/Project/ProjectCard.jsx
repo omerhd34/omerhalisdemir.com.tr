@@ -54,6 +54,11 @@ export default function ProjectCard({ project, translations, language, index }) 
   SiPrisma: "Prisma",
   SiPostgresql: "PostgreSQL",
   SiOpenai: "OpenAI",
+  SiRedux: "Redux",
+  SiGooglegemini: "Google Gemini",
+  SiStripe: "Shopier",
+  SiIyzico: "İyzico",
+  TbApi: "RESTful API",
  };
 
  const technologyIcons = useMemo(() => {
