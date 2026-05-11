@@ -7,13 +7,13 @@ const projectsData = [
   titleTr: "Kişisel Portfolio Web Sitesi",
   titleEn: "Personal Portfolio Website",
   descriptionTr:
-   "Next.js ve React ile geliştirdiğim, TR/EN çoklu dil desteği, dinamik proje yönetimi ve iletişim formu entegrasyonu içeren kişisel portföy platformu. Hem teknik yetkinliğimi hem de gerçek müşteri projelerimi sergileyen aktif bir dijital vitrin.",
+   "Next.js ve React ile geliştirdiğim, RESTful API üzerinden bağlanan TR/EN çoklu dil desteği, dinamik proje yönetimi ve iletişim formu entegrasyonu içeren kişisel portföy platformu. Hem teknik yetkinliğimi hem de gerçek müşteri projelerimi sergileyen aktif bir dijital vitrin.",
   descriptionEn:
-   "A personal portfolio platform developed with Next.js and React, featuring TR/EN multi-language support, dynamic project management, and contact form integration. An active digital showcase presenting both my technical skills and real client projects.",
+   "A personal portfolio platform developed with Next.js and React, with TR/EN multi-language support, dynamic project management, and contact form integration connected through a RESTful API. An active digital showcase presenting both my technical skills and real client projects.",
   longDescriptionTr:
-   "Bu portföy platformu, Next.js, React ve Node.js teknolojileriyle geliştirilmiş; PostgreSQL ve Prisma ORM ile güvenli bir veri katmanı kurulmuştur. TR/EN çoklu dil desteği, SSR ile SEO optimizasyonu ve gelişmiş animasyonlar kullanıcı deneyimini ön plana çıkarır. Dinamik içerik yönetimi sayesinde yeni projeler ve deneyimler kolayca güncellenebilmektedir. İletişim formu entegrasyonu ile ziyaretçiler doğrudan iletişime geçebilir. Vercel üzerinde yayınlanan platform aktif olarak kullanılmakta ve sürekli geliştirilmektedir.",
+   "Bu portföy platformu, Next.js, React ve Node.js teknolojileriyle geliştirilmiş; arayüz ile sunucu arasındaki tüm veri akışı RESTful API katmanı üzerinden kurulmuştur. PostgreSQL ve Prisma ORM ile güvenli bir veri katmanı sağlanırken, proje, deneyim ve iletişim formu işlemleri aynı API mimarisiyle yönetilir. TR/EN çoklu dil desteği, SSR ile SEO optimizasyonu ve gelişmiş animasyonlar kullanıcı deneyimini ön plana çıkarır. Dinamik içerik yönetimi sayesinde yeni projeler ve deneyimler kolayca güncellenebilmektedir. Vercel üzerinde yayınlanan platform aktif olarak kullanılmakta ve sürekli geliştirilmektedir.",
   longDescriptionEn:
-   "This portfolio platform is built with Next.js, React, and Node.js, with a secure data layer powered by PostgreSQL and Prisma ORM. TR/EN multi-language support, SSR-based SEO optimization, and advanced animations put user experience at the forefront. Dynamic content management allows new projects and experiences to be updated with ease. Contact form integration enables visitors to reach out directly. Published on Vercel, the platform is actively used and continuously improved.",
+   "This portfolio platform is built with Next.js, React, and Node.js, with all data flow between the interface and server established through a RESTful API layer. A secure data layer powered by PostgreSQL and Prisma ORM supports project, experience, and contact form operations through the same API architecture. TR/EN multi-language support, SSR-based SEO optimization, and advanced animations put user experience at the forefront. Dynamic content management allows new projects and experiences to be updated with ease. Published on Vercel, the platform is actively used and continuously improved.",
   status: "completed",
   technologies: [
    "FaJsSquare",
@@ -23,6 +23,8 @@ const projectsData = [
    "SiPostgresql",
    "SiPrisma",
    "FaNodeJs",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Çok dilli destek (TR/EN)",
@@ -30,6 +32,7 @@ const projectsData = [
    "SEO optimizasyonu (SSR)",
    "Gelişmiş animasyonlar",
    "İletişim formu entegrasyonu",
+   "RESTful API ile istemci-sunucu bağlantısı",
    "Responsive tasarım",
    "Güvenli ve ölçeklenebilir altyapı",
    "Bileşen tabanlı mimari",
@@ -40,6 +43,7 @@ const projectsData = [
    "SEO optimization (SSR)",
    "Advanced animations",
    "Contact form integration",
+   "Client-server connectivity via RESTful API",
    "Responsive design",
    "Secure and scalable infrastructure",
    "Component-based architecture",
@@ -50,16 +54,14 @@ const projectsData = [
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "3 hafta" },
+   { label: "Geliştirme Süresi", value: "6 hafta" },
    { label: "Dil Desteği", value: "TR / EN" },
    { label: "Durum", value: "Aktif" },
-   { label: "Deploy", value: "Vercel" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "3 weeks" },
+   { label: "Development Time", value: "6 weeks" },
    { label: "Language Support", value: "TR / EN" },
    { label: "Status", value: "Active & Improving" },
-   { label: "Deploy", value: "Vercel" },
   ],
   displayOrder: 1,
  },
@@ -68,13 +70,13 @@ const projectsData = [
   titleTr: "IQfinansAI",
   titleEn: "IQfinansAI",
   descriptionTr:
-   "Google Gemini AI destekli, yeni nesil finansal analiz, görselleştirme ve yönetim platformu. Gelişmiş veri grafikleri ve saatlik güncellenen analizlerle finansal süreçlerinizi tek bir merkezden, güvenle yönetmenizi sağlar.",
+   "Google Gemini AI destekli, RESTful API ile bağlanan yeni nesil finansal analiz, görselleştirme ve yönetim platformu. Gelişmiş veri grafikleri ve saatlik güncellenen analizlerle finansal süreçlerinizi tek bir merkezden, güvenle yönetmenizi sağlar.",
   descriptionEn:
-   "Next-generation, Google Gemini AI-powered financial analysis, visualization, and management platform. It allows you to securely manage your financial processes from a single hub with advanced data charts and hourly updated analytics.",
+   "A next-generation, Google Gemini AI-powered financial analysis, visualization, and management platform connected through a RESTful API. It allows you to securely manage your financial processes from a single hub with advanced data charts and hourly updated analytics.",
   longDescriptionTr:
-   "IQfinansAI, kullanıcıların finansal verilerini Google Gemini AI entegrasyonu ile analiz ederek kişiselleştirilmiş içgörüler ve öngörüler sunan modern bir web uygulamasıdır. Next.js, React ve Redux kullanılarak hızlı ve dinamik bir kullanıcı deneyimi hedeflenirken, arka uçta Node.js, Prisma ve MySQL ile güvenli, ölçeklenebilir bir veri mimarisi kurulmuştur. Uygulama aynı zamanda Recharts ile detaylı grafiksel analizler, PDF formatında finansal raporlama ve NextAuth destekli güvenli kimlik doğrulama altyapısına sahiptir.",
+   "IQfinansAI, kullanıcıların finansal verilerini Google Gemini AI entegrasyonu ile analiz ederek kişiselleştirilmiş içgörüler ve öngörüler sunan modern bir web uygulamasıdır. Next.js, React ve Redux ile sunulan arayüz; analiz, raporlama, kimlik doğrulama ve ödeme süreçlerini Node.js üzerindeki RESTful API uçlarına bağlar. Arka uçta Prisma ve MySQL ile güvenli, ölçeklenebilir bir veri mimarisi kurulmuştur. Uygulama aynı zamanda Recharts ile detaylı grafiksel analizler, PDF formatında finansal raporlama ve NextAuth destekli güvenli kimlik doğrulama altyapısına sahiptir.",
   longDescriptionEn:
-   "IQfinansAI is a modern web application that leverages Google Gemini AI integration to analyze financial data, providing users with personalized insights and forecasts. Designed for a fast and dynamic user experience using Next.js, React, and Redux, the platform relies on a secure, scalable backend architecture powered by Node.js, Prisma, and MySQL. It also features detailed graphical analysis with Recharts, financial PDF reporting, and a secure authentication infrastructure supported by NextAuth.",
+   "IQfinansAI is a modern web application that leverages Google Gemini AI integration to analyze financial data, providing users with personalized insights and forecasts. The interface built with Next.js, React, and Redux connects analysis, reporting, authentication, and payment workflows to RESTful API endpoints on Node.js. The platform relies on a secure, scalable backend architecture powered by Prisma and MySQL. It also features detailed graphical analysis with Recharts, financial PDF reporting, and a secure authentication infrastructure supported by NextAuth.",
   status: "completed",
   liveUrl: "https://www.iqfinansai.com",
   technologies: [
@@ -86,6 +88,10 @@ const projectsData = [
    "SiMysql",
    "SiPrisma",
    "SiRedux",
+   "SiGooglegemini",
+   "SiStripe",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Google Gemini AI tabanlı finansal veri analizi",
@@ -93,7 +99,8 @@ const projectsData = [
    "PDF formatında dinamik finansal rapor oluşturma",
    "Prisma & MySQL ile güvenli veri yönetimi",
    "NextAuth ile güvenli kimlik doğrulama",
-   "Güvenli ödeme entegrasyonu"
+   "Güvenli ödeme entegrasyonu",
+   "RESTful API ile servis ve veri bağlantısı"
   ],
   featuresEn: [
    "Google Gemini AI-powered financial data analysis",
@@ -101,23 +108,24 @@ const projectsData = [
    "Dynamic financial report generation in PDF format",
    "Secure data management with Prisma & MySQL",
    "Secure authentication with NextAuth",
-   "Secure payment integration"
+   "Secure payment integration",
+   "Service and data connectivity via RESTful API"
   ],
   teamTr: "Bireysel",
   teamEn: "Individual",
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "9 hafta" },
-   { label: "Veritabanı", value: "MySQL" },
-   { label: "Yapay Zeka", value: "Google Gemini" },
-   { label: "Deploy", value: "Vercel" },
+   { label: "Geliştirme Süresi", value: "12 hafta" },
+   { label: "Durum", value: "Aktif" },
+   { label: "Ödeme", value: "Entegre" },
+   { label: "Kayıtlı Kullanıcı", value: "500+" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "9 weeks" },
-   { label: "Database", value: "MySQL" },
-   { label: "AI Engine", value: "Google Gemini" },
-   { label: "Deploy", value: "Vercel" },
+   { label: "Development Time", value: "12 weeks" },
+   { label: "Status", value: "Actively Used" },
+   { label: "Payment", value: "Integrated" },
+   { label: "Registered Users", value: "500+" },
   ],
   displayOrder: 2,
  },
@@ -126,13 +134,13 @@ const projectsData = [
   titleTr: "Yazıcı Ticaret E-Ticaret Sitesi",
   titleEn: "Yazici Ticaret E-Commerce Website",
   descriptionTr:
-   "Beyaz eşya ve ev elektroniği sektöründe faaliyet gösteren Yazıcı Ticaret için geliştirilen tam kapsamlı e-ticaret platformu. Profilo ve LG ürünlerini listeleyen platform; ödeme entegrasyonu, sipariş takip sistemi ve güçlü admin paneliyle aktif olarak kullanılmaktadır.",
+   "Beyaz eşya ve ev elektroniği sektöründe faaliyet gösteren Yazıcı Ticaret için geliştirilen tam kapsamlı e-ticaret platformu. RESTful API üzerinden bağlanan ürün, sipariş, ödeme ve admin süreçleriyle Profilo ve LG ürünlerini listeleyen platform aktif olarak kullanılmaktadır.",
   descriptionEn:
-   "A full-featured e-commerce platform developed for Yazici Ticaret, operating in the home appliances and electronics sector. Listing Profilo and LG products, the platform is actively used with payment integration, order tracking, and a powerful admin panel.",
+   "A full-featured e-commerce platform developed for Yazici Ticaret, operating in the home appliances and electronics sector. Product, order, payment, and admin workflows connected through a RESTful API; the platform listing Profilo and LG products is actively used.",
   longDescriptionTr:
-   "Yazıcı Ticaret için Next.js, React ve Node.js teknolojileriyle geliştirilen bu e-ticaret platformu, müşterilerin Profilo ve LG gibi markalardan ürün satın almasını, siparişlerini takip etmesini ve hesaplarını yönetmesini sağlar. Ürün filtreleme, karşılaştırma ve arama özellikleriyle kullanıcı deneyimi ön planda tutulmuştur. Güvenli ödeme entegrasyonu ile kredi/banka kartı işlemleri sorunsuz gerçekleşmekte; her sipariş için üretilen benzersiz takip numarası sayesinde müşteriler siparişlerini anlık olarak takip edebilmektedir. Kapsamlı admin paneli aracılığıyla ürün yönetimi, stok takibi, fiyat güncellemeleri ve sipariş süreçleri kolayca yönetilebilmektedir. MongoDB altyapısı ve Vercel deployment ile yüksek performans ve güvenilirlik sağlanmıştır.",
+   "Yazıcı Ticaret için Next.js, React ve Node.js teknolojileriyle geliştirilen bu e-ticaret platformu, müşterilerin Profilo ve LG gibi markalardan ürün satın almasını, siparişlerini takip etmesini ve hesaplarını yönetmesini sağlar. Mağaza, sepet, sipariş, ödeme ve yönetim paneli RESTful API katmanı üzerinden aynı veri modeline bağlanır. Ürün filtreleme, karşılaştırma ve arama özellikleriyle kullanıcı deneyimi ön planda tutulmuştur. Güvenli ödeme entegrasyonu ile kredi/banka kartı işlemleri sorunsuz gerçekleşmekte; her sipariş için üretilen benzersiz takip numarası sayesinde müşteriler siparişlerini anlık olarak takip edebilmektedir. Kapsamlı admin paneli aracılığıyla ürün yönetimi, stok takibi, fiyat güncellemeleri ve sipariş süreçleri kolayca yönetilebilmektedir. MongoDB altyapısı ve Vercel deployment ile yüksek performans ve güvenilirlik sağlanmıştır.",
   longDescriptionEn:
-   "Built with Next.js, React, and Node.js for Yazici Ticaret, this e-commerce platform allows customers to purchase products from brands like Profilo and LG, track their orders, and manage their accounts. Product filtering, comparison, and search features ensure a smooth user experience. Secure payment integration handles credit and debit card transactions reliably, while unique tracking numbers keep customers informed about their order status in real time. The comprehensive admin panel makes product management, inventory tracking, price updates, and order processing straightforward. MongoDB and Vercel deployment ensure high performance and reliability.",
+   "Built with Next.js, React, and Node.js for Yazici Ticaret, this e-commerce platform allows customers to purchase products from brands like Profilo and LG, track their orders, and manage their accounts. Storefront, cart, order, payment, and admin panel connect to the same data model through a RESTful API layer. Product filtering, comparison, and search features ensure a smooth user experience. Secure payment integration handles credit and debit card transactions reliably, while unique tracking numbers keep customers informed about their order status in real time. The comprehensive admin panel makes product management, inventory tracking, price updates, and order processing straightforward. MongoDB and Vercel deployment ensure high performance and reliability.",
   status: "completed",
   liveUrl: "https://yazici.gen.tr/",
   technologies: [
@@ -142,6 +150,9 @@ const projectsData = [
    "SiTailwindcss",
    "SiMongodb",
    "FaNodeJs",
+   "SiIyzico",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Güvenli ödeme entegrasyonu",
@@ -153,6 +164,7 @@ const projectsData = [
    "Server-side rendering & SEO",
    "Responsive tasarım",
    "Favoriye ekleme",
+   "RESTful API ile e-ticaret servis bağlantısı",
    "Bileşen tabanlı mimari",
   ],
   featuresEn: [
@@ -165,6 +177,7 @@ const projectsData = [
    "Server-side rendering & SEO",
    "Responsive design",
    "Add to favorites",
+   "E-commerce service connectivity via RESTful API",
    "Component-based architecture",
   ],
   teamTr: "Bireysel",
@@ -172,16 +185,14 @@ const projectsData = [
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "7 hafta" },
+   { label: "Geliştirme Süresi", value: "11 hafta" },
    { label: "Durum", value: "Aktif" },
    { label: "Ödeme", value: "Entegre" },
-   { label: "Deploy", value: "Vercel" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "7 weeks" },
+   { label: "Development Time", value: "11 weeks" },
    { label: "Status", value: "Actively Used" },
    { label: "Payment", value: "Integrated" },
-   { label: "Deploy", value: "Vercel" },
   ],
   displayOrder: 3,
  },
@@ -190,13 +201,13 @@ const projectsData = [
   titleTr: "Uzman Klinik Psikolog Web Sitesi",
   titleEn: "Expert Clinical Psychologist Website",
   descriptionTr:
-   "Uzman Klinik Psikolog Nisa Demir için geliştirilen profesyonel web platformu. Randevu talep sistemi, SEO optimizasyonu ve dinamik içerik yönetimiyle psikologun dijital varlığını güçlendiren, aktif olarak kullanılan bir çözüm.",
+   "Uzman Klinik Psikolog Nisa Demir için geliştirilen profesyonel web platformu. Randevu talebi, içerik ve iletişim süreçleri RESTful API üzerinden bağlanır; SEO optimizasyonu ve dinamik içerik yönetimiyle psikologun dijital varlığını güçlendiren aktif bir çözüm.",
   descriptionEn:
-   "A professional web platform developed for Expert Clinical Psychologist Nisa Demir. Featuring an appointment request system, SEO optimization, and dynamic content management — actively used by the client to strengthen their digital presence.",
+   "A professional web platform developed for Expert Clinical Psychologist Nisa Demir. Appointment requests, content, and contact workflows connect through a RESTful API, with SEO optimization and dynamic content management — actively used by the client to strengthen their digital presence.",
   longDescriptionTr:
-   "Uzman Klinik Psikolog Nisa Demir'in potansiyel danışanlarına ulaşmasını kolaylaştırmak amacıyla Next.js ve React ile geliştirilen tam kapsamlı bir web platformu. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış; randevu talep sistemi ile ziyaretçiler doğrudan uzmanla iletişime geçebilmektedir. Server-side rendering ile SEO skoru optimize edilmiş, Tailwind CSS ile tüm cihazlarda tutarlı kullanıcı deneyimi sunulmuştur. Vercel üzerinde yayınlanan platform, müşteri tarafından aktif olarak kullanılmaktadır.",
+   "Uzman Klinik Psikolog Nisa Demir'in potansiyel danışanlarına ulaşmasını kolaylaştırmak amacıyla Next.js ve React ile geliştirilen tam kapsamlı bir web platformu. Randevu talepleri, içerik güncellemeleri ve iletişim formları RESTful API katmanı üzerinden sunucuya iletilir. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış; ziyaretçiler doğrudan uzmanla iletişime geçebilmektedir. Server-side rendering ile SEO skoru optimize edilmiş, Tailwind CSS ile tüm cihazlarda tutarlı kullanıcı deneyimi sunulmuştur. Vercel üzerinde yayınlanan platform, müşteri tarafından aktif olarak kullanılmaktadır.",
   longDescriptionEn:
-   "A full-featured web platform built with Next.js and React to help Expert Clinical Psychologist Nisa Demir reach potential clients online. Secure data management is handled via MongoDB and Prisma ORM, while the integrated appointment request system allows visitors to contact the specialist directly. Server-side rendering ensures strong SEO performance, and Tailwind CSS delivers a consistent experience across all devices. The platform is live on Vercel and actively used by the client.",
+   "A full-featured web platform built with Next.js and React to help Expert Clinical Psychologist Nisa Demir reach potential clients online. Appointment requests, content updates, and contact forms reach the server through a RESTful API layer. Secure data management is handled via MongoDB and Prisma ORM, allowing visitors to contact the specialist directly. Server-side rendering ensures strong SEO performance, and Tailwind CSS delivers a consistent experience across all devices. The platform is live on Vercel and actively used by the client.",
   status: "completed",
   technologies: [
    "FaJsSquare",
@@ -206,6 +217,8 @@ const projectsData = [
    "SiMongodb",
    "SiPrisma",
    "FaNodeJs",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Randevu talep sistemi",
@@ -217,6 +230,7 @@ const projectsData = [
    "Bileşen tabanlı mimari",
    "Performans optimizasyonu",
    "Erişilebilirlik özellikleri",
+   "RESTful API ile randevu ve içerik bağlantısı",
   ],
   featuresEn: [
    "Appointment booking system",
@@ -228,6 +242,7 @@ const projectsData = [
    "Component-based architecture",
    "Performance optimization",
    "Accessibility features",
+   "Appointment and content connectivity via RESTful API",
   ],
   liveUrl: "https://nisademir.com/",
   teamTr: "Bireysel",
@@ -235,16 +250,12 @@ const projectsData = [
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "1.5 hafta" },
+   { label: "Geliştirme Süresi", value: "4 hafta" },
    { label: "Durum", value: "Aktif" },
-   { label: "SEO", value: "Server-side Rendering" },
-   { label: "Deploy", value: "Vercel" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "1.5 weeks" },
+   { label: "Development Time", value: "4 weeks" },
    { label: "Status", value: "Actively Used" },
-   { label: "SEO", value: "Server-side Rendering" },
-   { label: "Deploy", value: "Vercel" },
   ],
   displayOrder: 4,
  },
@@ -253,13 +264,13 @@ const projectsData = [
   titleTr: "Mali Müşavir Web Platformu",
   titleEn: "Certified Public Accountant Web Platform",
   descriptionTr:
-   "Serbest Muhasebeci Mali Müşavir Şahin Demir için geliştirilen profesyonel web platformu. SEO optimizasyonu ve dinamik içerik yönetimiyle müşavirin dijital varlığını güçlendiren, koyu/açık mod desteğiyle kişiselleştirilmiş kullanıcı deneyimi sunan aktif bir çözüm.",
+   "Serbest Muhasebeci Mali Müşavir Şahin Demir için geliştirilen profesyonel web platformu. İçerik ve iletişim akışı RESTful API üzerinden bağlanır; SEO optimizasyonu ve dinamik içerik yönetimiyle müşavirin dijital varlığını güçlendiren, koyu/açık mod desteğiyle kişiselleştirilmiş kullanıcı deneyimi sunan aktif bir çözüm.",
   descriptionEn:
-   "A professional web platform developed for Certified Public Accountant Şahin Demir. An actively used solution that strengthens the accountant's digital presence with SEO optimization and dynamic content management, offering a personalized user experience with dark/light mode support.",
+   "A professional web platform developed for Certified Public Accountant Şahin Demir. Content and contact flows connect through a RESTful API, with SEO optimization and dynamic content management strengthening the accountant's digital presence and dark/light mode support for a personalized experience.",
   longDescriptionTr:
-   "Mali Müşavir Şahin Demir'in potansiyel müşterilere ulaşmasını kolaylaştırmak amacıyla Next.js ve React ile geliştirilen bu platform, muhasebe hizmetlerini dijital ortamda etkili biçimde sunmaktadır. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış; iletişim formu entegrasyonu sayesinde ziyaretçiler doğrudan müşavirle bağlantı kurabilmektedir. Server-side rendering ile SEO skoru optimize edilmiş, dinamik içerik yönetimiyle site güncellemeleri kolaylaştırılmıştır. Koyu/açık mod özelliği, kullanıcılara tercihlerine göre kişiselleştirilmiş bir görsel deneyim sunar. Platform, ixirhost domainiyle cPanel üzerinden yönetilmekte ve aktif olarak kullanılmaktadır.",
+   "Mali Müşavir Şahin Demir'in potansiyel müşterilere ulaşmasını kolaylaştırmak amacıyla Next.js ve React ile geliştirilen bu platform, muhasebe hizmetlerini dijital ortamda etkili biçimde sunmaktadır. İçerik yönetimi ve iletişim formu RESTful API katmanı üzerinden sunucuya bağlanır. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış; ziyaretçiler doğrudan müşavirle bağlantı kurabilmektedir. Server-side rendering ile SEO skoru optimize edilmiş, dinamik içerik yönetimiyle site güncellemeleri kolaylaştırılmıştır. Koyu/açık mod özelliği, kullanıcılara tercihlerine göre kişiselleştirilmiş bir görsel deneyim sunar. Platform, ixirhost domainiyle cPanel üzerinden yönetilmekte ve aktif olarak kullanılmaktadır.",
   longDescriptionEn:
-   "Developed with Next.js and React to help Certified Public Accountant Şahin Demir reach potential clients, this platform effectively presents accounting services in the digital space. Secure data management is handled via MongoDB and Prisma ORM, while contact form integration allows visitors to connect with the accountant directly. Server-side rendering ensures strong SEO performance, and dynamic content management simplifies site updates. The dark/light mode feature provides a personalized visual experience based on user preferences. The platform is managed via cPanel with an ixirhost domain and is actively in use.",
+   "Developed with Next.js and React to help Certified Public Accountant Şahin Demir reach potential clients, this platform effectively presents accounting services in the digital space. Content management and the contact form connect to the server through a RESTful API layer. Secure data management is handled via MongoDB and Prisma ORM, allowing visitors to connect with the accountant directly. Server-side rendering ensures strong SEO performance, and dynamic content management simplifies site updates. The dark/light mode feature provides a personalized visual experience based on user preferences. The platform is managed via cPanel with an ixirhost domain and is actively in use.",
   status: "completed",
   technologies: [
    "FaJsSquare",
@@ -269,6 +280,8 @@ const projectsData = [
    "SiMongodb",
    "SiPrisma",
    "FaNodeJs",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "SEO optimizasyonu (SSR)",
@@ -279,6 +292,7 @@ const projectsData = [
    "Güvenli ve ölçeklenebilir altyapı",
    "Bileşen tabanlı mimari",
    "Veritabanı entegrasyonu",
+   "RESTful API ile içerik ve iletişim bağlantısı",
   ],
   featuresEn: [
    "SEO optimization (SSR)",
@@ -289,6 +303,7 @@ const projectsData = [
    "Secure and scalable infrastructure",
    "Component-based architecture",
    "Database integration",
+   "Content and contact connectivity via RESTful API",
   ],
   liveUrl: "https://onlinemuhasebe.org/",
   teamTr: "Bireysel",
@@ -296,16 +311,12 @@ const projectsData = [
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "1.5 hafta" },
+   { label: "Geliştirme Süresi", value: "4 hafta" },
    { label: "Durum", value: "Aktif" },
-   { label: "SEO", value: "Server-side Rendering" },
-   { label: "Deploy", value: "cPanel" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "1.5 weeks" },
+   { label: "Development Time", value: "4 weeks" },
    { label: "Status", value: "Actively Used" },
-   { label: "SEO", value: "Server-side Rendering" },
-   { label: "Deploy", value: "cPanel" },
   ],
   displayOrder: 5,
  },
@@ -314,13 +325,13 @@ const projectsData = [
   titleTr: "Yazıcı Ticaret Dijital Katalog Platformu",
   titleEn: "Yazici Ticaret Digital Catalog Platform",
   descriptionTr:
-   "Beyaz eşya sektöründe faaliyet gösteren Yazıcı Ticaret için geliştirilen dijital katalog ve müşteri talep platformu. Stokta olmayan ürünler için talep oluşturma, benzersiz takip numarasıyla talep sorgulama ve kapsamlı admin paneliyle aktif olarak kullanılan bir çözüm.",
+   "Beyaz eşya sektöründe faaliyet gösteren Yazıcı Ticaret için geliştirilen dijital katalog ve müşteri talep platformu. Katalog, talep ve iletişim süreçleri RESTful API üzerinden bağlanır; stokta olmayan ürünler için talep oluşturma, benzersiz takip numarasıyla sorgulama ve kapsamlı admin paneliyle aktif olarak kullanılan bir çözüm.",
   descriptionEn:
-   "A digital catalog and customer request platform developed for Yazici Ticaret, operating in the home appliances sector. An actively used solution featuring request submission for out-of-stock products, request tracking with unique numbers, and a comprehensive admin panel.",
+   "A digital catalog and customer request platform developed for Yazici Ticaret, operating in the home appliances sector. Catalog, request, and communication workflows connect through a RESTful API, with request submission for out-of-stock products, tracking with unique numbers, and a comprehensive admin panel.",
   longDescriptionTr:
-   "Yazıcı Ticaret'in müşterilerine daha iyi hizmet sunmasını sağlamak amacıyla Next.js, React ve Node.js ile geliştirilen bu platform, standart bir katalog sitesinin ötesine geçer. Stokta bulunmayan veya özel ürünler için müşteriler talep formu doldurabilir; her talep için üretilen benzersiz takip numarasıyla taleplerinin güncel durumunu sorgulayabilirler. Entegre iletişim modülü sayesinde müşteriler doğrudan firma yetkilileriyle iletişime geçebilmektedir. Admin paneli aracılığıyla ürün yönetimi, talep durumu güncellemeleri ve iletişim süreçleri kolayca yönetilmektedir. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış, platform cPanel üzerinden yönetilmekte ve aktif olarak kullanılmaktadır.",
+   "Yazıcı Ticaret'in müşterilerine daha iyi hizmet sunmasını sağlamak amacıyla Next.js, React ve Node.js ile geliştirilen bu platform, standart bir katalog sitesinin ötesine geçer. Ürün kataloğu, talep oluşturma, durum sorgulama ve iletişim modülü RESTful API katmanı üzerinden aynı veri modeline bağlanır. Stokta bulunmayan veya özel ürünler için müşteriler talep formu doldurabilir; her talep için üretilen benzersiz takip numarasıyla taleplerinin güncel durumunu sorgulayabilirler. Entegre iletişim modülü sayesinde müşteriler doğrudan firma yetkilileriyle iletişime geçebilmektedir. Admin paneli aracılığıyla ürün yönetimi, talep durumu güncellemeleri ve iletişim süreçleri kolayca yönetilmektedir. MongoDB ve Prisma ORM altyapısıyla güvenli veri yönetimi sağlanmış, platform cPanel üzerinden yönetilmekte ve aktif olarak kullanılmaktadır.",
   longDescriptionEn:
-   "Developed with Next.js, React, and Node.js to help Yazici Ticaret serve its customers more effectively, this platform goes beyond a standard catalog site. Customers can submit request forms for out-of-stock or special products, and track their request status using unique tracking numbers generated for each submission. The integrated communication module allows customers to contact company representatives directly. Product management, request status updates, and communication processes are handled easily through the admin panel. Secure data management is powered by MongoDB and Prisma ORM, and the platform is managed via cPanel and actively in use.",
+   "Developed with Next.js, React, and Node.js to help Yazici Ticaret serve its customers more effectively, this platform goes beyond a standard catalog site. The product catalog, request submission, status lookup, and communication module connect to the same data model through a RESTful API layer. Customers can submit request forms for out-of-stock or special products, and track their request status using unique tracking numbers generated for each submission. The integrated communication module allows customers to contact company representatives directly. Product management, request status updates, and communication processes are handled easily through the admin panel. Secure data management is powered by MongoDB and Prisma ORM, and the platform is managed via cPanel and actively in use.",
   status: "completed",
   technologies: [
    "FaJsSquare",
@@ -330,6 +341,8 @@ const projectsData = [
    "SiMongodb",
    "SiPrisma",
    "FaNodeJs",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Ürün talep oluşturma sistemi",
@@ -340,6 +353,7 @@ const projectsData = [
    "Server-side rendering & SEO",
    "Responsive tasarım",
    "Güvenli ve ölçeklenebilir altyapı",
+   "RESTful API ile talep ve katalog bağlantısı",
   ],
   featuresEn: [
    "Product request submission system",
@@ -350,22 +364,21 @@ const projectsData = [
    "Server-side rendering & SEO",
    "Responsive design",
    "Secure and scalable infrastructure",
+   "Request and catalog connectivity via RESTful API",
   ],
   teamTr: "Bireysel",
   teamEn: "Individual",
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "1 hafta" },
+   { label: "Geliştirme Süresi", value: "4 hafta" },
    { label: "Durum", value: "Aktif değil" },
-   { label: "Talep Takibi", value: "Benzersiz No ile" },
-   { label: "Deploy", value: "cPanel" },
+   { label: "Talep Takibi", value: "No ile" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "1 week" },
+   { label: "Development Time", value: "4 week" },
    { label: "Status", value: "Not active" },
    { label: "Request Tracking", value: "Unique Number" },
-   { label: "Deploy", value: "cPanel" },
   ],
   displayOrder: 6,
  },
@@ -373,10 +386,10 @@ const projectsData = [
   category: "web",
   titleTr: "Emlak Platformu",
   titleEn: "Real Estate Platform",
-  descriptionTr: "Konut ve ticari gayrimenkul ilanlarını bir araya getiren modern emlak platformu. Harita tabanlı arama, sanal tur ve randevu sistemiyle aktif olarak kullanılmaktadır.",
-  descriptionEn: "A modern real estate platform bringing together residential and commercial listings. Actively used with map-based search, virtual tour, and appointment booking features.",
-  longDescriptionTr: "Next.js ve Prisma ile geliştirilen bu platform, kullanıcıların harita üzerinde konum bazlı mülk araması yapmasına, 360° sanal tur izlemesine ve doğrudan ilan sahibiyle randevu almasına olanak tanır. Gelişmiş filtre sistemi (fiyat aralığı, oda sayısı, metrekare, ısıtma tipi) sayesinde kullanıcılar istedikleri mülke hızla ulaşabilmektedir. İlan sahipleri için sunulan kapsamlı dashboard üzerinden ilan yönetimi, görüntülenme istatistikleri ve mesajlaşma özellikleri bulunmaktadır. PostgreSQL ve Prisma ORM altyapısı, Railway üzerinde deploy edilmiştir.",
-  longDescriptionEn: "Built with Next.js and Prisma, this platform lets users search for properties on a map, view 360° virtual tours, and book appointments directly with listing owners. Advanced filters (price range, room count, square footage, heating type) make it easy to find the right property. The comprehensive owner dashboard includes listing management, view statistics, and messaging. Backed by PostgreSQL and Prisma ORM, deployed on Railway.",
+  descriptionTr: "Konut ve ticari gayrimenkul ilanlarını bir araya getiren modern emlak platformu. İlan, arama, randevu ve mesajlaşma süreçleri RESTful API üzerinden bağlanır; harita tabanlı arama, sanal tur ve randevu sistemiyle aktif olarak kullanılmaktadır.",
+  descriptionEn: "A modern real estate platform bringing together residential and commercial listings. Listing, search, appointment, and messaging workflows connect through a RESTful API, with map-based search, virtual tours, and appointment booking in active use.",
+  longDescriptionTr: "Next.js ve Prisma ile geliştirilen bu platform, kullanıcıların harita üzerinde konum bazlı mülk araması yapmasına, 360° sanal tur izlemesine ve doğrudan ilan sahibiyle randevu almasına olanak tanır. İlan listeleme, filtreleme, randevu ve mesajlaşma RESTful API katmanı üzerinden aynı veri modeline bağlanır. Gelişmiş filtre sistemi (fiyat aralığı, oda sayısı, metrekare, ısıtma tipi) sayesinde kullanıcılar istedikleri mülke hızla ulaşabilmektedir. İlan sahipleri için sunulan kapsamlı dashboard üzerinden ilan yönetimi, görüntülenme istatistikleri ve mesajlaşma özellikleri bulunmaktadır. PostgreSQL ve Prisma ORM altyapısı, Railway üzerinde deploy edilmiştir.",
+  longDescriptionEn: "Built with Next.js and Prisma, this platform lets users search for properties on a map, view 360° virtual tours, and book appointments directly with listing owners. Listing, filtering, appointment, and messaging flows connect to the same data model through a RESTful API layer. Advanced filters (price range, room count, square footage, heating type) make it easy to find the right property. The comprehensive owner dashboard includes listing management, view statistics, and messaging. Backed by PostgreSQL and Prisma ORM, deployed on Railway.",
   status: "completed",
   technologies: [
    "SiTypescript",
@@ -386,6 +399,8 @@ const projectsData = [
    "SiPostgresql",
    "FaNodeJs",
    "SiPrisma",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Harita tabanlı mülk arama",
@@ -398,6 +413,7 @@ const projectsData = [
    "Responsive tasarım",
    "SEO optimizasyonu",
    "Rol tabanlı yetkilendirme",
+   "RESTful API ile ilan ve randevu bağlantısı",
   ],
   featuresEn: [
    "Map-based property search",
@@ -410,22 +426,23 @@ const projectsData = [
    "Responsive design",
    "SEO optimization",
    "Role-based authorization",
+   "Listing and appointment connectivity via RESTful API",
   ],
   teamTr: "Bireysel",
   teamEn: "Individual",
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "3 hafta" },
+   { label: "Geliştirme Süresi", value: "7 hafta" },
    { label: "Durum", value: "Aktif" },
    { label: "İlan Sayısı", value: "1,200+" },
-   { label: "Deploy", value: "Vercel" },
+   { label: "Kayıtlı Kullanıcı", value: "1,000+" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "3 weeks" },
+   { label: "Development Time", value: "7 weeks" },
    { label: "Status", value: "Active" },
    { label: "Listings", value: "1,200+" },
-   { label: "Deploy", value: "Vercel" },
+   { label: "Registered Users", value: "1,000+" },
   ],
   displayOrder: 7,
  },
@@ -434,13 +451,13 @@ const projectsData = [
   titleTr: "Dil Öğrenme Platformu",
   titleEn: "Language Learning Platform",
   descriptionTr:
-   "Yapay zeka destekli kelime kartları, adaptif quiz motoru ve konuşma pratiği ile İngilizce öğrenmeyi kişiselleştiren interaktif web uygulaması.",
+   "Yapay zeka destekli kelime kartları, adaptif quiz motoru ve konuşma pratiği ile İngilizce öğrenmeyi kişiselleştiren interaktif web uygulaması. Öğrenme, quiz ve ilerleme akışı RESTful API üzerinden bağlanır.",
   descriptionEn:
-   "An interactive web app that personalizes English learning with AI-powered flashcards, an adaptive quiz engine, and speaking practice.",
+   "An interactive web app that personalizes English learning with AI-powered flashcards, an adaptive quiz engine, and speaking practice. Learning, quiz, and progress flows connect through a RESTful API.",
   longDescriptionTr:
-   "Next.js ve Prisma ile geliştirilen bu platform, kullanıcının doğru/yanlış oranına göre tekrar aralıklarını dinamik olarak ayarlayan bir spaced repetition algoritması kullanır. OpenAI API entegrasyonu sayesinde her kelime için örnek cümleler ve bağlam açıklamaları otomatik üretilmektedir. Web Speech API ile desteklenen konuşma pratik modülü, telaffuz puanlama özelliği sunar. Kullanıcılar günlük hedef belirleyebilir, rozet kazanabilir ve haftalık ilerleme raporlarını e-posta ile alabilir.",
+   "Next.js ve Prisma ile geliştirilen bu platform, kullanıcının doğru/yanlış oranına göre tekrar aralıklarını dinamik olarak ayarlayan bir spaced repetition algoritması kullanır. Kelime kartları, quiz sonuçları, ilerleme verileri ve OpenAI destekli içerik üretimi RESTful API katmanı üzerinden sunucuya bağlanır. OpenAI API entegrasyonu sayesinde her kelime için örnek cümleler ve bağlam açıklamaları otomatik üretilmektedir. Web Speech API ile desteklenen konuşma pratik modülü, telaffuz puanlama özelliği sunar. Kullanıcılar günlük hedef belirleyebilir, rozet kazanabilir ve haftalık ilerleme raporlarını e-posta ile alabilir.",
   longDescriptionEn:
-   "Built with Next.js and Prisma, this platform uses a spaced repetition algorithm that dynamically adjusts review intervals based on the user's correct/incorrect ratio. OpenAI API integration auto-generates example sentences and context explanations for each word. The speaking practice module powered by the Web Speech API offers pronunciation scoring. Users can set daily goals, earn badges, and receive weekly progress reports by email.",
+   "Built with Next.js and Prisma, this platform uses a spaced repetition algorithm that dynamically adjusts review intervals based on the user's correct/incorrect ratio. Flashcards, quiz results, progress data, and OpenAI-powered content generation connect to the server through a RESTful API layer. OpenAI API integration auto-generates example sentences and context explanations for each word. The speaking practice module powered by the Web Speech API offers pronunciation scoring. Users can set daily goals, earn badges, and receive weekly progress reports by email.",
   status: "completed",
   technologies: [
    "FaJsSquare",
@@ -450,6 +467,8 @@ const projectsData = [
    "SiPostgresql",
    "SiPrisma",
    "SiOpenai",
+   "TbApi",
+   "SiVercel",
   ],
   featuresTr: [
    "Spaced repetition algoritması",
@@ -462,6 +481,7 @@ const projectsData = [
    "Kullanıcı istatistik dashboard",
    "Koyu/açık tema",
    "Responsive tasarım",
+   "RESTful API ile öğrenme ve ilerleme bağlantısı",
   ],
   featuresEn: [
    "Spaced repetition algorithm",
@@ -474,88 +494,23 @@ const projectsData = [
    "User statistics dashboard",
    "Dark/light theme",
    "Responsive design",
+   "Learning and progress connectivity via RESTful API",
   ],
   teamTr: "Bireysel",
   teamEn: "Individual",
   roleTr: "Full Stack Developer",
   roleEn: "Full Stack Developer",
   metricsTr: [
-   { label: "Geliştirme Süresi", value: "4 hafta" },
+   { label: "Geliştirme Süresi", value: "8 hafta" },
    { label: "Durum", value: "Aktif" },
    { label: "Kayıtlı Kullanıcı", value: "900+" },
-   { label: "Deploy", value: "Vercel" },
   ],
   metricsEn: [
-   { label: "Development Time", value: "4 weeks" },
+   { label: "Development Time", value: "8 weeks" },
    { label: "Status", value: "Actively Used" },
    { label: "Registered Users", value: "900+" },
-   { label: "Deploy", value: "Vercel" },
   ],
   displayOrder: 8,
- },
- {
-  category: "web",
-  titleTr: "Depo Yönetim Sistemi",
-  titleEn: "Warehouse Management System",
-  descriptionTr:
-   "Küçük ve orta ölçekli işletmelerin stok hareketlerini, tedarikçi ilişkilerini ve sevkiyat süreçlerini tek ekrandan yönetmesini sağlayan web tabanlı depo yönetim sistemi.",
-  descriptionEn:
-   "A web-based warehouse management system that lets small and mid-sized businesses manage stock movements, supplier relations, and shipping processes from a single screen.",
-  longDescriptionTr:
-   "Next.js ve Prisma ile geliştirilen bu sistem, barkod tarayıcı desteğiyle ürün giriş/çıkış işlemlerini hızlandırır. Kritik stok seviyesi eşiği aşıldığında sistem otomatik e-posta ve uygulama içi bildirim gönderir. Tedarikçi modülü; sipariş takibi, fatura yükleme ve ödeme durumu yönetimini kapsar. Sevkiyat entegrasyonu sayesinde kargo firması API'leriyle takip numaraları otomatik oluşturulmaktadır. Tüm hareketler tarih bazlı filtrelenebilir raporlara yansımaktadır.",
-  longDescriptionEn:
-   "Built with Next.js and Prisma, this system speeds up product check-in/check-out with barcode scanner support. When a critical stock level threshold is crossed, the system automatically sends email and in-app notifications. The supplier module covers order tracking, invoice uploads, and payment status management. Shipping integration auto-generates tracking numbers via courier company APIs. All movements are reflected in date-filterable reports.",
-  status: "completed",
-  technologies: [
-   "SiTypescript",
-   "FaReact",
-   "SiNextdotjs",
-   "FaNodeJs",
-   "SiPrisma",
-   "SiPostgresql",
-   "SiTailwindcss",
-  ],
-  featuresTr: [
-   "Barkod tarayıcı desteği",
-   "Kritik stok seviyesi bildirimi",
-   "Tedarikçi ve sipariş yönetimi",
-   "Fatura yükleme ve ödeme takibi",
-   "Kargo API entegrasyonu",
-   "Tarih bazlı stok raporları",
-   "Çoklu depo desteği",
-   "Kullanıcı rol yönetimi",
-   "CSV dışa aktarma",
-   "Responsive tasarım",
-  ],
-  featuresEn: [
-   "Barcode scanner support",
-   "Critical stock level notification",
-   "Supplier and order management",
-   "Invoice upload and payment tracking",
-   "Courier API integration",
-   "Date-based stock reports",
-   "Multi-warehouse support",
-   "User role management",
-   "CSV export",
-   "Responsive design",
-  ],
-  teamTr: "Bireysel",
-  teamEn: "Individual",
-  roleTr: "Full Stack Developer",
-  roleEn: "Full Stack Developer",
-  metricsTr: [
-   { label: "Geliştirme Süresi", value: "5 hafta" },
-   { label: "Durum", value: "Aktif" },
-   { label: "Ürün Kaydı", value: "5.000+" },
-   { label: "Deploy", value: "Vercel" },
-  ],
-  metricsEn: [
-   { label: "Development Time", value: "5 weeks" },
-   { label: "Status", value: "Active" },
-   { label: "Product Records", value: "5,000+" },
-   { label: "Deploy", value: "Vercel" },
-  ],
-  displayOrder: 9,
  },
 ];
 
