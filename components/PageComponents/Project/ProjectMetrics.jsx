@@ -9,7 +9,12 @@ export default function ProjectMetrics({ metricsList, buttonTexts }) {
     <FaChartLine className="w-3 xs:w-4 h-3 xs:h-4 mr-2 text-green-400" />
     {buttonTexts.projectMetrics}
    </h4>
-   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 xs:gap-4">
+   <div
+    className="grid gap-3 xs:gap-4"
+    style={{
+     gridTemplateColumns: `repeat(${metricsList.length}, minmax(0, 1fr))`,
+    }}
+   >
     {metricsList.map((metric, metricIndex) => (
      <div
       key={metricIndex}
